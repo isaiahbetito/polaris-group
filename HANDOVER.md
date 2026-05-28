@@ -1,161 +1,220 @@
-# Polaris Group — Handover to Ice
+# Polaris Group — Brief for Ice
 
-Lisa → Ice, handed off 2026-05-28.
+Lisa → Ice, 2026-05-28.
 
-## Client context
+**Important:** the code currently in this repo is a v0 Lisa built to validate direction with the client. **The visual direction wasn't right.** Ice rebuilds from scratch. Treat the existing code as **reference only** — don't continue from it.
 
-**Cesare Fontana**, founder of Polaris Group, based in **Crema, Lombardy**.
-Warm referral via Luca (Run Capital co-founder) — Cesare loved the RCP redesign and asked for the same treatment.
+This doc tells you what to build, the constraints, and the mistakes not to repeat.
 
-- **Discovery call:** 2026-05-20 (Lisa took notes; key constraints below)
-- **Launch target:** September 2026 — coordinated with site + LinkedIn + new training-season opportunities
-- **Cesare's communication:** WhatsApp or email, no preference
-- **Decision-maker:** Cesare alone
+---
 
-## What Polaris actually is
+## Client
 
-Italian SME services group. Brand "Polaris Group" sits over two legal entities + two strategic partners.
+- **Cesare Fontana**, founder of Polaris Group. Based in **Crema, Lombardy**.
+- Warm referral via Luca (Run Capital co-founder) — Cesare specifically said he likes the RCP redesign and wants the "same treatment".
+- **Sole decision-maker**, no committee.
+- Contact via WhatsApp or email (Lisa handles the client relationship).
+- Great client but particular about visual taste. Iterate fast, screenshot often, don't overbuild before alignment.
 
-**Two legal entities:**
-1. **Polaris HR srl** — formazione (training) + advisory. P.IVA 01616620199. Office in Crema.
-2. **Hazard srl** — invoice trading. Society of the Group. Allowed to surface publicly per Cesare.
+**Discovery call:** 2026-05-20. Lisa has the full transcript if you need raw quotes.
+**Launch target:** September 2026 — coordinated with site + LinkedIn + new training-season opportunities.
 
-**Two strategic partners (NOT Polaris-owned):**
-3. **Run Capital Partners** (Luxembourg) — Cesare is co-founder but has ZERO RCP clients
-4. **3DOTS Capital** (New York) — Nasdaq listing advisory for Southern European companies
+---
 
-**Polaris Credito** was sold; do NOT reference. Remove any link to `polaris-credito.it`.
+## What we promised the client
 
-## Critical content constraints (non-negotiable)
+**Proposal accepted by Cesare:**
+- Brand refresh — keep name "Polaris Group" + keep colors (white, silver, blue)
+- Bilingual 6-page site IT/EN + founder page for Cesare + 7 team pages
+- LinkedIn (Cesare personal rebuild + Polaris company page)
+- Ongoing weekly social retainer (Phase 2)
+- Launch by September 2026
+- **€3,500 brand + site (one-off)** + **€1,000 LinkedIn setup** + **€1,000/month ongoing social**
 
-1. **Run Capital honesty rule** — Cesare was visibly alarmed by earlier copy claiming he provides wealth management. He doesn't. He's a connector. Site copy must say "Run Capital eroga; Polaris cura la presentazione." Never imply Polaris does wealth management.
-2. **Hazard srl** — fine to mention publicly, used only on invoice trading service legal line + group section + footer.
-3. **No personal names** in body copy (except Cesare's founder page). No "Lisa or Davide" patterns.
-4. **No emojis anywhere** — UI, copy, emails. SVG / typography / color only.
-5. **Not an AI product** — never position Polaris with AI vocabulary.
-6. **Italian first**, English second. Italian audience is primary (PMI italiane + commercialisti + consulenti del lavoro).
+**Pages (Cesare's stated structure):**
+1. **Home** — who Polaris is, the services, proof, clear contact CTA
+2. **Chi Siamo** — Cesare's story, the team (one card per person)
+3. **Servizi** — Formazione (obbligatoria + su misura), Invoice trading, RCP + 3Dots partner callout
+4. **Casi e Testimonianze** — case studies + testimonials
+5. **Lavora con noi** — simple application invite
+6. **Contatti** — email, phone, sede
 
-## Tech stack
+**Team to feature:** Cesare + Cristina, Alessio, Gianmaria, Mara, Paola, Andrea, Giovanni (8 people total).
 
-Plain HTML/CSS/JS. No framework. Same convention as `runcapital-redesign`.
+---
 
-- **16 HTML pages** (home, chi-siamo, servizi, casi-testimonianze, lavora-con-noi, contatti, privacy, cookie, 8 team pages)
-- **Bilingual** via inline `data-it` / `data-en` attributes + JS toggle in `scripts/main.js`
-- **`data-html="1"`** opt-in attribute on elements whose data values contain HTML markup
-- **Single `style.css`** (~1800 lines) — brand tokens at the top
-- **Team pages generated** from `scripts/gen-team.mjs` (re-run `node scripts/gen-team.mjs` after editing bios)
-- **Cesare's founder page** is hand-edited (custom layout), not generated
-- **Cache-busting meta tags** on every page (no-cache / no-store) — keep them, browser caching has caused many false-positive "this is broken" reports
+## Brand constraints — non-negotiable (per Cesare)
 
-## Design system (locked — see DESIGN.md for full)
+1. **Logo locked.** Navy compass mark + "POLARIS" navy + "GROUP" silver + tagline "human resources | credit and finance". Brand file in `img/logo-mark.svg` (and `img/logo-full.svg` if you want the full lockup).
+2. **Palette: white + silver + blue only.** No gold, no warm tones. Cesare was explicit on the call (also during iteration when Lisa tried adding gold-warm as an accent — got rejected). Silver/blue/cream only.
+3. **Tone: serious but warm**, like RCP. Cesare's verbatim: "serio al punto giusto, però anche caldo." Not flashy. Not AI. Not corporate-stiff.
+4. **Italian-first**, English second. Italian audience is the primary one.
 
-**Palette — strict, blue/silver/cream only:**
-- Navy `#1A3A5C` (POLARIS wordmark color, primary brand)
-- Silver `#8E9499` (GROUP wordmark color, silver-italic accent)
-- Silver scale `#A8B0B6 → #E5E9EC`
-- Cream `#FAF8F3` (section backgrounds)
-- White (page base)
-- **No gold, no teal, no warm tones anywhere.**
+---
 
-**Typography:**
-- Display: Cormorant Garamond (serif, 400/500, italic for accents)
-- Body + UI: Inter (400/500/600/700)
-- Wordmark in nav: Inter 700, uppercase, letter-spacing 0.06em
+## Content rules — also non-negotiable
 
-**Signature visual moves:**
-- One italic word per heading gets the `silver-italic` class (metallic gradient text). e.g. "Conosci il *team.*", "Tre servizi. *Un metodo.*"
-- Eyebrows preceded by `eyebrow-dash` class which adds "— " before
-- RCP-style cards with silver borders + hover lift + silver glow + top accent bar
-- Aurora animated background on hero (`.aurora` class) — silver/blue gradient streaks, ported from Aceternity UI to plain CSS
-- Twinkling stars / counter animations / cursor-follow card glow (`scripts/main.js`)
-- Silver-gradient filled buttons (`.btn--silver`) with shimmer sweep on hover
+1. **Run Capital honesty.** Cesare has **ZERO RCP clients**. Never imply Polaris does wealth management. Quoting Cesare from the call: *"io non ho clienti su Rank Capital. Zero. Infatti avete messo una descrizione che è sulle mie competenze che mi ha agitato perché ho detto minchia ma io quella roba lì non l'ho mai fatta."* If RCP appears on the site, it's a clearly-labeled partner card. RCP eroga; Polaris cura la presentazione.
+2. **Hazard srl** is the legal entity for invoice trading. Cesare is fine surfacing it publicly. Reference it on the invoice trading service + footer.
+3. **Polaris Credito was sold.** Never reference it. Remove any link to polaris-credito.it.
+4. **Three Dots / Nasdaq** — light callout only. Cesare's verbatim: *"non dobbiamo enfatizzarlo. può anche essere una scelta quella di dire 'lo fa Ran, vanno a vederlo su Ran e lo trovano lì'."*
+5. **No emojis anywhere** — UI, copy, emails. SVG / typography / color only.
+6. **No personal names in body copy** (except Cesare's founder page). No "Lisa or Davide" patterns.
+7. **Not an AI product.** Never use AI vocabulary or position Polaris as an AI thing.
 
-**Layout rhythm:** light-majority site with ONE dark navy "Il Gruppo" section as punctuation. Reverse of RCP polarity.
+---
 
-## Lisa's hard-learned feedback (read this BEFORE editing)
+## Audience
 
-This is condensed from many iterations. Save yourself the pain.
+Three reads, equally important:
 
-1. **Cesare's brief is "bianco/argento/blu"** — strictly. Lisa tried adding gold-warm as a tertiary accent for refinement; Cesare's stated preferences override design taste here. Stay silver-only.
-2. **Cards must have visible borders.** Lisa tried opacity-0.20 borders on dark bg — looked invisible. Use opacity 0.40+ minimum on dark sections.
-3. **Don't make it look like a journal/editorial paper.** Iteration #N+1 will always be "more cool effects, less wall of text." Lean into card-based layouts with stat callouts.
-4. **Service names (Formazione / Invoice Trading / Advisory) must be the dominant heading**, not a small kicker label. Lisa burned cycles fixing this twice.
-5. **Hero must be vertically centered with content readable.** Body text MUST be pure white on the navy hero (use `.hero p.hero__lead, .hero__lead { color: #FFFFFF }` — the `p.lead` selector has higher specificity than `.hero__lead` alone, gotcha).
-6. **Pinterest videos** can be downloaded via `~/.local/bin/yt-dlp <pin.it URL>`. Cesare doesn't have his own video assets yet. Some pin URLs turn out to be images, not videos.
-7. **Always verify localhost is running before asking Lisa to refresh.** `cd ~/polaris-group && python3 -m http.server 4323`
-8. **Cache problems are the #1 cause of false "this is broken" reports.** Always cache-bust via `?v=$(date +%s)` when screenshotting.
+1. **PMI italiane** — direct clients (training, financing, advisory)
+2. **Commercialisti** — both clients AND referral channel
+3. **Consulenti del lavoro** — both clients AND referral channel
 
-## Files & layout
+Design + copy need to land for all three at once. The latter two are key — Cesare's growth comes from referrals.
+
+---
+
+## What Polaris actually does
+
+### 1. Formazione (Training)
+- **Obbligatoria** — mandatory courses: primo soccorso, sicurezza sul lavoro (D.Lgs. 81/08), antincendio, RSPP, RLS, HACCP, formazione preposti/dirigenti
+- **Su misura** — tailor-made programs: team building, leadership, sviluppo manageriale, change management
+- Funded via interprofessional funds: **Fondimpresa, Fonarcom, Formazienda, Fondolavoro, Fondo Nuove Competenze (FNC)** — name them, both competitors lead with this and SMEs/commercialisti recognize these acronyms
+- Polaris manages end-to-end: needs analysis, scheduling, instructors, registers, certificates, regional reporting
+
+### 2. Invoice Trading
+- Cessione fatture to qualified investors on regulated Italian platforms
+- Benefits: fast liquidity, no Centrale Rischi impact, no castelletti consumati
+- Erogated by **Hazard srl** (legal entity, fine to mention)
+
+### 3. Advisory direzionale
+- Riassetti organizzativi
+- Passaggi generazionali, governance familiare
+- Gestione finanziaria + efficientamento
+- Preparazione a operazioni straordinarie (M&A, ingresso soci)
+- Coordinamento tavoli con commercialisti, banche, advisor
+
+### Partner callout
+- **Run Capital Partners** (Luxembourg) — alternative investments, securitization, wealth management (RCP delivers; Polaris introduces)
+- **Three Dots** — Nasdaq listing advisory for Southern European companies
+
+---
+
+## Competitors (browse these to understand the category)
+
+1. **https://gruppomagistra.it/** — bright, busy, mass-market. Heavy on fondi interprofessionali. Strong Regione Campania focus. Cluttered icon-card grids.
+2. **https://www.rts-srl.it** — corporate-clean blue/teal, stock-photo-heavy. ISO 9001:2015 certified front and center. Catalog of pre-built courses by area. Targets Consulenti del Lavoro explicitly. Toll-free 800 010 333 prominent.
+3. **https://runcapital.partners** — Cesare's reference. RCP redesign Lisa built (gold + dark, editorial premium). Polaris's silver/blue version aims for the same boutique premium feel.
+
+Both Italian competitors are mid-market and visually cluttered. Polaris's positioning is premium-boutique. The differentiation lives in restraint + craft, not in feature count.
+
+---
+
+## What's in this repo (reference only)
 
 ```
-~/polaris-group/
-  index.html                              # Home — most polished
-  chi-siamo.html                          # About + team grid
-  servizi.html                            # Services detail (3 RCP cards)
-  casi-testimonianze.html                 # Case studies + testimonials
-  lavora-con-noi.html                     # Careers (email-based)
-  contatti.html                           # Contact form + info
-  privacy.html, cookie.html               # Legal stubs
-  team/
-    cesare-fontana.html                   # Custom founder layout (hand-edited)
-    cristina.html, alessio.html, ...      # 7 generated team pages
-  style.css                               # ~1800 lines, brand tokens at top
-  scripts/
-    main.js                               # Lang toggle, mobile nav, counters
-    gen-team.mjs                          # Team page generator (run via node)
-  img/
-    logo-mark.svg                         # 4-chevron compass mark, navy
-    logo-full.svg                         # Full lockup with wordmark
-    favicon.svg
-    svc-formazione.jpg, svc-invoice.jpg, svc-advisory.jpg
-    aud-pmi.jpg, aud-commercialisti.jpg, aud-consulenti.jpg
-    team-action.jpg
-    polaris-bg.mp4                        # Background video (Pinterest pin #1)
-    pin-2.mp4, pin-5.mp4                  # Spare Pinterest videos
-  robots.txt, sitemap.xml
-  favicon.svg
-  DESIGN.md                               # Brand system documentation
-  README.md                               # Project conventions
-  HANDOVER.md                             # This file
+HANDOVER.md                         # this file
+DESIGN.md                           # Lisa's v0 design notes — keep, ignore, or remix
+README.md                           # file map
+Polaris-checklist-Cesare.docx       # Italian content checklist Lisa is sending Cesare
+img/
+  logo-mark.svg                     # USE — the brand logo (4-chevron compass)
+  logo-full.svg                     # USE if you want the full lockup
+  favicon.svg                       # USE
+  polaris-bg.mp4, pin-2.mp4, pin-5.mp4   # Pinterest videos Cesare's team sent as reference (see below)
+  svc-*.jpg, aud-*.jpg, team-action.jpg  # Pexels stock photos from Lisa's iteration
+*.html                              # v0 pages — read for content reference, don't continue from them
+style.css, scripts/main.js          # v0 styling — reference only
+team/                               # generated v0 team pages
 ```
 
-## What still needs Cesare's input (grep `[PLACEHOLDER`)
+**The logo + favicon + Pinterest videos are worth keeping.** Everything else is reference.
 
-This was Lisa's punch list for the client call. Ice should pick up wherever Cesare's at:
+---
 
-1. **8 team portraits** (Cesare + 7 team)
-2. **Cesare's founder story** — 4 paragraphs + 1 quote (needs 30-min interview)
-3. **7 team member bios** (1-2 sentences each, edit `scripts/gen-team.mjs`)
-4. **3 case studies** (Problem → Solution → Result format)
-5. **3 client testimonials** with name/role/company
-6. **4 client logos** with display authorization
-7. **Phone number** for `contatti.html`
-8. **Full address** in Crema for `contatti.html`
-9. **Cesare's LinkedIn URL**
-10. **Privacy + Cookie policy text** from Cesare's lawyer
-11. **Polaris LinkedIn company page** URL (after Lisa creates it)
+## Pinterest video pattern (worth knowing)
 
-## Recent iteration history (so you don't relearn the same lessons)
+Cesare's team sends visual references via Pinterest links. You can't download those normally — they're gated.
 
-- Initial build: editorial/minimal — felt "like a journal", Cesare unhappy
-- Cartolina photo cards iteration: Pexels stock photos rate-limited; tried local downloads; eventually pulled photos in favor of RCP-style typed cards
-- Hero went through 5 iterations: cream/text-only → navy + aurora + silver-italic title → centered properly with pure-white lead
-- Service cards finally landed as: small "01/02/03" top-right + BIG serif service name + italic silver tagline + body + meta + "LEARN MORE →"
-- "Il Gruppo" RCP-style 4-card section added (Polaris HR / Hazard / RCP / 3DOTS) — 3DOTS is the filled-silver accent card
-- Team avatars: dark navy circles with silver-ringed border + silver initials (until real photos arrive)
+I installed `yt-dlp` at `~/.local/bin/yt-dlp` (Mach-O standalone binary). To download from a Pinterest pin URL:
 
-## Deploy
+```bash
+~/.local/bin/yt-dlp "https://pin.it/XXXXXX" -o "video.%(ext)s"
+```
 
-Static. Whatever host Lisa picks (Vercel works — `vercel --prod` from project root).
+Some pins are videos, some are images (yt-dlp will say "no video formats" for the latter). 3 of the 5 references Cesare's team sent were videos and are now in `img/`.
 
-DNS: `polaris-group.it` is the production domain. Cesare confirmed keeping the existing domain.
+---
 
-## Memory references
+## What Cesare still needs to provide
 
-- [Polaris Group website](~/.claude/projects/-Users-lisatyshchenko/memory/project_polaris_group.md) — client context, corporate structure
-- [Polaris site v1 build](~/.claude/projects/-Users-lisatyshchenko/memory/project_polaris_site_build.md) — what shipped on 2026-05-26
-- [Verify localhost](~/.claude/projects/-Users-lisatyshchenko/memory/feedback_localhost.md) — Lisa's rule
+Lisa is sending Cesare **`Polaris-checklist-Cesare.docx`** (Italian, natural tone, not AI-stiff). When content lands, Lisa forwards to you.
 
-## Good luck
+Summary of what's pending:
+1. 8 team portraits (photographer ~€500-800 for the day — Lisa is proposing 3 photographers)
+2. Cesare's founder story (4 paragraphs + 1 quote — needs 30-min interview)
+3. 7 team bios (5 min each member)
+4. 3 case studies (Problem → Solution → Result)
+5. 3 client testimonials with name/role/company
+6. 4 client logos with display authorization
+7. Phone number for contatti page
+8. Full address in Crema
+9. Cesare's LinkedIn URL (after Lisa rebuilds his profile)
+10. Privacy + Cookie policy text from his lawyer
+11. Polaris LinkedIn company page URL (after Lisa creates it)
 
-Ice — Cesare's a great client but particular about visual taste. Iterate fast, screenshot often, and respect the silver-only palette religiously. The hardest part is over (system + structure locked); now it's content + polish until September.
+If team photos + interview + testimonials land within 2 weeks, September is realistic.
+
+---
+
+## Hard-learned feedback (READ before designing)
+
+These are condensed from many iterations Lisa burned on the v0. Save the cycles.
+
+1. **The brand brief is "bianco/argento/blu"** — strict. Cesare doesn't want gold or warm tones. Don't try.
+2. **Cesare's main critique was "looks like a journal paper / dead fish / boring."** Editorial-minimalist doesn't work for him. Lean into card-based layouts, motion, cool effects, visual variety.
+3. **Cesare also likes RCP** — but RCP is dark + gold. Polaris equivalent has to be silver + blue. Polarity reversal: light-majority with one dark navy section as punctuation feels more Italian-daylight; full-dark feels too RCP-clone.
+4. **Service names (Formazione / Invoice Trading / Advisory) must be the dominant heading**, not a small kicker. Cesare burned cycles fixing this twice.
+5. **Stock photos look generic** unless heavily branded. Pexels photos of strangers in suits felt wrong. Real team portraits (when they land) will be the lift.
+6. **Don't position Polaris as wealth manager.** See Run Capital rule above. Cesare was visibly alarmed by v0 copy that overclaimed.
+7. **Cache problems are the #1 cause of false "this is broken" reports.** Hard-reload (Cmd+Shift+R), incognito, or no-cache meta tags. Don't burn cycles thinking layout is broken when it's just stale CSS.
+8. **Verify localhost is running before asking Lisa to refresh** something.
+9. **Iterate fast and screenshot often.** Lisa screenshots and gives concrete pointed feedback. Build the loop tight.
+
+---
+
+## Tech stack — your call
+
+Lisa built v0 in plain HTML/CSS/JS (matching her `runcapital-redesign` pattern). You can:
+
+- Continue with plain HTML (fastest, no build step, easy to maintain)
+- Switch to Astro / Next.js / SvelteKit / whatever you and Claude Code prefer
+- Whatever feels right for the rebuild
+
+**Hosting:** Vercel works fine for static (free tier). Domain `polaris-group.it` is Cesare's — he keeps it.
+
+**Bilingual approach choice:**
+- Lisa used inline `data-it` / `data-en` attributes + JS toggle. Works but adds complexity. SEO trade-off: only IT indexes (single URL).
+- Alternative: separate `/it/` and `/en/` URL trees for real bilingual SEO. More maintenance.
+- v1: IT-only SEO is acceptable per Cesare. The English version is for partner-audience direct-link visitors.
+
+---
+
+## How to proceed
+
+1. Read this whole doc + DESIGN.md (for brand constraints — the colors and content rules survive any rebuild)
+2. Browse the competitors (Magistra + RTS) and RCP (runcapital.partners)
+3. Look at the v0 code as content reference (the copy + structure are decent)
+4. Propose 1-2 strong directions to Lisa before building anything (Lisa wants to see direction, not a full v1)
+5. Build, screenshot, iterate
+6. Send Cesare to look once Lisa says it's ready for client review
+
+---
+
+## Sign-off
+
+Ice — the hardest part is over: client is signed, brand constraints are locked, content collection is in motion via the Italian checklist. What didn't work in v0 was the visual taste. Pick a fresh direction, ship faster, talk to Lisa often.
+
+Lisa
