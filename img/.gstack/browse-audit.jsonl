@@ -1,0 +1,36 @@
+{"ts":"2026-05-26T18:23:21.075Z","cmd":"viewport","args":"1280x720","origin":"about:blank","durationMs":4,"status":"ok","hasCookies":false,"mode":"launched"}
+{"ts":"2026-05-26T18:23:21.233Z","cmd":"goto","args":"http://localhost:4323/","origin":"http://localhost:4323/","durationMs":118,"status":"ok","hasCookies":false,"mode":"launched"}
+{"ts":"2026-05-26T18:23:22.648Z","cmd":"screenshot","args":"/tmp/p-cards-final.png","origin":"http://localhost:4323/","durationMs":355,"status":"ok","hasCookies":false,"mode":"launched"}
+{"ts":"2026-05-26T18:23:51.660Z","cmd":"goto","args":"http://localhost:4323/","origin":"http://localhost:4323/","durationMs":27,"status":"ok","hasCookies":false,"mode":"launched"}
+{"ts":"2026-05-26T18:23:52.527Z","cmd":"js","args":"document.querySelector('.video-section').scrollIntoView({behavior:'instant',block:'center'})","origin":"http://localhost:4323/","durationMs":3,"status":"ok","hasCookies":false,"mode":"launched"}
+{"ts":"2026-05-26T18:23:53.219Z","cmd":"screenshot","args":"/tmp/p-video-fixed.png","origin":"http://localhost:4323/","durationMs":339,"status":"ok","hasCookies":false,"mode":"launched"}
+{"ts":"2026-05-26T18:25:26.188Z","cmd":"viewport","args":"1280x720","origin":"http://localhost:4323/","durationMs":0,"status":"ok","hasCookies":false,"mode":"launched"}
+{"ts":"2026-05-26T18:25:26.296Z","cmd":"goto","args":"http://localhost:4323/servizi.html","origin":"http://localhost:4323/servizi.html","durationMs":64,"status":"ok","hasCookies":false,"mode":"launched"}
+{"ts":"2026-05-26T18:25:27.490Z","cmd":"screenshot","args":"/tmp/p-servizi-cartoline.png","origin":"http://localhost:4323/servizi.html","durationMs":132,"status":"ok","hasCookies":false,"mode":"launched"}
+{"ts":"2026-05-26T18:26:58.518Z","cmd":"goto","args":"http://localhost:4323/","origin":"http://localhost:4323/","durationMs":20,"status":"ok","hasCookies":false,"mode":"launched"}
+{"ts":"2026-05-26T18:26:59.575Z","cmd":"js","args":"document.querySelector('.services-stack').scrollIntoView({block:'center'})","origin":"http://localhost:4323/","durationMs":1,"status":"ok","hasCookies":false,"mode":"launched"}
+{"ts":"2026-05-26T18:27:00.199Z","cmd":"screenshot","args":"--viewport /tmp/p-home-svc-zoom.png","origin":"http://localhost:4323/","durationMs":72,"status":"ok","hasCookies":false,"mode":"launched"}
+{"ts":"2026-05-27T08:44:38.533Z","cmd":"viewport","args":"1280x720","origin":"about:blank","durationMs":5,"status":"ok","hasCookies":false,"mode":"launched"}
+{"ts":"2026-05-27T08:44:38.780Z","cmd":"goto","args":"http://localhost:4323/","origin":"http://localhost:4323/","durationMs":207,"status":"ok","hasCookies":false,"mode":"launched"}
+{"ts":"2026-05-27T08:44:40.839Z","cmd":"js","args":"document.querySelector('.video-section').scrollIntoView({block:'center'})","origin":"http://localhost:4323/","durationMs":2,"status":"ok","hasCookies":false,"mode":"launched"}
+{"ts":"2026-05-27T08:44:42.507Z","cmd":"screenshot","args":"--viewport /tmp/p-video-live.png","origin":"http://localhost:4323/","durationMs":108,"status":"ok","hasCookies":false,"mode":"launched"}
+{"ts":"2026-05-27T09:15:09.717Z","cmd":"viewport","args":"1280x720","origin":"http://localhost:4323/","durationMs":1,"status":"ok","hasCookies":false,"mode":"launched"}
+{"ts":"2026-05-27T09:15:09.830Z","cmd":"goto","args":"http://localhost:4323/","origin":"http://localhost:4323/","durationMs":72,"status":"ok","hasCookies":false,"mode":"launched"}
+{"ts":"2026-05-27T09:15:11.398Z","cmd":"js","args":"document.querySelector('.video-section').scrollIntoView({block:'center'})","origin":"http://localhost:4323/","durationMs":1,"status":"ok","hasCookies":false,"mode":"launched"}
+{"ts":"2026-05-27T09:15:14.059Z","cmd":"screenshot","args":"--viewport /tmp/p-pin1-live.png","origin":"http://localhost:4323/","durationMs":111,"status":"ok","hasCookies":false,"mode":"launched"}
+{"ts":"2026-05-27T09:17:15.608Z","cmd":"viewport","args":"1280x720","origin":"http://localhost:4323/","durationMs":1,"status":"ok","hasCookies":false,"mode":"launched"}
+{"ts":"2026-05-27T09:17:15.665Z","cmd":"goto","args":"http://localhost:4323/","origin":"http://localhost:4323/","durationMs":18,"status":"ok","hasCookies":false,"mode":"launched"}
+{"ts":"2026-05-27T09:17:16.724Z","cmd":"js","args":"document.querySelector('.video-section').scrollIntoView({block:'center'})","origin":"http://localhost:4323/","durationMs":1,"status":"ok","hasCookies":false,"mode":"launched"}
+{"ts":"2026-05-27T09:17:18.376Z","cmd":"screenshot","args":"--viewport /tmp/p-video-sameline.png","origin":"http://localhost:4323/","durationMs":99,"status":"ok","hasCookies":false,"mode":"launched"}
+{"ts":"2026-05-27T09:17:54.783Z","cmd":"js","args":"document.querySelector('.video-section h2').outerHTML","origin":"http://localhost:4323/","durationMs":2,"status":"ok","hasCookies":false,"mode":"launched"}
+{"ts":"2026-05-27T09:17:54.821Z","cmd":"js","args":"document.querySelector('.video-section h2').dataset.en","origin":"http://localhost:4323/","durationMs":1,"status":"ok","hasCookies":false,"mode":"launched"}
+{"ts":"2026-05-27T09:20:38.661Z","cmd":"viewport","args":"1280x720","origin":"http://localhost:4323/","durationMs":3,"status":"ok","hasCookies":false,"mode":"launched"}
+{"ts":"2026-05-27T09:20:38.730Z","cmd":"goto","args":"http://localhost:4323/","origin":"http://localhost:4323/","durationMs":27,"status":"ok","hasCookies":false,"mode":"launched"}
+{"ts":"2026-05-27T09:20:40.836Z","cmd":"screenshot","args":"--viewport /tmp/p-hero-video.png","origin":"http://localhost:4323/","durationMs":46,"status":"ok","hasCookies":false,"mode":"launched"}
+{"ts":"2026-05-27T09:21:04.416Z","cmd":"goto","args":"http://localhost:4323/?v=1779873664","origin":"http://localhost:4323/?v=1779873664","durationMs":23,"status":"ok","hasCookies":false,"mode":"launched"}
+{"ts":"2026-05-27T09:21:06.472Z","cmd":"js","args":"getComputedStyle(document.querySelector('.hero')).backgroundColor","origin":"http://localhost:4323/?v=1779873664","durationMs":0,"status":"ok","hasCookies":false,"mode":"launched"}
+{"ts":"2026-05-27T09:21:06.515Z","cmd":"js","args":"document.querySelector('.hero__video')?.outerHTML?.slice(0, 150) || 'no hero__video'","origin":"http://localhost:4323/?v=1779873664","durationMs":1,"status":"ok","hasCookies":false,"mode":"launched"}
+{"ts":"2026-05-27T09:21:06.618Z","cmd":"screenshot","args":"--viewport /tmp/p-hero-final.png","origin":"http://localhost:4323/?v=1779873664","durationMs":63,"status":"ok","hasCookies":false,"mode":"launched"}
+{"ts":"2026-05-27T09:21:59.174Z","cmd":"js","args":"document.querySelectorAll('link[rel=\"stylesheet\"]').forEach(l => { l.href = l.href.split('?')[0] + '?v=' + Date.now(); })","origin":"http://localhost:4323/?v=1779873664","durationMs":4,"status":"ok","hasCookies":false,"mode":"launched"}
+{"ts":"2026-05-27T09:22:00.223Z","cmd":"js","args":"getComputedStyle(document.querySelector('.hero')).backgroundColor","origin":"http://localhost:4323/?v=1779873664","durationMs":0,"status":"ok","hasCookies":false,"mode":"launched"}
+{"ts":"2026-05-27T09:22:00.262Z","cmd":"js","args":"getComputedStyle(document.querySelector('.hero')).textAlign","origin":"http://localhost:4323/?v=1779873664","durationMs":1,"status":"ok","hasCookies":false,"mode":"launched"}

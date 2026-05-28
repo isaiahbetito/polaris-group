@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" fill="#1A3A5C">
+  <!-- Compass-chevron mark: 4 tall/sharp arrowheads pointing outward.
+       Geometry matches the Polaris Group brand logo. -->
+  <!-- Top arrow (^) -->
+  <path d="M40 4 L52 32 L46 32 L40 22 L34 32 L28 32 Z"/>
+  <!-- Right arrow (>) -->
+  <path d="M76 40 L48 52 L48 46 L58 40 L48 34 L48 28 Z"/>
+  <!-- Bottom arrow (v) -->
+  <path d="M40 76 L28 48 L34 48 L40 58 L46 48 L52 48 Z"/>
+  <!-- Left arrow (<) -->
+  <path d="M4 40 L32 28 L32 34 L22 40 L32 46 L32 52 Z"/>
+</svg>

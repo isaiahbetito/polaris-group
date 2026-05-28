@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 200" fill="none">
+  <!-- Compass mark on the left -->
+  <g transform="translate(20, 60)" fill="#1A3A5C">
+    <path d="M40 0 L52 20 L46 20 L40 12 L34 20 L28 20 Z"/>
+    <path d="M80 40 L60 52 L60 46 L68 40 L60 34 L60 28 Z"/>
+    <path d="M40 80 L28 60 L34 60 L40 68 L46 60 L52 60 Z"/>
+    <path d="M0 40 L20 28 L20 34 L12 40 L20 46 L20 52 Z"/>
+  </g>
+  <!-- POLARIS wordmark (navy) -->
+  <text x="135" y="100" font-family="Inter, -apple-system, sans-serif" font-weight="700" font-size="72" letter-spacing="2" fill="#1A3A5C">POLARIS</text>
+  <!-- GROUP wordmark (silver) -->
+  <text x="430" y="100" font-family="Inter, -apple-system, sans-serif" font-weight="700" font-size="72" letter-spacing="2" fill="#8E9499">GROUP</text>
+  <!-- Tagline -->
+  <text x="135" y="135" font-family="Inter, -apple-system, sans-serif" font-weight="400" font-size="18" letter-spacing="1" fill="#B0B6BB">human resources  |  credit and finance</text>
+</svg>
