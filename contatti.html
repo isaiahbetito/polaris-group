@@ -1,180 +1,169 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta http-equiv="Pragma" content="no-cache">
-  <meta http-equiv="Expires" content="0">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title data-it="Contatti — Polaris Group" data-en="Contact — Polaris Group">Contatti — Polaris Group</title>
-  <meta name="description" data-it-content="Contatta Polaris Group: email, telefono, sede di Crema. Rispondiamo entro 24 ore lavorative.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contatti — Polaris Group | Crema, Brescia, Massa Carrara</title>
+<meta name="description" content="Contatta Polaris Group. Sede principale a Crema (CR), Via del Commercio 29. Tel +39 0373 250072. Sedi a Brescia e Massa Carrara.">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+<link rel="apple-touch-icon" href="/favicon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
+<style>
+  .contact-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:stretch}
+  .contact-rows{display:flex;flex-direction:column;gap:28px}
+  .contact-row{display:flex;gap:18px;align-items:flex-start}
+  .contact-row__ic{flex:0 0 44px;width:44px;height:44px;border-radius:50%;border:1px solid var(--silver-1);display:flex;align-items:center;justify-content:center;color:var(--navy-deep)}
+  .contact-row__ic svg{width:20px;height:20px}
+  .contact-row__label{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--silver-accent);margin-bottom:4px}
+  .contact-row__val{font-family:var(--serif);font-size:1.5rem;color:var(--navy-deep);line-height:1.2}
+  .contact-row__val a:hover{color:var(--steel)}
+  .contact-note{margin-top:8px;font-size:.95rem;color:var(--steel)}
+  .contact-map{border-radius:8px;overflow:hidden;border:1px solid var(--silver-1);min-height:420px;box-shadow:0 30px 60px -40px rgba(11,46,79,.4)}
+  .contact-map iframe{width:100%;height:100%;min-height:420px;border:0;display:block;filter:grayscale(.4) contrast(1.05)}
+  .office-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .office{background:var(--white);border:1px solid var(--silver-2);border-radius:4px;padding:32px 30px;transition:transform .25s var(--ease),box-shadow .25s var(--ease),border-color .25s var(--ease)}
+  .office:hover{transform:translateY(-5px);box-shadow:0 24px 50px -28px rgba(11,46,79,.3);border-color:var(--silver-1)}
+  .office__tag{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--silver-accent)}
+  .office__city{font-family:var(--serif);font-size:1.7rem;color:var(--navy-deep);margin:8px 0 10px}
+  .office__addr{font-size:.97rem;color:var(--ink);opacity:.82;line-height:1.5}
+  .office__link{display:inline-block;margin-top:16px;font-size:13px;font-weight:600;letter-spacing:.04em;color:var(--navy-deep)}
+  @media(max-width:860px){ .contact-grid{grid-template-columns:1fr;gap:36px} .office-grid{grid-template-columns:1fr} }
+</style>
 </head>
 <body>
 
-  <a href="#main" class="skip-link" data-it="Vai al contenuto" data-en="Skip to content">Vai al contenuto</a>
+<nav class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="/" class="nav__logo" aria-label="Polaris Group"><img src="/img/logo-lockup.png" alt="Polaris Group"></a>
+    <button class="nav__toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    <ul class="nav__links">
+      <li><a href="/chi-siamo.html" data-it="Chi Siamo" data-en="About">Chi Siamo</a></li>
+      <li><a href="/servizi.html" data-it="Servizi" data-en="Services">Servizi</a></li>
+      <li><a href="/chi-siamo.html#team" data-it="Team" data-en="Team">Team</a></li>
+      <li><a href="/casi-testimonianze.html" data-it="Casi &amp; Testimonianze" data-en="Cases">Casi &amp; Testimonianze</a></li>
+      <li><a href="/lavora-con-noi.html" data-it="Lavora con noi" data-en="Careers">Lavora con noi</a></li>
+      <li><a href="/contatti.html" class="nav__cta is-active" data-it="Contattaci" data-en="Get in Touch">Contattaci</a></li>
+      <li><button type="button" class="lang-switch" aria-label="Cambia lingua"><span class="lang-switch__opt on" data-lang="it">IT</span><span>/</span><span class="lang-switch__opt" data-lang="en">EN</span></button></li>
+    </ul>
+  </div>
+</nav>
 
-  <nav class="nav" id="nav">
-    <div class="nav__inner">
-      <a href="/" class="nav__logo" aria-label="Polaris Group">
-        <img class="nav__logo-mark" src="/img/logo-mark.svg" alt="" width="28" height="28">
-        <span>POLARIS <span class="nav__logo-group">GROUP</span></span>
-      </a>
-      <button class="nav__toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-      <ul class="nav__links" id="navLinks">
+<main>
+  <header class="page-head">
+    <div class="container">
+      <span class="eyebrow eyebrow--center" data-it="Parla con noi" data-en="Get in touch">Parla con noi</span>
+      <h1 data-it-html="Parliamo del tuo <em>prossimo passo.</em>" data-en-html="Let's talk about your <em>next step.</em>">Parliamo del tuo <em>prossimo passo.</em></h1>
+      <p class="lead" data-it="Siamo a Crema, attivi in tutta Italia. Scrivici o chiamaci: rispondiamo entro 24 ore lavorative." data-en="Based in Crema, active across Italy. Email or call us — we reply within 24 working hours.">Siamo a Crema, attivi in tutta Italia. Scrivici o chiamaci: rispondiamo entro 24 ore lavorative.</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-rows reveal">
+          <div class="contact-row">
+            <span class="contact-row__ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>
+            <div>
+              <div class="contact-row__label" data-it="Email" data-en="Email">Email</div>
+              <div class="contact-row__val"><a href="mailto:segreteria@polaris-group.it">segreteria@polaris-group.it</a></div>
+            </div>
+          </div>
+          <div class="contact-row">
+            <span class="contact-row__ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.6a16 16 0 0 0 6 6l1.1-1.1a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></span>
+            <div>
+              <div class="contact-row__label" data-it="Telefono" data-en="Phone">Telefono</div>
+              <div class="contact-row__val"><a href="tel:+390373250072">+39 0373 250072</a></div>
+            </div>
+          </div>
+          <div class="contact-row">
+            <span class="contact-row__ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+            <div>
+              <div class="contact-row__label" data-it="Sede principale" data-en="Headquarters">Sede principale</div>
+              <div class="contact-row__val">Crema (CR)</div>
+              <div class="contact-note">Via del Commercio 29, 26013</div>
+            </div>
+          </div>
+          <a href="mailto:segreteria@polaris-group.it" class="btn btn--primary" style="align-self:flex-start" data-it="Scrivici una mail" data-en="Send us an email">Scrivici una mail</a>
+        </div>
+        <div class="contact-map reveal">
+          <iframe title="Mappa — Polaris Group, Crema" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Via%20del%20Commercio%2029%2C%2026013%20Crema%20CR%20Italy&output=embed"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--cream">
+    <div class="container">
+      <div class="section__head reveal">
+        <span class="eyebrow eyebrow--center" data-it="Dove siamo" data-en="Where we are">Dove siamo</span>
+        <h2 data-it-html="Le nostre <em class=&quot;hl&quot;>sedi.</em>" data-en-html="Our <em class=&quot;hl&quot;>offices.</em>">Le nostre <em class="hl">sedi.</em></h2>
+      </div>
+      <div class="office-grid reveal">
+        <article class="office">
+          <div class="office__tag" data-it="Sede principale" data-en="Headquarters">Sede principale</div>
+          <h3 class="office__city">Crema</h3>
+          <p class="office__addr">Via del Commercio 29<br>26013 Crema (CR)</p>
+          <a class="office__link" href="https://www.google.com/maps/search/?api=1&query=Via+del+Commercio+29+26013+Crema+CR" target="_blank" rel="noopener" data-it="Indicazioni →" data-en="Directions →">Indicazioni →</a>
+        </article>
+        <article class="office">
+          <div class="office__tag" data-it="Sede secondaria" data-en="Branch office">Sede secondaria</div>
+          <h3 class="office__city">Brescia</h3>
+          <p class="office__addr">Via Francesco Crispi 20<br>25121 Brescia</p>
+          <a class="office__link" href="https://www.google.com/maps/search/?api=1&query=Via+Francesco+Crispi+20+25121+Brescia" target="_blank" rel="noopener" data-it="Indicazioni →" data-en="Directions →">Indicazioni →</a>
+        </article>
+        <article class="office">
+          <div class="office__tag" data-it="Sede secondaria" data-en="Branch office">Sede secondaria</div>
+          <h3 class="office__city">Massa Carrara</h3>
+          <p class="office__addr">Via S. Giuseppe Vecchio 53<br>54100 Massa Carrara (MS)</p>
+          <a class="office__link" href="https://www.google.com/maps/search/?api=1&query=Via+San+Giuseppe+Vecchio+53+54100+Massa+Carrara" target="_blank" rel="noopener" data-it="Indicazioni →" data-en="Directions →">Indicazioni →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__brand">
+      <img class="footer__logo" src="/img/logo-lockup.png" alt="Polaris Group">
+      <p data-it="La forza della visione, al servizio delle imprese. Formazione, finanza non bancaria, advisory direzionale." data-en="The power of vision, at the service of businesses. Training, non-bank finance, strategic advisory.">La forza della visione, al servizio delle imprese. Formazione, finanza non bancaria, advisory direzionale.</p>
+    </div>
+    <div class="footer__col">
+      <h4 data-it="Sito" data-en="Site">Sito</h4>
+      <ul>
         <li><a href="/chi-siamo.html" data-it="Chi Siamo" data-en="About">Chi Siamo</a></li>
         <li><a href="/servizi.html" data-it="Servizi" data-en="Services">Servizi</a></li>
-        <li><a href="/casi-testimonianze.html" data-it="Casi & Testimonianze" data-en="Cases & Testimonials">Casi & Testimonianze</a></li>
+        <li><a href="/casi-testimonianze.html" data-it="Casi &amp; Testimonianze" data-en="Cases">Casi</a></li>
         <li><a href="/lavora-con-noi.html" data-it="Lavora con noi" data-en="Careers">Lavora con noi</a></li>
-        <li><a href="/contatti.html" class="nav__cta is-current" data-it="Contattaci" data-en="Get in Touch">Contattaci</a></li>
-        <li>
-          <button type="button" class="lang-switch" aria-label="Cambia lingua">
-            <span class="lang-switch__opt" data-lang="it">IT</span>
-            <span class="lang-switch__sep">/</span>
-            <span class="lang-switch__opt" data-lang="en">EN</span>
-          </button>
-        </li>
       </ul>
     </div>
-  </nav>
-
-  <main id="main">
-
-    <section class="section" style="padding-top: calc(var(--space-16) + 80px);">
-      <div class="container container--narrow">
-        <span class="eyebrow reveal" data-it="Contatti" data-en="Contact">Contatti</span>
-        <h1 class="reveal delay-1" style="margin-bottom: var(--space-4);" data-html="1" data-it="<span class=&quot;silver-italic&quot;><span class="silver-italic">Parliamone.</span></span>" data-en="<span class=&quot;silver-italic&quot;>Let&rsquo;s talk.</span>"><span class="silver-italic">Parliamone.</span></h1>
-        <p class="lead reveal delay-2" data-it="Scrivi due righe sul tuo progetto o sulla tua domanda. Ti rispondiamo entro 24 ore lavorative. Per richieste urgenti, il telefono è il modo più rapido." data-en="Drop two lines about your project or question. We reply within 24 working hours. For urgent matters, the phone is fastest.">Scrivi due righe sul tuo progetto o sulla tua domanda. Ti rispondiamo entro 24 ore lavorative. Per richieste urgenti, il telefono è il modo più rapido.</p>
-      </div>
-    </section>
-
-    <section class="section section--tight">
-      <div class="container">
-        <div class="grid grid--2" style="gap: var(--space-8); align-items: start;">
-
-          <!-- LEFT: CONTACT FORM -->
-          <div class="reveal">
-            <h2 style="margin-bottom: var(--space-4);" data-it="Scrivici" data-en="Write to us">Scrivici</h2>
-            <form class="form" action="mailto:info@polaris-group.it" method="post" enctype="text/plain">
-              <div class="form__field">
-                <label class="form__label" for="name" data-it="Nome e cognome" data-en="Full name">Nome e cognome</label>
-                <input type="text" id="name" name="name" required>
-              </div>
-              <div class="form__field">
-                <label class="form__label" for="email" data-it="Email" data-en="Email">Email</label>
-                <input type="email" id="email" name="email" required>
-              </div>
-              <div class="form__field">
-                <label class="form__label" for="company" data-it="Azienda o studio" data-en="Company or firm">Azienda o studio</label>
-                <input type="text" id="company" name="company">
-              </div>
-              <div class="form__field">
-                <label class="form__label" for="topic" data-it="Cosa ti interessa" data-en="What you're interested in">Cosa ti interessa</label>
-                <select id="topic" name="topic">
-                  <option value="formazione" data-it="Formazione" data-en="Training">Formazione</option>
-                  <option value="invoice-trading" data-it="Invoice Trading" data-en="Invoice Trading">Invoice Trading</option>
-                  <option value="advisory" data-it="Advisory direzionale" data-en="Strategic advisory">Advisory direzionale</option>
-                  <option value="run-capital" data-it="Investimenti alternativi (Run Capital)" data-en="Alternative investments (Run Capital)">Investimenti alternativi (Run Capital)</option>
-                  <option value="altro" data-it="Altro" data-en="Other">Altro</option>
-                </select>
-              </div>
-              <div class="form__field">
-                <label class="form__label" for="message" data-it="Il tuo messaggio" data-en="Your message">Il tuo messaggio</label>
-                <textarea id="message" name="message" rows="6" required></textarea>
-              </div>
-              <button type="submit" class="btn btn--silver" style="justify-self: start;" data-it="Invia" data-en="Send">Invia</button>
-              <p class="muted" style="font-size: 0.8125rem;" data-it="Inviando questo messaggio accetti il trattamento dei dati personali secondo la nostra <a href=&quot;/privacy.html&quot; class=&quot;link&quot;>privacy policy</a>." data-en="By submitting this message you accept the processing of personal data per our <a href=&quot;/privacy.html&quot; class=&quot;link&quot;>privacy policy</a>.">Inviando questo messaggio accetti il trattamento dei dati personali secondo la nostra <a href="/privacy.html" class="link">privacy policy</a>.</p>
-            </form>
-          </div>
-
-          <!-- RIGHT: CONTACT INFO -->
-          <div class="reveal delay-1">
-            <h2 style="margin-bottom: var(--space-4);" data-it="Trovaci" data-en="Find us">Trovaci</h2>
-
-            <div style="margin-bottom: var(--space-4);">
-              <span class="eyebrow eyebrow-dash" data-it="Email" data-en="Email">Email</span>
-              <p style="font-size: 1.125rem; margin-top: var(--space-1);"><a href="mailto:info@polaris-group.it" class="link">info@polaris-group.it</a></p>
-              <p class="muted" style="font-size: 0.875rem;" data-it="Per candidature: <a href=&quot;mailto:candidature@polaris-group.it&quot; class=&quot;link&quot;>candidature@polaris-group.it</a>" data-en="For applications: <a href=&quot;mailto:candidature@polaris-group.it&quot; class=&quot;link&quot;>candidature@polaris-group.it</a>">Per candidature: <a href="mailto:candidature@polaris-group.it" class="link">candidature@polaris-group.it</a></p>
-            </div>
-
-            <div style="margin-bottom: var(--space-4);">
-              <span class="eyebrow eyebrow-dash" data-it="Telefono" data-en="Phone">Telefono</span>
-              <p style="font-size: 1.125rem; margin-top: var(--space-1);" data-it="[PLACEHOLDER — numero da confermare]" data-en="[PLACEHOLDER — number to confirm]">[PLACEHOLDER — numero da confermare]</p>
-              <p class="muted" style="font-size: 0.875rem;" data-it="Lun-Ven, 9:00–13:00 e 14:00–18:00" data-en="Mon-Fri, 9:00–13:00 and 14:00–18:00">Lun-Ven, 9:00–13:00 e 14:00–18:00</p>
-            </div>
-
-            <div style="margin-bottom: var(--space-4);">
-              <span class="eyebrow eyebrow-dash" data-it="Sede" data-en="Office">Sede</span>
-              <p style="margin-top: var(--space-1);" data-it="[PLACEHOLDER — indirizzo completo]<br>Crema (CR), Lombardia, Italia" data-en="[PLACEHOLDER — full address]<br>Crema (CR), Lombardy, Italy">[PLACEHOLDER — indirizzo completo]<br>Crema (CR), Lombardia, Italia</p>
-            </div>
-
-            <div>
-              <span class="eyebrow eyebrow-dash" data-it="Dati societari" data-en="Company data">Dati societari</span>
-              <p style="font-size: 0.875rem; margin-top: var(--space-1);" data-it="Polaris HR srl<br>P.IVA: 01616620199<br>Capitale sociale interamente versato" data-en="Polaris HR srl<br>VAT: 01616620199<br>Fully paid-up share capital">Polaris HR srl<br>P.IVA: 01616620199<br>Capitale sociale interamente versato</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- HOURS / RESPONSE -->
-    <section class="section section--cream">
-      <div class="container container--narrow text-center">
-        <div class="reveal">
-          <h2 style="margin-bottom: var(--space-3);" data-it="Quando rispondiamo" data-en="When we reply">Quando rispondiamo</h2>
-          <p class="lead" data-it="Le mail vengono lette entro la stessa giornata lavorativa. Una risposta strutturata arriva entro 24 ore lavorative — sempre, anche se è per dirti che la richiesta non rientra nei nostri servizi." data-en="Emails are read within the same working day. A structured reply lands within 24 working hours — always, even if it's to tell you the request is outside our scope.">Le mail vengono lette entro la stessa giornata lavorativa. Una risposta strutturata arriva entro 24 ore lavorative — sempre, anche se è per dirti che la richiesta non rientra nei nostri servizi.</p>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <footer class="footer">
-    <div class="footer__inner">
-      <div class="footer__brand">
-        <h3>Polaris Group</h3>
-        <p data-it="La stella polare per chi guida un'impresa. Formazione, finanza non bancaria, advisory direzionale." data-en="The North Star for those who run a business. Training, non-bank finance, strategic advisory.">La stella polare per chi guida un'impresa. Formazione, finanza non bancaria, advisory direzionale.</p>
-      </div>
-      <div class="footer__col">
-        <h4 data-it="Sito" data-en="Site">Sito</h4>
-        <ul>
-          <li><a href="/chi-siamo.html" data-it="Chi Siamo" data-en="About">Chi Siamo</a></li>
-          <li><a href="/servizi.html" data-it="Servizi" data-en="Services">Servizi</a></li>
-          <li><a href="/casi-testimonianze.html" data-it="Casi & Testimonianze" data-en="Cases">Casi</a></li>
-          <li><a href="/lavora-con-noi.html" data-it="Lavora con noi" data-en="Careers">Lavora con noi</a></li>
-        </ul>
-      </div>
-      <div class="footer__col">
-        <h4 data-it="Contatti" data-en="Contact">Contatti</h4>
-        <ul>
-          <li><a href="mailto:info@polaris-group.it">info@polaris-group.it</a></li>
-          <li><a data-it="Crema, Lombardia" data-en="Crema, Lombardy">Crema, Lombardia</a></li>
-          <li><a href="/contatti.html" data-it="Tutti i contatti" data-en="All contact info">Tutti i contatti</a></li>
-        </ul>
-      </div>
-      <div class="footer__col">
-        <h4 data-it="Gruppo" data-en="Group">Gruppo</h4>
-        <ul>
-          <li><a data-it="Polaris HR srl" data-en="Polaris HR srl">Polaris HR srl</a></li>
-          <li><a data-it="Hazard srl" data-en="Hazard srl">Hazard srl</a></li>
-          <li><a href="https://runcapital.partners" target="_blank" rel="noopener" data-it="Run Capital Partners ↗" data-en="Run Capital Partners ↗">Run Capital Partners ↗</a></li>
-        </ul>
-      </div>
+    <div class="footer__col">
+      <h4 data-it="Contatti" data-en="Contact">Contatti</h4>
+      <ul>
+        <li><a href="mailto:segreteria@polaris-group.it">segreteria@polaris-group.it</a></li>
+        <li><a href="tel:+390373250072">+39 0373 250072</a></li>
+        <li><a data-it="Via del Commercio 29, 26013 Crema (CR)" data-en="Via del Commercio 29, 26013 Crema (CR)">Via del Commercio 29, 26013 Crema (CR)</a></li>
+      </ul>
     </div>
-    <div class="footer__legal">
-      <span data-it="© 2026 Polaris Group · P.IVA 01616620199 · Tutti i diritti riservati" data-en="© 2026 Polaris Group · VAT 01616620199 · All rights reserved">© 2026 Polaris Group · P.IVA 01616620199 · Tutti i diritti riservati</span>
-      <span>
-        <a href="/privacy.html" data-it="Privacy" data-en="Privacy">Privacy</a> &nbsp;·&nbsp;
-        <a href="/cookie.html" data-it="Cookie" data-en="Cookie">Cookie</a>
-      </span>
+    <div class="footer__col">
+      <h4 data-it="Gruppo" data-en="Group">Gruppo</h4>
+      <ul>
+        <li><a>Polaris HR srl</a></li>
+        <li><a>Hazard srl</a></li>
+        <li><a href="https://runcapital.partners" target="_blank" rel="noopener">Run Capital Partners ↗</a></li>
+      </ul>
     </div>
-  </footer>
+  </div>
+  <div class="footer__legal">
+    <span data-it="© 2026 Polaris Group · P.IVA 01616620199 · Tutti i diritti riservati" data-en="© 2026 Polaris Group · VAT 01616620199 · All rights reserved">© 2026 Polaris Group · P.IVA 01616620199 · Tutti i diritti riservati</span>
+    <span><a href="/privacy.html" data-it="Privacy" data-en="Privacy">Privacy</a> &nbsp;·&nbsp; <a href="/cookie.html" data-it="Cookie" data-en="Cookie">Cookie</a></span>
+  </div>
+</footer>
 
-  <script src="/scripts/main.js"></script>
+<script src="/assets/site.js"></script>
 </body>
 </html>

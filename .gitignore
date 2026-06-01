@@ -11,3 +11,5 @@ node_modules/
 .netlify/
 *.log
 .cache/
+.gstack/
+.vercel

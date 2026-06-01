@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Polaris — Accreditation marquee (drop-in component)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&family=Inter:wght@600&display=swap" rel="stylesheet">
+<style>
+  /* ===========================================================================
+     POLARIS — INFINITE ACCREDITATION MARQUEE  (self-contained, no JS)
+     ---------------------------------------------------------------------------
+     HOW TO CUSTOMIZE — all knobs live on .marquee:
+       --marquee-speed : full-loop duration. 30s–40s feels slow/premium. Higher = slower.
+       --marquee-gap   : horizontal space between logos.
+       --marquee-clear : width reserved on the LEFT for the fixed label
+                         (logos fade out before reaching it).
+       --marquee-edge  : width of the fade at the RIGHT edge.
+     COLORS:
+       text logos  -> .marquee__name  (color + opacity)
+       image logos -> .marquee__logo  (filter forces monochrome off-white)
+       band/border -> .marquee background + border-top
+     SWAP TEXT -> REAL LOGOS (trivial): replace
+         <span class="marquee__name">Fondimpresa</span>
+       with
+         <img class="marquee__logo" src="/img/funds/fondimpresa.svg" alt="Fondimpresa">
+       Keep the two <div class="marquee__set"> blocks IDENTICAL — the seamless loop
+       depends on set 2 being an exact duplicate of set 1.
+     =========================================================================== */
+  :root{
+    --navy-deep:#0B2E4F; --silver-1:#B8C2CC; --silver-2:#D6DCE2;
+    --serif:"Cormorant Garamond",Georgia,serif; --sans:"Inter",-apple-system,sans-serif;
+    --ease:cubic-bezier(0.16,1,0.3,1);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  /* demo backdrop only — not part of the component */
+  body{min-height:100vh;display:flex;align-items:flex-end;
+    background:radial-gradient(80% 70% at 60% 20%,#103a5e,transparent 60%),linear-gradient(180deg,#0B2E4F,#061a2c)}
+
+  /* ---- COMPONENT ---- */
+  .marquee{position:relative;width:100%;overflow:hidden;
+    background:rgba(6,18,34,.35);border-top:1px solid rgba(184,194,204,.18);backdrop-filter:blur(3px);padding:18px 0;
+    --marquee-speed:36s; --marquee-gap:56px; --marquee-clear:430px; --marquee-edge:90px}
+  /* viewport carries the fade mask (fixed width); the track scrolls underneath it */
+  .marquee__viewport{position:relative;width:100%;overflow:hidden;
+    -webkit-mask-image:linear-gradient(to right,transparent 0,transparent var(--marquee-clear),#000 calc(var(--marquee-clear) + 64px),#000 calc(100% - var(--marquee-edge)),transparent 100%);
+            mask-image:linear-gradient(to right,transparent 0,transparent var(--marquee-clear),#000 calc(var(--marquee-clear) + 64px),#000 calc(100% - var(--marquee-edge)),transparent 100%)}
+  /* two identical sets; translateX(-50%) advances exactly one set => seamless, no jump/reset flash */
+  .marquee__track{display:flex;width:max-content;animation:marquee-scroll var(--marquee-speed) linear infinite}
+  .marquee:hover .marquee__track{animation-play-state:paused}          /* pause on hover over the strip */
+  .marquee__set{display:flex;align-items:center;gap:var(--marquee-gap);padding-right:var(--marquee-gap);flex:none}
+  .marquee__item{display:flex;align-items:center;line-height:1}
+  .marquee__name{font-family:var(--serif);font-size:1.4rem;font-weight:500;white-space:nowrap;color:var(--silver-2);opacity:.55;transition:opacity .25s var(--ease)}
+  .marquee__item:hover .marquee__name{opacity:.95}                     /* brighten on hover */
+  .marquee__logo{height:30px;width:auto;display:block;filter:brightness(0) invert(1);opacity:.55;transition:opacity .25s var(--ease)}
+  .marquee__item:hover .marquee__logo{opacity:.95}
+  /* fixed label — does not scroll; lives in the cleared/faded left zone */
+  .marquee__label{position:absolute;left:32px;top:50%;transform:translateY(-50%);z-index:2;pointer-events:none;white-space:nowrap;
+    font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--silver-1)}
+  @keyframes marquee-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  /* responsive: drop the long label on small screens, shrink the fades */
+  @media(max-width:760px){ .marquee{--marquee-clear:24px;--marquee-edge:40px} .marquee__label{display:none} }
+  /* accessibility: honour reduced-motion */
+  @media(prefers-reduced-motion:reduce){ .marquee__track{animation:none!important} }
+</style>
+</head>
+<body>
+
+<!-- ===== DROP-IN START ===== -->
+<div class="marquee">
+  <div class="marquee__viewport">
+    <div class="marquee__track">
+      <!-- Set 1 (real). Swap any name for a logo:
+           <span class="marquee__item"><img class="marquee__logo" src="/img/funds/fondimpresa.svg" alt="Fondimpresa"></span> -->
+      <div class="marquee__set">
+        <span class="marquee__item"><span class="marquee__name">Fondimpresa</span></span>
+        <span class="marquee__item"><span class="marquee__name">Fondolavoro</span></span>
+        <span class="marquee__item"><span class="marquee__name">Fonarcom</span></span>
+        <span class="marquee__item"><span class="marquee__name">Fondo Nuove Competenze</span></span>
+        <span class="marquee__item"><span class="marquee__name">Formazienda</span></span>
+        <span class="marquee__item"><span class="marquee__name">Fondoprofessioni</span></span>
+        <span class="marquee__item"><span class="marquee__name">Fondir</span></span>
+        <span class="marquee__item"><span class="marquee__name">Fondirigenti</span></span>
+      </div>
+      <!-- Set 2 (identical duplicate — required for the seamless loop; hidden from screen readers) -->
+      <div class="marquee__set" aria-hidden="true">
+        <span class="marquee__item"><span class="marquee__name">Fondimpresa</span></span>
+        <span class="marquee__item"><span class="marquee__name">Fondolavoro</span></span>
+        <span class="marquee__item"><span class="marquee__name">Fonarcom</span></span>
+        <span class="marquee__item"><span class="marquee__name">Fondo Nuove Competenze</span></span>
+        <span class="marquee__item"><span class="marquee__name">Formazienda</span></span>
+        <span class="marquee__item"><span class="marquee__name">Fondoprofessioni</span></span>
+        <span class="marquee__item"><span class="marquee__name">Fondir</span></span>
+        <span class="marquee__item"><span class="marquee__name">Fondirigenti</span></span>
+      </div>
+    </div>
+  </div>
+  <span class="marquee__label">— Riconosciuti dai principali fondi interprofessionali</span>
+</div>
+<!-- ===== DROP-IN END ===== -->
+
+</body>
+</html>

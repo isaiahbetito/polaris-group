@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Polaris Group — Galaxy hero (Direzione A · variante)</title>
+<meta name="description" content="Polaris Group: formazione, finanza non bancaria, advisory per PMI italiane.">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+<link rel="apple-touch-icon" href="/favicon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0A1419; --navy-deep:#0B2E4F; --navy-mid:#1A3A5F; --steel:#3D5A75;
+    --silver-1:#B8C2CC; --silver-2:#D6DCE2; --cream:#FAF8F3; --white:#FFFFFF;
+    --silver-accent:#6B7B8C;
+    --serif:"Cormorant Garamond",Georgia,serif; --sans:"Inter",-apple-system,sans-serif;
+    --ease:cubic-bezier(0.16,1,0.3,1);
+    --sp-8:4rem; --sp-12:6rem; --sp-16:8rem;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);color:var(--ink);background:var(--white);-webkit-font-smoothing:antialiased;line-height:1.6}
+  a{color:inherit;text-decoration:none}
+  img,svg{display:block}
+  .container{max-width:1200px;margin:0 auto;padding:0 32px}
+  .container--narrow{max-width:820px}
+  .text-center{text-align:center}
+
+  .eyebrow{display:inline-flex;align-items:center;gap:12px;font-size:12px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--silver-accent)}
+  .eyebrow::before{content:"";width:30px;height:1px;background:var(--silver-1)}
+  .eyebrow--center::after{content:"";width:30px;height:1px;background:var(--silver-1)}
+  h1,h2,h3,h4{font-family:var(--serif);font-weight:500;letter-spacing:-.015em;line-height:1.05}
+  .section{padding:var(--sp-16) 0}
+  .section--cream{background:var(--cream)}
+  .section--navy{background:var(--navy-deep);color:#fff}
+  .section__head{max-width:720px;margin:0 auto var(--sp-8);text-align:center}
+  .section__head h2{font-size:clamp(2.2rem,4.4vw,3.4rem);color:var(--ink);margin-top:18px}
+  .section--navy .section__head h2{color:#fff}
+  em.hl{font-style:italic;color:var(--steel)}
+  .section--navy em.hl{color:var(--silver-1)}
+
+  .btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--sans);font-weight:600;font-size:15px;padding:15px 30px;border-radius:2px;transition:all .2s var(--ease);cursor:pointer;border:0}
+  .btn--primary{background:var(--navy-deep);color:#fff}
+  .btn--primary:hover{background:var(--navy-mid);transform:translateY(-2px)}
+  .btn--ghost{border:1px solid var(--silver-1);color:var(--navy-deep);background:transparent}
+  .btn--ghost:hover{border-color:var(--navy-deep);background:rgba(11,46,79,.03)}
+  .section--navy .btn--ghost{border-color:rgba(184,194,204,.5);color:#fff}
+  .section--navy .btn--ghost:hover{border-color:#fff;background:rgba(255,255,255,.06)}
+
+  /* NAV — transparent over the dark hero, solid/light on scroll */
+  .nav{position:fixed;top:0;left:0;right:0;z-index:50;background:transparent;border-bottom:1px solid transparent;transition:background .3s var(--ease),border-color .3s var(--ease)}
+  .nav__inner{max-width:1200px;margin:0 auto;padding:0 32px;height:74px;display:flex;align-items:center;justify-content:space-between}
+  .nav__logo{display:flex;align-items:center;gap:12px}
+  .nav__logo img{width:30px;height:30px;filter:brightness(0) invert(1);transition:filter .3s}
+  .nav__logo span{font-family:var(--sans);font-weight:700;letter-spacing:1.5px;font-size:18px;color:#fff;transition:color .3s}
+  .nav__logo .grp{color:var(--silver-1)}
+  .nav__links{display:flex;align-items:center;gap:32px;list-style:none}
+  .nav__links a{font-size:14px;font-weight:500;color:#fff;opacity:.82;transition:opacity .15s,color .3s}
+  .nav__links a:hover{opacity:1}
+  .nav__cta{padding:10px 20px;background:#fff;color:var(--navy-deep)!important;border-radius:2px;opacity:1!important;font-weight:600;transition:background .3s,color .3s}
+  .lang-switch{display:flex;gap:5px;font-size:12px;font-weight:600;letter-spacing:1px;color:var(--silver-1);background:none;border:0;cursor:pointer}
+  .lang-switch__opt.on{color:#fff}
+  .nav--solid{background:rgba(255,255,255,.85);backdrop-filter:saturate(140%) blur(12px);border-bottom-color:rgba(11,46,79,.08)}
+  .nav--solid .nav__logo img{filter:none}
+  .nav--solid .nav__logo span{color:var(--navy-deep)}
+  .nav--solid .nav__logo .grp{color:var(--silver-accent)}
+  .nav--solid .nav__links a{color:var(--ink)}
+  .nav--solid .nav__cta{background:var(--navy-deep);color:#fff!important}
+  .nav--solid .lang-switch{color:var(--silver-accent)}
+  .nav--solid .lang-switch__opt.on{color:var(--navy-deep)}
+
+  /* GALAXY HERO */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;background:hsl(212,64%,6%)}
+  .galaxy{position:absolute;inset:0;z-index:0;display:block}
+  .hero::after{content:"";position:absolute;inset:0;z-index:4;pointer-events:none;
+    background:radial-gradient(58% 52% at 42% 46%, rgba(6,16,28,.55), transparent 72%),
+               linear-gradient(180deg, rgba(6,16,28,.35) 0%, transparent 22%, transparent 72%, rgba(6,16,28,.55) 100%)}
+
+  #horizon{position:absolute;left:0;right:0;bottom:0;height:42%;z-index:2;pointer-events:none}
+  .glow{position:absolute;left:50%;bottom:-6%;transform:translateX(-50%);width:130%;height:70%;
+    background:radial-gradient(ellipse at 50% 100%, rgba(184,194,204,.30), rgba(141,160,178,.08) 42%, transparent 70%);filter:blur(22px)}
+  #earth{position:absolute;left:50%;bottom:-2230px;transform:translateX(-50%);width:2400px;height:2400px;border-radius:50%;z-index:3;
+    background:radial-gradient(circle at 50% 16%, #123a60 0%, #0a2742 36%, #061525 70%);
+    box-shadow:0 -1px 0 1px rgba(214,220,226,.30), 0 -24px 80px rgba(184,194,204,.22)}
+  .polestar-focal{position:absolute;top:19%;left:64%;width:118px;height:118px;z-index:5;filter:drop-shadow(0 0 16px rgba(234,240,245,.95));animation:pulse 5s var(--ease) infinite}
+  .polestar-focal path{fill:#fff}
+  @keyframes pulse{0%,100%{opacity:.85;transform:scale(1)}50%{opacity:1;transform:scale(1.06)}}
+
+  .hero__inner{position:relative;z-index:5;padding-top:74px}
+  .hero .eyebrow{margin-bottom:26px;color:var(--silver-1)}
+  .hero .eyebrow::before{background:rgba(184,194,204,.5)}
+  .hero h1{font-size:clamp(3rem,7vw,6rem);line-height:1.02;color:#fff;max-width:15ch;text-shadow:0 2px 40px rgba(0,0,0,.45)}
+  .hero h1 em{font-style:italic;background:linear-gradient(180deg,#eaf0f5,#9fb0bf);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .hero .lead{margin-top:30px;max-width:48ch;font-size:1.2rem;color:var(--silver-2)}
+  .hero__cta{margin-top:42px;display:flex;gap:16px;flex-wrap:wrap}
+  .hero .btn--primary{background:#fff;color:var(--navy-deep)}
+  .hero .btn--primary:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(0,0,0,.3)}
+  .hero .btn--ghost{border:1px solid rgba(184,194,204,.5);color:#fff}
+  .hero .btn--ghost:hover{border-color:#fff;background:rgba(255,255,255,.06)}
+
+  .marquee{position:absolute;bottom:0;left:0;right:0;z-index:6;background:rgba(255,255,255,.04);border-top:1px solid rgba(184,194,204,.18);padding:20px 0;overflow:hidden;backdrop-filter:blur(2px)}
+  .marquee__row{display:flex;align-items:center;gap:32px}
+  .marquee__label{flex:0 0 auto;font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--silver-1);padding-left:32px}
+  .marquee__track{display:flex;gap:54px;white-space:nowrap;animation:scroll 30s linear infinite}
+  .marquee__track span{font-family:var(--serif);font-size:1.45rem;font-weight:500;color:var(--silver-2);opacity:.8}
+  @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+  /* SERVICES */
+  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .svc{position:relative;background:var(--white);border:1px solid var(--silver-2);border-radius:3px;padding:38px 32px 32px;display:flex;flex-direction:column;transition:transform .25s var(--ease),box-shadow .25s var(--ease),border-color .25s var(--ease)}
+  .svc::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:var(--navy-deep);transform:scaleX(0);transform-origin:left;transition:transform .3s var(--ease)}
+  .svc:hover{transform:translateY(-6px);box-shadow:0 24px 50px -28px rgba(11,46,79,.35);border-color:var(--silver-1)}
+  .svc:hover::before{transform:scaleX(1)}
+  .svc__num{font-size:13px;font-weight:600;letter-spacing:.1em;color:var(--silver-accent)}
+  .svc__name{font-size:clamp(1.9rem,2.6vw,2.4rem);color:var(--navy-deep);margin:14px 0 4px}
+  .svc__kicker{font-family:var(--serif);font-style:italic;font-size:1.25rem;color:var(--steel)}
+  .svc__lead{margin-top:18px;font-size:.97rem;color:var(--ink);opacity:.82}
+  .svc__meta{margin-top:auto;padding-top:24px;border-top:1px solid var(--silver-2)}
+  .svc__meta-label{display:block;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--silver-accent);margin-bottom:6px}
+  .svc__meta-val{font-size:.9rem;color:var(--steel);font-weight:500}
+  .svc__cta{margin-top:22px;font-size:14px;font-weight:600;color:var(--navy-deep)}
+
+  /* METHOD */
+  .method{position:relative;overflow:hidden}
+  .method__inner{position:relative;z-index:3;max-width:760px;margin:0 auto;text-align:center}
+  .method__inner h2{font-size:clamp(2rem,4vw,3rem);color:#fff;margin:18px 0}
+  .method__inner .lead{color:var(--silver-2);max-width:54ch;margin:0 auto 32px;font-size:1.15rem}
+  .method .constell{position:absolute;inset:0;z-index:1;opacity:.5;pointer-events:none}
+  .method .constell .dot{fill:var(--silver-1)}.method .constell .star{fill:#fff}.method .constell .line{stroke:var(--silver-1);opacity:.25;stroke-width:1}
+  .twinkle{animation:tw 4s var(--ease) infinite}.twinkle.d1{animation-delay:.8s}.twinkle.d2{animation-delay:1.6s}.twinkle.d3{animation-delay:2.4s}.twinkle.d4{animation-delay:3.1s}
+  @keyframes tw{0%,100%{opacity:.35}50%{opacity:.95}}
+
+  /* STATS */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr)}
+  .stat{padding:0 28px;border-left:1px solid var(--silver-2)}
+  .stat:first-child{border-left:0;padding-left:0}
+  .stat__num{font-family:var(--serif);font-weight:600;font-size:clamp(3rem,5vw,4rem);color:var(--navy-deep);line-height:1}
+  .stat__label{margin-top:10px;font-size:.85rem;color:var(--steel);max-width:18ch}
+
+  /* PARTNER */
+  .partner{max-width:920px;margin:0 auto;background:var(--white);border:1px solid var(--silver-1);border-left:3px solid var(--silver-accent);border-radius:3px;padding:40px 44px;display:grid;grid-template-columns:200px 1fr;gap:36px;align-items:center}
+  .partner__tag{font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--silver-accent)}
+  .partner__name{font-size:1.8rem;color:var(--navy-deep);margin:8px 0 4px}
+  .partner__loc{font-size:.85rem;color:var(--steel)}
+  .partner__body{font-size:1rem;color:var(--ink);opacity:.85}
+  .partner__body strong{font-weight:600;color:var(--navy-deep)}
+  .partner__link{display:inline-block;margin-top:16px;font-size:14px;font-weight:600;color:var(--navy-deep)}
+
+  /* TEAM */
+  .team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:36px 24px;margin-top:8px}
+  .team-card{text-align:center}
+  .team-card__photo{width:108px;height:108px;margin:0 auto 16px;border-radius:50%;background:var(--navy-deep);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:2rem;font-weight:500;box-shadow:0 0 0 1px var(--silver-1),0 0 0 6px var(--white),0 0 0 7px var(--silver-2);transition:transform .25s var(--ease)}
+  .team-card:hover .team-card__photo{transform:translateY(-4px)}
+  .team-card--lead .team-card__photo{width:128px;height:128px;font-size:2.4rem;background:linear-gradient(160deg,#0B2E4F,#1A3A5F)}
+  .team-card__name{font-family:var(--serif);font-size:1.3rem;color:var(--ink)}
+  .team-card__role{margin-top:2px;font-size:.78rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--silver-accent)}
+
+  /* TESTIMONIAL */
+  .quote{max-width:840px;margin:0 auto;text-align:center}
+  .quote blockquote{font-family:var(--serif);font-size:clamp(1.6rem,3.2vw,2.4rem);line-height:1.35;color:var(--navy-deep);font-style:italic}
+  .quote__mark{font-family:var(--serif);font-size:4rem;color:var(--silver-1);line-height:.5;display:block;margin-bottom:8px}
+  .quote__attr{margin-top:26px;font-size:.9rem;color:var(--steel);font-weight:500}
+  .placeholder{outline:1px dashed var(--silver-1);outline-offset:6px;border-radius:2px}
+
+  /* FOOTER */
+  .footer{background:var(--navy-deep);color:#fff;padding:72px 0 28px}
+  .footer__inner{max-width:1200px;margin:0 auto;padding:0 32px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px}
+  .footer__brand h3{font-size:1.5rem;margin-bottom:14px}
+  .footer__brand p{color:var(--silver-1);max-width:34ch;font-size:.95rem}
+  .footer__col h4{font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--silver-accent);margin-bottom:16px}
+  .footer__col ul{list-style:none}.footer__col li{margin-bottom:10px}
+  .footer__col a{color:var(--silver-2);font-size:.92rem;transition:color .15s}.footer__col a:hover{color:#fff}
+  .footer__legal{max-width:1200px;margin:56px auto 0;padding:24px 32px 0;border-top:1px solid rgba(184,194,204,.18);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:.8rem;color:var(--silver-1)}
+  .footer__legal a{color:var(--silver-1)}.footer__legal a:hover{color:#fff}
+
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+  .reveal.in{opacity:1;transform:none}
+  .fade{opacity:0;transform:translateY(18px);animation:rise .9s var(--ease) forwards}
+  .fade.s1{animation-delay:.1s}.fade.s2{animation-delay:.28s}.fade.s3{animation-delay:.46s}.fade.s4{animation-delay:.62s}
+  @keyframes rise{to{opacity:1;transform:none}}
+
+  @media(max-width:900px){
+    .nav__links{display:none}
+    .svc-grid,.stats,.team-grid,.footer__inner{grid-template-columns:1fr}
+    .stat{border-left:0;border-top:1px solid var(--silver-2);padding:24px 0}.stat:first-child{border-top:0}
+    .partner{grid-template-columns:1fr;gap:18px}
+    .polestar-focal{left:auto;right:6%;width:80px;height:80px}
+  }
+  @media(prefers-reduced-motion:reduce){
+    .marquee__track,.polestar-focal,.fade{animation:none!important}
+    .fade{opacity:1!important;transform:none!important}
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="#" class="nav__logo" aria-label="Polaris Group">
+      <img src="/img/logo-mark.svg" alt="">
+      <span>POLARIS <span class="grp">GROUP</span></span>
+    </a>
+    <ul class="nav__links">
+      <li><a href="#" data-it="Chi Siamo" data-en="About">Chi Siamo</a></li>
+      <li><a href="#servizi" data-it="Servizi" data-en="Services">Servizi</a></li>
+      <li><a href="#team" data-it="Team" data-en="Team">Team</a></li>
+      <li><a href="#" data-it="Casi &amp; Testimonianze" data-en="Cases">Casi &amp; Testimonianze</a></li>
+      <li><a href="#" data-it="Lavora con noi" data-en="Careers">Lavora con noi</a></li>
+      <li><a href="#contatti" class="nav__cta" data-it="Contattaci" data-en="Get in Touch">Contattaci</a></li>
+      <li>
+        <button type="button" class="lang-switch" aria-label="Cambia lingua">
+          <span class="lang-switch__opt on" data-lang="it">IT</span><span>/</span><span class="lang-switch__opt" data-lang="en">EN</span>
+        </button>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- GALAXY HERO -->
+<section class="hero">
+  <canvas class="galaxy" id="galaxy"></canvas>
+
+  <svg class="polestar-focal" viewBox="0 0 100 100" aria-hidden="true">
+    <path d="M50 4 L57 43 L96 50 L57 57 L50 96 L43 57 L4 50 L43 43 Z"/>
+  </svg>
+
+  <div id="horizon"><div class="glow"></div></div>
+  <div id="earth"></div>
+
+  <div class="container hero__inner">
+    <span class="eyebrow fade s1" data-it="Gruppo Polaris" data-en="Polaris Group">Gruppo Polaris</span>
+    <h1 class="fade s2" data-it-html="La stella polare per chi guida un&rsquo;<em>impresa.</em>" data-en-html="The North Star for those who run a <em>business.</em>">La stella polare per chi guida un&rsquo;<em>impresa.</em></h1>
+    <p class="lead fade s3" data-it="Formazione, finanza non bancaria e advisory per PMI italiane, commercialisti e consulenti del lavoro." data-en="Training, non-bank finance, and strategic advisory for Italian SMEs, accountants, and labor consultants.">Formazione, finanza non bancaria e advisory per PMI italiane, commercialisti e consulenti del lavoro.</p>
+    <div class="hero__cta fade s4">
+      <a href="#servizi" class="btn btn--primary" data-it="Scopri i servizi" data-en="See our services">Scopri i servizi</a>
+      <a href="#contatti" class="btn btn--ghost" data-it="Parla con noi &rarr;" data-en="Talk to us &rarr;">Parla con noi &rarr;</a>
+    </div>
+  </div>
+
+  <div class="marquee">
+    <div class="marquee__row">
+      <span class="marquee__label" data-it="— Riconosciuti dai principali fondi interprofessionali" data-en="— Recognized by the leading interprofessional funds">— Riconosciuti dai principali fondi interprofessionali</span>
+      <div class="marquee__track">
+        <span>Fondimpresa</span><span>Fonarcom</span><span>Formazienda</span><span>Fondolavoro</span><span>Fondo Nuove Competenze</span>
+        <span>Fondimpresa</span><span>Fonarcom</span><span>Formazienda</span><span>Fondolavoro</span><span>Fondo Nuove Competenze</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section section--cream" id="servizi">
+  <div class="container">
+    <div class="section__head reveal">
+      <span class="eyebrow eyebrow--center" data-it="Cosa facciamo" data-en="What we do">Cosa facciamo</span>
+      <h2 data-it-html="Tre servizi. <em class=&quot;hl&quot;>Un metodo.</em>" data-en-html="Three services. <em class=&quot;hl&quot;>One method.</em>">Tre servizi. <em class="hl">Un metodo.</em></h2>
+    </div>
+    <div class="svc-grid">
+      <article class="svc reveal">
+        <span class="svc__num">01</span>
+        <h3 class="svc__name" data-it="Formazione" data-en="Training">Formazione</h3>
+        <span class="svc__kicker" data-it="Obbligatoria, su misura, finanziata." data-en="Mandatory, tailor-made, funded.">Obbligatoria, su misura, finanziata.</span>
+        <p class="svc__lead" data-it="Dal primo soccorso alla leadership. Ciclo completo, finanziato dai fondi interprofessionali." data-en="From first-aid to leadership. Full cycle, funded through interprofessional funds.">Dal primo soccorso alla leadership. Ciclo completo, finanziato dai fondi interprofessionali.</p>
+        <div class="svc__meta">
+          <span class="svc__meta-label" data-it="Fondi gestiti" data-en="Funds managed">Fondi gestiti</span>
+          <span class="svc__meta-val">Fondimpresa · Fonarcom · Formazienda · FNC</span>
+          <div class="svc__cta" data-it="Scopri →" data-en="Learn more →">Scopri →</div>
+        </div>
+      </article>
+      <article class="svc reveal">
+        <span class="svc__num">02</span>
+        <h3 class="svc__name" data-it="Invoice Trading" data-en="Invoice Trading">Invoice Trading</h3>
+        <span class="svc__kicker" data-it="Liquidità senza banca." data-en="Liquidity without the bank.">Liquidità senza banca.</span>
+        <p class="svc__lead" data-it="Cessione fatture a investitori qualificati su piattaforme regolamentate. Niente Centrale Rischi, niente castelletti." data-en="Invoice sale to qualified investors on regulated platforms. No credit registry, no credit lines used.">Cessione fatture a investitori qualificati su piattaforme regolamentate. Niente Centrale Rischi, niente castelletti.</p>
+        <div class="svc__meta">
+          <span class="svc__meta-label" data-it="Erogato da" data-en="Delivered by">Erogato da</span>
+          <span class="svc__meta-val" data-it="Hazard srl, società del Gruppo" data-en="Hazard srl, a Group company">Hazard srl, società del Gruppo</span>
+          <div class="svc__cta" data-it="Scopri →" data-en="Learn more →">Scopri →</div>
+        </div>
+      </article>
+      <article class="svc reveal">
+        <span class="svc__num">03</span>
+        <h3 class="svc__name" data-it="Advisory" data-en="Advisory">Advisory</h3>
+        <span class="svc__kicker" data-it="Le scelte che non si delegano." data-en="The decisions you can't delegate.">Le scelte che non si delegano.</span>
+        <p class="svc__lead" data-it="Riassetti, passaggi generazionali, gestione finanziaria, operazioni straordinarie. Accanto alla proprietà fino alla decisione." data-en="Restructuring, generational transitions, financial management, extraordinary operations. Alongside ownership until the decision lands.">Riassetti, passaggi generazionali, gestione finanziaria, operazioni straordinarie. Accanto alla proprietà fino alla decisione.</p>
+        <div class="svc__meta">
+          <span class="svc__meta-label" data-it="Esperienza" data-en="Experience">Esperienza</span>
+          <span class="svc__meta-val" data-it="25+ anni con PMI italiane" data-en="25+ years with Italian SMEs">25+ anni con PMI italiane</span>
+          <div class="svc__cta" data-it="Scopri →" data-en="Learn more →">Scopri →</div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- METHOD -->
+<section class="section method section--navy">
+  <svg class="constell" viewBox="0 0 1440 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <line class="line" x1="1080" y1="120" x2="1180" y2="240"/><line class="line" x1="1180" y1="240" x2="1010" y2="300"/><line class="line" x1="240" y1="420" x2="360" y2="360"/>
+    <path class="star twinkle" d="M1180 206 L1192 234 L1220 240 L1192 246 L1180 274 L1168 246 L1140 240 L1168 234 Z"/>
+    <circle class="dot twinkle d1" cx="1080" cy="120" r="3"/><circle class="dot twinkle d3" cx="1010" cy="300" r="2.4"/><circle class="dot twinkle d2" cx="240" cy="420" r="2.2"/><circle class="dot twinkle d4" cx="360" cy="360" r="1.8"/><circle class="dot twinkle d3" cx="160" cy="200" r="1.6"/>
+  </svg>
+  <div class="container method__inner reveal">
+    <span class="eyebrow eyebrow--center" style="color:var(--silver-1)" data-it="Come lavoriamo" data-en="How we work">Come lavoriamo</span>
+    <h2 data-it-html="Un solo interlocutore.<br><em class=&quot;hl&quot;>Una rete di specialisti dietro.</em>" data-en-html="One point of contact.<br><em class=&quot;hl&quot;>A network of specialists behind.</em>">Un solo interlocutore.<br><em class="hl">Una rete di specialisti dietro.</em></h2>
+    <p class="lead" data-it="Dalla prima analisi alla rendicontazione finale, l'azienda parla con noi. Il resto lo orchestriamo." data-en="From the first analysis to the final reporting, the client talks to us. We orchestrate the rest.">Dalla prima analisi alla rendicontazione finale, l'azienda parla con noi. Il resto lo orchestriamo.</p>
+    <a href="#contatti" class="btn btn--ghost" data-it="Scopri come" data-en="Discover how">Scopri come</a>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="section">
+  <div class="container">
+    <div class="section__head reveal">
+      <span class="eyebrow eyebrow--center" data-it="Perché Polaris" data-en="Why Polaris">Perché Polaris</span>
+      <h2 data-it-html="Quattro <em class=&quot;hl&quot;>certezze.</em>" data-en-html="Four <em class=&quot;hl&quot;>certainties.</em>">Quattro <em class="hl">certezze.</em></h2>
+    </div>
+    <div class="stats reveal">
+      <div class="stat"><div class="stat__num"><span class="count" data-target="25">0</span>+</div><div class="stat__label" data-it="Anni di mestiere con PMI italiane" data-en="Years of craft with Italian SMEs">Anni di mestiere con PMI italiane</div></div>
+      <div class="stat"><div class="stat__num"><span class="count" data-target="100">0</span>%</div><div class="stat__label" data-it="Servizi gestiti end-to-end" data-en="Services managed end-to-end">Servizi gestiti end-to-end</div></div>
+      <div class="stat"><div class="stat__num">1</div><div class="stat__label" data-it="Interlocutore. Non cinque." data-en="Point of contact. Not five.">Interlocutore. Non cinque.</div></div>
+      <div class="stat"><div class="stat__num" style="font-size:clamp(2rem,3.4vw,2.7rem)">Crema</div><div class="stat__label" data-it="Sede in Lombardia, attivi in Italia" data-en="Based in Lombardy, active across Italy">Sede in Lombardia, attivi in Italia</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNER -->
+<section class="section section--cream">
+  <div class="container">
+    <div class="section__head reveal">
+      <span class="eyebrow eyebrow--center" data-it="I Partner" data-en="Partners">I Partner</span>
+      <h2 data-it-html="Una rete che <em class=&quot;hl&quot;>va oltre.</em>" data-en-html="A network that <em class=&quot;hl&quot;>goes further.</em>">Una rete che <em class="hl">va oltre.</em></h2>
+    </div>
+    <div class="partner reveal">
+      <div>
+        <div class="partner__tag">Partner · Luxembourg</div>
+        <div class="partner__name">Run Capital Partners</div>
+        <div class="partner__loc" data-it="con il programma Nasdaq di Three Dots" data-en="with the Three Dots Nasdaq program">con il programma Nasdaq di Three Dots</div>
+      </div>
+      <div>
+        <p class="partner__body" data-it-html="Tramite la partnership con Run Capital Partners mettiamo in contatto le imprese italiane e i loro advisor con opportunità di investimento alternativo e operazioni di quotazione (incluso il programma Nasdaq tramite Three Dots). <strong>Run Capital eroga il servizio di gestione patrimoniale; Polaris cura la presentazione.</strong>" data-en-html="Through our partnership with Run Capital Partners we connect Italian companies and their advisors with alternative investment opportunities and listing operations (including the Nasdaq program via Three Dots). <strong>Run Capital delivers the wealth-management service; Polaris handles the introduction.</strong>">Tramite la partnership con Run Capital Partners mettiamo in contatto le imprese italiane e i loro advisor con opportunità di investimento alternativo e operazioni di quotazione (incluso il programma Nasdaq tramite Three Dots). <strong>Run Capital eroga il servizio di gestione patrimoniale; Polaris cura la presentazione.</strong></p>
+        <a href="https://runcapital.partners" target="_blank" rel="noopener" class="partner__link">Run Capital Partners ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="section" id="team">
+  <div class="container">
+    <div class="section__head reveal">
+      <span class="eyebrow eyebrow--center" data-it="Il team" data-en="The team">Il team</span>
+      <h2 data-it-html="Conosci chi <em class=&quot;hl&quot;>guida Polaris.</em>" data-en-html="Meet the people <em class=&quot;hl&quot;>behind Polaris.</em>">Conosci chi <em class="hl">guida Polaris.</em></h2>
+    </div>
+    <div class="team-grid reveal">
+      <a href="#" class="team-card team-card--lead"><div class="team-card__photo">CT</div><div class="team-card__name">Cesare Trebeschi</div><div class="team-card__role" data-it="Fondatore &amp; Guida" data-en="Founder &amp; Lead">Fondatore &amp; Guida</div></a>
+      <a href="#" class="team-card"><div class="team-card__photo">C</div><div class="team-card__name">Cristina</div><div class="team-card__role" data-it="Formazione" data-en="Training">Formazione</div></a>
+      <a href="#" class="team-card"><div class="team-card__photo">A</div><div class="team-card__name">Alessio</div><div class="team-card__role" data-it="Advisory" data-en="Advisory">Advisory</div></a>
+      <a href="#" class="team-card"><div class="team-card__photo">G</div><div class="team-card__name">Gianmaria</div><div class="team-card__role" data-it="Invoice Trading" data-en="Invoice Trading">Invoice Trading</div></a>
+      <a href="#" class="team-card"><div class="team-card__photo">M</div><div class="team-card__name">Mara</div><div class="team-card__role" data-it="Formazione su misura" data-en="Tailor-made Training">Formazione su misura</div></a>
+      <a href="#" class="team-card"><div class="team-card__photo">P</div><div class="team-card__name">Paola</div><div class="team-card__role" data-it="Operations" data-en="Operations">Operations</div></a>
+      <a href="#" class="team-card"><div class="team-card__photo">A</div><div class="team-card__name">Andrea</div><div class="team-card__role" data-it="Formazione" data-en="Training">Formazione</div></a>
+      <a href="#" class="team-card"><div class="team-card__photo">G</div><div class="team-card__name">Giovanni</div><div class="team-card__role" data-it="Advisory" data-en="Advisory">Advisory</div></a>
+    </div>
+    <div class="text-center" style="margin-top:var(--sp-8)">
+      <a href="#" class="btn btn--ghost" data-it="Conosci tutto il team" data-en="Meet the full team">Conosci tutto il team</a>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIAL -->
+<section class="section section--cream">
+  <div class="container quote reveal">
+    <span class="quote__mark">&ldquo;</span>
+    <blockquote class="placeholder" data-it="Testimonianza in arrivo — una o due frasi concrete sul risultato ottenuto, da un cliente PMI o da un commercialista." data-en="Testimonial coming soon — one or two concrete sentences about the result achieved, from an SME client or an accountant.">Testimonianza in arrivo — una o due frasi concrete sul risultato ottenuto, da un cliente PMI o da un commercialista.</blockquote>
+    <p class="quote__attr" data-it="— Nome Cognome, Ruolo, Azienda · in raccolta" data-en="— Name Surname, Role, Company · being collected">— Nome Cognome, Ruolo, Azienda · in raccolta</p>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section" id="contatti">
+  <div class="container container--narrow text-center reveal">
+    <h2 style="font-size:clamp(2.2rem,4.4vw,3.4rem);color:var(--ink)" data-it="Parliamo del tuo prossimo passo." data-en="Let's talk about your next step.">Parliamo del tuo prossimo passo.</h2>
+    <p class="lead" style="margin:18px auto 32px;max-width:48ch;color:var(--steel)" data-it="Scrivici una mail o prenota una chiamata. Rispondiamo entro 24 ore lavorative." data-en="Email us or book a call. We reply within 24 working hours.">Scrivici una mail o prenota una chiamata. Rispondiamo entro 24 ore lavorative.</p>
+    <a href="mailto:info@polaris-group.it" class="btn btn--primary" data-it="Contattaci" data-en="Get in touch">Contattaci</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__brand">
+      <h3>Polaris Group</h3>
+      <p data-it="La stella polare per chi guida un'impresa. Formazione, finanza non bancaria, advisory direzionale." data-en="The North Star for those who run a business. Training, non-bank finance, strategic advisory.">La stella polare per chi guida un'impresa. Formazione, finanza non bancaria, advisory direzionale.</p>
+    </div>
+    <div class="footer__col">
+      <h4 data-it="Sito" data-en="Site">Sito</h4>
+      <ul>
+        <li><a href="#" data-it="Chi Siamo" data-en="About">Chi Siamo</a></li>
+        <li><a href="#servizi" data-it="Servizi" data-en="Services">Servizi</a></li>
+        <li><a href="#" data-it="Casi &amp; Testimonianze" data-en="Cases">Casi</a></li>
+        <li><a href="#" data-it="Lavora con noi" data-en="Careers">Lavora con noi</a></li>
+      </ul>
+    </div>
+    <div class="footer__col">
+      <h4 data-it="Contatti" data-en="Contact">Contatti</h4>
+      <ul>
+        <li><a href="mailto:info@polaris-group.it">info@polaris-group.it</a></li>
+        <li><a data-it="Telefono — in arrivo" data-en="Phone — coming soon">Telefono — in arrivo</a></li>
+        <li><a data-it="Crema (CR), Lombardia — indirizzo in arrivo" data-en="Crema (CR), Lombardy — address coming soon">Crema (CR), Lombardia — indirizzo in arrivo</a></li>
+      </ul>
+    </div>
+    <div class="footer__col">
+      <h4 data-it="Gruppo" data-en="Group">Gruppo</h4>
+      <ul>
+        <li><a>Polaris HR srl</a></li>
+        <li><a>Hazard srl</a></li>
+        <li><a href="https://runcapital.partners" target="_blank" rel="noopener">Run Capital Partners ↗</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer__legal">
+    <span data-it="© 2026 Polaris Group · P.IVA 01616620199 · Tutti i diritti riservati" data-en="© 2026 Polaris Group · VAT 01616620199 · All rights reserved">© 2026 Polaris Group · P.IVA 01616620199 · Tutti i diritti riservati</span>
+    <span><a href="#" data-it="Privacy" data-en="Privacy">Privacy</a> &nbsp;·&nbsp; <a href="#" data-it="Cookie" data-en="Cookie">Cookie</a></span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // --- Canvas galaxy (orbiting stars), ported from the StarsCanvas component ---
+  var canvas=document.getElementById('galaxy');
+  if(canvas && canvas.getContext){
+    var ctx=canvas.getContext('2d');
+    var hero=canvas.parentElement;
+    var hue=212, brightness=1, maxStars=700, speedMultiplier=1, twinkleIntensity=20;
+    var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var w,h;
+    function size(){ w=canvas.width=hero.clientWidth; h=canvas.height=hero.clientHeight; }
+    size();
+
+    // cached glowing-star texture
+    var tex=document.createElement('canvas'),tctx=tex.getContext('2d');
+    tex.width=tex.height=100; var half=50;
+    var g=tctx.createRadialGradient(half,half,0,half,half,half);
+    g.addColorStop(0.025,'#fff');
+    g.addColorStop(0.1,'hsl('+hue+',61%,52%)');
+    g.addColorStop(0.25,'hsl('+hue+',64%,12%)');
+    g.addColorStop(1,'transparent');
+    tctx.fillStyle=g; tctx.beginPath(); tctx.arc(half,half,half,0,Math.PI*2); tctx.fill();
+
+    function random(min,max){ if(max===undefined){max=min;min=0;} if(min>max){var t=min;min=max;max=t;} return Math.floor(Math.random()*(max-min+1))+min; }
+    function maxOrbit(x,y){ var m=Math.max(x,y); return Math.round(Math.sqrt(m*m+m*m))/2; }
+
+    function Star(){
+      this.orbitRadius=random(maxOrbit(w,h));
+      this.radius=random(60,this.orbitRadius)/12;
+      this.orbitX=w/2; this.orbitY=h/2;
+      this.timePassed=random(0,maxStars);
+      this.speed=(random(this.orbitRadius)/50000)*speedMultiplier;
+      this.alpha=(random(2,10)/10)*brightness;
+    }
+    Star.prototype.draw=function(){
+      var x=Math.sin(this.timePassed)*this.orbitRadius+this.orbitX;
+      var y=Math.cos(this.timePassed)*this.orbitRadius+this.orbitY;
+      var tw=random(twinkleIntensity);
+      if(tw===1&&this.alpha>0){this.alpha-=0.05;} else if(tw===2&&this.alpha<1){this.alpha+=0.05;}
+      ctx.globalAlpha=Math.max(0,Math.min(1,this.alpha));
+      ctx.drawImage(tex,x-this.radius/2,y-this.radius/2,this.radius,this.radius);
+      this.timePassed+=this.speed;
+    };
+
+    var stars=[]; for(var i=0;i<maxStars;i++) stars.push(new Star());
+
+    function frame(){
+      ctx.globalCompositeOperation='source-over';
+      ctx.globalAlpha=0.8;
+      ctx.fillStyle='hsl('+hue+',64%,6%)';
+      ctx.fillRect(0,0,w,h);
+      ctx.globalCompositeOperation='lighter';
+      for(var i=0;i<stars.length;i++) stars[i].draw();
+    }
+    if(reduce){ frame(); }
+    else{ (function loop(){ frame(); requestAnimationFrame(loop); })(); }
+
+    var rt; window.addEventListener('resize',function(){ clearTimeout(rt); rt=setTimeout(function(){ size(); stars=[]; for(var i=0;i<maxStars;i++) stars.push(new Star()); if(reduce) frame(); },200); });
+  }
+
+  // Nav goes solid/light after the hero
+  var nav=document.getElementById('nav');
+  function onScroll(){ if(window.scrollY>window.innerHeight*0.82){nav.classList.add('nav--solid');}else{nav.classList.remove('nav--solid');} }
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+
+  // Language toggle
+  function setLang(lang){
+    document.documentElement.lang=lang;
+    document.querySelectorAll('[data-it],[data-en]').forEach(function(el){var v=el.getAttribute('data-'+lang); if(v!==null) el.textContent=v;});
+    document.querySelectorAll('[data-it-html],[data-en-html]').forEach(function(el){var v=el.getAttribute('data-'+lang+'-html'); if(v!==null) el.innerHTML=v;});
+    document.querySelectorAll('.lang-switch__opt').forEach(function(o){o.classList.toggle('on',o.dataset.lang===lang);});
+    try{localStorage.setItem('polaris-lang',lang);}catch(e){}
+  }
+  document.querySelectorAll('.lang-switch__opt').forEach(function(o){o.addEventListener('click',function(){setLang(o.dataset.lang);});});
+  var saved; try{saved=localStorage.getItem('polaris-lang');}catch(e){} if(saved&&saved!=='it') setLang(saved);
+
+  // Reveal on scroll
+  var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12,rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+
+  // Count-up
+  function countUp(el){var target=+el.dataset.target,dur=1400,t0=null;function step(ts){if(!t0)t0=ts;var p=Math.min((ts-t0)/dur,1);el.textContent=Math.round((1-Math.pow(1-p,3))*target);if(p<1)requestAnimationFrame(step);}requestAnimationFrame(step);}
+  var cio=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){countUp(e.target);cio.unobserve(e.target);}});},{threshold:.6});
+  document.querySelectorAll('.count').forEach(function(el){cio.observe(el);});
+})();
+</script>
+</body>
+</html>

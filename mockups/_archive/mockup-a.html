@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Polaris Group — Direzione A · Italian Daylight</title>
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+<link rel="apple-touch-icon" href="/favicon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0A1419; --navy-deep:#0B2E4F; --navy-mid:#1A3A5F; --steel:#3D5A75;
+    --silver-1:#B8C2CC; --silver-2:#D6DCE2; --cream:#FAF8F3; --white:#FFFFFF;
+    --silver-accent:#6B7B8C;
+    --serif:"Cormorant Garamond",Georgia,serif; --sans:"Inter",-apple-system,sans-serif;
+    --ease:cubic-bezier(0.16,1,0.3,1);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);color:var(--ink);background:var(--white);-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .container{max-width:1200px;margin:0 auto;padding:0 32px}
+
+  /* NAV */
+  .nav{position:fixed;top:0;left:0;right:0;z-index:50;
+    background:rgba(255,255,255,0.82);backdrop-filter:saturate(140%) blur(12px);
+    border-bottom:1px solid rgba(11,46,79,0.08)}
+  .nav__inner{max-width:1200px;margin:0 auto;padding:0 32px;height:74px;display:flex;align-items:center;justify-content:space-between}
+  .nav__logo{display:flex;align-items:center;gap:12px}
+  .nav__logo img{width:30px;height:30px}
+  .nav__logo span{font-weight:700;letter-spacing:1.5px;font-size:18px;color:var(--navy-deep)}
+  .nav__logo .grp{color:var(--silver-accent)}
+  .nav__links{display:flex;align-items:center;gap:34px;list-style:none}
+  .nav__links a{font-size:14px;font-weight:500;color:var(--ink);letter-spacing:.2px;opacity:.82;transition:opacity .15s}
+  .nav__links a:hover{opacity:1}
+  .nav__cta{padding:10px 20px;background:var(--navy-deep);color:#fff!important;border-radius:2px;opacity:1!important;font-weight:600}
+  .nav__lang{display:flex;gap:5px;font-size:12px;font-weight:600;letter-spacing:1px;color:var(--silver-accent)}
+  .nav__lang .on{color:var(--navy-deep)}
+
+  /* HERO */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;
+    background:
+      radial-gradient(110% 80% at 86% 8%, rgba(11,46,79,0.07), transparent 58%),
+      radial-gradient(90% 70% at 0% 100%, rgba(61,90,117,0.05), transparent 55%),
+      linear-gradient(180deg,#ffffff 0%,#FAF8F3 100%);}
+  .hero__inner{position:relative;z-index:3;padding-top:74px}
+  .eyebrow{display:inline-flex;align-items:center;gap:12px;font-size:12px;font-weight:600;
+    letter-spacing:.22em;text-transform:uppercase;color:var(--silver-accent);margin-bottom:26px}
+  .eyebrow::before{content:"";width:34px;height:1px;background:var(--silver-1)}
+  .hero h1{font-family:var(--serif);font-weight:500;color:var(--ink);
+    font-size:clamp(3rem,7vw,6rem);line-height:1.02;letter-spacing:-.015em;max-width:15ch}
+  .hero h1 em{font-style:italic;color:var(--steel)}
+  .hero .lead{margin-top:30px;max-width:46ch;font-size:1.2rem;line-height:1.6;color:var(--steel)}
+  .hero__cta{margin-top:42px;display:flex;gap:16px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:15px;
+    padding:15px 30px;border-radius:2px;transition:all .2s var(--ease)}
+  .btn--primary{background:var(--navy-deep);color:#fff}
+  .btn--primary:hover{background:var(--navy-mid);transform:translateY(-2px)}
+  .btn--ghost{border:1px solid var(--silver-1);color:var(--navy-deep)}
+  .btn--ghost:hover{border-color:var(--navy-deep);background:rgba(11,46,79,0.03)}
+
+  /* polestar / constellation motif (subtle, right side) */
+  .constell{position:absolute;top:0;right:0;width:55%;height:100%;z-index:1;opacity:.9;pointer-events:none}
+  .constell .star{fill:var(--silver-accent)}
+  .constell .dot{fill:var(--silver-1)}
+  .constell .line{stroke:var(--silver-1);stroke-width:1;opacity:.5}
+  .twinkle{animation:tw 4s var(--ease) infinite}
+  .twinkle.d1{animation-delay:.8s}.twinkle.d2{animation-delay:1.6s}.twinkle.d3{animation-delay:2.4s}.twinkle.d4{animation-delay:3.1s}
+  @keyframes tw{0%,100%{opacity:.35}50%{opacity:.95}}
+  .watermark{position:absolute;right:-60px;top:50%;transform:translateY(-50%);width:520px;height:520px;opacity:.04;z-index:0}
+
+  /* MARQUEE */
+  .marquee{position:absolute;bottom:0;left:0;right:0;z-index:4;background:var(--cream);
+    border-top:1px solid rgba(11,46,79,0.08);padding:20px 0;overflow:hidden}
+  .marquee__row{display:flex;align-items:center;gap:32px}
+  .marquee__label{flex:0 0 auto;font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--silver-accent);padding-left:32px}
+  .marquee__track{display:flex;gap:54px;white-space:nowrap;animation:scroll 28s linear infinite}
+  .marquee__track span{font-family:var(--serif);font-size:1.45rem;font-weight:500;color:var(--steel);opacity:.7}
+  @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+  /* load animation */
+  .fade{opacity:0;transform:translateY(18px);animation:rise .9s var(--ease) forwards}
+  .fade.s1{animation-delay:.1s}.fade.s2{animation-delay:.28s}.fade.s3{animation-delay:.46s}.fade.s4{animation-delay:.62s}
+  @keyframes rise{to{opacity:1;transform:none}}
+
+  .tag{position:absolute;top:90px;left:50%;transform:translateX(-50%);z-index:60;
+    font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--silver-accent);
+    background:#fff;border:1px solid var(--silver-2);padding:6px 14px;border-radius:999px;font-weight:600}
+</style>
+</head>
+<body>
+
+<span class="tag">Direzione A — Italian Daylight</span>
+
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="#" class="nav__logo">
+      <img src="/img/logo-mark.svg" alt="">
+      <span>POLARIS <span class="grp">GROUP</span></span>
+    </a>
+    <ul class="nav__links">
+      <li><a href="#">Chi Siamo</a></li>
+      <li><a href="#">Servizi</a></li>
+      <li><a href="#">Casi &amp; Testimonianze</a></li>
+      <li><a href="#">Lavora con noi</a></li>
+      <li><a href="#" class="nav__cta">Contattaci</a></li>
+      <li class="nav__lang"><span class="on">IT</span><span>/</span><span>EN</span></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="hero">
+  <!-- faint oversized compass watermark -->
+  <img class="watermark" src="/img/logo-mark.svg" alt="">
+
+  <!-- constellation -->
+  <svg class="constell" viewBox="0 0 700 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <line class="line" x1="520" y1="180" x2="600" y2="300"/>
+    <line class="line" x1="600" y1="300" x2="470" y2="360"/>
+    <line class="line" x1="470" y1="360" x2="560" y2="470"/>
+    <line class="line" x1="600" y1="300" x2="650" y2="150"/>
+    <!-- polestar (the bright 4-point) -->
+    <path class="star twinkle" d="M600 270 L612 296 L640 300 L612 304 L600 330 L588 304 L560 300 L588 296 Z"/>
+    <circle class="dot twinkle d1" cx="520" cy="180" r="3"/>
+    <circle class="dot twinkle d2" cx="470" cy="360" r="2.5"/>
+    <circle class="dot twinkle d3" cx="560" cy="470" r="3"/>
+    <circle class="dot twinkle d4" cx="650" cy="150" r="2"/>
+    <circle class="dot twinkle d2" cx="430" cy="240" r="1.6"/>
+    <circle class="dot twinkle d3" cx="640" cy="430" r="1.8"/>
+  </svg>
+
+  <div class="container hero__inner">
+    <span class="eyebrow fade s1">Gruppo Polaris</span>
+    <h1 class="fade s2">La stella polare per chi guida un&rsquo;<em>impresa.</em></h1>
+    <p class="lead fade s3">Formazione, finanza non bancaria e advisory per PMI italiane, commercialisti e consulenti del lavoro.</p>
+    <div class="hero__cta fade s4">
+      <a href="#" class="btn btn--primary">Scopri i servizi</a>
+      <a href="#" class="btn btn--ghost">Parla con noi &rarr;</a>
+    </div>
+  </div>
+
+  <div class="marquee">
+    <div class="marquee__row">
+      <span class="marquee__label">— Riconosciuti dai principali fondi interprofessionali</span>
+      <div class="marquee__track">
+        <span>Fondimpresa</span><span>Fonarcom</span><span>Formazienda</span><span>Fondolavoro</span><span>Fondo Nuove Competenze</span>
+        <span>Fondimpresa</span><span>Fonarcom</span><span>Formazienda</span><span>Fondolavoro</span><span>Fondo Nuove Competenze</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>

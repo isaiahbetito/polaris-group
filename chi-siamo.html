@@ -1,213 +1,199 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta http-equiv="Pragma" content="no-cache">
-  <meta http-equiv="Expires" content="0">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title data-it="Chi Siamo — Polaris Group" data-en="About — Polaris Group">Chi Siamo — Polaris Group</title>
-  <meta name="description" data-it-content="Polaris Group: una guida, un team di otto persone, venticinque anni di mestiere nella formazione, finanza non bancaria e advisory per PMI italiane." content="Polaris Group: una guida, un team di otto persone, venticinque anni di mestiere nella formazione, finanza non bancaria e advisory per PMI italiane.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chi Siamo — Polaris Group | Un nuovo modo di affiancare le imprese</title>
+<meta name="description" content="Polaris Group: formazione, finanza non bancaria e advisory per le PMI italiane. In cosa crediamo, il nostro modello e il team che guida il Gruppo.">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+<link rel="apple-touch-icon" href="/favicon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
+<style>
+  .belief-lead{max-width:760px;margin:0 auto;text-align:center}
+  .belief-lead p{font-family:var(--serif);font-size:clamp(1.4rem,2.6vw,1.9rem);line-height:1.5;color:var(--navy-deep);font-weight:500}
+  .belief-lead em{font-style:italic;color:var(--steel)}
+  .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:var(--sp-8)}
+  .pillar{background:var(--white);border:1px solid var(--silver-2);border-radius:4px;padding:34px 30px}
+  .pillar__n{font-size:13px;font-weight:600;letter-spacing:.18em;color:var(--silver-accent)}
+  .pillar__t{font-family:var(--serif);font-size:1.5rem;color:var(--navy-deep);margin:10px 0 10px}
+  .pillar__d{font-size:.97rem;color:var(--ink);opacity:.82;line-height:1.6}
+  /* founder */
+  .founder{display:grid;grid-template-columns:300px 1fr;gap:56px;align-items:center;max-width:1000px;margin:0 auto}
+  .founder__photo{width:240px;height:240px;border-radius:50%;overflow:hidden;background:linear-gradient(160deg,#0B2E4F,#1A3A5F);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:4rem;box-shadow:0 0 0 1px var(--silver-1),0 0 0 8px var(--white),0 0 0 9px var(--silver-2);margin:0 auto}
+  .founder__photo img{width:100%;height:100%;object-fit:cover;object-position:center 16%}
+  .founder__role{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--silver-accent)}
+  .founder__name{font-family:var(--serif);font-size:clamp(2rem,3.4vw,2.8rem);color:var(--navy-deep);margin:8px 0 16px}
+  .founder__bio{font-size:1.05rem;color:var(--ink);opacity:.85;line-height:1.7;max-width:54ch}
+  .founder__link{display:inline-block;margin-top:20px;font-weight:600;font-size:14px;color:var(--navy-deep)}
+  /* team grid */
+  .team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:40px 24px;margin-top:var(--sp-8)}
+  .team-card{text-align:center;display:block}
+  .team-card__photo{width:112px;height:112px;margin:0 auto 16px;border-radius:50%;overflow:hidden;background:var(--navy-deep);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:2rem;font-weight:500;box-shadow:0 0 0 1px var(--silver-1),0 0 0 6px var(--cream),0 0 0 7px var(--silver-2);transition:transform .25s var(--ease)}
+  .team-card__photo img{width:100%;height:100%;object-fit:cover;object-position:center 14%}
+  .team-card:hover .team-card__photo{transform:translateY(-4px)}
+  .team-card--lead .team-card__photo{width:128px;height:128px;font-size:2.4rem;background:linear-gradient(160deg,#0B2E4F,#1A3A5F)}
+  .team-card__name{font-family:var(--serif);font-size:1.3rem;color:var(--ink)}
+  .team-card__role{margin-top:2px;font-size:.78rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--silver-accent)}
+  @media(max-width:860px){ .pillars{grid-template-columns:1fr} .founder{grid-template-columns:1fr;gap:28px;text-align:center} .founder__bio{margin:0 auto} .team-grid{grid-template-columns:1fr 1fr} }
+</style>
 </head>
 <body>
 
-  <a href="#main" class="skip-link" data-it="Vai al contenuto" data-en="Skip to content">Vai al contenuto</a>
+<nav class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="/" class="nav__logo" aria-label="Polaris Group"><img src="/img/logo-lockup.png" alt="Polaris Group"></a>
+    <button class="nav__toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    <ul class="nav__links">
+      <li><a href="/chi-siamo.html" class="is-active" data-it="Chi Siamo" data-en="About">Chi Siamo</a></li>
+      <li><a href="/servizi.html" data-it="Servizi" data-en="Services">Servizi</a></li>
+      <li><a href="/chi-siamo.html#team" data-it="Team" data-en="Team">Team</a></li>
+      <li><a href="/casi-testimonianze.html" data-it="Casi &amp; Testimonianze" data-en="Cases">Casi &amp; Testimonianze</a></li>
+      <li><a href="/lavora-con-noi.html" data-it="Lavora con noi" data-en="Careers">Lavora con noi</a></li>
+      <li><a href="/contatti.html" class="nav__cta" data-it="Contattaci" data-en="Get in Touch">Contattaci</a></li>
+      <li><button type="button" class="lang-switch" aria-label="Cambia lingua"><span class="lang-switch__opt on" data-lang="it">IT</span><span>/</span><span class="lang-switch__opt" data-lang="en">EN</span></button></li>
+    </ul>
+  </div>
+</nav>
 
-  <nav class="nav" id="nav">
-    <div class="nav__inner">
-      <a href="/" class="nav__logo" aria-label="Polaris Group">
-        <img class="nav__logo-mark" src="/img/logo-mark.svg" alt="" width="28" height="28">
-        <span>POLARIS <span class="nav__logo-group">GROUP</span></span>
-      </a>
-      <button class="nav__toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-      <ul class="nav__links" id="navLinks">
-        <li><a href="/chi-siamo.html" class="is-current" data-it="Chi Siamo" data-en="About">Chi Siamo</a></li>
+<main>
+  <header class="page-head">
+    <div class="container">
+      <span class="eyebrow eyebrow--center" data-it="Chi Siamo" data-en="About us">Chi Siamo</span>
+      <h1 data-it-html="Un nuovo modo di affiancare le <em>imprese.</em>" data-en-html="A new way to stand beside <em>business.</em>">Un nuovo modo di affiancare le <em>imprese.</em></h1>
+      <p class="lead" data-it="Formazione, finanza non bancaria e advisory per le PMI italiane, i commercialisti e i consulenti del lavoro. Un solo interlocutore, una rete di specialisti dietro." data-en="Training, non-bank finance and advisory for Italian SMEs, accountants and labour consultants. One point of contact, a network of specialists behind.">Formazione, finanza non bancaria e advisory per le PMI italiane, i commercialisti e i consulenti del lavoro. Un solo interlocutore, una rete di specialisti dietro.</p>
+    </div>
+  </header>
+
+  <!-- IN COSA CREDIAMO -->
+  <section class="section">
+    <div class="container">
+      <div class="section__head reveal">
+        <span class="eyebrow eyebrow--center" data-it="In cosa crediamo" data-en="What we believe">In cosa crediamo</span>
+      </div>
+      <div class="belief-lead reveal">
+        <p data-it-html="Crediamo che le imprese debbano passare da una logica di breve periodo a una di lungo periodo: restare nel mercato il più a lungo possibile, <em>lasciando le cose meglio di come le hanno trovate.</em>" data-en-html="We believe companies should move from short-term thinking to the long term: staying in the market as long as possible, <em>leaving things better than they found them.</em>">Crediamo che le imprese debbano passare da una logica di breve periodo a una di lungo periodo: restare nel mercato il più a lungo possibile, <em>lasciando le cose meglio di come le hanno trovate.</em></p>
+      </div>
+      <div class="pillars reveal">
+        <article class="pillar">
+          <span class="pillar__n">01</span>
+          <h3 class="pillar__t" data-it="Le persone al centro" data-en="People at the centre">Le persone al centro</h3>
+          <p class="pillar__d" data-it="Il clima di fiducia, le competenze e il coinvolgimento dei collaboratori sono il primo motore della crescita di un’azienda." data-en="Trust, skills and the involvement of employees are the first engine of a company's growth.">Il clima di fiducia, le competenze e il coinvolgimento dei collaboratori sono il primo motore della crescita di un’azienda.</p>
+        </article>
+        <article class="pillar">
+          <span class="pillar__n">02</span>
+          <h3 class="pillar__t" data-it="Una visione di lungo periodo" data-en="A long-term vision">Una visione di lungo periodo</h3>
+          <p class="pillar__d" data-it="Una mission chiara e una corretta gestione delle risorse finanziarie permettono di crescere e prosperare nel proprio mercato." data-en="A clear mission and sound financial management let a business grow and prosper in its market.">Una mission chiara e una corretta gestione delle risorse finanziarie permettono di crescere e prosperare nel proprio mercato.</p>
+        </article>
+        <article class="pillar">
+          <span class="pillar__n">03</span>
+          <h3 class="pillar__t" data-it="Cultura prima della tecnica" data-en="Culture before technique">Cultura prima della tecnica</h3>
+          <p class="pillar__d" data-it="La nostra è una missione più culturale che tecnica: coinvolgiamo partner professionali capaci di trasferire alle imprese ciò in cui crediamo." data-en="Ours is a mission more cultural than technical: we involve professional partners able to pass on what we believe to companies.">La nostra è una missione più culturale che tecnica: coinvolgiamo partner professionali capaci di trasferire alle imprese ciò in cui crediamo.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- MODELLO -->
+  <section class="section section--cream">
+    <div class="container">
+      <div class="section__head reveal">
+        <span class="eyebrow eyebrow--center" data-it="Il modello" data-en="The model">Il modello</span>
+        <h2 data-it-html="Tre aree. <em class=&quot;hl&quot;>Un solo interlocutore.</em>" data-en-html="Three areas. <em class=&quot;hl&quot;>One point of contact.</em>">Tre aree. <em class="hl">Un solo interlocutore.</em></h2>
+        <p class="lead" style="margin:18px auto 0;max-width:60ch" data-it="Dalla prima analisi alla rendicontazione finale, l’azienda parla con noi. Il resto lo orchestriamo, coinvolgendo le società del Gruppo e una rete di partner specializzati." data-en="From the first analysis to the final reporting, the client talks to us. We orchestrate the rest, drawing on the Group's companies and a network of specialist partners.">Dalla prima analisi alla rendicontazione finale, l’azienda parla con noi. Il resto lo orchestriamo, coinvolgendo le società del Gruppo e una rete di partner specializzati.</p>
+      </div>
+      <div class="text-center reveal">
+        <a href="/servizi.html" class="btn btn--ghost" data-it="Scopri i servizi" data-en="See our services">Scopri i servizi</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FONDATORE -->
+  <section class="section">
+    <div class="container">
+      <div class="founder reveal">
+        <a href="/team/cesare-trebeschi.html" class="founder__photo" aria-label="Cesare Trebeschi"><img src="/img/cesare-trebeschi.jpg" alt="Cesare Trebeschi"></a>
+        <div>
+          <div class="founder__role" data-it="Fondatore &amp; Guida" data-en="Founder &amp; Lead">Fondatore &amp; Guida</div>
+          <h2 class="founder__name">Cesare Trebeschi</h2>
+          <p class="founder__bio" data-it="[In arrivo — la storia di Cesare: da dove nasce Polaris Group, la visione che guida il Gruppo e il modo di stare accanto agli imprenditori. Quattro paragrafi e una citazione, dall’intervista con il fondatore.]" data-en="[Coming soon — Cesare's story: how Polaris Group began, the vision that drives the Group and the way it stands beside entrepreneurs. Four paragraphs and a quote, from the founder interview.]">[In arrivo — la storia di Cesare: da dove nasce Polaris Group, la visione che guida il Gruppo e il modo di stare accanto agli imprenditori. Quattro paragrafi e una citazione, dall’intervista con il fondatore.]</p>
+          <a href="/team/cesare-trebeschi.html" class="founder__link" data-it="Leggi la sua storia →" data-en="Read his story →">Leggi la sua storia →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section class="section section--cream" id="team">
+    <div class="container">
+      <div class="section__head reveal">
+        <span class="eyebrow eyebrow--center" data-it="Il team" data-en="The team">Il team</span>
+        <h2 data-it-html="Conosci chi <em class=&quot;hl&quot;>guida Polaris.</em>" data-en-html="Meet the people <em class=&quot;hl&quot;>behind Polaris.</em>">Conosci chi <em class="hl">guida Polaris.</em></h2>
+      </div>
+      <div class="team-grid reveal">
+        <a href="/team/cesare-trebeschi.html" class="team-card team-card--lead"><div class="team-card__photo"><img src="/img/cesare-trebeschi.jpg" alt="Cesare Trebeschi"></div><div class="team-card__name">Cesare Trebeschi</div><div class="team-card__role" data-it="Fondatore &amp; Guida" data-en="Founder &amp; Lead">Fondatore &amp; Guida</div></a>
+        <a href="/team/cristina.html" class="team-card"><div class="team-card__photo">C</div><div class="team-card__name">Cristina</div><div class="team-card__role" data-it="Formazione" data-en="Training">Formazione</div></a>
+        <a href="/team/alessio.html" class="team-card"><div class="team-card__photo">A</div><div class="team-card__name">Alessio</div><div class="team-card__role" data-it="Advisory" data-en="Advisory">Advisory</div></a>
+        <a href="/team/gianmaria.html" class="team-card"><div class="team-card__photo">G</div><div class="team-card__name">Gianmaria</div><div class="team-card__role" data-it="Invoice Trading" data-en="Invoice Trading">Invoice Trading</div></a>
+        <a href="/team/mara.html" class="team-card"><div class="team-card__photo">M</div><div class="team-card__name">Mara</div><div class="team-card__role" data-it="Formazione su misura" data-en="Tailor-made Training">Formazione su misura</div></a>
+        <a href="/team/paola.html" class="team-card"><div class="team-card__photo">P</div><div class="team-card__name">Paola</div><div class="team-card__role" data-it="Operations" data-en="Operations">Operations</div></a>
+        <a href="/team/andrea.html" class="team-card"><div class="team-card__photo">A</div><div class="team-card__name">Andrea</div><div class="team-card__role" data-it="Formazione" data-en="Training">Formazione</div></a>
+        <a href="/team/giovanni.html" class="team-card"><div class="team-card__photo">G</div><div class="team-card__name">Giovanni</div><div class="team-card__role" data-it="Advisory" data-en="Advisory">Advisory</div></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section">
+    <div class="container container--narrow text-center reveal">
+      <h2 style="font-size:clamp(2.2rem,4.4vw,3.4rem);color:var(--ink)" data-it="Lavoriamo insieme?" data-en="Shall we work together?">Lavoriamo insieme?</h2>
+      <p class="lead" style="margin:18px auto 32px;max-width:48ch" data-it="Scrivici o prenota una chiamata. Rispondiamo entro 24 ore lavorative." data-en="Email us or book a call. We reply within 24 working hours.">Scrivici o prenota una chiamata. Rispondiamo entro 24 ore lavorative.</p>
+      <a href="/contatti.html" class="btn btn--primary" data-it="Contattaci" data-en="Get in touch">Contattaci</a>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__brand">
+      <img class="footer__logo" src="/img/logo-lockup.png" alt="Polaris Group">
+      <p data-it="La forza della visione, al servizio delle imprese. Formazione, finanza non bancaria, advisory direzionale." data-en="The power of vision, at the service of businesses. Training, non-bank finance, strategic advisory.">La forza della visione, al servizio delle imprese. Formazione, finanza non bancaria, advisory direzionale.</p>
+    </div>
+    <div class="footer__col">
+      <h4 data-it="Sito" data-en="Site">Sito</h4>
+      <ul>
+        <li><a href="/chi-siamo.html" data-it="Chi Siamo" data-en="About">Chi Siamo</a></li>
         <li><a href="/servizi.html" data-it="Servizi" data-en="Services">Servizi</a></li>
-        <li><a href="/casi-testimonianze.html" data-it="Casi & Testimonianze" data-en="Cases & Testimonials">Casi & Testimonianze</a></li>
+        <li><a href="/casi-testimonianze.html" data-it="Casi &amp; Testimonianze" data-en="Cases">Casi</a></li>
         <li><a href="/lavora-con-noi.html" data-it="Lavora con noi" data-en="Careers">Lavora con noi</a></li>
-        <li><a href="/contatti.html" class="nav__cta" data-it="Contattaci" data-en="Get in Touch">Contattaci</a></li>
-        <li>
-          <button type="button" class="lang-switch" aria-label="Cambia lingua">
-            <span class="lang-switch__opt" data-lang="it">IT</span>
-            <span class="lang-switch__sep">/</span>
-            <span class="lang-switch__opt" data-lang="en">EN</span>
-          </button>
-        </li>
       </ul>
     </div>
-  </nav>
-
-  <main id="main">
-
-    <!-- PAGE HEADER -->
-    <section class="section" style="padding-top: calc(var(--space-16) + 80px);">
-      <div class="container container--narrow">
-        <span class="eyebrow reveal" data-it="Chi siamo" data-en="About us">Chi siamo</span>
-        <h1 class="reveal delay-1" style="margin-bottom: var(--space-4);" data-html="1" data-it="Un&rsquo;impresa di persone, <span class=&quot;silver-italic&quot;>costruita per durare.</span>" data-en="A people-first business, <span class=&quot;silver-italic&quot;>built to last.</span>">Un'impresa di persone, costruita per durare.</h1>
-        <p class="lead reveal delay-2" data-it="Polaris Group è un gruppo italiano con sede a Crema, fondato e guidato da Cesare Fontana. Lavoriamo da venticinque anni accanto a imprenditori e manager, su tre fronti: formazione del personale, finanziamento non bancario, advisory direzionale." data-en="Polaris Group is an Italian group based in Crema, founded and led by Cesare Fontana. For twenty-five years we've worked alongside owners and managers on three fronts: employee training, non-bank finance, and strategic advisory.">Polaris Group è un gruppo italiano con sede a Crema, fondato e guidato da Cesare Fontana. Lavoriamo da venticinque anni accanto a imprenditori e manager, su tre fronti: formazione del personale, finanziamento non bancario, advisory direzionale.</p>
-      </div>
-    </section>
-
-    <!-- BELIEFS — refined, not generic -->
-    <section class="section section--cream">
-      <div class="container">
-        <div class="grid grid--2" style="gap: var(--space-8);">
-          <div class="reveal">
-            <span class="eyebrow eyebrow-dash" data-it="In cosa crediamo" data-en="What we believe">In cosa crediamo</span>
-            <h2 style="margin-bottom: var(--space-3);" data-it="Le imprese che durano sono quelle che pensano in lungo." data-en="The businesses that last are those that think long.">Le imprese che durano sono quelle che pensano in lungo.</h2>
-            <p data-it="Non crediamo alla competizione di breve periodo. Crediamo che un'azienda viva e prosperi quando le persone che ci lavorano sono coinvolte nelle scelte, quando le competenze sono presenti, quando la gestione finanziaria è ordinata. È un mestiere lungo, ma è anche l'unico che funziona davvero." data-en="We don't believe in short-term competition. We believe a company thrives when its people are engaged in decisions, when skills are in place, when financial management is sound. It's a long craft, but it's the only one that actually works.">Non crediamo alla competizione di breve periodo. Crediamo che un'azienda viva e prosperi quando le persone che ci lavorano sono coinvolte nelle scelte, quando le competenze sono presenti, quando la gestione finanziaria è ordinata. È un mestiere lungo, ma è anche l'unico che funziona davvero.</p>
-          </div>
-          <div class="reveal delay-1">
-            <span class="eyebrow eyebrow-dash" data-it="Come lavoriamo" data-en="How we work">Come lavoriamo</span>
-            <h2 style="margin-bottom: var(--space-3);" data-it="Un solo interlocutore, una rete di specialisti." data-en="One point of contact, a network of specialists.">Un solo interlocutore, una rete di specialisti.</h2>
-            <p data-it="Lavoriamo con docenti, piattaforme, commercialisti e consulenti del lavoro che selezioniamo personalmente. L'azienda parla con noi; noi orchestriamo il resto. È così che possiamo gestire un corso di sicurezza per quaranta dipendenti e una cessione di fatture per due milioni nello stesso mese." data-en="We work with instructors, platforms, accountants, and labor consultants we personally vet. The client talks to us; we orchestrate everything else. That's how we manage a safety course for forty employees and a two-million invoice transfer in the same month.">Lavoriamo con docenti, piattaforme, commercialisti e consulenti del lavoro che selezioniamo personalmente. L'azienda parla con noi; noi orchestriamo il resto. È così che possiamo gestire un corso di sicurezza per quaranta dipendenti e una cessione di fatture per due milioni nello stesso mese.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- TEAM -->
-    <section class="section">
-      <div class="container">
-        <div class="reveal" style="max-width: 720px; margin-bottom: var(--space-8);">
-          <span class="eyebrow eyebrow-dash" data-it="Il team" data-en="The team">Il team</span>
-          <h2 data-it="Otto persone. Una guida. Ognuno con il proprio mestiere." data-en="Eight people. One guide. Each with their own craft.">Otto persone. Una guida. Ognuno con il proprio mestiere.</h2>
-          <p class="muted mt-4" data-it="Clicca su una persona per leggere chi è e di cosa si occupa." data-en="Click on a person to read who they are and what they do.">Clicca su una persona per leggere chi è e di cosa si occupa.</p>
-        </div>
-
-        <div class="team-grid">
-          <a href="/team/cesare-fontana.html" class="team-card team-card--lead reveal">
-            <div class="team-card__photo">CF</div>
-            <div class="team-card__body">
-              <div class="team-card__name">Cesare Fontana</div>
-              <div class="team-card__role" data-it="Fondatore & Guida" data-en="Founder & Lead">Fondatore & Guida</div>
-            </div>
-          </a>
-          <a href="/team/cristina.html" class="team-card reveal delay-1">
-            <div class="team-card__photo">C</div>
-            <div class="team-card__body">
-              <div class="team-card__name">Cristina</div>
-              <div class="team-card__role" data-it="Formazione" data-en="Training">Formazione</div>
-            </div>
-          </a>
-          <a href="/team/alessio.html" class="team-card reveal delay-2">
-            <div class="team-card__photo">A</div>
-            <div class="team-card__body">
-              <div class="team-card__name">Alessio</div>
-              <div class="team-card__role" data-it="Advisory" data-en="Advisory">Advisory</div>
-            </div>
-          </a>
-          <a href="/team/mara.html" class="team-card reveal delay-1">
-            <div class="team-card__photo">M</div>
-            <div class="team-card__body">
-              <div class="team-card__name">Mara</div>
-              <div class="team-card__role" data-it="Formazione" data-en="Training">Formazione</div>
-            </div>
-          </a>
-          <a href="/team/gianmaria.html" class="team-card reveal delay-2">
-            <div class="team-card__photo">G</div>
-            <div class="team-card__body">
-              <div class="team-card__name">Gianmaria</div>
-              <div class="team-card__role" data-it="Invoice Trading" data-en="Invoice Trading">Invoice Trading</div>
-            </div>
-          </a>
-          <a href="/team/paola.html" class="team-card reveal">
-            <div class="team-card__photo">P</div>
-            <div class="team-card__body">
-              <div class="team-card__name">Paola</div>
-              <div class="team-card__role" data-it="Amministrazione" data-en="Operations">Amministrazione</div>
-            </div>
-          </a>
-          <a href="/team/andrea.html" class="team-card reveal delay-1">
-            <div class="team-card__photo">A</div>
-            <div class="team-card__body">
-              <div class="team-card__name">Andrea</div>
-              <div class="team-card__role" data-it="Formazione" data-en="Training">Formazione</div>
-            </div>
-          </a>
-          <a href="/team/giovanni.html" class="team-card reveal delay-2">
-            <div class="team-card__photo">G</div>
-            <div class="team-card__body">
-              <div class="team-card__name">Giovanni</div>
-              <div class="team-card__role" data-it="Advisory" data-en="Advisory">Advisory</div>
-            </div>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- GROUP STRUCTURE -->
-    <section class="section section--cream">
-      <div class="container container--narrow">
-        <div class="reveal">
-          <span class="eyebrow eyebrow-dash" data-it="Il gruppo" data-en="The group">Il gruppo</span>
-          <h2 style="margin-bottom: var(--space-4);" data-it="Polaris Group nei dettagli legali." data-en="Polaris Group, the legal detail.">Polaris Group nei dettagli legali.</h2>
-          <p class="lead" data-it="Polaris Group è il brand sotto cui operano due società italiane. Polaris HR srl gestisce la formazione e le attività di advisory. Hazard srl coordina la parte di invoice trading. Una sola guida, due strumenti legali, un'unica esperienza per il cliente." data-en="Polaris Group is the brand under which two Italian companies operate. Polaris HR srl handles training and advisory. Hazard srl manages invoice trading. One leadership, two legal vehicles, one client experience.">Polaris Group è il brand sotto cui operano due società italiane. Polaris HR srl gestisce la formazione e le attività di advisory. Hazard srl coordina la parte di invoice trading. Una sola guida, due strumenti legali, un'unica esperienza per il cliente.</p>
-          <p class="muted mt-4" data-it="Tra i nostri partner strategici: Run Capital Partners (Lussemburgo) per investimenti alternativi e gestioni patrimoniali, e Three Dots per il programma di quotazione Nasdaq." data-en="Among our strategic partners: Run Capital Partners (Luxembourg) for alternative investments and wealth management, and Three Dots for the Nasdaq listing program.">Tra i nostri partner strategici: Run Capital Partners (Lussemburgo) per investimenti alternativi e gestioni patrimoniali, e Three Dots per il programma di quotazione Nasdaq.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="section">
-      <div class="container container--narrow text-center">
-        <div class="reveal">
-          <h2 style="margin-bottom: var(--space-3);" data-it="Vuoi conoscerci meglio?" data-en="Want to know us better?">Vuoi conoscerci meglio?</h2>
-          <p class="lead" style="margin-bottom: var(--space-4);" data-it="Scrivici due righe sul tuo progetto. Ti ricontattiamo entro 24 ore lavorative per un primo confronto, senza impegno." data-en="Drop us two lines about your project. We'll get back to you within 24 working hours, no commitment.">Scrivici due righe sul tuo progetto. Ti ricontattiamo entro 24 ore lavorative per un primo confronto, senza impegno.</p>
-          <a href="/contatti.html" class="btn btn--silver" data-it="Contattaci" data-en="Get in touch">Contattaci</a>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <footer class="footer">
-    <div class="footer__inner">
-      <div class="footer__brand">
-        <h3>Polaris Group</h3>
-        <p data-it="La stella polare per chi guida un'impresa. Formazione, finanza non bancaria, advisory direzionale." data-en="The North Star for those who run a business. Training, non-bank finance, strategic advisory.">La stella polare per chi guida un'impresa. Formazione, finanza non bancaria, advisory direzionale.</p>
-      </div>
-      <div class="footer__col">
-        <h4 data-it="Sito" data-en="Site">Sito</h4>
-        <ul>
-          <li><a href="/chi-siamo.html" data-it="Chi Siamo" data-en="About">Chi Siamo</a></li>
-          <li><a href="/servizi.html" data-it="Servizi" data-en="Services">Servizi</a></li>
-          <li><a href="/casi-testimonianze.html" data-it="Casi & Testimonianze" data-en="Cases">Casi</a></li>
-          <li><a href="/lavora-con-noi.html" data-it="Lavora con noi" data-en="Careers">Lavora con noi</a></li>
-        </ul>
-      </div>
-      <div class="footer__col">
-        <h4 data-it="Contatti" data-en="Contact">Contatti</h4>
-        <ul>
-          <li><a href="mailto:info@polaris-group.it">info@polaris-group.it</a></li>
-          <li><a data-it="Crema, Lombardia" data-en="Crema, Lombardy">Crema, Lombardia</a></li>
-          <li><a href="/contatti.html" data-it="Tutti i contatti" data-en="All contact info">Tutti i contatti</a></li>
-        </ul>
-      </div>
-      <div class="footer__col">
-        <h4 data-it="Gruppo" data-en="Group">Gruppo</h4>
-        <ul>
-          <li><a data-it="Polaris HR srl" data-en="Polaris HR srl">Polaris HR srl</a></li>
-          <li><a data-it="Hazard srl" data-en="Hazard srl">Hazard srl</a></li>
-          <li><a href="https://runcapital.partners" target="_blank" rel="noopener" data-it="Run Capital Partners ↗" data-en="Run Capital Partners ↗">Run Capital Partners ↗</a></li>
-        </ul>
-      </div>
+    <div class="footer__col">
+      <h4 data-it="Contatti" data-en="Contact">Contatti</h4>
+      <ul>
+        <li><a href="mailto:segreteria@polaris-group.it">segreteria@polaris-group.it</a></li>
+        <li><a href="tel:+390373250072">+39 0373 250072</a></li>
+        <li><a data-it="Via del Commercio 29, 26013 Crema (CR)" data-en="Via del Commercio 29, 26013 Crema (CR)">Via del Commercio 29, 26013 Crema (CR)</a></li>
+      </ul>
     </div>
-    <div class="footer__legal">
-      <span data-it="© 2026 Polaris Group · P.IVA 01616620199 · Tutti i diritti riservati" data-en="© 2026 Polaris Group · VAT 01616620199 · All rights reserved">© 2026 Polaris Group · P.IVA 01616620199 · Tutti i diritti riservati</span>
-      <span>
-        <a href="/privacy.html" data-it="Privacy" data-en="Privacy">Privacy</a> &nbsp;·&nbsp;
-        <a href="/cookie.html" data-it="Cookie" data-en="Cookie">Cookie</a>
-      </span>
+    <div class="footer__col">
+      <h4 data-it="Gruppo" data-en="Group">Gruppo</h4>
+      <ul>
+        <li><a>Polaris HR srl</a></li>
+        <li><a>Hazard srl</a></li>
+        <li><a href="https://runcapital.partners" target="_blank" rel="noopener">Run Capital Partners ↗</a></li>
+      </ul>
     </div>
-  </footer>
+  </div>
+  <div class="footer__legal">
+    <span data-it="© 2026 Polaris Group · P.IVA 01616620199 · Tutti i diritti riservati" data-en="© 2026 Polaris Group · VAT 01616620199 · All rights reserved">© 2026 Polaris Group · P.IVA 01616620199 · Tutti i diritti riservati</span>
+    <span><a href="/privacy.html" data-it="Privacy" data-en="Privacy">Privacy</a> &nbsp;·&nbsp; <a href="/cookie.html" data-it="Cookie" data-en="Cookie">Cookie</a></span>
+  </div>
+</footer>
 
-  <script src="/scripts/main.js"></script>
+<script src="/assets/site.js"></script>
 </body>
 </html>

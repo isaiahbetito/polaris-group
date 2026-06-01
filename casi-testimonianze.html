@@ -1,233 +1,187 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta http-equiv="Pragma" content="no-cache">
-  <meta http-equiv="Expires" content="0">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title data-it="Casi & Testimonianze — Polaris Group" data-en="Cases & Testimonials — Polaris Group">Casi & Testimonianze — Polaris Group</title>
-  <meta name="description" data-it-content="Storie reali di aziende che hanno lavorato con Polaris Group: formazione, invoice trading, advisory. Risultati concreti, raccontati dai protagonisti.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Casi & Testimonianze — Polaris Group</title>
+<meta name="description" content="Casi di studio e testimonianze dei clienti di Polaris Group: problema, soluzione, risultato. PMI, commercialisti e consulenti del lavoro.">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+<link rel="apple-touch-icon" href="/favicon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
+<style>
+  .case-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .case{display:flex;flex-direction:column;background:var(--white);border:1px solid var(--silver-2);border-radius:4px;padding:34px 30px}
+  .case__n{font-size:13px;font-weight:600;letter-spacing:.18em;color:var(--silver-accent)}
+  .case__sector{font-family:var(--serif);font-size:1.5rem;color:var(--navy-deep);margin:8px 0 20px}
+  .case__step{margin-bottom:16px}
+  .case__lbl{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--silver-accent);margin-bottom:4px}
+  .case__txt{font-size:.95rem;color:var(--ink);opacity:.82;line-height:1.5}
+  .placeholder{outline:1px dashed var(--silver-1);outline-offset:5px;border-radius:2px}
+  .quote-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .qcard{background:rgba(255,255,255,.05);border:1px solid rgba(184,194,204,.22);border-radius:8px;padding:34px 30px;backdrop-filter:blur(4px)}
+  .qcard__mk{font-family:var(--serif);font-size:3rem;color:var(--silver-1);line-height:.4;display:block;margin-bottom:14px}
+  .qcard__q{font-family:var(--serif);font-style:italic;font-size:1.2rem;line-height:1.45;color:var(--silver-2)}
+  .qcard__a{margin-top:20px;font-size:.82rem;font-weight:600;letter-spacing:.04em;color:#7ea3cf}
+  .logos{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;max-width:920px;margin:0 auto}
+  .logoslot{height:96px;border:1px dashed var(--silver-1);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--silver-accent);text-align:center;padding:0 12px}
+  @media(max-width:860px){ .case-grid,.quote-grid{grid-template-columns:1fr} .logos{grid-template-columns:1fr 1fr} }
+</style>
 </head>
 <body>
 
-  <a href="#main" class="skip-link" data-it="Vai al contenuto" data-en="Skip to content">Vai al contenuto</a>
+<nav class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="/" class="nav__logo" aria-label="Polaris Group"><img src="/img/logo-lockup.png" alt="Polaris Group"></a>
+    <button class="nav__toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    <ul class="nav__links">
+      <li><a href="/chi-siamo.html" data-it="Chi Siamo" data-en="About">Chi Siamo</a></li>
+      <li><a href="/servizi.html" data-it="Servizi" data-en="Services">Servizi</a></li>
+      <li><a href="/chi-siamo.html#team" data-it="Team" data-en="Team">Team</a></li>
+      <li><a href="/casi-testimonianze.html" class="is-active" data-it="Casi &amp; Testimonianze" data-en="Cases">Casi &amp; Testimonianze</a></li>
+      <li><a href="/lavora-con-noi.html" data-it="Lavora con noi" data-en="Careers">Lavora con noi</a></li>
+      <li><a href="/contatti.html" class="nav__cta" data-it="Contattaci" data-en="Get in Touch">Contattaci</a></li>
+      <li><button type="button" class="lang-switch" aria-label="Cambia lingua"><span class="lang-switch__opt on" data-lang="it">IT</span><span>/</span><span class="lang-switch__opt" data-lang="en">EN</span></button></li>
+    </ul>
+  </div>
+</nav>
 
-  <nav class="nav" id="nav">
-    <div class="nav__inner">
-      <a href="/" class="nav__logo" aria-label="Polaris Group">
-        <img class="nav__logo-mark" src="/img/logo-mark.svg" alt="" width="28" height="28">
-        <span>POLARIS <span class="nav__logo-group">GROUP</span></span>
-      </a>
-      <button class="nav__toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-      <ul class="nav__links" id="navLinks">
+<main>
+  <header class="page-head">
+    <div class="container">
+      <span class="eyebrow eyebrow--center" data-it="Casi &amp; Testimonianze" data-en="Cases &amp; Testimonials">Casi &amp; Testimonianze</span>
+      <h1 data-it-html="Risultati concreti, <em>raccontati.</em>" data-en-html="Concrete results, <em>in their words.</em>">Risultati concreti, <em>raccontati.</em></h1>
+      <p class="lead" data-it="Problema, soluzione, risultato. Le storie delle imprese che abbiamo affiancato e le parole di chi ci ha scelto." data-en="Problem, solution, result. The stories of the companies we've supported and the words of those who chose us.">Problema, soluzione, risultato. Le storie delle imprese che abbiamo affiancato e le parole di chi ci ha scelto.</p>
+    </div>
+  </header>
+
+  <!-- CASI -->
+  <section class="section">
+    <div class="container">
+      <div class="section__head reveal">
+        <span class="eyebrow eyebrow--center" data-it="I casi" data-en="The cases">I casi</span>
+        <h2 data-it-html="Come abbiamo <em class=&quot;hl&quot;>fatto la differenza.</em>" data-en-html="How we made <em class=&quot;hl&quot;>the difference.</em>">Come abbiamo <em class="hl">fatto la differenza.</em></h2>
+      </div>
+      <div class="case-grid reveal">
+        <article class="case placeholder">
+          <span class="case__n">01</span>
+          <h3 class="case__sector" data-it="PMI manifatturiera" data-en="SME manufacturer">PMI manifatturiera</h3>
+          <div class="case__step"><div class="case__lbl" data-it="Problema" data-en="Problem">Problema</div><p class="case__txt" data-it="[In arrivo — la sfida iniziale dell’azienda.]" data-en="[Coming soon — the company's initial challenge.]">[In arrivo — la sfida iniziale dell’azienda.]</p></div>
+          <div class="case__step"><div class="case__lbl" data-it="Soluzione" data-en="Solution">Soluzione</div><p class="case__txt" data-it="[In arrivo — come è intervenuta Polaris.]" data-en="[Coming soon — how Polaris stepped in.]">[In arrivo — come è intervenuta Polaris.]</p></div>
+          <div class="case__step"><div class="case__lbl" data-it="Risultato" data-en="Result">Risultato</div><p class="case__txt" data-it="[In arrivo — il risultato, con un numero concreto.]" data-en="[Coming soon — the result, with a concrete figure.]">[In arrivo — il risultato, con un numero concreto.]</p></div>
+        </article>
+        <article class="case placeholder">
+          <span class="case__n">02</span>
+          <h3 class="case__sector" data-it="Azienda di servizi" data-en="Services company">Azienda di servizi</h3>
+          <div class="case__step"><div class="case__lbl" data-it="Problema" data-en="Problem">Problema</div><p class="case__txt" data-it="[In arrivo — la sfida iniziale dell’azienda.]" data-en="[Coming soon — the company's initial challenge.]">[In arrivo — la sfida iniziale dell’azienda.]</p></div>
+          <div class="case__step"><div class="case__lbl" data-it="Soluzione" data-en="Solution">Soluzione</div><p class="case__txt" data-it="[In arrivo — come è intervenuta Polaris.]" data-en="[Coming soon — how Polaris stepped in.]">[In arrivo — come è intervenuta Polaris.]</p></div>
+          <div class="case__step"><div class="case__lbl" data-it="Risultato" data-en="Result">Risultato</div><p class="case__txt" data-it="[In arrivo — il risultato, con un numero concreto.]" data-en="[Coming soon — the result, with a concrete figure.]">[In arrivo — il risultato, con un numero concreto.]</p></div>
+        </article>
+        <article class="case placeholder">
+          <span class="case__n">03</span>
+          <h3 class="case__sector" data-it="Gruppo industriale" data-en="Industrial group">Gruppo industriale</h3>
+          <div class="case__step"><div class="case__lbl" data-it="Problema" data-en="Problem">Problema</div><p class="case__txt" data-it="[In arrivo — la sfida iniziale dell’azienda.]" data-en="[Coming soon — the company's initial challenge.]">[In arrivo — la sfida iniziale dell’azienda.]</p></div>
+          <div class="case__step"><div class="case__lbl" data-it="Soluzione" data-en="Solution">Soluzione</div><p class="case__txt" data-it="[In arrivo — come è intervenuta Polaris.]" data-en="[Coming soon — how Polaris stepped in.]">[In arrivo — come è intervenuta Polaris.]</p></div>
+          <div class="case__step"><div class="case__lbl" data-it="Risultato" data-en="Result">Risultato</div><p class="case__txt" data-it="[In arrivo — il risultato, con un numero concreto.]" data-en="[Coming soon — the result, with a concrete figure.]">[In arrivo — il risultato, con un numero concreto.]</p></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIANZE -->
+  <section class="section section--navy">
+    <div class="container">
+      <div class="section__head reveal">
+        <span class="eyebrow eyebrow--center" style="color:var(--silver-1)" data-it="Cosa dicono di noi" data-en="What they say">Cosa dicono di noi</span>
+        <h2 data-it-html="Le parole di <em class=&quot;hl&quot;>chi ci ha scelto.</em>" data-en-html="The words of <em class=&quot;hl&quot;>those who chose us.</em>">Le parole di <em class="hl">chi ci ha scelto.</em></h2>
+      </div>
+      <div class="quote-grid reveal">
+        <article class="qcard">
+          <span class="qcard__mk" aria-hidden="true">&ldquo;</span>
+          <p class="qcard__q placeholder" data-it="[Testimonianza in arrivo — un risultato concreto ottenuto con Polaris, in una o due frasi.]" data-en="[Testimonial coming — a concrete result achieved with Polaris, in a sentence or two.]">[Testimonianza in arrivo — un risultato concreto ottenuto con Polaris, in una o due frasi.]</p>
+          <div class="qcard__a" data-it="Direzione — PMI manifatturiera · in raccolta" data-en="Management — SME manufacturer · being collected">Direzione — PMI manifatturiera · in raccolta</div>
+        </article>
+        <article class="qcard">
+          <span class="qcard__mk" aria-hidden="true">&ldquo;</span>
+          <p class="qcard__q placeholder" data-it="[Testimonianza in arrivo — il punto di vista di un commercialista che ci invia i propri clienti.]" data-en="[Testimonial coming — the view of an accountant who refers their clients to us.]">[Testimonianza in arrivo — il punto di vista di un commercialista che ci invia i propri clienti.]</p>
+          <div class="qcard__a" data-it="Commercialista — studio associato · in raccolta" data-en="Accountant — associate firm · being collected">Commercialista — studio associato · in raccolta</div>
+        </article>
+        <article class="qcard">
+          <span class="qcard__mk" aria-hidden="true">&ldquo;</span>
+          <p class="qcard__q placeholder" data-it="[Testimonianza in arrivo — un percorso di formazione finanziata, dal bisogno al risultato.]" data-en="[Testimonial coming — a funded training program, from need to result.]">[Testimonianza in arrivo — un percorso di formazione finanziata, dal bisogno al risultato.]</p>
+          <div class="qcard__a" data-it="Responsabile HR — gruppo industriale · in raccolta" data-en="HR Lead — industrial group · being collected">Responsabile HR — gruppo industriale · in raccolta</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOGHI CLIENTI -->
+  <section class="section section--cream">
+    <div class="container">
+      <div class="section__head reveal">
+        <span class="eyebrow eyebrow--center" data-it="Ci hanno scelto" data-en="They chose us">Ci hanno scelto</span>
+        <h2 data-it-html="I <em class=&quot;hl&quot;>clienti.</em>" data-en-html="Our <em class=&quot;hl&quot;>clients.</em>">I <em class="hl">clienti.</em></h2>
+      </div>
+      <div class="logos reveal">
+        <div class="logoslot" data-it="Logo cliente · in arrivo" data-en="Client logo · coming soon">Logo cliente · in arrivo</div>
+        <div class="logoslot" data-it="Logo cliente · in arrivo" data-en="Client logo · coming soon">Logo cliente · in arrivo</div>
+        <div class="logoslot" data-it="Logo cliente · in arrivo" data-en="Client logo · coming soon">Logo cliente · in arrivo</div>
+        <div class="logoslot" data-it="Logo cliente · in arrivo" data-en="Client logo · coming soon">Logo cliente · in arrivo</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section">
+    <div class="container container--narrow text-center reveal">
+      <h2 style="font-size:clamp(2.2rem,4.4vw,3.4rem);color:var(--ink)" data-it="La prossima storia è la tua?" data-en="Is the next story yours?">La prossima storia è la tua?</h2>
+      <p class="lead" style="margin:18px auto 32px;max-width:48ch" data-it="Raccontaci la tua esigenza: ti rispondiamo entro 24 ore lavorative." data-en="Tell us what you need: we reply within 24 working hours.">Raccontaci la tua esigenza: ti rispondiamo entro 24 ore lavorative.</p>
+      <a href="/contatti.html" class="btn btn--primary" data-it="Contattaci" data-en="Get in touch">Contattaci</a>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__brand">
+      <img class="footer__logo" src="/img/logo-lockup.png" alt="Polaris Group">
+      <p data-it="La forza della visione, al servizio delle imprese. Formazione, finanza non bancaria, advisory direzionale." data-en="The power of vision, at the service of businesses. Training, non-bank finance, strategic advisory.">La forza della visione, al servizio delle imprese. Formazione, finanza non bancaria, advisory direzionale.</p>
+    </div>
+    <div class="footer__col">
+      <h4 data-it="Sito" data-en="Site">Sito</h4>
+      <ul>
         <li><a href="/chi-siamo.html" data-it="Chi Siamo" data-en="About">Chi Siamo</a></li>
         <li><a href="/servizi.html" data-it="Servizi" data-en="Services">Servizi</a></li>
-        <li><a href="/casi-testimonianze.html" class="is-current" data-it="Casi & Testimonianze" data-en="Cases & Testimonials">Casi & Testimonianze</a></li>
+        <li><a href="/casi-testimonianze.html" data-it="Casi &amp; Testimonianze" data-en="Cases">Casi</a></li>
         <li><a href="/lavora-con-noi.html" data-it="Lavora con noi" data-en="Careers">Lavora con noi</a></li>
-        <li><a href="/contatti.html" class="nav__cta" data-it="Contattaci" data-en="Get in Touch">Contattaci</a></li>
-        <li>
-          <button type="button" class="lang-switch" aria-label="Cambia lingua">
-            <span class="lang-switch__opt" data-lang="it">IT</span>
-            <span class="lang-switch__sep">/</span>
-            <span class="lang-switch__opt" data-lang="en">EN</span>
-          </button>
-        </li>
       </ul>
     </div>
-  </nav>
-
-  <main id="main">
-
-    <section class="section" style="padding-top: calc(var(--space-16) + 80px);">
-      <div class="container container--narrow">
-        <span class="eyebrow reveal" data-it="Casi & Testimonianze" data-en="Cases & Testimonials">Casi & Testimonianze</span>
-        <h1 class="reveal delay-1" style="margin-bottom: var(--space-4);" data-html="1" data-it="Le storie <span class=&quot;silver-italic&quot;>valgono più delle promesse.</span>" data-en="Stories <span class=&quot;silver-italic&quot;>matter more than promises.</span>">Le storie <span class="silver-italic">valgono più delle promesse.</span></h1>
-        <p class="lead reveal delay-2" data-it="Tre casi reali raccontati dal punto di vista del cliente. Problema, soluzione, risultato. Senza enfasi, senza claim non verificabili." data-en="Three real cases told from the client's perspective. Problem, solution, result. No hype, no unverifiable claims.">Tre casi reali raccontati dal punto di vista del cliente. Problema, soluzione, risultato. Senza enfasi, senza claim non verificabili.</p>
-      </div>
-    </section>
-
-    <!-- CASE STUDIES -->
-    <section class="section section--tight">
-      <div class="container">
-        <span class="eyebrow eyebrow-dash" data-it="Casi studio" data-en="Case studies">Casi studio</span>
-
-        <article class="case reveal">
-          <div>
-            <span class="case__tag" data-it="Formazione obbligatoria" data-en="Mandatory training">Formazione obbligatoria</span>
-            <h3 class="case__title" data-it="[PLACEHOLDER] PMI manifatturiera, 80 dipendenti, sicurezza sul lavoro" data-en="[PLACEHOLDER] Manufacturing SME, 80 employees, workplace safety">[PLACEHOLDER] PMI manifatturiera, 80 dipendenti, sicurezza sul lavoro</h3>
-          </div>
-          <div>
-            <div class="case__problem">
-              <span class="case__label" data-it="Il problema" data-en="The problem">Il problema</span>
-              <p data-it="[PLACEHOLDER — descrizione del problema concreto. Es: scadenza accavallate di corsi sicurezza, RSPP da formare, registri non aggiornati, rischio sanzione in caso di ispezione]" data-en="[PLACEHOLDER — concrete problem description. e.g. overlapping safety course deadlines, RSPP to be trained, outdated registers, sanction risk in case of inspection]">[PLACEHOLDER — descrizione del problema concreto. Es: scadenze accavallate di corsi sicurezza, RSPP da formare, registri non aggiornati, rischio sanzione in caso di ispezione]</p>
-            </div>
-            <div class="case__solution">
-              <span class="case__label" data-it="La soluzione" data-en="The solution">La soluzione</span>
-              <p data-it="[PLACEHOLDER — cosa abbiamo fatto, in modo concreto. Es: audit completo, piano di formazione su 12 mesi, calendario condiviso con il cliente, docenti accreditati, rapporti con Regione gestiti internamente]" data-en="[PLACEHOLDER — what we did, concretely. e.g. full audit, 12-month training plan, shared calendar with client, accredited instructors, regional reporting handled in-house]">[PLACEHOLDER — cosa abbiamo fatto, in modo concreto.]</p>
-            </div>
-            <div class="case__result">
-              <span class="case__label" data-it="Il risultato" data-en="The result">Il risultato</span>
-              <p data-it="[PLACEHOLDER — risultato misurabile. Es: tutti i dipendenti formati nei tempi previsti, costo ridotto del 15% rispetto al preventivo del fornitore precedente, zero ispezioni problematiche]" data-en="[PLACEHOLDER — measurable result. e.g. all employees trained on time, cost reduced by 15% vs previous vendor, zero problem inspections]">[PLACEHOLDER — risultato misurabile.]</p>
-            </div>
-          </div>
-        </article>
-
-        <article class="case reveal">
-          <div>
-            <span class="case__tag" data-it="Invoice Trading" data-en="Invoice Trading">Invoice Trading</span>
-            <h3 class="case__title" data-it="[PLACEHOLDER] Società di servizi B2B, accelerazione del circolante" data-en="[PLACEHOLDER] B2B services company, working capital acceleration">[PLACEHOLDER] Società di servizi B2B, accelerazione del circolante</h3>
-          </div>
-          <div>
-            <div class="case__problem">
-              <span class="case__label" data-it="Il problema" data-en="The problem">Il problema</span>
-              <p data-it="[PLACEHOLDER — es: fatture a 90 giorni verso grandi clienti, castelletti bancari pieni, crescita rallentata dal circolante]" data-en="[PLACEHOLDER — e.g. 90-day invoices to large customers, bank credit lines full, growth slowed by working capital]">[PLACEHOLDER — descrizione del problema]</p>
-            </div>
-            <div class="case__solution">
-              <span class="case__label" data-it="La soluzione" data-en="The solution">La soluzione</span>
-              <p data-it="[PLACEHOLDER — es: selezione piattaforma adatta al profilo dei debitori, caricamento del primo lotto di fatture, accompagnamento nei primi cicli, monitoraggio incassi]" data-en="[PLACEHOLDER — e.g. platform selection matching debtor profile, first invoice batch upload, support through initial cycles, collection monitoring]">[PLACEHOLDER — la soluzione applicata]</p>
-            </div>
-            <div class="case__result">
-              <span class="case__label" data-it="Il risultato" data-en="The result">Il risultato</span>
-              <p data-it="[PLACEHOLDER — es: € 1,2M di fatture cedute nei primi 6 mesi, riduzione DSO da 95 a 45 giorni, zero impatto su Centrale Rischi]" data-en="[PLACEHOLDER — e.g. €1.2M invoices sold in first 6 months, DSO reduced from 95 to 45 days, zero impact on credit registry]">[PLACEHOLDER — risultato misurabile]</p>
-            </div>
-          </div>
-        </article>
-
-        <article class="case reveal">
-          <div>
-            <span class="case__tag" data-it="Advisory + Formazione" data-en="Advisory + Training">Advisory + Formazione</span>
-            <h3 class="case__title" data-it="[PLACEHOLDER] Gruppo familiare, riassetto organizzativo e change management" data-en="[PLACEHOLDER] Family group, organizational restructuring and change management">[PLACEHOLDER] Gruppo familiare, riassetto organizzativo e change management</h3>
-          </div>
-          <div>
-            <div class="case__problem">
-              <span class="case__label" data-it="Il problema" data-en="The problem">Il problema</span>
-              <p data-it="[PLACEHOLDER — es: passaggio generazionale in corso, due figli con visioni diverse, management storico in attesa di chiarezza]" data-en="[PLACEHOLDER — e.g. generational transition in progress, two children with different visions, historic management awaiting clarity]">[PLACEHOLDER — situazione iniziale]</p>
-            </div>
-            <div class="case__solution">
-              <span class="case__label" data-it="La soluzione" data-en="The solution">La soluzione</span>
-              <p data-it="[PLACEHOLDER — es: ciclo di tavoli con la famiglia, ridisegno del modello di governance, programma di sviluppo manageriale per i ruoli chiave, accompagnamento sui 18 mesi successivi]" data-en="[PLACEHOLDER — e.g. cycle of family working sessions, governance redesign, management development program for key roles, 18-month follow-on support]">[PLACEHOLDER — il percorso intrapreso]</p>
-            </div>
-            <div class="case__result">
-              <span class="case__label" data-it="Il risultato" data-en="The result">Il risultato</span>
-              <p data-it="[PLACEHOLDER — es: nuovo assetto operativo dopo 12 mesi, due nuove deleghe consolidate, EBITDA in crescita del 8% nel primo anno post-riassetto]" data-en="[PLACEHOLDER — e.g. new operating model after 12 months, two new delegations consolidated, EBITDA +8% in first post-restructuring year]">[PLACEHOLDER — risultato]</p>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- TESTIMONIALS -->
-    <section class="section section--cream">
-      <div class="container">
-        <div class="reveal" style="max-width: 720px; margin-bottom: var(--space-6);">
-          <span class="eyebrow eyebrow-dash" data-it="Testimonianze" data-en="Testimonials">Testimonianze</span>
-          <h2 data-it="Le voci dei clienti." data-en="Client voices.">Le voci dei clienti.</h2>
-        </div>
-        <div class="grid grid--3">
-          <blockquote class="testimonial reveal">
-            <p class="testimonial__quote" data-it="[PLACEHOLDER — testimonianza Cliente 1: 1-2 frasi specifiche sul risultato ottenuto. Esempio: &lsquo;Avevamo bisogno di formare 40 persone in tre mesi. Polaris ci ha gestito tutto, dai docenti alla Regione.&rsquo;]" data-en="[PLACEHOLDER — Client 1: 1-2 specific sentences on the result.]">[PLACEHOLDER — testimonianza Cliente 1]</p>
-            <div class="testimonial__author">
-              <strong data-it="[Nome Cognome]" data-en="[Name Surname]">[Nome Cognome]</strong><br>
-              <span data-it="[Ruolo], [Azienda]" data-en="[Role], [Company]">[Ruolo], [Azienda]</span>
-            </div>
-          </blockquote>
-
-          <blockquote class="testimonial reveal delay-1">
-            <p class="testimonial__quote" data-it="[PLACEHOLDER — testimonianza Cliente 2: idealmente da un settore diverso dal primo, magari un commercialista che parla del rapporto di referral.]" data-en="[PLACEHOLDER — Client 2: ideally from a different sector, perhaps an accountant speaking about the referral relationship.]">[PLACEHOLDER — testimonianza Cliente 2]</p>
-            <div class="testimonial__author">
-              <strong data-it="[Nome Cognome]" data-en="[Name Surname]">[Nome Cognome]</strong><br>
-              <span data-it="[Ruolo], [Studio]" data-en="[Role], [Firm]">[Ruolo], [Studio]</span>
-            </div>
-          </blockquote>
-
-          <blockquote class="testimonial reveal delay-2">
-            <p class="testimonial__quote" data-it="[PLACEHOLDER — testimonianza Cliente 3: da una piccola azienda che ha usato l&rsquo;invoice trading. Frase concreta sul beneficio.]" data-en="[PLACEHOLDER — Client 3: from a small company that used invoice trading. Concrete benefit sentence.]">[PLACEHOLDER — testimonianza Cliente 3]</p>
-            <div class="testimonial__author">
-              <strong data-it="[Nome Cognome]" data-en="[Name Surname]">[Nome Cognome]</strong><br>
-              <span data-it="[Ruolo], [Azienda]" data-en="[Role], [Company]">[Ruolo], [Azienda]</span>
-            </div>
-          </blockquote>
-        </div>
-      </div>
-    </section>
-
-    <!-- LOGOS PLACEHOLDER -->
-    <section class="section section--tight">
-      <div class="container">
-        <div class="reveal text-center">
-          <span class="eyebrow eyebrow-dash" data-it="Hanno lavorato con noi" data-en="Worked with us">Hanno lavorato con noi</span>
-          <h2 style="max-width: 24ch; margin: 0 auto var(--space-6);" data-it="Una selezione di clienti che ci hanno autorizzato a citarli." data-en="A selection of clients who have authorized us to mention them.">Una selezione di clienti che ci hanno autorizzato a citarli.</h2>
-          <div class="grid grid--4" style="gap: var(--space-3); align-items: center; justify-items: center;">
-            <div style="aspect-ratio: 3/1; width: 100%; background: var(--silver-3); display:flex; align-items:center; justify-content:center; color: var(--steel); font-size: 0.875rem;" data-it="[Logo 1]" data-en="[Logo 1]">[Logo 1]</div>
-            <div style="aspect-ratio: 3/1; width: 100%; background: var(--silver-3); display:flex; align-items:center; justify-content:center; color: var(--steel); font-size: 0.875rem;" data-it="[Logo 2]" data-en="[Logo 2]">[Logo 2]</div>
-            <div style="aspect-ratio: 3/1; width: 100%; background: var(--silver-3); display:flex; align-items:center; justify-content:center; color: var(--steel); font-size: 0.875rem;" data-it="[Logo 3]" data-en="[Logo 3]">[Logo 3]</div>
-            <div style="aspect-ratio: 3/1; width: 100%; background: var(--silver-3); display:flex; align-items:center; justify-content:center; color: var(--steel); font-size: 0.875rem;" data-it="[Logo 4]" data-en="[Logo 4]">[Logo 4]</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="section section--navy">
-      <div class="container container--narrow text-center">
-        <div class="reveal">
-          <h2 style="margin-bottom: var(--space-3); color: var(--white);" data-it="Vuoi essere il nostro prossimo caso?" data-en="Want to be our next case?">Vuoi essere il nostro prossimo caso?</h2>
-          <p class="lead" style="margin-bottom: var(--space-4); color: var(--silver-2);" data-it="Scrivici. Capiamo insieme cosa serve e se possiamo essere utili." data-en="Drop us a line. We'll figure out together what's needed and whether we can help.">Scrivici. Capiamo insieme cosa serve e se possiamo essere utili.</p>
-          <a href="/contatti.html" class="btn btn--ghost" data-it="Parliamone" data-en="Let's talk">Parliamone</a>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <footer class="footer">
-    <div class="footer__inner">
-      <div class="footer__brand">
-        <h3>Polaris Group</h3>
-        <p data-it="La stella polare per chi guida un'impresa. Formazione, finanza non bancaria, advisory direzionale." data-en="The North Star for those who run a business. Training, non-bank finance, strategic advisory.">La stella polare per chi guida un'impresa. Formazione, finanza non bancaria, advisory direzionale.</p>
-      </div>
-      <div class="footer__col">
-        <h4 data-it="Sito" data-en="Site">Sito</h4>
-        <ul>
-          <li><a href="/chi-siamo.html" data-it="Chi Siamo" data-en="About">Chi Siamo</a></li>
-          <li><a href="/servizi.html" data-it="Servizi" data-en="Services">Servizi</a></li>
-          <li><a href="/casi-testimonianze.html" data-it="Casi & Testimonianze" data-en="Cases">Casi</a></li>
-          <li><a href="/lavora-con-noi.html" data-it="Lavora con noi" data-en="Careers">Lavora con noi</a></li>
-        </ul>
-      </div>
-      <div class="footer__col">
-        <h4 data-it="Contatti" data-en="Contact">Contatti</h4>
-        <ul>
-          <li><a href="mailto:info@polaris-group.it">info@polaris-group.it</a></li>
-          <li><a data-it="Crema, Lombardia" data-en="Crema, Lombardy">Crema, Lombardia</a></li>
-          <li><a href="/contatti.html" data-it="Tutti i contatti" data-en="All contact info">Tutti i contatti</a></li>
-        </ul>
-      </div>
-      <div class="footer__col">
-        <h4 data-it="Gruppo" data-en="Group">Gruppo</h4>
-        <ul>
-          <li><a data-it="Polaris HR srl" data-en="Polaris HR srl">Polaris HR srl</a></li>
-          <li><a data-it="Hazard srl" data-en="Hazard srl">Hazard srl</a></li>
-          <li><a href="https://runcapital.partners" target="_blank" rel="noopener" data-it="Run Capital Partners ↗" data-en="Run Capital Partners ↗">Run Capital Partners ↗</a></li>
-        </ul>
-      </div>
+    <div class="footer__col">
+      <h4 data-it="Contatti" data-en="Contact">Contatti</h4>
+      <ul>
+        <li><a href="mailto:segreteria@polaris-group.it">segreteria@polaris-group.it</a></li>
+        <li><a href="tel:+390373250072">+39 0373 250072</a></li>
+        <li><a data-it="Via del Commercio 29, 26013 Crema (CR)" data-en="Via del Commercio 29, 26013 Crema (CR)">Via del Commercio 29, 26013 Crema (CR)</a></li>
+      </ul>
     </div>
-    <div class="footer__legal">
-      <span data-it="© 2026 Polaris Group · P.IVA 01616620199 · Tutti i diritti riservati" data-en="© 2026 Polaris Group · VAT 01616620199 · All rights reserved">© 2026 Polaris Group · P.IVA 01616620199 · Tutti i diritti riservati</span>
-      <span>
-        <a href="/privacy.html" data-it="Privacy" data-en="Privacy">Privacy</a> &nbsp;·&nbsp;
-        <a href="/cookie.html" data-it="Cookie" data-en="Cookie">Cookie</a>
-      </span>
+    <div class="footer__col">
+      <h4 data-it="Gruppo" data-en="Group">Gruppo</h4>
+      <ul>
+        <li><a>Polaris HR srl</a></li>
+        <li><a>Hazard srl</a></li>
+        <li><a href="https://runcapital.partners" target="_blank" rel="noopener">Run Capital Partners ↗</a></li>
+      </ul>
     </div>
-  </footer>
+  </div>
+  <div class="footer__legal">
+    <span data-it="© 2026 Polaris Group · P.IVA 01616620199 · Tutti i diritti riservati" data-en="© 2026 Polaris Group · VAT 01616620199 · All rights reserved">© 2026 Polaris Group · P.IVA 01616620199 · Tutti i diritti riservati</span>
+    <span><a href="/privacy.html" data-it="Privacy" data-en="Privacy">Privacy</a> &nbsp;·&nbsp; <a href="/cookie.html" data-it="Cookie" data-en="Cookie">Cookie</a></span>
+  </div>
+</footer>
 
-  <script src="/scripts/main.js"></script>
+<script src="/assets/site.js"></script>
 </body>
 </html>
