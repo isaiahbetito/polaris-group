@@ -205,9 +205,8 @@ const page = m => {
   .tl-item__d{font-size:.92rem;color:var(--ink);opacity:.78;line-height:1.7;max-width:480px}
 
   .belief{background:radial-gradient(70% 100% at 50% 0%,#0e3258,transparent 60%),linear-gradient(180deg,#08233c,#0B2E4F);color:#fff;text-align:center}
-  .belief__inner{max-width:860px;margin:0 auto;padding:var(--sp-12) 32px;position:relative}
-  .belief__eyebrow{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--blue);font-weight:600;margin-bottom:32px}
-  .belief__mk{display:block;font-family:var(--serif);font-size:clamp(5rem,9vw,8rem);line-height:.6;color:var(--blue);opacity:.55;margin-bottom:18px}
+  .belief__inner{max-width:860px;margin:0 auto;padding:var(--sp-12) 32px;position:relative;text-align:center}
+  .belief__mk{display:block;width:100%;text-align:center;font-family:var(--serif);font-size:clamp(4.5rem,8vw,7rem);line-height:1;color:var(--blue);opacity:.55;margin:0 auto 24px}
   .belief__quote{font-family:var(--serif);font-weight:500;font-style:italic;font-size:clamp(1.8rem,3.6vw,2.8rem);line-height:1.3;letter-spacing:-.01em;quotes:none;margin:0}
   .belief__quote em{font-style:italic;color:var(--blue);font-weight:500}
   .belief__by{margin-top:28px;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.55);font-weight:600}
@@ -346,7 +345,6 @@ ${xpCards(m)}
   <!-- BELIEF -->
   <section class="belief reveal">
     <figure class="belief__inner" style="margin:0">
-      <p class="belief__eyebrow" data-it="${escA(BELIEF.eyebrow.it)}" data-en="${escA(BELIEF.eyebrow.en)}">${BELIEF.eyebrow.it}</p>
       <span class="belief__mk" aria-hidden="true">&ldquo;</span>
       <blockquote class="belief__quote" data-it-html="${escH(BELIEF.quote.it)}" data-en-html="${escH(BELIEF.quote.en)}">${BELIEF.quote.it}</blockquote>
       <figcaption class="belief__by">${BELIEF.by}</figcaption>
