@@ -45,6 +45,7 @@
   .area__list li{position:relative;padding-left:18px;font-size:.9rem;color:var(--steel);margin-bottom:7px;line-height:1.4}
   .area__list li::before{content:"";position:absolute;left:0;top:9px;width:5px;height:5px;border-radius:50%;background:var(--silver-accent)}
   .fin-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px}
+  .adv-grid{grid-template-columns:1fr 1fr!important}
   .fin{position:relative;overflow:hidden;background:rgba(255,255,255,.05);border:1px solid rgba(184,194,204,.22);border-radius:4px;padding:32px 28px;backdrop-filter:blur(4px);transition:transform .3s var(--ease),border-color .3s var(--ease),background .3s var(--ease),box-shadow .3s var(--ease)}
   .fin::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(115deg,transparent 30%,rgba(156,192,239,.18) 50%,transparent 70%);transform:translateX(-110%);transition:transform .9s var(--ease)}
   .fin>*{position:relative;z-index:1}
@@ -60,13 +61,18 @@
   .adv-list li::before{content:"";position:absolute;left:0;top:10px;width:7px;height:7px;border:1px solid var(--silver-accent);border-radius:50%}
   .partner-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:1000px;margin:0 auto}
   @media(max-width:760px){.partner-grid{grid-template-columns:1fr}}
-  .partner-cta{display:flex;flex-direction:column;max-width:none;background:var(--white);border:1px solid var(--silver-1);border-left:3px solid var(--silver-accent);border-radius:4px;padding:32px 32px;transition:transform .25s var(--ease),border-color .25s var(--ease),box-shadow .25s var(--ease)}
-  .partner-grid .partner-cta:hover{transform:translateY(-4px);border-left-color:var(--navy-deep);box-shadow:0 24px 50px -28px rgba(11,46,79,.3)}
-  .partner-cta__tag{font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--silver-accent)}
-  .partner-cta__t{font-family:var(--serif);font-weight:700;font-size:1.7rem;color:var(--navy-deep);margin:8px 0 12px}
-  .partner-cta__b{font-size:1rem;color:var(--ink);opacity:.85;line-height:1.6}
-  .partner-cta__b strong{color:var(--navy-deep)}
-  .partner-cta__link{display:inline-block;margin-top:16px;font-weight:600;font-size:14px;color:var(--navy-deep)}
+  .partner-cta{position:relative;overflow:hidden;display:flex;flex-direction:column;max-width:none;background:linear-gradient(160deg,#0e3258,#0a2a4c);border:1px solid rgba(127,168,220,.18);border-radius:6px;padding:36px 32px;color:#fff;transition:transform .25s var(--ease),border-color .25s var(--ease),box-shadow .25s var(--ease)}
+  .partner-cta::after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 30%,rgba(127,168,220,.22) 50%,transparent 70%);transform:translateX(-110%);transition:transform .9s ease-out;pointer-events:none}
+  .partner-grid .partner-cta:hover{transform:translateY(-4px);border-color:rgba(127,168,220,.45);box-shadow:0 28px 60px -28px rgba(11,46,79,.55)}
+  .partner-grid .partner-cta:hover::after{transform:translateX(110%)}
+  .partner-cta__tag{display:inline-block;align-self:flex-start;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#cfd9e6;background:rgba(127,168,220,.12);border:1px solid rgba(127,168,220,.32);border-radius:999px;padding:6px 12px}
+  .partner-cta__t{font-family:var(--serif);font-weight:600;font-size:1.7rem;color:#fff;margin:20px 0 12px;letter-spacing:-.005em}
+  .partner-cta__b{font-size:1rem;color:rgba(255,255,255,.82);line-height:1.6}
+  .partner-cta__b strong{color:#fff}
+  .partner-cta__meta{margin-top:24px;padding-top:18px;border-top:1px solid rgba(127,168,220,.22);display:flex;flex-direction:column;gap:6px}
+  .partner-cta__loc{font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#cfd9e6}
+  .partner-cta__sub{font-size:.92rem;color:rgba(255,255,255,.6);font-style:italic}
+  .partner-cta__link{display:inline-block;margin-top:18px;font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#fff}
   /* 01 Formazione — cinematic training-scene background */
   #formazione{position:relative;overflow:hidden}
   #formazione .fmz-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;filter:saturate(.9) brightness(.97) contrast(1.03)}
@@ -80,7 +86,7 @@
   #formazione .fund-strip{border-top-color:rgba(184,194,204,.22)}
   #formazione .fund-strip__row img{filter:brightness(0) invert(1);opacity:.6}
   #formazione .fund-strip__row img:hover{filter:brightness(0) invert(1);opacity:1}
-  @media(max-width:860px){ .duo,.area-grid,.fin-grid{grid-template-columns:1fr} .adv-list{columns:1} }
+  @media(max-width:860px){ .duo,.area-grid,.fin-grid,.adv-grid{grid-template-columns:1fr!important} .adv-list{columns:1} }
   @media(prefers-reduced-motion:reduce){
     #formazione .fmz-bg{display:none}
     #formazione{background:#0B2E4F url("/img/formazione-bg.jpg") center/cover}
@@ -187,12 +193,12 @@
     <div class="cine-bg__tint" aria-hidden="true"></div>
     <div class="cine-bg__grade" aria-hidden="true"></div>
     <div class="container">
-      <div class="svc-block svc-block--right reveal">
+      <div class="svc-block reveal">
         <h2 class="svc-block__name" data-it="Invoice Trading" data-en="Invoice Trading">Invoice Trading</h2>
         <p class="svc-block__kicker" data-it="Liquidità senza banca." data-en="Liquidity without the bank.">Liquidità senza banca.</p>
         <p class="svc-block__lead" data-it="Le aziende falliscono per cassa, non per debiti. Diversifichiamo le fonti di approvvigionamento finanziario oltre il canale bancario tradizionale, con strumenti che non impattano la Centrale Rischi e non consumano i castelletti. Servizio erogato tramite Hazard srl, società del Gruppo." data-en="Companies fail for cash, not for debt. We diversify funding sources beyond the traditional bank channel, with tools that don't affect the credit registry or use up credit lines. Service delivered through Hazard srl, a Group company.">Le aziende falliscono per cassa, non per debiti. Diversifichiamo le fonti di approvvigionamento finanziario oltre il canale bancario tradizionale, con strumenti che non impattano la Centrale Rischi e non consumano i castelletti. Servizio erogato tramite Hazard srl, società del Gruppo.</p>
       </div>
-      <div class="fin-grid reveal" style="max-width:1000px;margin-left:auto;margin-right:auto">
+      <div class="fin-grid reveal" style="max-width:1000px;margin-left:0;margin-right:auto">
         <article class="fin">
           <span class="fin__tag">OAM M354-2015</span>
           <h3 class="fin__t" data-it="Mediazione creditizia" data-en="Credit brokerage">Mediazione creditizia</h3>
@@ -236,13 +242,25 @@
         <h2 class="svc-block__name" data-it="Advisory" data-en="Advisory">Advisory</h2>
         <p class="svc-block__kicker" data-it="Le scelte che non si delegano." data-en="The decisions you can't delegate.">Le scelte che non si delegano.</p>
         <p class="svc-block__lead" data-it="Accanto alla proprietà nelle decisioni strategiche, fino al momento in cui la scelta prende forma." data-en="Alongside ownership in strategic decisions, right up to the moment the choice takes shape.">Accanto alla proprietà nelle decisioni strategiche, fino al momento in cui la scelta prende forma.</p>
-      <ul class="adv-list" style="margin-top:32px">
-        <li data-it="Riassetti organizzativi e dei processi" data-en="Organizational &amp; process restructuring">Riassetti organizzativi e dei processi</li>
-        <li data-it="Passaggi generazionali e governance familiare" data-en="Generational transitions &amp; family governance">Passaggi generazionali e governance familiare</li>
-        <li data-it="Gestione finanziaria ed efficientamento" data-en="Financial management &amp; efficiency">Gestione finanziaria ed efficientamento</li>
-        <li data-it="Preparazione a operazioni straordinarie (M&amp;A, ingresso soci)" data-en="Preparation for extraordinary operations (M&amp;A, new partners)">Preparazione a operazioni straordinarie (M&amp;A, ingresso soci)</li>
-        <li data-it="Coordinamento dei tavoli con commercialisti, banche e advisor" data-en="Coordinating the table with accountants, banks and advisors">Coordinamento dei tavoli con commercialisti, banche e advisor</li>
-      </ul>
+      </div>
+      <div class="fin-grid adv-grid reveal" style="grid-template-columns:1fr 1fr;max-width:1000px;margin-left:0;margin-right:auto;margin-top:32px">
+        <article class="fin">
+          <span class="fin__tag" data-it="Strategia &amp; governance" data-en="Strategy &amp; governance">Strategia &amp; governance</span>
+          <h3 class="fin__t" data-it="Riassetti e passaggi" data-en="Restructuring &amp; transitions">Riassetti e passaggi</h3>
+          <ul class="fin__list">
+            <li data-it="Riassetti organizzativi e dei processi" data-en="Organizational &amp; process restructuring">Riassetti organizzativi e dei processi</li>
+            <li data-it="Passaggi generazionali e governance familiare" data-en="Generational transitions &amp; family governance">Passaggi generazionali e governance familiare</li>
+            <li data-it="Gestione finanziaria ed efficientamento" data-en="Financial management &amp; efficiency">Gestione finanziaria ed efficientamento</li>
+          </ul>
+        </article>
+        <article class="fin">
+          <span class="fin__tag" data-it="Operazioni straordinarie" data-en="Extraordinary operations">Operazioni straordinarie</span>
+          <h3 class="fin__t" data-it="M&amp;A &amp; tavoli" data-en="M&amp;A &amp; tables">M&amp;A &amp; tavoli</h3>
+          <ul class="fin__list">
+            <li data-it="Preparazione a operazioni straordinarie (M&amp;A, ingresso soci)" data-en="Preparation for extraordinary operations (M&amp;A, new partners)">Preparazione a operazioni straordinarie (M&amp;A, ingresso soci)</li>
+            <li data-it="Coordinamento dei tavoli con commercialisti, banche e advisor" data-en="Coordinating the table with accountants, banks and advisors">Coordinamento dei tavoli con commercialisti, banche e advisor</li>
+          </ul>
+        </article>
       </div>
     </div>
   </section>
@@ -318,23 +336,32 @@
   </section>
 
   <!-- PARTNER -->
-  <section class="section section--cream">
+  <section class="section section--cream" style="padding-top:0">
     <div class="container">
+      <hr style="border:0;border-top:1px solid var(--silver-2);max-width:1000px;margin:0 auto 80px">
       <div class="section__head reveal">
         <h2 data-it-html="Una rete che <em class=&quot;hl&quot;>va oltre</em>" data-en-html="A network that <em class=&quot;hl&quot;>goes further</em>">Una rete che <em class="hl">va oltre</em></h2>
       </div>
       <div class="partner-grid reveal">
         <a href="https://runcapital.partners" target="_blank" rel="noopener" class="partner-cta">
-          <div class="partner-cta__tag" data-it="Partner · Lussemburgo" data-en="Partner · Luxembourg">Partner · Lussemburgo</div>
+          <span class="partner-cta__tag" data-it="Partner" data-en="Partner">Partner</span>
           <div class="partner-cta__t">Run Capital Partners</div>
           <p class="partner-cta__b" data-it="Strutturazione di fondi di investimento alternativi, securitization e gestione patrimoniale. Partner del Gruppo per le operazioni di finanza alternativa." data-en="Alternative investment fund structuring, securitization and wealth management. The Group's partner for alternative-finance operations.">Strutturazione di fondi di investimento alternativi, securitization e gestione patrimoniale. Partner del Gruppo per le operazioni di finanza alternativa.</p>
-          <span class="partner-cta__link">Run Capital Partners &nearr;</span>
+          <div class="partner-cta__meta">
+            <span class="partner-cta__loc">Luxembourg</span>
+            <span class="partner-cta__sub" data-it="Partnership strategica" data-en="Strategic partnership">Partnership strategica</span>
+          </div>
+          <span class="partner-cta__link" data-it-html="Visita &rarr;" data-en-html="Learn more &rarr;">Visita →</span>
         </a>
         <a href="https://runcapital.partners/nasdaq-listings" target="_blank" rel="noopener" class="partner-cta">
-          <div class="partner-cta__tag" data-it="Partner · New York" data-en="Partner · New York">Partner · New York</div>
+          <span class="partner-cta__tag" data-it="Partner" data-en="Partner">Partner</span>
           <div class="partner-cta__t">3DOTS Capital</div>
           <p class="partner-cta__b" data-it="Advisory per la quotazione su Nasdaq di società del Sud Europa. Programma dedicato alle PMI italiane in crescita." data-en="Nasdaq listing advisory for Southern European companies. A program dedicated to growing Italian SMEs.">Advisory per la quotazione su Nasdaq di società del Sud Europa. Programma dedicato alle PMI italiane in crescita.</p>
-          <span class="partner-cta__link">3DOTS Capital &nearr;</span>
+          <div class="partner-cta__meta">
+            <span class="partner-cta__loc">New York</span>
+            <span class="partner-cta__sub" data-it="Programma Nasdaq" data-en="Nasdaq program">Programma Nasdaq</span>
+          </div>
+          <span class="partner-cta__link" data-it-html="Visita &rarr;" data-en-html="Learn more &rarr;">Visita →</span>
         </a>
       </div>
     </div>

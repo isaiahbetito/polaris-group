@@ -373,17 +373,17 @@
   .mock-back:hover{background:rgba(0,0,0,.6)}
 
   /* ---- SCROLL-EXPAND HERO ---- */
-  .hex{position:relative;height:200vh;background:#020812}
+  .hex{position:relative;height:200vh;background:#020812;--hex-p:0}
   .hex__pin{position:sticky;top:0;height:100vh;overflow:hidden}
   .hex__bg{position:absolute;inset:0;background-image:url(/img/hero-biolum.jpg);background-size:cover;background-position:center;filter:brightness(.85) saturate(1.04);z-index:0}
   .hex__bg::after{content:"";position:absolute;inset:0;background:radial-gradient(90% 80% at 50% 50%,transparent 0%,rgba(0,0,0,.18) 100%);pointer-events:none}
   .hex__frame{position:absolute;left:50%;top:50%;translate:-50% -50%;width:360px;height:560px;border-radius:28px;overflow:hidden;box-shadow:0 40px 100px -20px rgba(0,0,0,.7),0 0 0 1px rgba(127,168,220,.22) inset;will-change:width,height,border-radius;z-index:2}
   .hex__frame-vid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
   .hex__frame::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(0,0,0,.45) 100%);pointer-events:none}
-  .hex__overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;pointer-events:none;z-index:3;padding:80px 32px 200px}
-  .hex__overlay .polestar-focal{width:60px;height:60px;margin-bottom:18px;fill:#fff;opacity:.92;filter:drop-shadow(0 0 30px rgba(255,255,255,.4));animation:hex-pulse 4s ease-in-out infinite}
+  .hex__overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;pointer-events:none;z-index:3;padding:32px;transform:translateY(calc((1 - var(--hex-p)) * -20px))}
+  .hex__overlay .polestar-focal{width:calc(24px + var(--hex-p) * 40px);height:calc(24px + var(--hex-p) * 40px);margin-bottom:calc(8px + var(--hex-p) * 14px);margin-left:calc(10px * (1 - var(--hex-p)));fill:#fff;opacity:.92;filter:drop-shadow(0 0 30px rgba(255,255,255,.4));animation:hex-pulse 4s ease-in-out infinite}
   @keyframes hex-pulse{0%,100%{opacity:.85;transform:scale(1)}50%{opacity:1;transform:scale(1.06)}}
-  .hex__title{font-family:var(--serif);font-weight:500;font-size:clamp(2.4rem,5.5vw,5rem);line-height:1.05;letter-spacing:-.02em;color:#fff;mix-blend-mode:difference;max-width:18ch;margin:0}
+  .hex__title{font-family:var(--serif);font-weight:500;font-size:var(--hex-title-size,1.4rem);line-height:1.08;letter-spacing:-.02em;color:#fff;margin:0;white-space:nowrap;text-shadow:0 1px 16px rgba(0,0,0,.55)}
   .hex__title em{font-style:italic;font-weight:400;color:#9cc0ef}
   .hex__lead{margin:22px 0 0;font-size:1.05rem;color:rgba(255,255,255,.85);max-width:52ch;text-shadow:0 1px 16px rgba(0,0,0,.6);transition:opacity .3s}
   .hex__cta{margin-top:30px;display:flex;gap:14px;flex-wrap:wrap;justify-content:center;pointer-events:auto;transition:opacity .3s}
@@ -395,6 +395,7 @@
   @media(max-width:680px){
     .hex__frame{width:280px;height:440px}
     .hex__title{letter-spacing:-.015em}
+    .hex__overlay .polestar-focal{width:calc(20px + var(--hex-p) * 28px);height:calc(20px + var(--hex-p) * 28px)}
     .hex__hint{bottom:120px}
   }
 </style>
@@ -429,24 +430,15 @@
   <div class="hex__pin">
     <div class="hex__bg" aria-hidden="true"></div>
     <div class="hex__frame" id="hexframe">
-      <video class="hex__frame-vid" autoplay muted loop playsinline preload="auto" poster="/hero-stars-poster.jpg" aria-hidden="true">
-        <source src="/hero-stars.mp4" type="video/mp4">
+      <video class="hex__frame-vid" autoplay muted loop playsinline preload="auto" poster="/img/hero-stars-pin.jpg" aria-hidden="true">
+        <source src="/img/hero-stars-pin.mp4" type="video/mp4">
       </video>
     </div>
     <div class="hex__overlay">
       <svg class="polestar-focal" viewBox="0 0 100 100" aria-hidden="true">
         <path d="M50 4 L57 43 L96 50 L57 57 L50 96 L43 57 L4 50 L43 43 Z"/>
       </svg>
-      <h1 class="hex__title" data-it-html="La forza della <em>visione</em>,<br>al servizio delle imprese." data-en-html="The power of <em>vision</em>,<br>at the service of businesses.">La forza della <em>visione</em>,<br>al servizio delle imprese.</h1>
-      <p class="hex__lead" data-it="Formazione, finanza non bancaria e advisory per PMI italiane, commercialisti e consulenti del lavoro." data-en="Training, non-bank finance, and strategic advisory for Italian SMEs, accountants, and labor consultants.">Formazione, finanza non bancaria e advisory per PMI italiane, commercialisti e consulenti del lavoro.</p>
-      <div class="hex__cta">
-        <a href="/servizi.html" class="btn btn--primary" data-it="Scopri i servizi" data-en="See our services">Scopri i servizi</a>
-        <a href="/contatti.html" class="btn btn--ghost" data-it="Parla con noi &rarr;" data-en="Talk to us &rarr;">Parla con noi &rarr;</a>
-      </div>
-    </div>
-    <div class="hex__hint" id="hexhint">
-      <b>Polaris Group</b>
-      Scorri per espandere
+      <h1 class="hex__title" data-it-html="La forza della <em>visione</em>,<br>al servizio delle imprese" data-en-html="The power of <em>vision</em>,<br>at the service of businesses">La forza della <em>visione</em>,<br>al servizio delle imprese</h1>
     </div>
 
   <div class="marquee">
@@ -818,9 +810,15 @@
     var e = 1 - Math.pow(1 - p, 2);
     var tw = window.innerWidth;
     var th = window.innerHeight;
-    frame.style.width = (START_W + (tw - START_W) * e) + 'px';
-    frame.style.height = (START_H + (th - START_H) * e) + 'px';
+    var fw = START_W + (tw - START_W) * e;
+    var fh = START_H + (th - START_H) * e;
+    frame.style.width = fw + 'px';
+    frame.style.height = fh + 'px';
     frame.style.borderRadius = (START_R * (1 - e)) + 'px';
+    section.style.setProperty('--hex-p', e.toFixed(3));
+    // size title so line 2 "at the service of businesses" nearly fills frame width
+    var ts = Math.min(fw * 0.09, 108);
+    section.style.setProperty('--hex-title-size', ts.toFixed(2) + 'px');
     if (hint) hint.style.opacity = 1 - Math.min(1, e * 2.2);
     if (lead) lead.style.opacity = 1 - Math.min(1, e * 1.6);
     if (cta)  cta.style.opacity  = 1 - Math.min(1, e * 1.6);
