@@ -373,13 +373,17 @@ ${xpCards(m)}
   </section>
 
   <!-- CONTACT -->
-  <section class="section section--navy reveal">
-    <div class="container bio-cta">
-      <h2 data-it="Parliamone." data-en="Let's talk.">Parliamone.</h2>
-      <p data-it="Scrivici per lavorare con ${escA(m.name)} e con il team di Polaris." data-en="Get in touch to work with ${escA(m.name)} and the Polaris team.">Scrivici per lavorare con ${m.name} e con il team di Polaris.</p>
-      <div class="bio-cta__links">
-        <a href="/contatti.html" class="btn btn--primary" data-it="Contattaci" data-en="Get in touch">Contattaci</a>
-        <a href="/chi-siamo.html#team" class="btn btn--ghost" style="border-color:rgba(184,194,204,.4);color:#fff" data-it="Torna al team" data-en="Back to the team">Torna al team</a>
+  <section class="section reveal">
+    <div class="container container--narrow text-center">
+      <div class="git">
+        <div class="git__eyebrow" data-it="Parliamone" data-en="Get in touch">Parliamone</div>
+        <h2 class="git__title" data-it-html="Lavoriamo <em>insieme</em>?" data-en-html="Shall we <em>work together</em>?">Lavoriamo <em>insieme</em>?</h2>
+        <p class="git__sub" data-it="Scrivici una mail all'indirizzo qui sotto e ci faremo sentire." data-en="Send us a message at the address below and we'll be in touch.">Scrivici una mail all'indirizzo qui sotto e ci faremo sentire.</p>
+        <div class="git__box">
+          <span class="git__email">info@polaris-group.it</span>
+          <button class="git__copy" type="button" data-copy="info@polaris-group.it">COPY</button>
+        </div>
+        <a class="git__cta" href="mailto:info@polaris-group.it" data-it-html="Apri nella tua mail &rarr;" data-en-html="Open in email app &rarr;">Open in email app →</a>
       </div>
     </div>
   </section>
@@ -404,7 +408,7 @@ ${xpCards(m)}
     <div class="footer__col">
       <h4 data-it="Contatti" data-en="Contact">Contatti</h4>
       <ul>
-        <li><a href="mailto:segreteria@polaris-group.it">segreteria@polaris-group.it</a></li>
+        <li><a href="mailto:info@polaris-group.it">info@polaris-group.it</a></li>
         <li><a href="tel:+390373250072">+39 0373 250072</a></li>
         <li><a data-it="Via del Commercio 29, 26013 Crema (CR)" data-en="Via del Commercio 29, 26013 Crema (CR)">Via del Commercio 29, 26013 Crema (CR)</a></li>
       </ul>

@@ -30,4 +30,19 @@
   }
   var cio=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ countUp(e.target); cio.unobserve(e.target);} }); },{threshold:.6});
   document.querySelectorAll('.count').forEach(function(el){ cio.observe(el); });
+
+  // ---- copy-to-clipboard for .git__copy buttons ----
+  document.querySelectorAll('.git__copy').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var v = btn.getAttribute('data-copy') || (btn.previousElementSibling ? btn.previousElementSibling.textContent.trim() : '');
+      if(!v) return;
+      var done = function(){
+        var l = lang(), labels = { it:{copy:'Copia',copied:'Copiato'}, en:{copy:'Copy',copied:'Copied'} };
+        btn.textContent = labels[l].copied; btn.classList.add('copied');
+        setTimeout(function(){ btn.textContent = labels[l].copy; btn.classList.remove('copied'); }, 1800);
+      };
+      if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(v).then(done).catch(function(){}); }
+      else { var t=document.createElement('textarea'); t.value=v; document.body.appendChild(t); t.select(); try{document.execCommand('copy'); done();}catch(e){} document.body.removeChild(t); }
+    });
+  });
 })();

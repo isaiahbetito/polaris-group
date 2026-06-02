@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mockup — Hero Expand Effect (Bioluminescent) | Polaris Group</title>
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{background:#020812;color:#fff;font-family:Inter,-apple-system,sans-serif;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+
+  /* mockup label */
+  .mock-tag{position:fixed;top:18px;left:18px;z-index:50;background:rgba(255,255,255,.08);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.18);
+    padding:8px 14px;border-radius:999px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.78)}
+  .mock-tag b{color:#7FA8DC;font-weight:600}
+  .mock-back{position:fixed;top:18px;right:18px;z-index:50;background:rgba(255,255,255,.06);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.18);
+    padding:8px 16px;border-radius:999px;font-size:12px;font-weight:600;color:#fff;text-decoration:none;transition:background .2s}
+  .mock-back:hover{background:rgba(255,255,255,.14)}
+
+  /* the pinned scroll-expand section: 220vh tall so there's scroll room */
+  .he{position:relative;height:220vh;background:#020812}
+  .he__pin{position:sticky;top:0;height:100vh;overflow:hidden}
+
+  /* full-bleed sharp backdrop layer */
+  .he__bg{position:absolute;inset:0;background-image:url(/img/hero-biolum.jpg);background-size:cover;background-position:center;
+    filter:brightness(.88) saturate(1.04)}
+
+  /* very subtle vignette for edge richness — does not blur or fight the image */
+  .he__bg::after{content:"";position:absolute;inset:0;background:radial-gradient(90% 80% at 50% 50%,transparent 0%,rgba(0,0,0,.18) 100%);pointer-events:none}
+
+  /* the centered frame that expands */
+  .he__frame{position:absolute;left:50%;top:50%;translate:-50% -50%;
+    width:340px;height:540px;border-radius:28px;overflow:hidden;
+    box-shadow:0 40px 100px -20px rgba(0,0,0,.7),0 0 0 1px rgba(127,168,220,.22) inset;
+    will-change:width,height,border-radius}
+  .he__frame-vid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.04)}
+  .he__frame::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(0,0,0,.45) 100%);pointer-events:none}
+
+  /* large overlay title with mix-blend so it interacts with both the bg and the frame */
+  .he__overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;pointer-events:none;z-index:3}
+  .he__eyebrow{display:none}
+  .he__title{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(2.4rem,5.5vw,5rem);line-height:1.02;letter-spacing:-.02em;color:#fff;
+    mix-blend-mode:difference;text-shadow:0 0 40px rgba(255,255,255,.15);max-width:14ch;text-align:center}
+  .he__title em{font-style:italic;font-weight:400;color:#9cc0ef}
+  .he__hint{position:absolute;bottom:48px;left:50%;transform:translateX(-50%);font-family:Inter,sans-serif;font-size:13px;letter-spacing:.02em;color:rgba(255,255,255,.85);
+    display:flex;flex-direction:column;align-items:center;gap:6px;opacity:1;transition:opacity .3s;text-align:center}
+  .he__hint b{font-weight:600;color:#fff;letter-spacing:.04em;font-size:15px}
+  .he__hint__arrow{width:1px;height:32px;background:linear-gradient(180deg,rgba(255,255,255,.6),transparent);animation:hint 1.6s ease-in-out infinite}
+  @keyframes hint{0%,100%{transform:translateY(0);opacity:.6}50%{transform:translateY(8px);opacity:1}}
+
+  /* after-section so you see what follows the effect */
+  .after{padding:140px 32px 160px;text-align:center;background:linear-gradient(180deg,#020812,#0B2E4F)}
+  .after h2{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(2.4rem,4vw,3.6rem);color:#fff;letter-spacing:-.012em}
+  .after h2 em{font-style:italic;color:#9cc0ef}
+  .after p{margin:20px auto 0;max-width:54ch;color:rgba(255,255,255,.65);font-size:1.05rem;line-height:1.7}
+  .after .cta{margin-top:40px;display:inline-flex;align-items:center;gap:8px;padding:13px 26px;background:#fff;color:#0B2E4F;border-radius:4px;font-weight:600;font-size:14px;text-decoration:none;transition:transform .2s}
+  .after .cta:hover{transform:translateY(-2px)}
+
+  @media(max-width:680px){
+    .he__frame{width:260px;height:420px}
+    .he__title{letter-spacing:-.035em}
+  }
+</style>
+</head>
+<body>
+
+<div class="mock-tag"><b>MOCKUP</b> &nbsp;Hero Expand · Bioluminescent</div>
+<a href="/" class="mock-back">← Back to main site</a>
+
+<section class="he" id="he">
+  <div class="he__pin">
+    <div class="he__bg" aria-hidden="true"></div>
+    <div class="he__frame" id="frame">
+      <video class="he__frame-vid" autoplay muted loop playsinline preload="auto" poster="/hero-stars-poster.jpg" aria-hidden="true">
+        <source src="/hero-stars.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="he__overlay">
+      <h1 class="he__title">La forza della <em>visione</em>.</h1>
+      <div class="he__hint" id="hint">
+        <b>Polaris Group</b>
+        Scorri per espandere
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="after">
+  <h2>Al servizio delle <em>imprese.</em></h2>
+  <p>Formazione, finanza non bancaria e advisory direzionale per le PMI italiane. Un solo interlocutore, una rete di specialisti dietro.</p>
+  <a class="cta" href="/">Torna al sito principale →</a>
+</section>
+
+<script>
+  const section = document.getElementById('he');
+  const frame = document.getElementById('frame');
+  const hint = document.getElementById('hint');
+  const title = document.querySelector('.he__title');
+
+  // initial frame footprint
+  const START_W = window.innerWidth <= 680 ? 260 : 340;
+  const START_H = window.innerWidth <= 680 ? 420 : 540;
+  const START_R = 28;
+
+  function update() {
+    const rect = section.getBoundingClientRect();
+    const scrollRange = rect.height - window.innerHeight;
+    const p = Math.min(1, Math.max(0, -rect.top / scrollRange));
+    // ease-out for a smoother arrival at full-screen
+    const e = 1 - Math.pow(1 - p, 2);
+
+    const targetW = window.innerWidth;
+    const targetH = window.innerHeight;
+    const w = START_W + (targetW - START_W) * e;
+    const h = START_H + (targetH - START_H) * e;
+    const r = START_R * (1 - e);
+
+    frame.style.width = w + 'px';
+    frame.style.height = h + 'px';
+    frame.style.borderRadius = r + 'px';
+
+    // fade the hint as the frame swallows it
+    hint.style.opacity = 1 - Math.min(1, e * 2.2);
+
+    // gently scale the title as the frame grows so it stays balanced
+    const s = 1 + 0.08 * e;
+    title.style.transform = `scale(${s})`;
+  }
+
+  let ticking = false;
+  function onScroll() {
+    if (!ticking) {
+      requestAnimationFrame(() => { update(); ticking = false; });
+      ticking = true;
+    }
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', update);
+  update();
+</script>
+
+</body>
+</html>

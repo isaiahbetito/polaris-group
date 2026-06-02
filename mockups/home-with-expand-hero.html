@@ -96,7 +96,7 @@
   .hero .eyebrow::before{background:rgba(184,194,204,.5)}
   .hero .eyebrow::after{content:"";width:30px;height:1px;background:rgba(184,194,204,.5)}
   .hero h1{font-size:clamp(2.8rem,7.4vw,5.8rem);line-height:1.04;color:#fff;max-width:none;margin:0 auto;text-shadow:0 2px 50px rgba(0,0,0,.6)}
-  .hero h1 em{font-style:italic;color:#fff}
+  .hero h1 em{font-style:italic;background:linear-gradient(180deg,#6ea0d8,#2b5286);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
   .hero .lead{margin:32px auto 0;max-width:52ch;font-size:1.25rem;color:var(--silver-2);text-shadow:0 1px 20px rgba(0,0,0,.5)}
   .hero__cta{margin-top:42px;display:flex;gap:16px;flex-wrap:wrap;justify-content:center}
   .hero .btn--primary{background:#fff;color:var(--navy-deep)}
@@ -161,27 +161,26 @@
 
   /* SERVICES */
   .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-  .svc{position:relative;overflow:hidden;
-    background:linear-gradient(155deg,#f4f6f9 0%,#dde2e8 38%,#c7cfd8 72%,#b6bfc9 100%);
-    border:1px solid rgba(214,220,226,.7);border-radius:4px;padding:40px 32px 32px;display:flex;flex-direction:column;
-    box-shadow:inset 0 1px 0 rgba(255,255,255,.6),inset 0 -1px 0 rgba(11,46,79,.06);
-    transition:transform .35s var(--ease),box-shadow .35s var(--ease),border-color .35s var(--ease),background .35s var(--ease)}
-  .svc::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;z-index:2;background:linear-gradient(90deg,#9cc0ef,#335f93);transform:scaleX(0);transform-origin:left;transition:transform .35s var(--ease)}
-  .svc::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(120% 90% at 18% -10%,rgba(255,255,255,.75),transparent 55%),linear-gradient(135deg,rgba(255,255,255,.18) 0%,transparent 32%,transparent 68%,rgba(255,255,255,.12) 100%);opacity:.85;transition:opacity .35s var(--ease)}
+  .svc{position:relative;overflow:hidden;background-color:#0B2E4F;
+    background-image:linear-gradient(155deg,rgba(11,46,79,.62),rgba(8,35,60,.78)), var(--svc-bg, none);
+    background-size:cover, cover;background-position:center, center;background-repeat:no-repeat, no-repeat;
+    border:1px solid rgba(11,46,79,.4);border-radius:3px;padding:38px 32px 32px;display:flex;flex-direction:column;
+    transition:transform .35s var(--ease),box-shadow .35s var(--ease),border-color .35s var(--ease),background-image .35s var(--ease)}
+  .svc::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;z-index:2;background:linear-gradient(90deg,#9cc0ef,#335f93);transform:scaleX(0);transform-origin:left;transition:transform .3s var(--ease)}
   .svc>*{position:relative;z-index:1}
-  .svc:hover{transform:translateY(-6px);border-color:rgba(11,46,79,.28);
-    background:linear-gradient(155deg,#f9fbfd 0%,#e6ebf0 38%,#d0d8e0 72%,#bec7d1 100%);
-    box-shadow:inset 0 1px 0 rgba(255,255,255,.8),inset 0 -1px 0 rgba(11,46,79,.08),0 28px 60px -28px rgba(0,0,0,.45),0 0 56px -10px rgba(180,195,215,.6)}
+  .svc:hover{transform:translateY(-6px);border-color:rgba(127,168,220,.45);
+    background-image:linear-gradient(155deg,rgba(11,46,79,.42),rgba(8,35,60,.58)), var(--svc-bg, none);
+    box-shadow:0 28px 60px -28px rgba(0,0,0,.7),0 0 56px -4px rgba(11,46,79,.55)}
   .svc:hover::before{transform:scaleX(1)}
-  .svc:hover::after{opacity:1}
-  .svc__num{align-self:flex-start;background:var(--navy-deep);color:#fff;padding:9px 16px;border-radius:6px;font-size:1.2rem;font-weight:600;letter-spacing:.08em;line-height:1;transition:background .3s var(--ease),color .3s var(--ease)}
-  .svc__name{font-size:clamp(1.9rem,2.6vw,2.4rem);color:var(--navy-deep);margin:18px 0 4px}
-  .svc__kicker{font-family:var(--serif);font-style:italic;font-size:1.25rem;color:var(--steel)}
+  .svc:hover .svc__num{background:#fff;color:var(--navy-deep)}
+  .svc__num{align-self:flex-start;background:var(--navy-deep);color:#fff;padding:10px 18px;border-radius:8px;font-size:1.4rem;font-weight:600;letter-spacing:.06em;line-height:1;transition:background .3s var(--ease),color .3s var(--ease)}
+  .svc__name{font-size:clamp(1.9rem,2.6vw,2.4rem);color:#fff;margin:14px 0 4px;text-shadow:0 2px 14px rgba(6,14,22,.6)}
+  .svc__kicker{font-family:var(--serif);font-style:italic;font-size:1.25rem;color:var(--silver-1);text-shadow:0 1px 10px rgba(6,14,22,.55)}
   .svc__lead{margin-top:18px;font-size:.97rem;color:var(--silver-2);opacity:.95}
   .svc__meta{margin-top:auto;padding-top:24px}
   .svc__meta-label{display:block;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--silver-accent);margin-bottom:6px}
   .svc__meta-val{font-size:.9rem;color:var(--steel);font-weight:500}
-  .svc__cta{margin-top:22px;font-size:14px;font-weight:600;color:var(--navy-deep);transition:color .3s var(--ease)}
+  .svc__cta{margin-top:22px;font-size:14px;font-weight:600;color:#9cc0ef;transition:color .3s var(--ease)}
 
   /* METHOD */
   .method{position:relative;overflow:hidden;background:#06182c}
@@ -266,10 +265,10 @@
   /* TEAM */
   .team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:36px 24px;margin-top:8px}
   .team-card{text-align:center}
-  .team-card__photo{width:148px;height:148px;margin:0 auto 18px;border-radius:50%;overflow:hidden;background:var(--navy-deep);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:2.6rem;font-weight:500;box-shadow:0 0 0 1px var(--silver-1),0 0 0 6px var(--white),0 0 0 7px var(--silver-2);transition:transform .25s var(--ease)}
+  .team-card__photo{width:108px;height:108px;margin:0 auto 16px;border-radius:50%;overflow:hidden;background:var(--navy-deep);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:2rem;font-weight:500;box-shadow:0 0 0 1px var(--silver-1),0 0 0 6px var(--white),0 0 0 7px var(--silver-2);transition:transform .25s var(--ease)}
   .team-card__photo img{width:100%;height:100%;object-fit:cover;object-position:center 14%}
   .team-card:hover .team-card__photo{transform:translateY(-4px)}
-  .team-card--lead .team-card__photo{background:linear-gradient(160deg,#0B2E4F,#1A3A5F)}
+  .team-card--lead .team-card__photo{width:128px;height:128px;font-size:2.4rem;background:linear-gradient(160deg,#0B2E4F,#1A3A5F)}
   .team-card__name{font-family:var(--serif);font-size:1.3rem;color:var(--ink)}
   .team-card__role{margin-top:2px;font-size:.78rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--silver-accent)}
 
@@ -317,6 +316,9 @@
   .tcards-col{display:flex;flex-direction:column;align-items:center}
   .tcards-col .tstack{margin:8px 0 0}
   .tcards-col .tnav{margin-top:30px;transform:translateX(52px)} /* centered under the cards, nudged a little right toward the fan */
+  /* navy-blue gradient emphasis with a thin white outline so it reads on the navy bg */
+  #testimonials h2 em.hl{background:linear-gradient(180deg,#9cc0ef,#335f93);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;
+    -webkit-text-stroke:.7px rgba(255,255,255,.9);paint-order:stroke fill}
   @media(max-width:900px){
     .tlayout{grid-template-columns:1fr;gap:40px}
     .tphoto img{height:360px;object-position:30% 28%}
@@ -359,26 +361,46 @@
     .fade{opacity:1!important;transform:none!important}
     .hero__video{display:none} /* poster background shows instead */
   }
-
-  /* Get-in-Touch CTA block */
-  .git{max-width:680px;margin:0 auto;text-align:center}
-  .git__eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--silver-accent);margin-bottom:24px}
-  .git__eyebrow::before{content:"—"}
-  .git__title{font-family:var(--serif);font-weight:500;font-size:clamp(2rem,4vw,3.2rem);color:var(--navy-deep);line-height:1.1;letter-spacing:-.012em;margin:0}
-  .git__title em{font-style:italic;color:var(--steel)}
-  .git__sub{margin:22px auto 36px;font-size:1rem;color:var(--ink);opacity:.7;line-height:1.6;max-width:none;white-space:nowrap}
-  @media(max-width:680px){.git__sub{white-space:normal;max-width:46ch}}
-  .git__box{display:flex;align-items:center;justify-content:space-between;gap:16px;background:#fff;border:1px solid var(--silver-2);border-radius:8px;padding:13px 16px 13px 22px;max-width:520px;margin:0 auto 22px}
-  .git__email{font-family:"Courier New",ui-monospace,monospace;font-size:.95rem;color:var(--navy-deep);font-weight:500;letter-spacing:.01em}
-  .git__copy{background:transparent;border:1px solid var(--silver-1);border-radius:6px;padding:8px 16px;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--navy-deep);cursor:pointer;transition:background .2s,border-color .2s,color .2s;font-family:var(--sans)}
-  .git__copy:hover{background:var(--navy-deep);color:#fff;border-color:var(--navy-deep)}
-  .git__copy.copied{background:var(--navy-deep);color:#fff;border-color:var(--navy-deep)}
-  .git__cta{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--navy-deep);color:#fff;padding:14px 32px;border-radius:6px;font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;transition:transform .2s var(--ease),background .2s}
-  .git__cta:hover{transform:translateY(-2px);background:var(--navy-mid)}
-  @media(max-width:560px){.git__box{flex-direction:column;align-items:stretch;text-align:center}.git__copy{width:100%}}
 </style>
 </head>
 <body>
+
+<style>
+  /* ---- MOCKUP BANNER + BACK LINK ---- */
+  .mock-tag{position:fixed;top:18px;left:18px;z-index:200;background:rgba(0,0,0,.4);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.22);padding:8px 14px;border-radius:999px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.82);font-family:Inter,sans-serif;font-weight:500}
+  .mock-tag b{color:#7FA8DC;font-weight:700}
+  .mock-back{position:fixed;top:18px;right:18px;z-index:200;background:rgba(0,0,0,.4);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.22);padding:8px 16px;border-radius:999px;font-size:12px;font-weight:600;color:#fff;text-decoration:none;font-family:Inter,sans-serif;transition:background .2s}
+  .mock-back:hover{background:rgba(0,0,0,.6)}
+
+  /* ---- SCROLL-EXPAND HERO ---- */
+  .hex{position:relative;height:200vh;background:#020812}
+  .hex__pin{position:sticky;top:0;height:100vh;overflow:hidden}
+  .hex__bg{position:absolute;inset:0;background-image:url(/img/hero-biolum.jpg);background-size:cover;background-position:center;filter:brightness(.85) saturate(1.04);z-index:0}
+  .hex__bg::after{content:"";position:absolute;inset:0;background:radial-gradient(90% 80% at 50% 50%,transparent 0%,rgba(0,0,0,.18) 100%);pointer-events:none}
+  .hex__frame{position:absolute;left:50%;top:50%;translate:-50% -50%;width:360px;height:560px;border-radius:28px;overflow:hidden;box-shadow:0 40px 100px -20px rgba(0,0,0,.7),0 0 0 1px rgba(127,168,220,.22) inset;will-change:width,height,border-radius;z-index:2}
+  .hex__frame-vid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .hex__frame::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(0,0,0,.45) 100%);pointer-events:none}
+  .hex__overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;pointer-events:none;z-index:3;padding:80px 32px 200px}
+  .hex__overlay .polestar-focal{width:60px;height:60px;margin-bottom:18px;fill:#fff;opacity:.92;filter:drop-shadow(0 0 30px rgba(255,255,255,.4));animation:hex-pulse 4s ease-in-out infinite}
+  @keyframes hex-pulse{0%,100%{opacity:.85;transform:scale(1)}50%{opacity:1;transform:scale(1.06)}}
+  .hex__title{font-family:var(--serif);font-weight:500;font-size:clamp(2.4rem,5.5vw,5rem);line-height:1.05;letter-spacing:-.02em;color:#fff;mix-blend-mode:difference;max-width:18ch;margin:0}
+  .hex__title em{font-style:italic;font-weight:400;color:#9cc0ef}
+  .hex__lead{margin:22px 0 0;font-size:1.05rem;color:rgba(255,255,255,.85);max-width:52ch;text-shadow:0 1px 16px rgba(0,0,0,.6);transition:opacity .3s}
+  .hex__cta{margin-top:30px;display:flex;gap:14px;flex-wrap:wrap;justify-content:center;pointer-events:auto;transition:opacity .3s}
+  .hex__cta .btn--primary{background:#fff;color:var(--navy-deep)}
+  .hex__cta .btn--ghost{border:1px solid rgba(255,255,255,.55);color:#fff;background:transparent}
+  .hex__cta .btn--ghost:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+  .hex__hint{position:absolute;left:50%;bottom:140px;transform:translateX(-50%);font-family:var(--sans);font-size:13px;color:rgba(255,255,255,.85);display:flex;flex-direction:column;align-items:center;gap:6px;opacity:1;transition:opacity .3s;text-align:center;z-index:4}
+  .hex__hint b{font-weight:600;color:#fff;letter-spacing:.04em;font-size:15px}
+  @media(max-width:680px){
+    .hex__frame{width:280px;height:440px}
+    .hex__title{letter-spacing:-.015em}
+    .hex__hint{bottom:120px}
+  }
+</style>
+
+<div class="mock-tag"><b>MOCKUP</b> &nbsp;Home · Scroll-Expand Hero</div>
+<a href="/" class="mock-back">← Back to live site</a>
 
 <nav class="nav" id="nav">
   <div class="nav__inner">
@@ -402,26 +424,30 @@
   </div>
 </nav>
 
-<!-- HERO -->
-<section class="hero">
-  <video class="hero__video" autoplay muted loop playsinline preload="auto" poster="/hero-stars-poster.jpg">
-    <source src="/hero-stars.mp4" type="video/mp4">
-  </video>
-  <div class="hero__tint"></div>
-  <div class="hero__grade"></div>
-
-  <svg class="polestar-focal" viewBox="0 0 100 100" aria-hidden="true">
-    <path d="M50 4 L57 43 L96 50 L57 57 L50 96 L43 57 L4 50 L43 43 Z"/>
-  </svg>
-
-  <div class="container hero__inner">
-    <span class="eyebrow fade s1" data-it="Gruppo Polaris" data-en="Polaris Group">Gruppo Polaris</span>
-    <h1 class="fade s2" data-it-html="La forza della <em>visione</em>,<br>al servizio delle imprese" data-en-html="The power of <em>vision</em>,<br>at the service of businesses">La forza della <em>visione</em>,<br>al servizio delle imprese</h1>
-    <div class="hero__cta fade s4">
-      <a href="/servizi.html" class="btn btn--primary" data-it="Scopri i servizi" data-en="See our services">Scopri i servizi</a>
-      <a href="/contatti.html" class="btn btn--ghost" data-it="Parla con noi &rarr;" data-en="Talk to us &rarr;">Parla con noi &rarr;</a>
+<!-- HERO — scroll-expand mockup -->
+<section class="hex" id="hexhero">
+  <div class="hex__pin">
+    <div class="hex__bg" aria-hidden="true"></div>
+    <div class="hex__frame" id="hexframe">
+      <video class="hex__frame-vid" autoplay muted loop playsinline preload="auto" poster="/hero-stars-poster.jpg" aria-hidden="true">
+        <source src="/hero-stars.mp4" type="video/mp4">
+      </video>
     </div>
-  </div>
+    <div class="hex__overlay">
+      <svg class="polestar-focal" viewBox="0 0 100 100" aria-hidden="true">
+        <path d="M50 4 L57 43 L96 50 L57 57 L50 96 L43 57 L4 50 L43 43 Z"/>
+      </svg>
+      <h1 class="hex__title" data-it-html="La forza della <em>visione</em>,<br>al servizio delle imprese." data-en-html="The power of <em>vision</em>,<br>at the service of businesses.">La forza della <em>visione</em>,<br>al servizio delle imprese.</h1>
+      <p class="hex__lead" data-it="Formazione, finanza non bancaria e advisory per PMI italiane, commercialisti e consulenti del lavoro." data-en="Training, non-bank finance, and strategic advisory for Italian SMEs, accountants, and labor consultants.">Formazione, finanza non bancaria e advisory per PMI italiane, commercialisti e consulenti del lavoro.</p>
+      <div class="hex__cta">
+        <a href="/servizi.html" class="btn btn--primary" data-it="Scopri i servizi" data-en="See our services">Scopri i servizi</a>
+        <a href="/contatti.html" class="btn btn--ghost" data-it="Parla con noi &rarr;" data-en="Talk to us &rarr;">Parla con noi &rarr;</a>
+      </div>
+    </div>
+    <div class="hex__hint" id="hexhint">
+      <b>Polaris Group</b>
+      Scorri per espandere
+    </div>
 
   <div class="marquee">
     <span class="marquee__label" data-it="— Riconosciuti dai principali fondi interprofessionali" data-en="— Recognized by the leading interprofessional funds">— Riconosciuti dai principali fondi interprofessionali</span>
@@ -453,13 +479,14 @@
       </div>
     </div>
   </div>
+  </div><!-- /.hex__pin -->
 </section>
 
 <!-- BRAND STATEMENT -->
 <section class="statement">
   <div class="container statement__inner reveal">
     <img class="statement__logo" src="/img/logo-lockup.png" alt="Polaris Group">
-    <h2 data-it-html="Un riferimento solido<em>Per ogni decisione</em>" data-en-html="A steady reference point<em>For every decision</em>">Un riferimento solido<em>Per ogni decisione</em></h2>
+    <h2 data-it-html="Un riferimento solido.<em>Per ogni decisione.</em>" data-en-html="A steady reference point.<em>For every decision.</em>">Un riferimento solido.<em>Per ogni decisione.</em></h2>
   </div>
 </section>
 
@@ -467,10 +494,10 @@
 <section class="section section--navy" id="servizi">
   <div class="container">
     <div class="section__head reveal">
-      <h2 data-it-html="I nostri <em class=&quot;hl&quot;>Servizi</em>" data-en-html="Our <em class=&quot;hl&quot;>Services</em>">I nostri <em class="hl">Servizi</em></h2>
+      <h2 data-it-html="I nostri <em class=&quot;hl&quot;>Servizi.</em>" data-en-html="Our <em class=&quot;hl&quot;>Services.</em>">I nostri <em class="hl">Servizi.</em></h2>
     </div>
     <div class="svc-grid">
-      <a class="svc reveal" href="/servizi.html#formazione">
+      <a class="svc reveal" href="/servizi.html#formazione" style="--svc-bg:url(/img/svc-card-1.jpg)">
         <span class="svc__num">01</span>
         <h3 class="svc__name" data-it="Formazione" data-en="Training">Formazione</h3>
         <span class="svc__kicker" data-it="Obbligatoria, su misura, finanziata." data-en="Mandatory, tailor-made, funded.">Obbligatoria, su misura, finanziata.</span>
@@ -478,7 +505,7 @@
           <div class="svc__cta" data-it="Scopri →" data-en="Learn more →">Scopri →</div>
         </div>
       </a>
-      <a class="svc reveal" href="/servizi.html#invoice-trading">
+      <a class="svc reveal" href="/servizi.html#invoice-trading" style="--svc-bg:url(/img/svc-card-2.jpg)">
         <span class="svc__num">02</span>
         <h3 class="svc__name" data-it="Invoice Trading" data-en="Invoice Trading">Invoice Trading</h3>
         <span class="svc__kicker" data-it="Liquidità senza banca." data-en="Liquidity without the bank.">Liquidità senza banca.</span>
@@ -486,7 +513,7 @@
           <div class="svc__cta" data-it="Scopri →" data-en="Learn more →">Scopri →</div>
         </div>
       </a>
-      <a class="svc reveal" href="/servizi.html#advisory">
+      <a class="svc reveal" href="/servizi.html#advisory" style="--svc-bg:url(/img/svc-card-3.jpg)">
         <span class="svc__num">03</span>
         <h3 class="svc__name" data-it="Advisory" data-en="Advisory">Advisory</h3>
         <span class="svc__kicker" data-it="Le decisioni che definiscono l’impresa." data-en="The decisions that define the business.">Le decisioni che definiscono l’impresa.</span>
@@ -507,8 +534,8 @@
   </div>
   <div class="container method__inner reveal">
     <svg class="method__star" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 3 L57.5 42.5 L97 50 L57.5 57.5 L50 97 L42.5 57.5 L3 50 L42.5 42.5 Z"/></svg>
-    <h2 data-it-html="Un solo interlocutore<br><em class=&quot;hl&quot;>Una rete di specialisti dietro</em>" data-en-html="One point of contact<br><em class=&quot;hl&quot;>A network of specialists behind</em>">Un solo interlocutore<br><em class="hl">Una rete di specialisti dietro</em></h2>
-    <a href="/contatti.html" class="btn btn--ghost" style="margin-top:48px" data-it="Scopri Come" data-en="Discover How">Scopri Come</a>
+    <h2 data-it-html="Un solo interlocutore.<br><em class=&quot;hl&quot;>Una rete di specialisti dietro.</em>" data-en-html="One point of contact.<br><em class=&quot;hl&quot;>A network of specialists behind.</em>">Un solo interlocutore.<br><em class="hl">Una rete di specialisti dietro.</em></h2>
+    <a href="/contatti.html" class="btn btn--ghost" data-it="Scopri come" data-en="Discover how">Scopri come</a>
   </div>
 </section>
 
@@ -516,7 +543,7 @@
 <section class="section">
   <div class="container">
     <div class="section__head reveal">
-      <h2 data-it-html="Perché <em class=&quot;hl&quot;>Polaris Group</em>" data-en-html="Why <em class=&quot;hl&quot;>Polaris Group</em>">Perché <em class="hl">Polaris Group</em></h2>
+      <h2 data-it-html="Perché <em class=&quot;hl&quot;>noi.</em>" data-en-html="Why <em class=&quot;hl&quot;>Us.</em>">Perché <em class="hl">noi.</em></h2>
     </div>
     <div class="stats reveal">
       <div class="stat"><div class="stat__num"><span class="count" data-target="20000">0</span>+</div><div class="stat__label" data-it="Persone formate dal 2015" data-en="People trained since 2015">Persone formate dal 2015</div></div>
@@ -599,7 +626,7 @@
 <section class="section" id="team">
   <div class="container">
     <div class="section__head reveal">
-      <h2 data-it-html="Conosci chi <em class=&quot;hl&quot;>guida Polaris</em>" data-en-html="Meet the people <em class=&quot;hl&quot;>behind Polaris</em>">Conosci chi <em class="hl">guida Polaris</em></h2>
+      <h2 data-it-html="Conosci chi <em class=&quot;hl&quot;>guida Polaris.</em>" data-en-html="Meet the people <em class=&quot;hl&quot;>behind Polaris.</em>">Conosci chi <em class="hl">guida Polaris.</em></h2>
     </div>
     <div class="team-grid reveal">
       <a href="/team/cesare-trebeschi.html" class="team-card team-card--lead"><div class="team-card__photo"><img src="/img/cesare-trebeschi.jpg" alt="Cesare Trebeschi"></div><div class="team-card__name">Cesare Trebeschi</div><div class="team-card__role" data-it="Fondatore &amp; Guida" data-en="Founder &amp; Lead">Fondatore &amp; Guida</div></a>
@@ -621,7 +648,7 @@
 <section class="section section--navy" id="testimonials">
   <div class="container">
     <div class="section__head reveal">
-      <h2 data-it-html="Cosa dicono i <em class=&quot;hl&quot;>clienti di noi</em>" data-en-html="What <em class=&quot;hl&quot;>clients say about us</em>">Cosa dicono i <em class="hl">clienti di noi</em></h2>
+      <h2 data-it-html="Cosa dicono i <em class=&quot;hl&quot;>clienti di noi.</em>" data-en-html="What <em class=&quot;hl&quot;>clients say about us.</em>">Cosa dicono i <em class="hl">clienti di noi.</em></h2>
     </div>
     <div class="quote-grid reveal">
       <article class="qcard">
@@ -646,16 +673,9 @@
 <!-- CTA -->
 <section class="section" id="contatti">
   <div class="container container--narrow text-center reveal">
-    <div class="git">
-      <div class="git__eyebrow" data-it="Parliamone" data-en="Get in touch">Parliamone</div>
-      <h2 class="git__title" data-it-html="Parliamo del tuo <em>prossimo passo</em>" data-en-html="Let's talk about your <em>next step</em>">Parliamo del tuo <em>prossimo passo</em></h2>
-      <p class="git__sub" data-it="Scrivici una mail all'indirizzo qui sotto e ci faremo sentire." data-en="Send us a message at the address below and we'll be in touch.">Scrivici una mail all'indirizzo qui sotto e ci faremo sentire.</p>
-      <div class="git__box">
-        <span class="git__email">info@polaris-group.it</span>
-        <button class="git__copy" type="button" data-copy="info@polaris-group.it">COPY</button>
-      </div>
-      <a class="git__cta" href="mailto:info@polaris-group.it" data-it-html="Apri nella tua mail &rarr;" data-en-html="Open in email app &rarr;">Open in email app →</a>
-    </div>
+    <h2 style="font-size:clamp(2.2rem,4.4vw,3.4rem);color:var(--ink)" data-it="Parliamo del tuo prossimo passo." data-en="Let's talk about your next step.">Parliamo del tuo prossimo passo.</h2>
+    <p class="lead" style="margin:18px auto 32px;max-width:48ch;color:var(--steel)" data-it="Scrivici una mail o prenota una chiamata. Rispondiamo entro 24 ore lavorative." data-en="Email us or book a call. We reply within 24 working hours.">Scrivici una mail o prenota una chiamata. Rispondiamo entro 24 ore lavorative.</p>
+    <a href="mailto:info@polaris-group.it" class="btn btn--primary" data-it="Contattaci" data-en="Get in touch">Contattaci</a>
   </div>
 </section>
 
@@ -723,22 +743,6 @@
   function countUp(el){var target=+el.dataset.target,dur=1600,t0=null;function step(ts){if(!t0)t0=ts;var p=Math.min((ts-t0)/dur,1);el.textContent=Math.round((1-Math.pow(1-p,3))*target).toLocaleString('it-IT');if(p<1)requestAnimationFrame(step);}requestAnimationFrame(step);}
   var cio=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){countUp(e.target);cio.unobserve(e.target);}});},{threshold:.6});
   document.querySelectorAll('.count').forEach(function(el){cio.observe(el);});
-
-  // copy-to-clipboard for .git__copy buttons
-  document.querySelectorAll('.git__copy').forEach(function(btn){
-    btn.addEventListener('click', function(){
-      var v = btn.getAttribute('data-copy') || (btn.previousElementSibling ? btn.previousElementSibling.textContent.trim() : '');
-      if(!v) return;
-      var done = function(){
-        var l = (function(){try{return localStorage.getItem('polaris-lang')==='en'?'en':'it'}catch(e){return 'it'}})();
-        var labels = { it:{copy:'Copia',copied:'Copiato'}, en:{copy:'Copy',copied:'Copied'} };
-        btn.textContent = labels[l].copied; btn.classList.add('copied');
-        setTimeout(function(){ btn.textContent = labels[l].copy; btn.classList.remove('copied'); }, 1800);
-      };
-      if(navigator.clipboard&&navigator.clipboard.writeText){ navigator.clipboard.writeText(v).then(done).catch(function(){}); }
-      else { var t=document.createElement('textarea'); t.value=v; document.body.appendChild(t); t.select(); try{document.execCommand('copy'); done();}catch(e){} document.body.removeChild(t); }
-    });
-  });
 })();
 </script>
 
@@ -792,5 +796,43 @@
   render();
 })();
 </script>
+
+<script>
+/* Scroll-expand hero — pinned 200vh, frame grows to viewport, content fades */
+(function(){
+  var section = document.getElementById('hexhero');
+  var frame   = document.getElementById('hexframe');
+  var hint    = document.getElementById('hexhint');
+  var lead    = document.querySelector('.hex__lead');
+  var cta     = document.querySelector('.hex__cta');
+  if (!section || !frame) return;
+
+  var START_W = window.innerWidth <= 680 ? 280 : 360;
+  var START_H = window.innerWidth <= 680 ? 440 : 560;
+  var START_R = 28;
+
+  function update(){
+    var rect = section.getBoundingClientRect();
+    var range = rect.height - window.innerHeight;
+    var p = Math.min(1, Math.max(0, -rect.top / range));
+    var e = 1 - Math.pow(1 - p, 2);
+    var tw = window.innerWidth;
+    var th = window.innerHeight;
+    frame.style.width = (START_W + (tw - START_W) * e) + 'px';
+    frame.style.height = (START_H + (th - START_H) * e) + 'px';
+    frame.style.borderRadius = (START_R * (1 - e)) + 'px';
+    if (hint) hint.style.opacity = 1 - Math.min(1, e * 2.2);
+    if (lead) lead.style.opacity = 1 - Math.min(1, e * 1.6);
+    if (cta)  cta.style.opacity  = 1 - Math.min(1, e * 1.6);
+  }
+
+  var ticking = false;
+  function onScroll(){ if (!ticking){ requestAnimationFrame(function(){ update(); ticking=false; }); ticking = true; } }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', update);
+  update();
+})();
+</script>
+
 </body>
 </html>

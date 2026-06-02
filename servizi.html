@@ -14,6 +14,8 @@
 <link rel="stylesheet" href="/assets/site.css">
 <style>
   .svc-block{max-width:1000px;margin:0 auto}
+  .svc-block--right{margin-left:auto;margin-right:0;text-align:right}
+  .svc-block--right .svc-block__lead{margin-left:auto}
   .svc-block__num{font-size:13px;font-weight:600;letter-spacing:.18em;color:var(--silver-accent)}
   .svc-block__name{font-family:var(--serif);font-size:clamp(2.4rem,5vw,3.6rem);color:var(--navy-deep);margin:10px 0 2px;line-height:1.04}
   .section--navy .svc-block__name{color:#fff}
@@ -22,7 +24,11 @@
   .svc-block__lead{margin-top:22px;font-size:1.08rem;line-height:1.7;color:var(--ink);opacity:.85;max-width:62ch}
   .section--navy .svc-block__lead{color:var(--silver-2);opacity:.95}
   .duo{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:40px}
-  .duo__card{background:var(--white);border:1px solid var(--silver-2);border-radius:4px;padding:30px 28px}
+  .duo__card{position:relative;overflow:hidden;background:var(--white);border:1px solid var(--silver-2);border-radius:4px;padding:30px 28px;transition:transform .3s var(--ease),border-color .3s var(--ease),box-shadow .3s var(--ease)}
+  .duo__card::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(115deg,transparent 30%,rgba(127,168,220,.22) 50%,transparent 70%);transform:translateX(-110%);transition:transform .9s var(--ease)}
+  .duo__card>*{position:relative;z-index:1}
+  .duo__card:hover{transform:translateY(-5px);border-color:var(--navy-deep);box-shadow:0 24px 50px -28px rgba(11,46,79,.4),0 0 40px -6px rgba(127,168,220,.3)}
+  .duo__card:hover::after{transform:translateX(110%)}
   .duo__card h4{font-family:var(--serif);font-size:1.4rem;color:var(--navy-deep);margin-bottom:8px}
   .duo__card p{font-size:.95rem;color:var(--ink);opacity:.82;line-height:1.55}
   .fund-strip{margin-top:44px;padding-top:32px;border-top:1px solid var(--silver-2)}
@@ -33,24 +39,31 @@
   .area-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
   .area{background:var(--white);border:1px solid var(--silver-2);border-radius:4px;padding:32px 28px;transition:transform .25s var(--ease),box-shadow .25s var(--ease),border-color .25s var(--ease)}
   .area:hover{transform:translateY(-5px);box-shadow:0 24px 50px -28px rgba(11,46,79,.3);border-color:var(--silver-1)}
-  .area__t{font-family:var(--serif);font-size:1.55rem;color:var(--navy-deep);margin-bottom:10px}
+  .area__t{font-family:var(--serif);font-weight:700;font-size:1.55rem;color:var(--navy-deep);margin-bottom:10px}
   .area__d{font-size:.95rem;color:var(--ink);opacity:.82;line-height:1.55;margin-bottom:16px}
   .area__list{list-style:none}
   .area__list li{position:relative;padding-left:18px;font-size:.9rem;color:var(--steel);margin-bottom:7px;line-height:1.4}
   .area__list li::before{content:"";position:absolute;left:0;top:9px;width:5px;height:5px;border-radius:50%;background:var(--silver-accent)}
   .fin-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px}
-  .fin{background:rgba(255,255,255,.05);border:1px solid rgba(184,194,204,.22);border-radius:4px;padding:32px 28px;backdrop-filter:blur(4px)}
+  .fin{position:relative;overflow:hidden;background:rgba(255,255,255,.05);border:1px solid rgba(184,194,204,.22);border-radius:4px;padding:32px 28px;backdrop-filter:blur(4px);transition:transform .3s var(--ease),border-color .3s var(--ease),background .3s var(--ease),box-shadow .3s var(--ease)}
+  .fin::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(115deg,transparent 30%,rgba(156,192,239,.18) 50%,transparent 70%);transform:translateX(-110%);transition:transform .9s var(--ease)}
+  .fin>*{position:relative;z-index:1}
+  .fin:hover{transform:translateY(-5px);background:rgba(255,255,255,.09);border-color:rgba(156,192,239,.45);box-shadow:0 24px 50px -28px rgba(0,0,0,.6),0 0 40px -6px rgba(156,192,239,.3)}
+  .fin:hover::after{transform:translateX(110%)}
   .fin__t{font-family:var(--serif);font-size:1.45rem;color:#fff;margin-bottom:6px}
   .fin__tag{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--silver-accent);margin-bottom:14px;display:block}
   .fin__list{list-style:none}
   .fin__list li{position:relative;padding-left:18px;font-size:.92rem;color:var(--silver-2);margin-bottom:8px;line-height:1.45}
   .fin__list li::before{content:"";position:absolute;left:0;top:9px;width:5px;height:5px;border-radius:50%;background:var(--silver-1)}
-  .adv-list{columns:2;column-gap:48px;margin:0;list-style:none}
+  .adv-list{columns:1;margin:0;list-style:none;max-width:680px}
   .adv-list li{break-inside:avoid;position:relative;padding:0 0 18px 26px;font-size:1.02rem;color:var(--ink);opacity:.85;line-height:1.5}
   .adv-list li::before{content:"";position:absolute;left:0;top:10px;width:7px;height:7px;border:1px solid var(--silver-accent);border-radius:50%}
-  .partner-cta{max-width:920px;margin:0 auto;background:var(--white);border:1px solid var(--silver-1);border-left:3px solid var(--silver-accent);border-radius:4px;padding:38px 42px}
+  .partner-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:1000px;margin:0 auto}
+  @media(max-width:760px){.partner-grid{grid-template-columns:1fr}}
+  .partner-cta{display:flex;flex-direction:column;max-width:none;background:var(--white);border:1px solid var(--silver-1);border-left:3px solid var(--silver-accent);border-radius:4px;padding:32px 32px;transition:transform .25s var(--ease),border-color .25s var(--ease),box-shadow .25s var(--ease)}
+  .partner-grid .partner-cta:hover{transform:translateY(-4px);border-left-color:var(--navy-deep);box-shadow:0 24px 50px -28px rgba(11,46,79,.3)}
   .partner-cta__tag{font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--silver-accent)}
-  .partner-cta__t{font-family:var(--serif);font-size:1.7rem;color:var(--navy-deep);margin:8px 0 12px}
+  .partner-cta__t{font-family:var(--serif);font-weight:700;font-size:1.7rem;color:var(--navy-deep);margin:8px 0 12px}
   .partner-cta__b{font-size:1rem;color:var(--ink);opacity:.85;line-height:1.6}
   .partner-cta__b strong{color:var(--navy-deep)}
   .partner-cta__link{display:inline-block;margin-top:16px;font-weight:600;font-size:14px;color:var(--navy-deep)}
@@ -124,9 +137,7 @@
 <main>
   <header class="page-head">
     <div class="container">
-      <span class="eyebrow eyebrow--center" data-it="Servizi" data-en="Services">Servizi</span>
-      <h1 data-it-html="Cosa facciamo per la tua <em>impresa.</em>" data-en-html="What we do for your <em>business.</em>">Cosa facciamo per la tua <em>impresa.</em></h1>
-      <p class="lead" data-it="Formazione finanziata, consulenza specialistica, finanza non bancaria e advisory direzionale. Un solo interlocutore, una rete di specialisti dietro." data-en="Funded training, specialist consulting, non-bank finance and strategic advisory. One point of contact, a network of specialists behind.">Formazione finanziata, consulenza specialistica, finanza non bancaria e advisory direzionale. Un solo interlocutore, una rete di specialisti dietro.</p>
+      <h1 data-it-html="Cosa facciamo per la tua <em>impresa</em>" data-en-html="What we do for your <em>business</em>">Cosa facciamo per la tua <em>impresa</em></h1>
     </div>
   </header>
 
@@ -139,7 +150,6 @@
     <div class="fmz-bg__grade" aria-hidden="true"></div>
     <div class="container">
       <div class="svc-block reveal">
-        <span class="svc-block__num">01</span>
         <h2 class="svc-block__name" data-it="Formazione" data-en="Training">Formazione</h2>
         <p class="svc-block__kicker" data-it="Obbligatoria, su misura, finanziata." data-en="Mandatory, tailor-made, funded.">Obbligatoria, su misura, finanziata.</p>
         <p class="svc-block__lead" data-it="Assistiamo le imprese nello sviluppo delle attività formative, individuando le fonti di finanziamento adatte. L’azienda scopre che — a costo zero — può intraprendere percorsi formativi per i propri collaboratori: il nostro lavoro viene pagato solo a finanziamento ottenuto e a formazione conclusa." data-en="We help companies develop their training, finding the right funding sources. A company discovers it can train its people at no cost: we are paid only once the funding is obtained and the training is complete.">Assistiamo le imprese nello sviluppo delle attività formative, individuando le fonti di finanziamento adatte. L’azienda scopre che — a costo zero — può intraprendere percorsi formativi per i propri collaboratori: il nostro lavoro viene pagato solo a finanziamento ottenuto e a formazione conclusa.</p>
@@ -169,12 +179,79 @@
     </div>
   </section>
 
+  <!-- INVOICE TRADING / FINANZA -->
+  <section class="section section--navy" id="invoice-trading">
+    <video class="cine-bg" autoplay muted loop playsinline preload="auto" poster="/img/invoice-bg.jpg" aria-hidden="true">
+      <source src="/img/invoice-bg.mp4" type="video/mp4">
+    </video>
+    <div class="cine-bg__tint" aria-hidden="true"></div>
+    <div class="cine-bg__grade" aria-hidden="true"></div>
+    <div class="container">
+      <div class="svc-block svc-block--right reveal">
+        <h2 class="svc-block__name" data-it="Invoice Trading" data-en="Invoice Trading">Invoice Trading</h2>
+        <p class="svc-block__kicker" data-it="Liquidità senza banca." data-en="Liquidity without the bank.">Liquidità senza banca.</p>
+        <p class="svc-block__lead" data-it="Le aziende falliscono per cassa, non per debiti. Diversifichiamo le fonti di approvvigionamento finanziario oltre il canale bancario tradizionale, con strumenti che non impattano la Centrale Rischi e non consumano i castelletti. Servizio erogato tramite Hazard srl, società del Gruppo." data-en="Companies fail for cash, not for debt. We diversify funding sources beyond the traditional bank channel, with tools that don't affect the credit registry or use up credit lines. Service delivered through Hazard srl, a Group company.">Le aziende falliscono per cassa, non per debiti. Diversifichiamo le fonti di approvvigionamento finanziario oltre il canale bancario tradizionale, con strumenti che non impattano la Centrale Rischi e non consumano i castelletti. Servizio erogato tramite Hazard srl, società del Gruppo.</p>
+      </div>
+      <div class="fin-grid reveal" style="max-width:1000px;margin-left:auto;margin-right:auto">
+        <article class="fin">
+          <span class="fin__tag">OAM M354-2015</span>
+          <h3 class="fin__t" data-it="Mediazione creditizia" data-en="Credit brokerage">Mediazione creditizia</h3>
+          <ul class="fin__list">
+            <li data-it="Banche tradizionali e di “secondo livello”" data-en="Traditional and “second-tier” banks">Banche tradizionali e di “secondo livello”</li>
+            <li data-it="Factor e leasing" data-en="Factoring &amp; leasing">Factor e leasing</li>
+            <li data-it="Pianificazione delle linee di credito" data-en="Credit line planning">Pianificazione delle linee di credito</li>
+          </ul>
+        </article>
+        <article class="fin">
+          <span class="fin__tag" data-it="Direzione finanziaria" data-en="Financial direction">Direzione finanziaria</span>
+          <h3 class="fin__t" data-it="Servizi finanziari" data-en="Financial services">Servizi finanziari</h3>
+          <ul class="fin__list">
+            <li data-it="CFO in outsourcing e Second Opinion" data-en="Outsourced CFO &amp; Second Opinion">CFO in outsourcing e Second Opinion</li>
+            <li data-it="Controllo di gestione e analisi cash flow" data-en="Management control &amp; cash-flow analysis">Controllo di gestione e analisi cash flow</li>
+            <li data-it="Analisi Centrale Rischi e garanzie" data-en="Credit registry &amp; guarantees analysis">Analisi Centrale Rischi e garanzie</li>
+          </ul>
+        </article>
+        <article class="fin">
+          <span class="fin__tag" data-it="Piattaforme regolamentate" data-en="Regulated platforms">Piattaforme regolamentate</span>
+          <h3 class="fin__t" data-it="Credito a mercato" data-en="Market credit">Credito a mercato</h3>
+          <ul class="fin__list">
+            <li data-it="Invoice trading: cessione di fatture a investitori" data-en="Invoice trading: sale of invoices to investors">Invoice trading: cessione di fatture a investitori</li>
+            <li data-it="Minibond e titoli di debito" data-en="Minibonds &amp; debt securities">Minibond e titoli di debito</li>
+            <li data-it="Operazioni di equity, M&amp;A e supply chain" data-en="Equity, M&amp;A and supply-chain operations">Operazioni di equity, M&amp;A e supply chain</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ADVISORY -->
+  <section class="section section--navy" id="advisory">
+    <video class="cine-bg" autoplay muted loop playsinline preload="auto" poster="/img/advisory-bg.jpg" aria-hidden="true">
+      <source src="/img/advisory-bg.mp4" type="video/mp4">
+    </video>
+    <div class="cine-bg__tint" aria-hidden="true"></div>
+    <div class="cine-bg__grade" aria-hidden="true"></div>
+    <div class="container">
+      <div class="svc-block reveal">
+        <h2 class="svc-block__name" data-it="Advisory" data-en="Advisory">Advisory</h2>
+        <p class="svc-block__kicker" data-it="Le scelte che non si delegano." data-en="The decisions you can't delegate.">Le scelte che non si delegano.</p>
+        <p class="svc-block__lead" data-it="Accanto alla proprietà nelle decisioni strategiche, fino al momento in cui la scelta prende forma." data-en="Alongside ownership in strategic decisions, right up to the moment the choice takes shape.">Accanto alla proprietà nelle decisioni strategiche, fino al momento in cui la scelta prende forma.</p>
+      <ul class="adv-list" style="margin-top:32px">
+        <li data-it="Riassetti organizzativi e dei processi" data-en="Organizational &amp; process restructuring">Riassetti organizzativi e dei processi</li>
+        <li data-it="Passaggi generazionali e governance familiare" data-en="Generational transitions &amp; family governance">Passaggi generazionali e governance familiare</li>
+        <li data-it="Gestione finanziaria ed efficientamento" data-en="Financial management &amp; efficiency">Gestione finanziaria ed efficientamento</li>
+        <li data-it="Preparazione a operazioni straordinarie (M&amp;A, ingresso soci)" data-en="Preparation for extraordinary operations (M&amp;A, new partners)">Preparazione a operazioni straordinarie (M&amp;A, ingresso soci)</li>
+        <li data-it="Coordinamento dei tavoli con commercialisti, banche e advisor" data-en="Coordinating the table with accountants, banks and advisors">Coordinamento dei tavoli con commercialisti, banche e advisor</li>
+      </ul>
+      </div>
+    </div>
+  </section>
+
   <!-- CONSULENZA -->
   <section class="section section--cream">
     <div class="container">
       <div class="section__head reveal">
-        <span class="eyebrow eyebrow--center" data-it="Consulenza" data-en="Consulting">Consulenza</span>
-        <h2 data-it-html="Le <em class=&quot;hl&quot;>aree.</em>" data-en-html="The <em class=&quot;hl&quot;>areas.</em>">Le <em class="hl">aree.</em></h2>
+        <h2 data-it-html="Le <em class=&quot;hl&quot;>aree</em>" data-en-html="The <em class=&quot;hl&quot;>areas</em>">Le <em class="hl">aree</em></h2>
       </div>
       <div class="area-grid reveal">
         <article class="area">
@@ -240,88 +317,25 @@
     </div>
   </section>
 
-  <!-- INVOICE TRADING / FINANZA -->
-  <section class="section section--navy" id="invoice-trading">
-    <video class="cine-bg" autoplay muted loop playsinline preload="auto" poster="/img/invoice-bg.jpg" aria-hidden="true">
-      <source src="/img/invoice-bg.mp4" type="video/mp4">
-    </video>
-    <div class="cine-bg__tint" aria-hidden="true"></div>
-    <div class="cine-bg__grade" aria-hidden="true"></div>
-    <div class="container">
-      <div class="svc-block reveal">
-        <span class="svc-block__num">02</span>
-        <h2 class="svc-block__name" data-it="Invoice Trading &amp; Finanza" data-en="Invoice Trading &amp; Finance">Invoice Trading &amp; Finanza</h2>
-        <p class="svc-block__kicker" data-it="Liquidità senza banca." data-en="Liquidity without the bank.">Liquidità senza banca.</p>
-        <p class="svc-block__lead" data-it="Le aziende falliscono per cassa, non per debiti. Diversifichiamo le fonti di approvvigionamento finanziario oltre il canale bancario tradizionale, con strumenti che non impattano la Centrale Rischi e non consumano i castelletti. Servizio erogato tramite Hazard srl, società del Gruppo." data-en="Companies fail for cash, not for debt. We diversify funding sources beyond the traditional bank channel, with tools that don't affect the credit registry or use up credit lines. Service delivered through Hazard srl, a Group company.">Le aziende falliscono per cassa, non per debiti. Diversifichiamo le fonti di approvvigionamento finanziario oltre il canale bancario tradizionale, con strumenti che non impattano la Centrale Rischi e non consumano i castelletti. Servizio erogato tramite Hazard srl, società del Gruppo.</p>
-      </div>
-      <div class="fin-grid reveal" style="max-width:1000px;margin-left:auto;margin-right:auto">
-        <article class="fin">
-          <span class="fin__tag">OAM M354-2015</span>
-          <h3 class="fin__t" data-it="Mediazione creditizia" data-en="Credit brokerage">Mediazione creditizia</h3>
-          <ul class="fin__list">
-            <li data-it="Banche tradizionali e di “secondo livello”" data-en="Traditional and “second-tier” banks">Banche tradizionali e di “secondo livello”</li>
-            <li data-it="Factor e leasing" data-en="Factoring &amp; leasing">Factor e leasing</li>
-            <li data-it="Pianificazione delle linee di credito" data-en="Credit line planning">Pianificazione delle linee di credito</li>
-          </ul>
-        </article>
-        <article class="fin">
-          <span class="fin__tag" data-it="Direzione finanziaria" data-en="Financial direction">Direzione finanziaria</span>
-          <h3 class="fin__t" data-it="Servizi finanziari" data-en="Financial services">Servizi finanziari</h3>
-          <ul class="fin__list">
-            <li data-it="CFO in outsourcing e Second Opinion" data-en="Outsourced CFO &amp; Second Opinion">CFO in outsourcing e Second Opinion</li>
-            <li data-it="Controllo di gestione e analisi cash flow" data-en="Management control &amp; cash-flow analysis">Controllo di gestione e analisi cash flow</li>
-            <li data-it="Analisi Centrale Rischi e garanzie" data-en="Credit registry &amp; guarantees analysis">Analisi Centrale Rischi e garanzie</li>
-          </ul>
-        </article>
-        <article class="fin">
-          <span class="fin__tag" data-it="Piattaforme regolamentate" data-en="Regulated platforms">Piattaforme regolamentate</span>
-          <h3 class="fin__t" data-it="Credito a mercato" data-en="Market credit">Credito a mercato</h3>
-          <ul class="fin__list">
-            <li data-it="Invoice trading: cessione di fatture a investitori" data-en="Invoice trading: sale of invoices to investors">Invoice trading: cessione di fatture a investitori</li>
-            <li data-it="Minibond e titoli di debito" data-en="Minibonds &amp; debt securities">Minibond e titoli di debito</li>
-            <li data-it="Operazioni di equity, M&amp;A e supply chain" data-en="Equity, M&amp;A and supply-chain operations">Operazioni di equity, M&amp;A e supply chain</li>
-          </ul>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ADVISORY -->
-  <section class="section section--navy" id="advisory">
-    <video class="cine-bg" autoplay muted loop playsinline preload="auto" poster="/img/advisory-bg.jpg" aria-hidden="true">
-      <source src="/img/advisory-bg.mp4" type="video/mp4">
-    </video>
-    <div class="cine-bg__tint" aria-hidden="true"></div>
-    <div class="cine-bg__grade" aria-hidden="true"></div>
-    <div class="container">
-      <div class="svc-block reveal">
-        <span class="svc-block__num">03</span>
-        <h2 class="svc-block__name" data-it="Advisory" data-en="Advisory">Advisory</h2>
-        <p class="svc-block__kicker" data-it="Le scelte che non si delegano." data-en="The decisions you can't delegate.">Le scelte che non si delegano.</p>
-        <p class="svc-block__lead" data-it="Accanto alla proprietà nelle decisioni strategiche, fino al momento in cui la scelta prende forma." data-en="Alongside ownership in strategic decisions, right up to the moment the choice takes shape.">Accanto alla proprietà nelle decisioni strategiche, fino al momento in cui la scelta prende forma.</p>
-      <ul class="adv-list" style="margin-top:32px">
-        <li data-it="Riassetti organizzativi e dei processi" data-en="Organizational &amp; process restructuring">Riassetti organizzativi e dei processi</li>
-        <li data-it="Passaggi generazionali e governance familiare" data-en="Generational transitions &amp; family governance">Passaggi generazionali e governance familiare</li>
-        <li data-it="Gestione finanziaria ed efficientamento" data-en="Financial management &amp; efficiency">Gestione finanziaria ed efficientamento</li>
-        <li data-it="Preparazione a operazioni straordinarie (M&amp;A, ingresso soci)" data-en="Preparation for extraordinary operations (M&amp;A, new partners)">Preparazione a operazioni straordinarie (M&amp;A, ingresso soci)</li>
-        <li data-it="Coordinamento dei tavoli con commercialisti, banche e advisor" data-en="Coordinating the table with accountants, banks and advisors">Coordinamento dei tavoli con commercialisti, banche e advisor</li>
-      </ul>
-      </div>
-    </div>
-  </section>
-
   <!-- PARTNER -->
   <section class="section section--cream">
     <div class="container">
       <div class="section__head reveal">
-        <span class="eyebrow eyebrow--center" data-it="I Partner" data-en="Partners">I Partner</span>
-        <h2 data-it-html="Una rete che <em class=&quot;hl&quot;>va oltre.</em>" data-en-html="A network that <em class=&quot;hl&quot;>goes further.</em>">Una rete che <em class="hl">va oltre.</em></h2>
+        <h2 data-it-html="Una rete che <em class=&quot;hl&quot;>va oltre</em>" data-en-html="A network that <em class=&quot;hl&quot;>goes further</em>">Una rete che <em class="hl">va oltre</em></h2>
       </div>
-      <div class="partner-cta reveal">
-        <div class="partner-cta__tag" data-it="Partner · Luxembourg, New York" data-en="Partner · Luxembourg, New York">Partner · Luxembourg, New York</div>
-        <div class="partner-cta__t">Run Capital Partners · 3DOTS Capital</div>
-        <p class="partner-cta__b" data-it-html="Tramite i nostri partner mettiamo in contatto le imprese e i loro advisor con opportunità di investimento alternativo e operazioni di quotazione (incluso il programma Nasdaq di Three Dots). <strong>I partner erogano i propri servizi; Polaris cura la presentazione e l’introduzione.</strong>" data-en-html="Through our partners we connect companies and their advisors with alternative investment opportunities and listing operations (including the Three Dots Nasdaq program). <strong>The partners deliver their own services; Polaris handles the introduction.</strong>">Tramite i nostri partner mettiamo in contatto le imprese e i loro advisor con opportunità di investimento alternativo e operazioni di quotazione (incluso il programma Nasdaq di Three Dots). <strong>I partner erogano i propri servizi; Polaris cura la presentazione e l’introduzione.</strong></p>
-        <a href="https://runcapital.partners" target="_blank" rel="noopener" class="partner-cta__link">Run Capital Partners ↗</a>
+      <div class="partner-grid reveal">
+        <a href="https://runcapital.partners" target="_blank" rel="noopener" class="partner-cta">
+          <div class="partner-cta__tag" data-it="Partner · Lussemburgo" data-en="Partner · Luxembourg">Partner · Lussemburgo</div>
+          <div class="partner-cta__t">Run Capital Partners</div>
+          <p class="partner-cta__b" data-it="Strutturazione di fondi di investimento alternativi, securitization e gestione patrimoniale. Partner del Gruppo per le operazioni di finanza alternativa." data-en="Alternative investment fund structuring, securitization and wealth management. The Group's partner for alternative-finance operations.">Strutturazione di fondi di investimento alternativi, securitization e gestione patrimoniale. Partner del Gruppo per le operazioni di finanza alternativa.</p>
+          <span class="partner-cta__link">Run Capital Partners &nearr;</span>
+        </a>
+        <a href="https://runcapital.partners/nasdaq-listings" target="_blank" rel="noopener" class="partner-cta">
+          <div class="partner-cta__tag" data-it="Partner · New York" data-en="Partner · New York">Partner · New York</div>
+          <div class="partner-cta__t">3DOTS Capital</div>
+          <p class="partner-cta__b" data-it="Advisory per la quotazione su Nasdaq di società del Sud Europa. Programma dedicato alle PMI italiane in crescita." data-en="Nasdaq listing advisory for Southern European companies. A program dedicated to growing Italian SMEs.">Advisory per la quotazione su Nasdaq di società del Sud Europa. Programma dedicato alle PMI italiane in crescita.</p>
+          <span class="partner-cta__link">3DOTS Capital &nearr;</span>
+        </a>
       </div>
     </div>
   </section>
@@ -329,9 +343,16 @@
   <!-- CTA -->
   <section class="section">
     <div class="container container--narrow text-center reveal">
-      <h2 style="font-size:clamp(2.2rem,4.4vw,3.4rem);color:var(--ink)" data-it="Da dove vuoi partire?" data-en="Where would you like to start?">Da dove vuoi partire?</h2>
-      <p class="lead" style="margin:18px auto 32px;max-width:48ch" data-it="Raccontaci la tua esigenza: ti rispondiamo entro 24 ore lavorative." data-en="Tell us what you need: we reply within 24 working hours.">Raccontaci la tua esigenza: ti rispondiamo entro 24 ore lavorative.</p>
-      <a href="/contatti.html" class="btn btn--primary" data-it="Contattaci" data-en="Get in touch">Contattaci</a>
+      <div class="git">
+        <div class="git__eyebrow" data-it="Parliamone" data-en="Get in touch">Parliamone</div>
+        <h2 class="git__title" data-it-html="Da dove vuoi <em>partire</em>?" data-en-html="Where would you like to <em>start</em>?">Da dove vuoi <em>partire</em>?</h2>
+        <p class="git__sub" data-it="Scrivici una mail all'indirizzo qui sotto e ci faremo sentire." data-en="Send us a message at the address below and we'll be in touch.">Scrivici una mail all'indirizzo qui sotto e ci faremo sentire.</p>
+        <div class="git__box">
+          <span class="git__email">info@polaris-group.it</span>
+          <button class="git__copy" type="button" data-copy="info@polaris-group.it">COPY</button>
+        </div>
+        <a class="git__cta" href="mailto:info@polaris-group.it" data-it-html="Apri nella tua mail &rarr;" data-en-html="Open in email app &rarr;">Open in email app →</a>
+      </div>
     </div>
   </section>
 </main>
@@ -354,7 +375,7 @@
     <div class="footer__col">
       <h4 data-it="Contatti" data-en="Contact">Contatti</h4>
       <ul>
-        <li><a href="mailto:segreteria@polaris-group.it">segreteria@polaris-group.it</a></li>
+        <li><a href="mailto:info@polaris-group.it">info@polaris-group.it</a></li>
         <li><a href="tel:+390373250072">+39 0373 250072</a></li>
         <li><a data-it="Via del Commercio 29, 26013 Crema (CR)" data-en="Via del Commercio 29, 26013 Crema (CR)">Via del Commercio 29, 26013 Crema (CR)</a></li>
       </ul>

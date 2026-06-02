@@ -93,3 +93,20 @@ em.hl{font-style:italic;color:var(--steel)}
 }
 @media(max-width:540px){ .footer__inner{grid-template-columns:1fr} }
 @media(prefers-reduced-motion:reduce){ .reveal{transition:none} }
+
+/* === Get-in-Touch CTA block (mirrors the RCP "Let's discuss your strategy" pattern) === */
+.git{max-width:680px;margin:0 auto;text-align:center}
+.git__eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--silver-accent);margin-bottom:24px}
+.git__eyebrow::before{content:"—"}
+.git__title{font-family:var(--serif);font-weight:500;font-size:clamp(2rem,4vw,3.2rem);color:var(--navy-deep);line-height:1.1;letter-spacing:-.012em;margin:0}
+.git__title em{font-style:italic;color:var(--steel)}
+.git__sub{margin:22px auto 36px;font-size:1rem;color:var(--ink);opacity:.7;line-height:1.6;max-width:none;white-space:nowrap}
+@media(max-width:680px){.git__sub{white-space:normal;max-width:46ch}}
+.git__box{display:flex;align-items:center;justify-content:space-between;gap:16px;background:var(--white);border:1px solid var(--silver-2);border-radius:8px;padding:13px 16px 13px 22px;max-width:520px;margin:0 auto 22px}
+.git__email{font-family:"Courier New",ui-monospace,monospace;font-size:.95rem;color:var(--navy-deep);font-weight:500;letter-spacing:.01em}
+.git__copy{background:transparent;border:1px solid var(--silver-1);border-radius:6px;padding:8px 16px;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--navy-deep);cursor:pointer;transition:background .2s,border-color .2s,color .2s;font-family:var(--sans)}
+.git__copy:hover{background:var(--navy-deep);color:#fff;border-color:var(--navy-deep)}
+.git__copy.copied{background:var(--navy-deep);color:#fff;border-color:var(--navy-deep)}
+.git__cta{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--navy-deep);color:#fff;padding:14px 32px;border-radius:6px;font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;transition:transform .2s var(--ease),background .2s}
+.git__cta:hover{transform:translateY(-2px);background:var(--navy-mid)}
+@media(max-width:560px){.git__box{flex-direction:column;align-items:stretch;text-align:center}.git__copy{width:100%}}

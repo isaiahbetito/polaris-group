@@ -14,9 +14,17 @@
 <link rel="stylesheet" href="/assets/site.css">
 <style>
   .case-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-  .case{display:flex;flex-direction:column;background:var(--white);border:1px solid var(--silver-2);border-radius:4px;padding:34px 30px}
-  .case__n{font-size:13px;font-weight:600;letter-spacing:.18em;color:var(--silver-accent)}
-  .case__sector{font-family:var(--serif);font-size:1.5rem;color:var(--navy-deep);margin:8px 0 20px}
+  .case{position:relative;overflow:hidden;display:flex;flex-direction:column;background:var(--white);border:1px solid var(--silver-2);border-radius:4px;padding:34px 30px;transition:transform .35s var(--ease),background .35s var(--ease),border-color .35s var(--ease),box-shadow .35s var(--ease),color .35s var(--ease)}
+  .case::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(115deg,transparent 30%,rgba(127,168,220,.22) 50%,transparent 70%);transform:translateX(-110%);transition:transform .9s var(--ease)}
+  .case>*{position:relative;z-index:1}
+  .case:hover{transform:translateY(-6px);background:linear-gradient(160deg,#0e3258,#0a2a4c);border-color:#1c4675;box-shadow:0 28px 60px -28px rgba(0,0,0,.5),0 0 50px -10px rgba(127,168,220,.35)}
+  .case:hover::after{transform:translateX(110%)}
+  .case:hover *{color:#fff!important}
+  .case:hover .case__n{color:#9cc0ef!important}
+  .case:hover .case__t{color:#fff!important}
+  .case:hover .case__h{color:#9cc0ef!important}
+  .case__n{font-size:1.6rem;font-weight:800;letter-spacing:.06em;color:var(--navy-deep)}
+  .case__sector{font-family:var(--serif);font-weight:700;font-size:1.5rem;color:var(--navy-deep);margin:14px 0 20px}
   .case__step{margin-bottom:16px}
   .case__lbl{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--silver-accent);margin-bottom:4px}
   .case__txt{font-size:.95rem;color:var(--ink);opacity:.82;line-height:1.5}
@@ -52,9 +60,7 @@
 <main>
   <header class="page-head">
     <div class="container">
-      <span class="eyebrow eyebrow--center" data-it="Casi &amp; Testimonianze" data-en="Cases &amp; Testimonials">Casi &amp; Testimonianze</span>
-      <h1 data-it-html="Risultati concreti, <em>raccontati.</em>" data-en-html="Concrete results, <em>in their words.</em>">Risultati concreti, <em>raccontati.</em></h1>
-      <p class="lead" data-it="Problema, soluzione, risultato. Le storie delle imprese che abbiamo affiancato e le parole di chi ci ha scelto." data-en="Problem, solution, result. The stories of the companies we've supported and the words of those who chose us.">Problema, soluzione, risultato. Le storie delle imprese che abbiamo affiancato e le parole di chi ci ha scelto.</p>
+      <h1 data-it-html="Risultati concreti, <em>raccontati</em>" data-en-html="Concrete results, <em>in their words</em>">Risultati concreti, <em>raccontati</em></h1>
     </div>
   </header>
 
@@ -62,8 +68,7 @@
   <section class="section">
     <div class="container">
       <div class="section__head reveal">
-        <span class="eyebrow eyebrow--center" data-it="I casi" data-en="The cases">I casi</span>
-        <h2 data-it-html="Come abbiamo <em class=&quot;hl&quot;>fatto la differenza.</em>" data-en-html="How we made <em class=&quot;hl&quot;>the difference.</em>">Come abbiamo <em class="hl">fatto la differenza.</em></h2>
+        <h2 data-it-html="Come abbiamo <em class=&quot;hl&quot;>fatto la differenza</em>" data-en-html="How we made <em class=&quot;hl&quot;>the difference</em>">Come abbiamo <em class="hl">fatto la differenza</em></h2>
       </div>
       <div class="case-grid reveal">
         <article class="case placeholder">
@@ -95,8 +100,7 @@
   <section class="section section--navy">
     <div class="container">
       <div class="section__head reveal">
-        <span class="eyebrow eyebrow--center" style="color:var(--silver-1)" data-it="Cosa dicono di noi" data-en="What they say">Cosa dicono di noi</span>
-        <h2 data-it-html="Le parole di <em class=&quot;hl&quot;>chi ci ha scelto.</em>" data-en-html="The words of <em class=&quot;hl&quot;>those who chose us.</em>">Le parole di <em class="hl">chi ci ha scelto.</em></h2>
+        <h2 data-it-html="Le parole di <em class=&quot;hl&quot;>chi ci ha scelto</em>" data-en-html="The words of <em class=&quot;hl&quot;>those who chose us</em>">Le parole di <em class="hl">chi ci ha scelto</em></h2>
       </div>
       <div class="quote-grid reveal">
         <article class="qcard">
@@ -122,8 +126,7 @@
   <section class="section section--cream">
     <div class="container">
       <div class="section__head reveal">
-        <span class="eyebrow eyebrow--center" data-it="Ci hanno scelto" data-en="They chose us">Ci hanno scelto</span>
-        <h2 data-it-html="I <em class=&quot;hl&quot;>clienti.</em>" data-en-html="Our <em class=&quot;hl&quot;>clients.</em>">I <em class="hl">clienti.</em></h2>
+        <h2 data-it-html="I <em class=&quot;hl&quot;>clienti</em>" data-en-html="Our <em class=&quot;hl&quot;>clients</em>">I <em class="hl">clienti</em></h2>
       </div>
       <div class="logos reveal">
         <div class="logoslot" data-it="Logo cliente · in arrivo" data-en="Client logo · coming soon">Logo cliente · in arrivo</div>
@@ -137,8 +140,7 @@
   <!-- CTA -->
   <section class="section">
     <div class="container container--narrow text-center reveal">
-      <h2 style="font-size:clamp(2.2rem,4.4vw,3.4rem);color:var(--ink)" data-it="La prossima storia è la tua?" data-en="Is the next story yours?">La prossima storia è la tua?</h2>
-      <p class="lead" style="margin:18px auto 32px;max-width:48ch" data-it="Raccontaci la tua esigenza: ti rispondiamo entro 24 ore lavorative." data-en="Tell us what you need: we reply within 24 working hours.">Raccontaci la tua esigenza: ti rispondiamo entro 24 ore lavorative.</p>
+      <h2 style="font-size:clamp(2.2rem,4.4vw,3.4rem);color:var(--ink);margin-bottom:32px" data-it-html="Inizia il tuo <em class=&quot;hl&quot;>percorso con noi</em>" data-en-html="Start your <em class=&quot;hl&quot;>journey with us</em>">Inizia il tuo <em class="hl">percorso con noi</em></h2>
       <a href="/contatti.html" class="btn btn--primary" data-it="Contattaci" data-en="Get in touch">Contattaci</a>
     </div>
   </section>
@@ -162,7 +164,7 @@
     <div class="footer__col">
       <h4 data-it="Contatti" data-en="Contact">Contatti</h4>
       <ul>
-        <li><a href="mailto:segreteria@polaris-group.it">segreteria@polaris-group.it</a></li>
+        <li><a href="mailto:info@polaris-group.it">info@polaris-group.it</a></li>
         <li><a href="tel:+390373250072">+39 0373 250072</a></li>
         <li><a data-it="Via del Commercio 29, 26013 Crema (CR)" data-en="Via del Commercio 29, 26013 Crema (CR)">Via del Commercio 29, 26013 Crema (CR)</a></li>
       </ul>

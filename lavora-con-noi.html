@@ -14,11 +14,17 @@
 <link rel="stylesheet" href="/assets/site.css">
 <style>
   .ally-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-  .ally{background:var(--white);border:1px solid var(--silver-2);border-radius:4px;padding:32px 28px;transition:transform .25s var(--ease),box-shadow .25s var(--ease),border-color .25s var(--ease)}
-  .ally:hover{transform:translateY(-5px);box-shadow:0 24px 50px -28px rgba(11,46,79,.3);border-color:var(--silver-1)}
-  .ally__n{font-size:13px;font-weight:600;letter-spacing:.16em;color:var(--silver-accent)}
-  .ally__t{font-family:var(--serif);font-size:1.5rem;color:var(--navy-deep);margin:10px 0 8px;line-height:1.15}
-  .ally__d{font-size:.95rem;color:var(--ink);opacity:.82;line-height:1.55}
+  .ally{position:relative;overflow:hidden;background:var(--white);border:1px solid var(--silver-2);border-radius:4px;padding:32px 28px;transition:transform .35s var(--ease),box-shadow .35s var(--ease),border-color .35s var(--ease),background .35s var(--ease)}
+  .ally::after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 30%,rgba(127,168,220,.22) 50%,transparent 70%);transform:translateX(-110%);transition:transform .9s ease-out;pointer-events:none}
+  .ally:hover{transform:translateY(-5px);background:linear-gradient(160deg,#0e3258,#0a2a4c);border-color:#0a2a4c;box-shadow:0 28px 60px -28px rgba(11,46,79,.55)}
+  .ally:hover::after{transform:translateX(110%)}
+  .ally:hover .ally__n{color:#9cc0ef}
+  .ally:hover .ally__t{color:#fff}
+  .ally:hover .ally__d{color:rgba(255,255,255,.85)}
+  .ally__n{display:inline-block;font-size:13px;font-weight:800;letter-spacing:.14em;color:var(--navy-deep);border:1.5px solid var(--silver-1);border-radius:4px;padding:6px 10px;transition:color .35s var(--ease),border-color .35s var(--ease)}
+  .ally:hover .ally__n{border-color:rgba(156,192,239,.5)}
+  .ally__t{font-family:var(--serif);font-weight:700;font-size:1.5rem;color:var(--navy-deep);margin:14px 0 8px;line-height:1.15;transition:color .35s var(--ease)}
+  .ally__d{font-size:.95rem;color:var(--ink);opacity:.82;line-height:1.55;transition:color .35s var(--ease)}
   .proof{display:grid;grid-template-columns:repeat(3,1fr);max-width:900px;margin:0 auto}
   .proof__i{text-align:center;padding:0 24px;border-left:1px solid rgba(184,194,204,.25)}
   .proof__i:first-child{border-left:0}
@@ -49,8 +55,7 @@
 <main>
   <header class="page-head">
     <div class="container">
-      <span class="eyebrow eyebrow--center" data-it="Lavora con noi" data-en="Work with us">Lavora con noi</span>
-      <h1 data-it-html="Entra nella nostra <em>rete.</em>" data-en-html="Join our <em>network.</em>">Entra nella nostra <em>rete.</em></h1>
+      <h1 data-it-html="Entra nella nostra <em>rete</em>" data-en-html="Join our <em>network</em>">Entra nella nostra <em>rete</em></h1>
       <p class="lead" data-it="Abbiamo scelto di crescere costruendo partnership: la collaborazione diffusa genera risultati superiori alla somma delle parti. Cerchiamo professionisti e collaboratori che condividano questo modo di lavorare." data-en="We've chosen to grow by building partnerships: shared collaboration generates results greater than the sum of the parts. We look for professionals and collaborators who share this way of working.">Abbiamo scelto di crescere costruendo partnership: la collaborazione diffusa genera risultati superiori alla somma delle parti. Cerchiamo professionisti e collaboratori che condividano questo modo di lavorare.</p>
     </div>
   </header>
@@ -59,8 +64,7 @@
   <section class="section">
     <div class="container">
       <div class="section__head reveal">
-        <span class="eyebrow eyebrow--center" data-it="La rete di alleati" data-en="The network of allies">La rete di alleati</span>
-        <h2 data-it-html="Chi cerchiamo, <em class=&quot;hl&quot;>con chi cresciamo.</em>" data-en-html="Who we look for, <em class=&quot;hl&quot;>who we grow with.</em>">Chi cerchiamo, <em class="hl">con chi cresciamo.</em></h2>
+        <h2 data-it-html="Chi cerchiamo, <em class=&quot;hl&quot;>con chi cresciamo</em>" data-en-html="Who we look for, <em class=&quot;hl&quot;>who we grow with</em>">Chi cerchiamo, <em class="hl">con chi cresciamo</em></h2>
       </div>
       <div class="ally-grid reveal">
         <article class="ally">
@@ -101,8 +105,7 @@
   <section class="section section--navy">
     <div class="container">
       <div class="section__head reveal">
-        <span class="eyebrow eyebrow--center" style="color:var(--silver-1)" data-it="Una rete che funziona" data-en="A network that works">Una rete che funziona</span>
-        <h2 data-it-html="In cinque anni, <em class=&quot;hl&quot;>insieme.</em>" data-en-html="In five years, <em class=&quot;hl&quot;>together.</em>">In cinque anni, <em class="hl">insieme.</em></h2>
+        <h2 data-it-html="In cinque anni, <em class=&quot;hl&quot;>insieme</em>" data-en-html="In five years, <em class=&quot;hl&quot;>together</em>">In cinque anni, <em class="hl">insieme</em></h2>
       </div>
       <div class="proof reveal">
         <div class="proof__i"><div class="proof__num">3.000+</div><div class="proof__lbl" data-it="Aziende coinvolte" data-en="Companies involved">Aziende coinvolte</div></div>
@@ -119,7 +122,7 @@
         <span class="eyebrow eyebrow--center" data-it="Proponiti" data-en="Get in touch">Proponiti</span>
         <h2 style="font-size:clamp(2.2rem,4.4vw,3.4rem);color:var(--ink);margin-top:16px" data-it-html="Vuoi far parte del <em class=&quot;hl&quot;>progetto?</em>" data-en-html="Want to be part of the <em class=&quot;hl&quot;>project?</em>">Vuoi far parte del <em class="hl">progetto?</em></h2>
         <p class="lead" style="margin:18px auto 32px;max-width:54ch" data-it="Scrivici raccontando chi sei e come vorresti collaborare — allega il tuo CV o la tua proposta. Ti rispondiamo entro pochi giorni." data-en="Write to us telling us who you are and how you'd like to collaborate — attach your CV or proposal. We'll reply within a few days.">Scrivici raccontando chi sei e come vorresti collaborare — allega il tuo CV o la tua proposta. Ti rispondiamo entro pochi giorni.</p>
-        <a href="mailto:segreteria@polaris-group.it?subject=Lavora%20con%20noi%20%E2%80%94%20Polaris%20Group" class="btn btn--primary" data-it="Invia la tua candidatura" data-en="Send your application">Invia la tua candidatura</a>
+        <a href="mailto:info@polaris-group.it?subject=Lavora%20con%20noi%20%E2%80%94%20Polaris%20Group" class="btn btn--primary" data-it="Invia la tua candidatura" data-en="Send your application">Invia la tua candidatura</a>
       </div>
     </div>
   </section>
@@ -143,7 +146,7 @@
     <div class="footer__col">
       <h4 data-it="Contatti" data-en="Contact">Contatti</h4>
       <ul>
-        <li><a href="mailto:segreteria@polaris-group.it">segreteria@polaris-group.it</a></li>
+        <li><a href="mailto:info@polaris-group.it">info@polaris-group.it</a></li>
         <li><a href="tel:+390373250072">+39 0373 250072</a></li>
         <li><a data-it="Via del Commercio 29, 26013 Crema (CR)" data-en="Via del Commercio 29, 26013 Crema (CR)">Via del Commercio 29, 26013 Crema (CR)</a></li>
       </ul>

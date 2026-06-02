@@ -49,7 +49,9 @@
   .xp-head{max-width:780px;margin:0 auto var(--sp-8)}
   .xp-head .eyebrow{color:var(--silver-1)}
   .xp-head .eyebrow{text-shadow:0 1px 10px rgba(8,14,22,.5)}
-  .xp-head h2{font-size:clamp(2rem,4vw,3rem);color:#fff;margin-top:16px;text-shadow:0 2px 18px rgba(8,14,22,.55)}
+  .xp-head h2{font-size:clamp(1.6rem,3vw,2.6rem);color:#fff;margin-top:16px;text-shadow:0 2px 18px rgba(8,14,22,.55);white-space:nowrap}
+  @media(max-width:760px){.xp-head h2{white-space:normal}}
+  .xp-head{max-width:none}
   .xp-head h2 .hl{color:var(--blue)}
   .xp-head p{margin-top:18px;font-size:1.05rem;color:rgba(255,255,255,.8);line-height:1.7;text-shadow:0 1px 12px rgba(8,14,22,.55)}
   .xp-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;max-width:980px;margin:0 auto}
@@ -86,6 +88,17 @@
   .belief__quote{font-family:var(--serif);font-weight:500;font-size:clamp(1.8rem,3.6vw,2.8rem);line-height:1.25;letter-spacing:-.01em}
   .belief__quote em{font-style:italic;color:var(--blue)}
   .belief__by{margin-top:22px;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.5)}
+
+  /* ---- A MOMENT (Nasdaq podium) ---- */
+  .moment{background:radial-gradient(70% 100% at 50% 0%,#0e3258,transparent 60%),linear-gradient(180deg,#08233c,#0B2E4F);color:#fff}
+  .moment__inner{max-width:1280px;margin:0 auto;padding:96px 32px;display:grid;grid-template-columns:1fr 1.1fr;gap:64px;align-items:center}
+  .moment__eyebrow{font-family:var(--sans);font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--blue);font-weight:600;margin:0 0 20px}
+  .moment__title{font-family:var(--serif);font-weight:500;font-size:clamp(30px,3.6vw,44px);line-height:1.1;letter-spacing:-.018em;margin:0 0 24px;color:#fff}
+  .moment__title em{font-style:italic;color:var(--blue)}
+  .moment__sub{font-size:17px;color:rgba(255,255,255,.6);line-height:1.75;margin:0;max-width:460px}
+  .moment__media{border-radius:14px;overflow:hidden;border:1px solid rgba(127,168,220,.18);box-shadow:0 24px 60px rgba(0,0,0,.5)}
+  .moment__media img{width:100%;height:auto;display:block}
+  @media(max-width:768px){.moment__inner{grid-template-columns:1fr;gap:36px;padding:64px 20px}}
 
   /* ---- EDUCATION (cream cards) ---- */
   .cred-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;max-width:840px;margin:0 auto}
@@ -184,9 +197,7 @@
     <div class="xp-bg__grade" aria-hidden="true"></div>
     <div class="container">
       <div class="xp-head text-center">
-        <span class="eyebrow eyebrow--center" data-it="Competenze" data-en="Expertise">Competenze</span>
-        <h2 data-it-html="Costruire <span class='hl'>strutture</span>, <span class='hl'>relazioni</span> e <span class='hl'>visione</span>." data-en-html="Building <span class='hl'>structures</span>, <span class='hl'>relationships</span> and <span class='hl'>vision</span>.">Costruire <span class="hl">strutture</span>, <span class="hl">relazioni</span> e <span class="hl">visione</span>.</h2>
-        <p data-it="Il contributo di Cesare alla nascita e alla crescita di Polaris Group, attingendo a un percorso che attraversa industria privata, pubblica amministrazione e mondo associativo." data-en="Cesare's contribution to the founding and growth of Polaris Group, drawing on a path that crosses private industry, public administration and trade associations.">Il contributo di Cesare alla nascita e alla crescita di Polaris Group, attingendo a un percorso che attraversa industria privata, pubblica amministrazione e mondo associativo.</p>
+        <h2 data-it-html="Costruire strutture, relazioni e visione" data-en-html="Building structures, relationships and vision">Costruire strutture, relazioni e visione</h2>
       </div>
       <div class="xp-grid">
         <div class="xp-card">
@@ -215,43 +226,51 @@
       <div class="split">
         <div class="split__left">
           <span class="eyebrow" data-it="Percorso" data-en="Career">Percorso</span>
-          <h2 data-it-html="Un percorso <span class='hl'>multi-settore</span>." data-en-html="A <span class='hl'>multi-sector</span> path.">Un percorso <span class="hl">multi-settore</span>.</h2>
-          <p data-it="Il cammino di Cesare attraversa più mondi prima di dare forma a Polaris Group e alla sua rete di società e partner." data-en="Cesare's path crosses several worlds before shaping Polaris Group and its network of companies and partners.">Il cammino di Cesare attraversa più mondi prima di dare forma a Polaris Group e alla sua rete di società e partner.</p>
+          <h2 data-it-html="Un percorso <span class='hl'>multi-settore</span> verso la finanza" data-en-html="A <span class='hl'>multi-sector</span> path into finance">Un percorso <span class="hl">multi-settore</span> verso la finanza</h2>
+          <p data-it="Il cammino di Cesare attraversa più mondi prima di co-fondare Run Capital Partners per costruire la piattaforma di investimenti alternativi e cartolarizzazione del Gruppo." data-en="Cesare's path crosses several worlds before co-founding Run Capital Partners to build the group's alternative-investment and securitization platform.">Il cammino di Cesare attraversa più mondi prima di co-fondare Run Capital Partners per costruire la piattaforma di investimenti alternativi e cartolarizzazione del Gruppo.</p>
         </div>
         <div class="split__right">
           <div class="timeline">
             <div class="tl-item tl-item--now">
-              <p class="tl-item__date" data-it="2018 — Oggi" data-en="2018 — Present">2018 — Oggi</p>
-              <h3 class="tl-item__role" data-it="Fondatore &amp; Guida" data-en="Founder &amp; Lead">Fondatore &amp; Guida</h3>
-              <p class="tl-item__co">Polaris Group · Crema</p>
-              <p class="tl-item__d" data-it="Dà forma al progetto che affianca le PMI italiane su formazione, finanza non bancaria e advisory direzionale, con un solo interlocutore e una rete di specialisti dietro." data-en="Shapes the project that supports Italian SMEs across training, non-bank finance and strategic advisory, with one point of contact and a network of specialists behind.">Dà forma al progetto che affianca le PMI italiane su formazione, finanza non bancaria e advisory direzionale, con un solo interlocutore e una rete di specialisti dietro.</p>
+              <p class="tl-item__date" data-it="Novembre 2022 — Oggi" data-en="November 2022 — Present">Novembre 2022 — Oggi</p>
+              <h3 class="tl-item__role" data-it="Co-fondatore &amp; Partner" data-en="Co-Founder &amp; Partner">Co-fondatore &amp; Partner</h3>
+              <p class="tl-item__co">Run Capital Partners</p>
+              <p class="tl-item__d" data-it="Contribuisce alla progettazione e al rollout dei fondi di investimento alternativi e dei veicoli di cartolarizzazione del Gruppo, accanto al CEO Luca Padovan." data-en="Contributes to the design and rollout of the group's alternative-investment funds and securitization vehicles, alongside CEO Luca Padovan.">Contribuisce alla progettazione e al rollout dei fondi di investimento alternativi e dei veicoli di cartolarizzazione del Gruppo, accanto al CEO Luca Padovan.</p>
+            </div>
+            <div class="tl-item tl-item--now">
+              <p class="tl-item__date" data-it="Febbraio 2018 — Oggi" data-en="February 2018 — Present">Febbraio 2018 — Oggi</p>
+              <h3 class="tl-item__role" data-it="Fondatore &amp; Proprietario" data-en="Founder &amp; Owner">Fondatore &amp; Proprietario</h3>
+              <p class="tl-item__co">Hazard Venture s.r.l.</p>
+              <p class="tl-item__d" data-it="Fondatore e proprietario di Hazard Venture s.r.l., con sede a Crema, in Lombardia." data-en="Founder and owner of Hazard Venture s.r.l., based in Crema, Lombardy.">Fondatore e proprietario di Hazard Venture s.r.l., con sede a Crema, in Lombardia.</p>
             </div>
             <div class="tl-item tl-item--now">
               <p class="tl-item__date" data-it="Oggi" data-en="Present">Oggi</p>
               <h3 class="tl-item__role" data-it="Founding Partner &amp; Presidente" data-en="Founding Partner &amp; President">Founding Partner &amp; Presidente</h3>
-              <p class="tl-item__co">Polaris HR srl</p>
-              <p class="tl-item__d" data-it="Società del Gruppo dedicata alla consulenza HR e alla formazione: sicurezza sul lavoro, certificazioni, apprendistato e programmi di finanziamento agevolato per le PMI." data-en="A Group company dedicated to HR consulting and training: workplace safety, certifications, apprenticeships and subsidised-financing programmes for SMEs.">Società del Gruppo dedicata alla consulenza HR e alla formazione: sicurezza sul lavoro, certificazioni, apprendistato e programmi di finanziamento agevolato per le PMI.</p>
-            </div>
-            <div class="tl-item tl-item--now">
-              <p class="tl-item__date" data-it="2018 — Oggi" data-en="2018 — Present">2018 — Oggi</p>
-              <h3 class="tl-item__role" data-it="Fondatore" data-en="Founder">Fondatore</h3>
-              <p class="tl-item__co">Hazard srl</p>
-              <p class="tl-item__d" data-it="Società del Gruppo per la finanza non bancaria e l’invoice trading, con sede a Crema, in Lombardia." data-en="A Group company for non-bank finance and invoice trading, based in Crema, Lombardy.">Società del Gruppo per la finanza non bancaria e l’invoice trading, con sede a Crema, in Lombardia.</p>
-            </div>
-            <div class="tl-item tl-item--now">
-              <p class="tl-item__date" data-it="2022 — Oggi" data-en="2022 — Present">2022 — Oggi</p>
-              <h3 class="tl-item__role" data-it="Co-fondatore &amp; Partner" data-en="Co-Founder &amp; Partner">Co-fondatore &amp; Partner</h3>
-              <p class="tl-item__co">Run Capital Partners</p>
-              <p class="tl-item__d" data-it="Partner del Gruppo per le operazioni di finanza alternativa e di quotazione, con presenza tra UK, Lussemburgo e Italia." data-en="The Group's partner for alternative-finance and listing operations, with a presence across the UK, Luxembourg and Italy.">Partner del Gruppo per le operazioni di finanza alternativa e di quotazione, con presenza tra UK, Lussemburgo e Italia.</p>
+              <p class="tl-item__co">Polaris HR</p>
+              <p class="tl-item__d" data-it="Società italiana di consulenza HR e formazione. Eroga formazione aziendale e advisory su sicurezza sul lavoro, HACCP, GDPR, certificazioni ISO, apprendistato e programmi di finanziamento agevolato per le PMI." data-en="Italian HR consulting and training firm. Delivers corporate training and advisory across workplace safety, HACCP, GDPR, ISO certifications, apprenticeships, and subsidised-financing programmes for SMEs.">Società italiana di consulenza HR e formazione. Eroga formazione aziendale e advisory su sicurezza sul lavoro, HACCP, GDPR, certificazioni ISO, apprendistato e programmi di finanziamento agevolato per le PMI.</p>
             </div>
             <div class="tl-item">
               <p class="tl-item__date" data-it="Precedente" data-en="Prior">Precedente</p>
               <h3 class="tl-item__role" data-it="Associazione — Sede Nazionale" data-en="Association — National Office">Associazione — Sede Nazionale</h3>
-              <p class="tl-item__co">CONFAPI</p>
+              <p class="tl-item__co">CONFAPI – Sede Nazionale</p>
               <p class="tl-item__d" data-it="Sede nazionale della confederazione italiana della piccola e media industria privata." data-en="National office of Italy's confederation of small and medium-sized private industry.">Sede nazionale della confederazione italiana della piccola e media industria privata.</p>
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AT THE NASDAQ PODIUM -->
+  <section class="moment reveal">
+    <div class="moment__inner">
+      <div class="moment__text">
+        <p class="moment__eyebrow" data-it="— Un momento" data-en="— A moment">— Un momento</p>
+        <h2 class="moment__title" data-it-html="Al <em>podio del Nasdaq</em>" data-en-html="At the <em>Nasdaq podium</em>">Al <em>podio del Nasdaq</em></h2>
+        <p class="moment__sub" data-it="Un riflesso del lavoro del Gruppo sulle quotazioni Nasdaq e sulle operazioni cross-border di mercato dei capitali che ancorano la partnership con Run Capital Partners." data-en="A reflection of the group's footprint in Nasdaq listing advisory and the cross-border capital-markets work that anchors the partnership with Run Capital Partners.">Un riflesso del lavoro del Gruppo sulle quotazioni Nasdaq e sulle operazioni cross-border di mercato dei capitali che ancorano la partnership con Run Capital Partners.</p>
+      </div>
+      <div class="moment__media">
+        <img src="/img/cesare-nasdaq.jpg" alt="Cesare Trebeschi al podio del Nasdaq" loading="lazy">
       </div>
     </div>
   </section>
@@ -288,13 +307,17 @@
   </section>
 
   <!-- CONTACT -->
-  <section class="section section--navy reveal">
-    <div class="container bio-cta">
-      <h2 data-it="Parliamone." data-en="Let's talk.">Parliamone.</h2>
-      <p data-it="Scrivici per conoscere come Polaris può affiancare la tua impresa." data-en="Get in touch to learn how Polaris can stand beside your business.">Scrivici per conoscere come Polaris può affiancare la tua impresa.</p>
-      <div class="bio-cta__links">
-        <a href="/contatti.html" class="btn btn--primary" data-it="Contattaci" data-en="Get in touch">Contattaci</a>
-        <a href="/chi-siamo.html#team" class="btn btn--ghost" style="border-color:rgba(184,194,204,.4);color:#fff" data-it="Torna al team" data-en="Back to the team">Torna al team</a>
+  <section class="section reveal">
+    <div class="container container--narrow text-center">
+      <div class="git">
+        <div class="git__eyebrow" data-it="Parliamone" data-en="Get in touch">Parliamone</div>
+        <h2 class="git__title" data-it-html="Lavoriamo <em>insieme</em>" data-en-html="Let's <em>work together</em>">Lavoriamo <em>insieme</em></h2>
+        <p class="git__sub" data-it="Scrivici una mail all'indirizzo qui sotto e ci faremo sentire." data-en="Send us a message at the address below and we'll be in touch.">Scrivici una mail all'indirizzo qui sotto e ci faremo sentire.</p>
+        <div class="git__box">
+          <span class="git__email">info@polaris-group.it</span>
+          <button class="git__copy" type="button" data-copy="info@polaris-group.it">COPY</button>
+        </div>
+        <a class="git__cta" href="mailto:info@polaris-group.it" data-it-html="Apri nella tua mail &rarr;" data-en-html="Open in email app &rarr;">Open in email app →</a>
       </div>
     </div>
   </section>
@@ -319,7 +342,7 @@
     <div class="footer__col">
       <h4 data-it="Contatti" data-en="Contact">Contatti</h4>
       <ul>
-        <li><a href="mailto:segreteria@polaris-group.it">segreteria@polaris-group.it</a></li>
+        <li><a href="mailto:info@polaris-group.it">info@polaris-group.it</a></li>
         <li><a href="tel:+390373250072">+39 0373 250072</a></li>
         <li><a data-it="Via del Commercio 29, 26013 Crema (CR)" data-en="Via del Commercio 29, 26013 Crema (CR)">Via del Commercio 29, 26013 Crema (CR)</a></li>
       </ul>
