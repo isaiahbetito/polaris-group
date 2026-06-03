@@ -62,8 +62,7 @@
       '      <button class="git__copy" type="button" data-copy="info@polaris-group.it">COPY</button>'+
       '    </div>'+
       '    <a class="git__cta" href="mailto:info@polaris-group.it" data-it-html="Apri nella tua mail &rarr;" data-en-html="Open in email app &rarr;">Open in email app &rarr;</a>'+
-      '    <button class="contact-modal__close" type="button" data-close-contact data-it="Chiudi" data-en="Close">Close</button>'+
-      '    <p class="contact-modal__foot" data-it-html="Se non si apre nulla, copia l\'indirizzo e scrivici dal tuo client preferito.<br>Richieste generali: <a href=\'mailto:info@polaris-group.it\'>info@polaris-group.it</a>" data-en-html="If nothing opens, copy the address and email us from your preferred client.<br>General inquiries: <a href=\'mailto:info@polaris-group.it\'>info@polaris-group.it</a>">If nothing opens, copy the address and email us from your preferred client.<br>General inquiries: <a href="mailto:info@polaris-group.it">info@polaris-group.it</a></p>'+
+      '    <button class="contact-modal__close" type="button" data-close-contact data-it="Chiudi" data-en="Close">Chiudi</button>'+
       '  </div>'+
       '</div>';
     document.body.insertAdjacentHTML('beforeend', html);
