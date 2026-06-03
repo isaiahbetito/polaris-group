@@ -111,3 +111,51 @@ em.hl{font-style:italic;color:var(--steel)}
 .git__cta{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--navy-deep);color:#fff;padding:14px 32px;border-radius:6px;font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;transition:transform .2s var(--ease),background .2s}
 .git__cta:hover{transform:translateY(-2px);background:var(--navy-mid)}
 @media(max-width:560px){.git__box{flex-direction:column;align-items:stretch;text-align:center}.git__copy{width:100%}}
+
+/* === Inner-page CTA: "Have questions?" + 2 buttons (RCP pattern) === */
+.ask{max-width:680px;margin:0 auto;text-align:center}
+.ask__title{font-family:var(--serif);font-weight:500;font-size:clamp(2.2rem,4.6vw,3.4rem);color:var(--navy-deep);line-height:1.1;letter-spacing:-.012em;margin:0 0 40px}
+.ask__title em{font-style:italic;color:var(--steel)}
+.ask__buttons{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.ask__buttons .btn{padding:14px 32px;font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;border-radius:6px;cursor:pointer;font-family:var(--sans);display:inline-flex;align-items:center;gap:8px}
+.ask__buttons .btn--primary{background:var(--navy-deep);color:#fff;border:1px solid var(--navy-deep);text-decoration:none}
+.ask__buttons .btn--primary:hover{background:var(--navy-mid);transform:translateY(-2px)}
+.ask__buttons .btn--ghost{background:transparent;color:var(--navy-deep);border:1px solid var(--silver-1);text-decoration:none}
+.ask__buttons .btn--ghost:hover{border-color:var(--navy-deep);background:rgba(11,46,79,.04)}
+
+/* === Contact modal (opens from .ask Contact-Us button) === */
+.contact-modal[hidden]{display:none}
+.contact-modal{position:fixed;inset:0;z-index:1000;display:none;align-items:center;justify-content:center;padding:24px;font-family:var(--sans)}
+.contact-modal.is-open{display:flex}
+.contact-modal__overlay{position:absolute;inset:0;background:rgba(0,0,0,.55);backdrop-filter:blur(4px);cursor:pointer}
+.contact-modal__card{position:relative;background:linear-gradient(180deg,#0e3258,#0B2E4F);color:#fff;border:1px solid rgba(127,168,220,.2);border-radius:14px;padding:40px 36px 28px;max-width:520px;width:100%;box-shadow:0 30px 80px -20px rgba(0,0,0,.7);max-height:90vh;overflow-y:auto;animation:contactPop .25s var(--ease)}
+@keyframes contactPop{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.contact-modal__x{position:absolute;top:14px;right:14px;background:transparent;border:0;color:rgba(255,255,255,.6);font-size:24px;cursor:pointer;width:36px;height:36px;display:flex;align-items:center;justify-content:center;line-height:1;padding:0;border-radius:50%;transition:background .2s,color .2s}
+.contact-modal__x:hover{color:#fff;background:rgba(255,255,255,.1)}
+.contact-modal__eyebrow{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--silver-1)}
+.contact-modal__title{font-family:var(--serif);font-weight:500;font-size:2rem;color:#fff;margin:14px 0 10px;letter-spacing:-.012em}
+.contact-modal__sub{font-size:.95rem;color:rgba(255,255,255,.78);line-height:1.55;margin:0 0 26px}
+.contact-modal__card .git__box{background:rgba(255,255,255,.06);border-color:rgba(127,168,220,.3);margin:0 0 14px}
+.contact-modal__card .git__email{color:#fff}
+.contact-modal__card .git__copy{color:#fff;border-color:rgba(127,168,220,.4)}
+.contact-modal__card .git__copy:hover{background:#fff;color:var(--navy-deep);border-color:#fff}
+.contact-modal__card .git__cta{display:flex;width:100%;justify-content:center;background:#fff;color:var(--navy-deep)}
+.contact-modal__card .git__cta:hover{background:var(--silver-2)}
+.contact-modal__close{margin-top:14px;width:100%;background:transparent;border:1px solid rgba(255,255,255,.3);color:#fff;padding:14px 32px;border-radius:6px;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;cursor:pointer;font-family:var(--sans);transition:background .2s,border-color .2s}
+.contact-modal__close:hover{background:rgba(255,255,255,.08);border-color:#fff}
+.contact-modal__foot{margin:24px 0 0;padding-top:22px;border-top:1px solid rgba(127,168,220,.18);font-size:.82rem;color:rgba(255,255,255,.55);text-align:center;line-height:1.6}
+.contact-modal__foot a{color:var(--silver-1);text-decoration:underline}
+
+/* === Direct-contact CTA (team profile bottom — RCP "Get in touch directly" pattern) === */
+.section--ink{background:linear-gradient(180deg,#0a1a2e,#02060c);color:#fff}
+.ask-direct{text-align:center;max-width:720px;margin:0 auto}
+.ask-direct__title{font-family:var(--serif);font-weight:500;font-size:clamp(2.2rem,4.6vw,3.4rem);color:#fff;margin:0 0 22px;letter-spacing:-.012em;line-height:1.1}
+.ask-direct__email{margin:0 0 36px;font-size:1.15rem;font-family:"Courier New",ui-monospace,monospace;color:var(--silver-1);letter-spacing:.01em}
+.ask-direct__email a{color:var(--silver-1);text-decoration:none;border-bottom:1px solid rgba(184,194,204,.35);padding-bottom:2px}
+.ask-direct__email a:hover{color:#fff;border-color:#fff}
+.ask-direct__buttons{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.ask-direct__buttons .btn{padding:14px 32px;font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;border-radius:6px;cursor:pointer;font-family:var(--sans);text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:background .2s,border-color .2s,color .2s,transform .2s var(--ease)}
+.ask-direct__buttons .btn--primary{background:var(--silver-1);color:var(--navy-deep);border:1px solid var(--silver-1)}
+.ask-direct__buttons .btn--primary:hover{background:#fff;border-color:#fff;transform:translateY(-2px)}
+.ask-direct__buttons .btn--ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.3)}
+.ask-direct__buttons .btn--ghost:hover{border-color:#fff;background:rgba(255,255,255,.06)}
