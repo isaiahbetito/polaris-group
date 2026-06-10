@@ -99,7 +99,7 @@
   .moment__sub{font-size:17px;color:rgba(255,255,255,.6);line-height:1.75;margin:0;max-width:460px}
   .moment__media{border-radius:14px;overflow:hidden;border:1px solid rgba(127,168,220,.18);box-shadow:0 24px 60px rgba(0,0,0,.5)}
   .moment__media img{width:100%;height:auto;display:block}
-  @media(max-width:768px){.moment__inner{grid-template-columns:1fr;gap:36px;padding:64px 20px}}
+  @media(max-width:768px){.moment__inner{grid-template-columns:1fr}}
 
   /* ---- BIOGRAFIA narrative prose ---- */
   .bio-prose{max-width:780px;margin:0 auto;font-size:1.06rem;line-height:1.8;color:var(--ink)}
@@ -141,6 +141,11 @@
     .xp-grid,.cred-grid{grid-template-columns:1fr}
     .split{grid-template-columns:1fr;gap:36px}
     .timeline{padding-left:36px}
+    /* tighten vertical rhythm between sections on mobile */
+    .section{padding:48px 0}
+    .belief__inner{padding:56px 24px}
+    .moment__inner{padding:48px 20px;gap:28px}
+    .ask-direct{padding:8px 0}
   }
   @media(max-width:420px){ .bio-photo__frame{width:280px;height:350px} }
   @media(prefers-reduced-motion:reduce){
