@@ -108,8 +108,10 @@
   .bio-prose strong{color:var(--navy-deep);font-weight:600}
   .qa{margin-bottom:40px}
   .qa:last-child{margin-bottom:0}
-  .qa__q{display:block;font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(1.2rem,2.2vw,1.45rem);color:var(--navy-deep);line-height:1.4;margin:0 0 18px;padding-left:18px;border-left:3px solid var(--steel)}
-  .qa__a{margin:0}
+  .qa__q{display:block;font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(1.4rem,2.8vw,1.7rem);color:var(--navy-deep);line-height:1.4;margin:0 0 20px;padding-left:18px;border-left:3px solid var(--steel)}
+  .qa__a{margin:0;quotes:"\201C" "\201D" "\2018" "\2019"}
+  .qa__a::before{content:open-quote;color:var(--steel);font-weight:600;padding-right:2px}
+  .qa__a::after{content:close-quote;color:var(--steel);font-weight:600;padding-left:2px}
 
   /* ---- INTERESSI cards (reading + sport) ---- */
   .interests{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;max-width:840px;margin:32px auto 0}
