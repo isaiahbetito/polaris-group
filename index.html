@@ -155,7 +155,8 @@
   .statement{position:relative;overflow:hidden;text-align:center;padding:var(--sp-16) 0;
     background:radial-gradient(75% 95% at 50% 26%,#ffffff,var(--cream))}
   .statement__inner{position:relative;z-index:2}
-  .statement__logo{height:112px;width:auto;margin:0 auto 38px;display:block} /* real colors on the light bg */
+  .statement__logo{height:112px;width:auto;max-width:min(560px,90%);object-fit:contain;margin:0 auto 38px;display:block} /* real colors on the light bg */
+  @media(max-width:680px){.statement__logo{height:auto;max-width:78%;margin-bottom:28px}}
   .statement h2{font-family:var(--serif);font-weight:500;font-size:clamp(2rem,4.4vw,3.4rem);line-height:1.12;color:var(--navy-deep);letter-spacing:-.01em}
   .statement h2 em{display:block;font-style:italic;color:#828a91}
 
@@ -352,9 +353,10 @@
     .nav__cta{display:inline-block;margin:8px 32px;background:#fff;color:var(--navy-deep)!important}
     .lang-switch{padding:10px 32px;color:var(--silver-1)}
     .svc-grid,.stats,.team-grid,.footer__inner{grid-template-columns:1fr}
-    .stat{border-left:0;border-top:1px solid var(--silver-2);padding:24px 0}.stat:first-child{border-top:0}
+    .stat{border-left:0;border-top:1px solid var(--silver-2);padding:24px 0;text-align:center}.stat:first-child{border-top:0}
+    .stat__label{white-space:normal}
     .partner{grid-template-columns:1fr;gap:18px}
-    .polestar-focal{left:auto;right:6%;width:74px;height:74px}
+    .polestar-focal{left:calc(50% - 37px);width:74px;height:74px}
   }
   @media(prefers-reduced-motion:reduce){
     .marquee__track,.polestar-focal,.fade{animation:none!important}
