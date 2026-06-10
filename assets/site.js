@@ -21,6 +21,13 @@
   var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} }); },{threshold:.12,rootMargin:'0px 0px -8% 0px'});
   document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
 
+  // ---- pillar cards: click (or Enter/Space) to toggle active navy fill ----
+  document.querySelectorAll('.pillar').forEach(function(p){
+    p.setAttribute('tabindex','0'); p.setAttribute('role','button');
+    p.addEventListener('click',function(){ p.classList.toggle('is-active'); });
+    p.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); p.classList.toggle('is-active'); } });
+  });
+
   // ---- count-up (Italian thousands formatting) ----
   function countUp(el){
     var target=+el.dataset.target, dur=1500, t0=null;

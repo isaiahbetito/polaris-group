@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Chi Siamo — Polaris Group | Un nuovo modo di affiancare le imprese</title>
+<title>Chi Siamo | Polaris Group, un nuovo modo di affiancare le imprese</title>
 <meta name="description" content="Polaris Group: formazione, finanza non bancaria e advisory per le PMI italiane. In cosa crediamo, il nostro modello e il team che guida il Gruppo.">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
@@ -22,15 +22,15 @@
   .belief-quote blockquote em{font-style:italic;color:var(--steel)}
   .belief-quote__by{margin-top:28px;font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--silver-accent)}
   .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:var(--sp-8)}
-  .pillar{position:relative;overflow:hidden;background:var(--white);border:1px solid var(--silver-2);border-radius:4px;padding:32px 28px;transition:transform .35s var(--ease),box-shadow .35s var(--ease),border-color .35s var(--ease),background .35s var(--ease)}
+  .pillar{position:relative;overflow:hidden;background:var(--white);border:1px solid var(--silver-2);border-radius:4px;padding:32px 28px;cursor:pointer;transition:transform .35s var(--ease),box-shadow .35s var(--ease),border-color .35s var(--ease),background .35s var(--ease)}
   .pillar::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(115deg,transparent 30%,rgba(127,168,220,.22) 50%,transparent 70%);transform:translateX(-110%);transition:transform .9s var(--ease)}
   .pillar>*{position:relative;z-index:1}
-  .pillar:hover{transform:translateY(-5px);border-color:#1c4675;box-shadow:0 26px 50px -28px rgba(11,46,79,.4),0 0 40px -6px rgba(127,168,220,.35)}
-  .pillar:hover::after{transform:translateX(110%)}
-  .pillar:hover{transform:translateY(-5px);background:linear-gradient(160deg,#0e3258,#0a2a4c);border-color:#0a2a4c;box-shadow:0 28px 60px -28px rgba(11,46,79,.55)}
-  .pillar:hover .pillar__n{border-color:rgba(156,192,239,.5);color:#9cc0ef}
-  .pillar:hover .pillar__t{color:#fff}
-  .pillar:hover .pillar__d{color:rgba(255,255,255,.85)}
+  .pillar:hover,.pillar.is-active{transform:translateY(-5px);border-color:#1c4675;box-shadow:0 26px 50px -28px rgba(11,46,79,.4),0 0 40px -6px rgba(127,168,220,.35)}
+  .pillar:hover::after,.pillar.is-active::after{transform:translateX(110%)}
+  .pillar:hover,.pillar.is-active{transform:translateY(-5px);background:linear-gradient(160deg,#0e3258,#0a2a4c);border-color:#0a2a4c;box-shadow:0 28px 60px -28px rgba(11,46,79,.55)}
+  .pillar:hover .pillar__n,.pillar.is-active .pillar__n{border-color:rgba(156,192,239,.5);color:#9cc0ef}
+  .pillar:hover .pillar__t,.pillar.is-active .pillar__t{color:#fff}
+  .pillar:hover .pillar__d,.pillar.is-active .pillar__d{color:rgba(255,255,255,.85)}
   .pillar__n{display:inline-block;font-size:13px;font-weight:800;letter-spacing:.14em;color:var(--navy-deep);border:1.5px solid var(--silver-1);border-radius:4px;padding:6px 10px;transition:color .35s var(--ease),border-color .35s var(--ease)}
   .pillar__t{font-family:var(--serif);font-weight:700;font-size:1.5rem;color:var(--navy-deep);margin:14px 0 8px;line-height:1.15;transition:color .35s var(--ease)}
   .pillar__d{font-size:.95rem;color:var(--ink);opacity:.82;line-height:1.55;transition:color .35s var(--ease)}
@@ -56,6 +56,16 @@
   .team-card--lead .team-card__photo{background:linear-gradient(160deg,#0B2E4F,#1A3A5F)}
   .team-card__name{font-family:var(--serif);font-size:1.3rem;color:var(--ink)}
   .team-card__role{margin-top:2px;font-size:.78rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--silver-accent)}
+  /* team groups (by area) */
+  .team-groups{display:flex;flex-direction:column;gap:64px;margin-top:var(--sp-8)}
+  .team-group__head{text-align:center;margin-bottom:32px}
+  .team-group__eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--silver-accent)}
+  .team-group__eyebrow::before,.team-group__eyebrow::after{content:"";width:32px;height:1px;background:var(--silver-2)}
+  .team-group__t{font-family:var(--serif);font-weight:500;font-size:clamp(1.4rem,2.4vw,1.9rem);color:var(--navy-deep);margin:10px 0 0;letter-spacing:-.005em}
+  .team-group__t em{font-style:italic;color:var(--steel)}
+  /* inside groups, switch to flex so cards center horizontally (trailing partial rows too) */
+  .team-groups .team-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:40px 24px;margin-top:0}
+  .team-groups .team-card{width:200px;flex:0 0 200px}
   @media(max-width:860px){ .pillars{grid-template-columns:1fr} .founder{grid-template-columns:1fr;gap:28px;text-align:center} .founder__bio{margin:0 auto} .team-grid{grid-template-columns:1fr 1fr} }
 </style>
 </head>
@@ -90,7 +100,7 @@
       <figure class="belief-quote reveal">
         <span class="belief-quote__mk" aria-hidden="true">&ldquo;</span>
         <blockquote data-it-html="Crediamo che le imprese debbano passare da una logica di breve periodo a una di lungo periodo: restare nel mercato il più a lungo possibile, <em>lasciando le cose meglio di come le hanno trovate.</em>" data-en-html="We believe companies should move from short-term thinking to the long term: staying in the market as long as possible, <em>leaving things better than they found them.</em>">Crediamo che le imprese debbano passare da una logica di breve periodo a una di lungo periodo: restare nel mercato il più a lungo possibile, <em>lasciando le cose meglio di come le hanno trovate.</em></blockquote>
-        <figcaption class="belief-quote__by">— Cesare Trebeschi</figcaption>
+        <figcaption class="belief-quote__by">Cesare Trebeschi</figcaption>
       </figure>
       <div class="pillars reveal">
         <article class="pillar">
@@ -118,9 +128,9 @@
       <div class="founder reveal">
         <a href="/team/cesare-trebeschi.html" class="founder__photo" aria-label="Cesare Trebeschi"><img src="/img/cesare-trebeschi.jpg" alt="Cesare Trebeschi"></a>
         <div>
-          <div class="founder__role" data-it="Fondatore &amp; Guida" data-en="Founder &amp; Lead">Fondatore &amp; Guida</div>
+          <div class="founder__role" data-it="CEO &amp; Fondatore" data-en="CEO &amp; Founder">CEO &amp; Fondatore</div>
           <h2 class="founder__name">Cesare Trebeschi</h2>
-          <p class="founder__bio" data-it="[In arrivo — la storia di Cesare: da dove nasce Polaris Group, la visione che guida il Gruppo e il modo di stare accanto agli imprenditori. Quattro paragrafi e una citazione, dall’intervista con il fondatore.]" data-en="[Coming soon — Cesare's story: how Polaris Group began, the vision that drives the Group and the way it stands beside entrepreneurs. Four paragraphs and a quote, from the founder interview.]">[In arrivo — la storia di Cesare: da dove nasce Polaris Group, la visione che guida il Gruppo e il modo di stare accanto agli imprenditori. Quattro paragrafi e una citazione, dall’intervista con il fondatore.]</p>
+          <p class="founder__bio" data-it="[In arrivo, la storia di Cesare: da dove nasce Polaris Group, la visione che guida il Gruppo e il modo di stare accanto agli imprenditori. Quattro paragrafi e una citazione, dall’intervista con il fondatore.]" data-en="[Coming soon, Cesare's story: how Polaris Group began, the vision that drives the Group and the way it stands beside entrepreneurs. Four paragraphs and a quote, from the founder interview.]">[In arrivo, la storia di Cesare: da dove nasce Polaris Group, la visione che guida il Gruppo e il modo di stare accanto agli imprenditori. Quattro paragrafi e una citazione, dall’intervista con il fondatore.]</p>
           <a href="/team/cesare-trebeschi.html" class="founder__link" data-it="Leggi la sua storia →" data-en="Read his story →">Leggi la sua storia →</a>
         </div>
       </div>
@@ -133,15 +143,56 @@
       <div class="section__head reveal">
         <h2 data-it-html="Conosci il <em class=&quot;hl&quot;>team</em>" data-en-html="Meet the <em class=&quot;hl&quot;>team</em>">Conosci il <em class="hl">team</em></h2>
       </div>
-      <div class="team-grid reveal">
-        <a href="/team/cesare-trebeschi.html" class="team-card team-card--lead"><div class="team-card__photo"><img src="/img/cesare-trebeschi.jpg" alt="Cesare Trebeschi"></div><div class="team-card__name">Cesare Trebeschi</div><div class="team-card__role" data-it="Fondatore &amp; Guida" data-en="Founder &amp; Lead">Fondatore &amp; Guida</div></a>
-        <a href="/team/cristina.html" class="team-card"><div class="team-card__photo">C</div><div class="team-card__name">Cristina</div><div class="team-card__role" data-it="Formazione" data-en="Training">Formazione</div></a>
-        <a href="/team/alessio.html" class="team-card"><div class="team-card__photo">A</div><div class="team-card__name">Alessio</div><div class="team-card__role" data-it="Consulenza" data-en="Advisory">Consulenza</div></a>
-        <a href="/team/gianmaria.html" class="team-card"><div class="team-card__photo">G</div><div class="team-card__name">Gianmaria</div><div class="team-card__role" data-it="Invoice Trading" data-en="Invoice Trading">Invoice Trading</div></a>
-        <a href="/team/mara.html" class="team-card"><div class="team-card__photo">M</div><div class="team-card__name">Mara</div><div class="team-card__role" data-it="Formazione su misura" data-en="Tailor-made Training">Formazione su misura</div></a>
-        <a href="/team/paola.html" class="team-card"><div class="team-card__photo">P</div><div class="team-card__name">Paola</div><div class="team-card__role" data-it="Operazioni" data-en="Operations">Operazioni</div></a>
-        <a href="/team/andrea.html" class="team-card"><div class="team-card__photo">A</div><div class="team-card__name">Andrea</div><div class="team-card__role" data-it="Formazione" data-en="Training">Formazione</div></a>
-        <a href="/team/giovanni.html" class="team-card"><div class="team-card__photo">G</div><div class="team-card__name">Giovanni</div><div class="team-card__role" data-it="Consulenza" data-en="Advisory">Consulenza</div></a>
+      <div class="team-groups">
+        <!-- Leadership -->
+        <div class="team-group team-group--lead reveal">
+          <div class="team-group__head">
+            <span class="team-group__eyebrow" data-it="Leadership" data-en="Leadership">Leadership</span>
+          </div>
+          <div class="team-grid">
+            <a href="/team/cesare-trebeschi.html" class="team-card team-card--lead"><div class="team-card__photo"><img src="/img/cesare-trebeschi.jpg" alt="Cesare Trebeschi"></div><div class="team-card__name">Cesare Trebeschi</div><div class="team-card__role" data-it="CEO &amp; Fondatore" data-en="CEO &amp; Founder">CEO &amp; Fondatore</div></a>
+          </div>
+        </div>
+
+        <!-- Area Formazione -->
+        <div class="team-group reveal">
+          <div class="team-group__head">
+            <span class="team-group__eyebrow" data-it="Area Formazione" data-en="Training">Area Formazione</span>
+          </div>
+          <div class="team-grid">
+            <a href="/team/mara.html" class="team-card"><div class="team-card__photo">M</div><div class="team-card__name">Mara Carioni</div><div class="team-card__role" data-it="Responsabile Formazione" data-en="Head of Training">Responsabile Formazione</div></a>
+            <a href="/team/paola.html" class="team-card"><div class="team-card__photo">P</div><div class="team-card__name">Paola Franzoni</div><div class="team-card__role" data-it="Formazione" data-en="Training">Formazione</div></a>
+            <a href="/team/andrea.html" class="team-card"><div class="team-card__photo">A</div><div class="team-card__name">Andrea Ungaro</div><div class="team-card__role" data-it="Formazione" data-en="Training">Formazione</div></a>
+            <a href="/team/giovanni.html" class="team-card"><div class="team-card__photo">G</div><div class="team-card__name">Giovanni Di Genio</div><div class="team-card__role" data-it="Senior Partner" data-en="Senior Partner">Senior Partner</div></a>
+            <a href="/team/silvia.html" class="team-card"><div class="team-card__photo">S</div><div class="team-card__name">Silvia Ungaro</div><div class="team-card__role" data-it="Senior Partner" data-en="Senior Partner">Senior Partner</div></a>
+            <a href="/team/roberto.html" class="team-card"><div class="team-card__photo">R</div><div class="team-card__name">Roberto James Aloi</div><div class="team-card__role" data-it="Senior Partner" data-en="Senior Partner">Senior Partner</div></a>
+            <a href="/team/carole.html" class="team-card"><div class="team-card__photo">C</div><div class="team-card__name">Carole Conti</div><div class="team-card__role" data-it="Senior Partner" data-en="Senior Partner">Senior Partner</div></a>
+            <a href="/team/roberta.html" class="team-card"><div class="team-card__photo">R</div><div class="team-card__name">Roberta Tagliani</div><div class="team-card__role" data-it="Senior Partner" data-en="Senior Partner">Senior Partner</div></a>
+            <a href="/team/francesca.html" class="team-card"><div class="team-card__photo">F</div><div class="team-card__name">Francesca Rossini</div><div class="team-card__role" data-it="Junior Partner" data-en="Junior Partner">Junior Partner</div></a>
+            <a href="/team/lavinia.html" class="team-card"><div class="team-card__photo">L</div><div class="team-card__name">Lavinia Di Genio</div><div class="team-card__role" data-it="Junior Partner" data-en="Junior Partner">Junior Partner</div></a>
+          </div>
+        </div>
+
+        <!-- Area Economico-Finanziaria -->
+        <div class="team-group reveal">
+          <div class="team-group__head">
+            <span class="team-group__eyebrow" data-it="Area Economico-Finanziaria" data-en="Finance &amp; Control">Area Economico-Finanziaria</span>
+          </div>
+          <div class="team-grid">
+            <a href="/team/alessio.html" class="team-card"><div class="team-card__photo">A</div><div class="team-card__name">Alessio Di Cesare</div><div class="team-card__role" data-it="Controller" data-en="Controller">Controller</div></a>
+            <a href="/team/gianmaria.html" class="team-card"><div class="team-card__photo">G</div><div class="team-card__name">Gianmaria Bassani</div><div class="team-card__role" data-it="Amministrazione" data-en="Administration">Amministrazione</div></a>
+          </div>
+        </div>
+
+        <!-- Area Segreteria -->
+        <div class="team-group reveal">
+          <div class="team-group__head">
+            <span class="team-group__eyebrow" data-it="Area Segreteria" data-en="Administration">Area Segreteria</span>
+          </div>
+          <div class="team-grid">
+            <a href="/team/cristina.html" class="team-card"><div class="team-card__photo">C</div><div class="team-card__name">Cristina Milanesi</div><div class="team-card__role" data-it="Segreteria" data-en="Administration">Segreteria</div></a>
+          </div>
+        </div>
       </div>
     </div>
   </section>

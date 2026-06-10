@@ -97,7 +97,7 @@ em.hl{font-style:italic;color:var(--steel)}
 /* === Get-in-Touch CTA block (mirrors the RCP "Let's discuss your strategy" pattern) === */
 .git{max-width:680px;margin:0 auto;text-align:center}
 .git__eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--silver-accent);margin-bottom:24px}
-.git__eyebrow::before{content:"—"}
+/* git eyebrow prefix dash removed */
 .git__title{font-family:var(--serif);font-weight:500;font-size:clamp(2rem,4vw,3.2rem);color:var(--navy-deep);line-height:1.1;letter-spacing:-.012em;margin:0}
 .git__title em{font-style:italic;color:var(--steel)}
 .git__sub{margin:22px auto 36px;font-size:1rem;color:var(--ink);opacity:.7;line-height:1.6;max-width:none;white-space:nowrap}

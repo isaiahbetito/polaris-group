@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cesare Trebeschi — Fondatore | Polaris Group</title>
+<title>Cesare Trebeschi, Fondatore | Polaris Group</title>
 <meta name="description" content="Cesare Trebeschi, fondatore e guida di Polaris Group. Dal 2018 affianca le PMI italiane su formazione, finanza non bancaria e advisory, da Crema. Percorso multidisciplinare tra industria, pubblica amministrazione e mondo associativo.">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
@@ -88,7 +88,7 @@
   .belief__quote{font-family:var(--serif);font-weight:500;font-style:italic;font-size:clamp(1.8rem,3.6vw,2.8rem);line-height:1.3;letter-spacing:-.01em;quotes:none;margin:0 auto;max-width:24ch;text-align:center}
   .belief__quote em{font-style:italic;color:var(--blue);font-weight:500}
   .belief__by{margin-top:28px;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.55);font-weight:600}
-  .belief__by::before{content:"— "}
+  /* attribution prefix removed (no em-dash) */
 
   /* ---- A MOMENT (Nasdaq podium) ---- */
   .moment{background:radial-gradient(70% 100% at 50% 0%,#0e3258,transparent 60%),linear-gradient(180deg,#08233c,#0B2E4F);color:#fff}
@@ -100,6 +100,22 @@
   .moment__media{border-radius:14px;overflow:hidden;border:1px solid rgba(127,168,220,.18);box-shadow:0 24px 60px rgba(0,0,0,.5)}
   .moment__media img{width:100%;height:auto;display:block}
   @media(max-width:768px){.moment__inner{grid-template-columns:1fr;gap:36px;padding:64px 20px}}
+
+  /* ---- BIOGRAFIA narrative prose ---- */
+  .bio-prose{max-width:780px;margin:0 auto;font-size:1.06rem;line-height:1.8;color:var(--ink)}
+  .bio-prose p{margin:0 0 22px}
+  .bio-prose p:last-child{margin-bottom:0}
+  .bio-prose em{font-style:italic;color:var(--steel)}
+  .bio-prose strong{color:var(--navy-deep);font-weight:600}
+
+  /* ---- INTERESSI cards (reading + sport) ---- */
+  .interests{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;max-width:840px;margin:32px auto 0}
+  .interest{padding:32px 28px;background:#fff;border:1px solid var(--silver-2);border-radius:6px;transition:transform .3s var(--ease),box-shadow .3s var(--ease),border-color .3s var(--ease)}
+  .interest:hover{transform:translateY(-3px);border-color:var(--silver-1);box-shadow:0 24px 50px -28px rgba(11,46,79,.25)}
+  .interest__icon{display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:50%;background:rgba(11,46,79,.06);color:var(--navy-deep);margin-bottom:14px}
+  .interest__t{font-family:var(--serif);font-size:1.3rem;font-weight:600;color:var(--navy-deep);margin:0 0 8px}
+  .interest__d{font-size:.96rem;color:var(--ink);opacity:.8;line-height:1.6;margin:0}
+  @media(max-width:640px){.interests{grid-template-columns:1fr}}
 
   /* ---- EDUCATION (cream cards) ---- */
   .cred-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;max-width:840px;margin:0 auto}
@@ -163,14 +179,14 @@
         <div class="bio-photo__accent-2" aria-hidden="true"></div>
       </div>
       <div class="bio-intro">
-        <div class="bio-eyebrow" data-it="Fondatore &amp; Guida" data-en="Founder &amp; Lead">Fondatore &amp; Guida</div>
+        <div class="bio-eyebrow" data-it="CEO &amp; Fondatore" data-en="CEO &amp; Founder">CEO &amp; Fondatore</div>
         <h1 class="bio-name">Cesare Trebeschi</h1>
         <p class="bio-title" data-it="Fondatore di Polaris Group" data-en="Founder of Polaris Group">Fondatore di Polaris Group</p>
         <a href="https://www.linkedin.com/in/cesare-t-b4055b80/" target="_blank" rel="noopener" class="bio-linkedin">
           <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
           <span data-it="Profilo LinkedIn" data-en="LinkedIn Profile">Profilo LinkedIn</span>
         </a>
-        <p class="bio-summary" data-it="Cesare porta in Polaris un percorso multidisciplinare che attraversa l’industria privata, la pubblica amministrazione e il mondo associativo. Da qui nasce un modo di affiancare le PMI fatto di un solo interlocutore, una rete di specialisti dietro e una visione di lungo periodo." data-en="Cesare brings to Polaris a multidisciplinary path spanning private industry, public administration and trade associations. From this comes a way of standing beside SMEs built on one point of contact, a network of specialists behind, and a long-term vision.">Cesare porta in Polaris un percorso multidisciplinare che attraversa l’industria privata, la pubblica amministrazione e il mondo associativo. Da qui nasce un modo di affiancare le PMI fatto di un solo interlocutore, una rete di specialisti dietro e una visione di lungo periodo.</p>
+        <p class="bio-summary" data-it="Un percorso multidisciplinare tra industria, amministrazione pubblica e mondo associativo, che nel 2015 ha portato alla fondazione di Polaris: una boutique agile e specializzata, dedicata ad affiancare gli imprenditori italiani con attenzione reale, relazioni durature e una visione di lungo periodo." data-en="A multidisciplinary path across industry, public administration and trade associations, which in 2015 led to the founding of Polaris: a nimble, specialised boutique dedicated to standing beside Italian entrepreneurs with genuine attention, lasting relationships and a long-term vision.">Un percorso multidisciplinare tra industria, amministrazione pubblica e mondo associativo, che nel 2015 ha portato alla fondazione di Polaris: una boutique agile e specializzata, dedicata ad affiancare gli imprenditori italiani con attenzione reale, relazioni durature e una visione di lungo periodo.</p>
         <div class="bio-meta">
           <div class="bio-meta__item">
             <span class="bio-meta__label" data-it="Sede" data-en="Based in">Sede</span>
@@ -178,11 +194,11 @@
           </div>
           <div class="bio-meta__item">
             <span class="bio-meta__label" data-it="In Polaris" data-en="At Polaris">In Polaris</span>
-            <span class="bio-meta__value" data-it="Dal 2018" data-en="Since 2018">Dal 2018</span>
+            <span class="bio-meta__value" data-it="Dal 2015" data-en="Since 2015">Dal 2015</span>
           </div>
           <div class="bio-meta__item">
             <span class="bio-meta__label" data-it="Ruolo" data-en="Role">Ruolo</span>
-            <span class="bio-meta__value" data-it="Fondatore &amp; Guida" data-en="Founder &amp; Lead">Fondatore &amp; Guida</span>
+            <span class="bio-meta__value" data-it="CEO &amp; Fondatore" data-en="CEO &amp; Founder">CEO &amp; Fondatore</span>
           </div>
         </div>
       </div>
@@ -200,7 +216,7 @@
       <div class="xp-grid">
         <div class="xp-card">
           <h3 class="xp-card__t" data-it="Formazione &amp; Sviluppo" data-en="Training &amp; Development">Formazione &amp; Sviluppo</h3>
-          <p class="xp-card__d" data-it="Formazione obbligatoria e su misura, finanziata dai fondi interprofessionali. Dal primo soccorso alla leadership, un ciclo completo accanto all’impresa." data-en="Mandatory and tailor-made training, funded by interprofessional funds. From first aid to leadership — a complete cycle alongside the company.">Formazione obbligatoria e su misura, finanziata dai fondi interprofessionali. Dal primo soccorso alla leadership, un ciclo completo accanto all’impresa.</p>
+          <p class="xp-card__d" data-it="Formazione obbligatoria e su misura, finanziata dai fondi interprofessionali. Dal primo soccorso alla leadership, un ciclo completo accanto all’impresa." data-en="Mandatory and tailor-made training, funded by interprofessional funds. From first aid to leadership, a complete cycle alongside the company.">Formazione obbligatoria e su misura, finanziata dai fondi interprofessionali. Dal primo soccorso alla leadership, un ciclo completo accanto all’impresa.</p>
         </div>
         <div class="xp-card">
           <h3 class="xp-card__t" data-it="Finanza non bancaria" data-en="Non-bank Finance">Finanza non bancaria</h3>
@@ -233,19 +249,25 @@
       <div class="split">
         <div class="split__left">
           <span class="eyebrow" data-it="Percorso" data-en="Career">Percorso</span>
-          <h2 data-it-html="Un percorso <span class='hl'>multi-settore</span> verso la finanza" data-en-html="A <span class='hl'>multi-sector</span> path into finance">Un percorso <span class="hl">multi-settore</span> verso la finanza</h2>
-          <p data-it="Il cammino di Cesare attraversa più mondi prima di co-fondare Run Capital Partners per costruire la piattaforma di investimenti alternativi e cartolarizzazione del Gruppo." data-en="Cesare's path crosses several worlds before co-founding Run Capital Partners to build the group's alternative-investment and securitization platform.">Il cammino di Cesare attraversa più mondi prima di co-fondare Run Capital Partners per costruire la piattaforma di investimenti alternativi e cartolarizzazione del Gruppo.</p>
+          <h2 data-it-html="Un percorso <span class='hl'>multidisciplinare</span> verso Polaris" data-en-html="A <span class='hl'>multidisciplinary</span> path to Polaris">Un percorso <span class="hl">multidisciplinare</span> verso Polaris</h2>
+          <p data-it="Dall’insegnamento all’amministrazione pubblica, dalla consulenza datoriale fino alla fondazione di Polaris: un cammino che intreccia impresa, normativa e formazione." data-en="From teaching to public administration, from employer-side consulting to founding Polaris: a path that weaves together business, regulation and training.">Dall’insegnamento all’amministrazione pubblica, dalla consulenza datoriale fino alla fondazione di Polaris: un cammino che intreccia impresa, normativa e formazione.</p>
         </div>
         <div class="split__right">
           <div class="timeline">
             <div class="tl-item tl-item--now">
-              <p class="tl-item__date" data-it="Novembre 2022 — Oggi" data-en="November 2022 — Present">Novembre 2022 — Oggi</p>
+              <p class="tl-item__date" data-it="Dal 2015 a oggi" data-en="2015 to today">Dal 2015 a oggi</p>
+              <h3 class="tl-item__role" data-it="CEO &amp; Fondatore" data-en="CEO &amp; Founder">CEO &amp; Fondatore</h3>
+              <p class="tl-item__co">Polaris Group</p>
+              <p class="tl-item__d" data-it="Fonda Polaris insieme al socio Stefano Marconi (venuto a mancare nel 2021). Polaris si occupa di formazione continua per le imprese, con percorsi dedicati a dipendenti, dirigenti e imprenditori, e di supporto finanziario, sia attraverso il canale bancario tradizionale sia con strumenti extra-bancari come invoice trading, supply chain finance e monetizzazione del magazzino." data-en="Founded Polaris together with partner Stefano Marconi (who passed away in 2021). Polaris delivers continuing education for companies, with paths dedicated to employees, managers and entrepreneurs, plus financial support, both through the traditional banking channel and through non-bank instruments such as invoice trading, supply chain finance and inventory monetisation.">Fonda Polaris insieme al socio Stefano Marconi (venuto a mancare nel 2021). Polaris si occupa di formazione continua per le imprese, con percorsi dedicati a dipendenti, dirigenti e imprenditori, e di supporto finanziario, sia attraverso il canale bancario tradizionale sia con strumenti extra-bancari come invoice trading, supply chain finance e monetizzazione del magazzino.</p>
+            </div>
+            <div class="tl-item tl-item--now">
+              <p class="tl-item__date" data-it="Dal novembre 2022" data-en="Since November 2022">Dal novembre 2022</p>
               <h3 class="tl-item__role" data-it="Co-fondatore &amp; Partner" data-en="Co-Founder &amp; Partner">Co-fondatore &amp; Partner</h3>
               <p class="tl-item__co">Run Capital Partners</p>
               <p class="tl-item__d" data-it="Contribuisce alla progettazione e al rollout dei fondi di investimento alternativi e dei veicoli di cartolarizzazione del Gruppo, accanto al CEO Luca Padovan." data-en="Contributes to the design and rollout of the group's alternative-investment funds and securitization vehicles, alongside CEO Luca Padovan.">Contribuisce alla progettazione e al rollout dei fondi di investimento alternativi e dei veicoli di cartolarizzazione del Gruppo, accanto al CEO Luca Padovan.</p>
             </div>
             <div class="tl-item tl-item--now">
-              <p class="tl-item__date" data-it="Febbraio 2018 — Oggi" data-en="February 2018 — Present">Febbraio 2018 — Oggi</p>
+              <p class="tl-item__date" data-it="Dal febbraio 2018" data-en="Since February 2018">Dal febbraio 2018</p>
               <h3 class="tl-item__role" data-it="Fondatore &amp; Proprietario" data-en="Founder &amp; Owner">Fondatore &amp; Proprietario</h3>
               <p class="tl-item__co">Hazard Venture s.r.l.</p>
               <p class="tl-item__d" data-it="Fondatore e proprietario di Hazard Venture s.r.l., con sede a Crema, in Lombardia." data-en="Founder and owner of Hazard Venture s.r.l., based in Crema, Lombardy.">Fondatore e proprietario di Hazard Venture s.r.l., con sede a Crema, in Lombardia.</p>
@@ -257,10 +279,22 @@
               <p class="tl-item__d" data-it="Società italiana di consulenza HR e formazione. Eroga formazione aziendale e advisory su sicurezza sul lavoro, HACCP, GDPR, certificazioni ISO, apprendistato e programmi di finanziamento agevolato per le PMI." data-en="Italian HR consulting and training firm. Delivers corporate training and advisory across workplace safety, HACCP, GDPR, ISO certifications, apprenticeships, and subsidised-financing programmes for SMEs.">Società italiana di consulenza HR e formazione. Eroga formazione aziendale e advisory su sicurezza sul lavoro, HACCP, GDPR, certificazioni ISO, apprendistato e programmi di finanziamento agevolato per le PMI.</p>
             </div>
             <div class="tl-item">
-              <p class="tl-item__date" data-it="Precedente" data-en="Prior">Precedente</p>
-              <h3 class="tl-item__role" data-it="Associazione — Sede Nazionale" data-en="Association — National Office">Associazione — Sede Nazionale</h3>
-              <p class="tl-item__co">CONFAPI – Sede Nazionale</p>
-              <p class="tl-item__d" data-it="Sede nazionale della confederazione italiana della piccola e media industria privata." data-en="National office of Italy's confederation of small and medium-sized private industry.">Sede nazionale della confederazione italiana della piccola e media industria privata.</p>
+              <p class="tl-item__date" data-it="Dal 2009 al 2013" data-en="2009 to 2013">Dal 2009 al 2013</p>
+              <h3 class="tl-item__role" data-it="Consulente di direzione" data-en="Management Consultant">Consulente di direzione</h3>
+              <p class="tl-item__co">Confapi</p>
+              <p class="tl-item__d" data-it="Consulente per la confederazione di rappresentanza delle PMI italiane. Si occupa di formazione aziendale, percorsi formativi per imprenditori e progetti finanziati dall’Unione Europea e dai fondi interprofessionali." data-en="Consultant for Italy’s confederation representing SMEs. Focuses on corporate training, training paths for entrepreneurs, and projects funded by the European Union and interprofessional funds.">Consulente per la confederazione di rappresentanza delle PMI italiane. Si occupa di formazione aziendale, percorsi formativi per imprenditori e progetti finanziati dall’Unione Europea e dai fondi interprofessionali.</p>
+            </div>
+            <div class="tl-item">
+              <p class="tl-item__date" data-it="Fino al 2009" data-en="Until 2009">Fino al 2009</p>
+              <h3 class="tl-item__role" data-it="Sindaco" data-en="Mayor">Sindaco</h3>
+              <p class="tl-item__co" data-it="Comune di Manerbio" data-en="Municipality of Manerbio">Comune di Manerbio</p>
+              <p class="tl-item__d" data-it="Sindaco del Comune di Manerbio (quasi 15.000 abitanti), dopo essere stato Assessore. Una palestra straordinaria di relazione, pazienza e comprensione dei processi pubblici." data-en="Mayor of the Municipality of Manerbio (nearly 15,000 inhabitants), after serving as Councillor. An extraordinary training ground in relationships, patience and understanding public processes.">Sindaco del Comune di Manerbio (quasi 15.000 abitanti), dopo essere stato Assessore. Una palestra straordinaria di relazione, pazienza e comprensione dei processi pubblici.</p>
+            </div>
+            <div class="tl-item">
+              <p class="tl-item__date" data-it="Inizio carriera" data-en="Early career">Inizio carriera</p>
+              <h3 class="tl-item__role" data-it="Insegnante di Economia e Diritto" data-en="Teacher of Economics &amp; Law">Insegnante di Economia e Diritto</h3>
+              <p class="tl-item__co" data-it="Formazione personale: Laurea in Economia e Commercio · Laurea triennale in Giurisprudenza (2014)" data-en="Education: Degree in Economics &amp; Commerce · Three-year Law Degree (2014)">Formazione personale: Laurea in Economia e Commercio · Laurea triennale in Giurisprudenza (2014)</p>
+              <p class="tl-item__d" data-it="Inizia la carriera nell’insegnamento. La laurea in Giurisprudenza, conseguita nel 2014, integra le competenze economiche con una solida comprensione del quadro normativo e legale." data-en="Began his career in teaching. The 2014 Law degree completed his economic background with a solid grounding in the regulatory and legal framework.">Inizia la carriera nell’insegnamento. La laurea in Giurisprudenza, conseguita nel 2014, integra le competenze economiche con una solida comprensione del quadro normativo e legale.</p>
             </div>
           </div>
         </div>
@@ -272,7 +306,7 @@
   <section class="moment reveal">
     <div class="moment__inner">
       <div class="moment__text">
-        <p class="moment__eyebrow" data-it="— Un momento" data-en="— A moment">— Un momento</p>
+        <p class="moment__eyebrow" data-it="Un momento" data-en="A moment">Un momento</p>
         <h2 class="moment__title" data-it-html="Al <em>podio del Nasdaq</em>" data-en-html="At the <em>Nasdaq podium</em>">Al <em>podio del Nasdaq</em></h2>
         <p class="moment__sub" data-it="Un riflesso del lavoro del Gruppo sulle quotazioni Nasdaq e sulle operazioni cross-border di mercato dei capitali che ancorano la partnership con Run Capital Partners." data-en="A reflection of the group's footprint in Nasdaq listing advisory and the cross-border capital-markets work that anchors the partnership with Run Capital Partners.">Un riflesso del lavoro del Gruppo sulle quotazioni Nasdaq e sulle operazioni cross-border di mercato dei capitali che ancorano la partnership con Run Capital Partners.</p>
       </div>
@@ -282,15 +316,57 @@
     </div>
   </section>
 
+  <!-- BIOGRAFIA — full narrative -->
+  <section class="section section--cream reveal">
+    <div class="container">
+      <div class="section__head text-center">
+        <span class="eyebrow eyebrow--center" data-it="La sua storia" data-en="His story">La sua storia</span>
+        <h2 data-it-html="Una <em class=&quot;hl&quot;>palestra straordinaria</em>" data-en-html="An <em class=&quot;hl&quot;>extraordinary training ground</em>">Una <em class="hl">palestra straordinaria</em></h2>
+      </div>
+      <div class="bio-prose reveal">
+        <p data-it="Laureato in Economia e Commercio, ho iniziato la mia carriera come insegnante di Economia e Diritto. Durante quel periodo ho intrapreso un’importante esperienza nell’amministrazione pubblica, ricoprendo prima il ruolo di Assessore e poi di Sindaco del Comune di Manerbio, un centro di quasi quindicimila abitanti, fino al 2009. Quella stagione è stata per me una palestra straordinaria. Mi ha insegnato a relazionarmi con le persone, a coltivare la pazienza e a comprendere i processi burocratici come elementi imprescindibili in qualsiasi tipo di attività." data-en="I hold a degree in Economics and Commerce, and began my career as a teacher of Economics and Law. During that time I took on a meaningful experience in public administration, first as Councillor and then as Mayor of the Municipality of Manerbio, a town of nearly fifteen thousand inhabitants, until 2009. That period was an extraordinary training ground for me. It taught me to engage with people, to cultivate patience, and to understand bureaucratic processes as essential to any kind of activity.">Laureato in Economia e Commercio, ho iniziato la mia carriera come insegnante di Economia e Diritto. Durante quel periodo ho intrapreso un’importante esperienza nell’amministrazione pubblica, ricoprendo prima il ruolo di Assessore e poi di Sindaco del Comune di Manerbio, un centro di quasi quindicimila abitanti, fino al 2009. Quella stagione è stata per me una palestra straordinaria. Mi ha insegnato a relazionarmi con le persone, a coltivare la pazienza e a comprendere i processi burocratici come elementi imprescindibili in qualsiasi tipo di attività.</p>
+        <p data-it="Conclusa l’esperienza amministrativa, ho lavorato per quattro anni come consulente di direzione presso Confapi, la realtà di rappresentanza datoriale per le piccole e medie imprese, paragonabile a una Confindustria del mondo PMI. In questo stesso periodo ho arricchito il mio percorso formativo conseguendo, nel 2014, la laurea triennale in Giurisprudenza, che mi ha fornito strumenti preziosi per affiancare alle competenze economiche una solida comprensione del quadro normativo e legale. Fino al 2013 mi ero occupato in particolare di formazione aziendale, di percorsi formativi per imprenditori e di progetti finanziati dall’Unione Europea e dai fondi interprofessionali." data-en="After my administrative experience, I worked for four years as a management consultant at Confapi, the employer-side body representing small and medium-sized enterprises in Italy, comparable to a Confindustria for the SME world. During the same period I expanded my education, earning a three-year Law degree in 2014, which gave me valuable tools to pair my economic background with a solid understanding of the regulatory and legal framework. Until 2013 I worked in particular on corporate training, training paths for entrepreneurs, and projects funded by the European Union and by interprofessional funds.">Conclusa l’esperienza amministrativa, ho lavorato per quattro anni come consulente di direzione presso Confapi, la realtà di rappresentanza datoriale per le piccole e medie imprese, paragonabile a una Confindustria del mondo PMI. In questo stesso periodo ho arricchito il mio percorso formativo conseguendo, nel 2014, la laurea triennale in Giurisprudenza, che mi ha fornito strumenti preziosi per affiancare alle competenze economiche una solida comprensione del quadro normativo e legale. Fino al 2013 mi ero occupato in particolare di formazione aziendale, di percorsi formativi per imprenditori e di progetti finanziati dall’Unione Europea e dai fondi interprofessionali.</p>
+        <p data-it-html="Da quella esperienza ho tratto le competenze per fondare, nel 2015, <strong>Polaris</strong>, insieme al socio Stefano Marconi, venuto a mancare nel 2021. Polaris si occupa di formazione continua rivolta alle imprese, con percorsi dedicati ai dipendenti, ai dirigenti e agli imprenditori, e di supporto finanziario, accompagnando le aziende nella ricerca di fonti di finanziamento. Lavoriamo sia attraverso il canale bancario tradizionale, con un’apposita divisione dedicata, sia attraverso strumenti extra-bancari non soggetti alla normativa OAM, come l’invoice trading, la supply chain finance e la monetizzazione del magazzino." data-en-html="From that experience I drew the skills to found <strong>Polaris</strong> in 2015, together with my partner Stefano Marconi, who passed away in 2021. Polaris delivers continuing education for companies, with paths dedicated to employees, managers, and entrepreneurs, alongside financial support, accompanying businesses in the search for funding. We work both through the traditional banking channel, via a dedicated division, and through non-bank instruments not subject to OAM regulation, such as invoice trading, supply chain finance, and inventory monetisation.">Da quella esperienza ho tratto le competenze per fondare, nel 2015, <strong>Polaris</strong>, insieme al socio Stefano Marconi, venuto a mancare nel 2021. Polaris si occupa di formazione continua rivolta alle imprese, con percorsi dedicati ai dipendenti, ai dirigenti e agli imprenditori, e di supporto finanziario, accompagnando le aziende nella ricerca di fonti di finanziamento. Lavoriamo sia attraverso il canale bancario tradizionale, con un’apposita divisione dedicata, sia attraverso strumenti extra-bancari non soggetti alla normativa OAM, come l’invoice trading, la supply chain finance e la monetizzazione del magazzino.</p>
+        <p data-it-html="La filosofia che ha sempre guidato Polaris è quella di una <em>boutique</em>. Non una realtà di grandi dimensioni, ma una struttura agile e specializzata, capace di dedicare attenzione reale a ciascun cliente. Crediamo che ogni impresa abbia una storia, una cultura e delle esigenze che non si prestano a soluzioni standard. Per questo lavoriamo costruendo relazioni durature con gli imprenditori, approfondendo il contesto in cui operano prima ancora di proporre qualsiasi strumento o percorso. L’obiettivo non è vendere un servizio, ma diventare un punto di riferimento stabile nel tempo. Qualcuno con cui confrontarsi nelle fasi di crescita e nei momenti di difficoltà. In un contesto economico che dal 2015 a oggi è cambiato profondamente, per le imprese, per i lavoratori e per i mercati, questa capacità di adattamento e di ascolto è diventata ancora più centrale. Abbiamo cambiato noi stessi per continuare a essere utili, senza però rinunciare a ciò che ci ha sempre contraddistinto. La cura per il dettaglio, la personalizzazione e la qualità della relazione umana." data-en-html="The philosophy that has always guided Polaris is that of a <em>boutique</em>. Not a large organisation, but a nimble, specialised structure capable of giving genuine attention to each client. We believe every company has a story, a culture and needs that don’t lend themselves to standard solutions. That’s why we build lasting relationships with entrepreneurs, taking time to understand the context in which they operate before proposing any tool or path. The goal is not to sell a service, but to become a stable point of reference over time. Someone to consult during phases of growth and in moments of difficulty. In an economic context that has changed profoundly since 2015, for businesses, workers and markets, this capacity to adapt and listen has become even more central. We have changed ourselves to remain useful, without giving up what has always set us apart. Attention to detail, personalisation, and the quality of the human relationship.">La filosofia che ha sempre guidato Polaris è quella di una <em>boutique</em>. Non una realtà di grandi dimensioni, ma una struttura agile e specializzata, capace di dedicare attenzione reale a ciascun cliente. Crediamo che ogni impresa abbia una storia, una cultura e delle esigenze che non si prestano a soluzioni standard. Per questo lavoriamo costruendo relazioni durature con gli imprenditori, approfondendo il contesto in cui operano prima ancora di proporre qualsiasi strumento o percorso. L’obiettivo non è vendere un servizio, ma diventare un punto di riferimento stabile nel tempo. Qualcuno con cui confrontarsi nelle fasi di crescita e nei momenti di difficoltà. In un contesto economico che dal 2015 a oggi è cambiato profondamente, per le imprese, per i lavoratori e per i mercati, questa capacità di adattamento e di ascolto è diventata ancora più centrale. Abbiamo cambiato noi stessi per continuare a essere utili, senza però rinunciare a ciò che ci ha sempre contraddistinto. La cura per il dettaglio, la personalizzazione e la qualità della relazione umana.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERESSI -->
+  <section class="section reveal">
+    <div class="container">
+      <div class="section__head text-center">
+        <span class="eyebrow eyebrow--center" data-it="Interessi &amp; passioni" data-en="Interests &amp; passions">Interessi &amp; passioni</span>
+        <h2 data-it-html="Fuori dal <em class=&quot;hl&quot;>lavoro</em>" data-en-html="Beyond <em class=&quot;hl&quot;>work</em>">Fuori dal <em class="hl">lavoro</em></h2>
+      </div>
+      <div class="interests reveal">
+        <article class="interest">
+          <span class="interest__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+          </span>
+          <h3 class="interest__t" data-it="Lettura" data-en="Reading">Lettura</h3>
+          <p class="interest__d" data-it="Amo leggere, spaziando tra romanzi e saggi. In questo periodo mi appassiona in particolare il tema dell’intelligenza artificiale, per i rilevanti interrogativi etici che pone." data-en="I love reading, ranging between novels and essays. Right now I’m particularly drawn to artificial intelligence, for the significant ethical questions it raises.">Amo leggere, spaziando tra romanzi e saggi. In questo periodo mi appassiona in particolare il tema dell’intelligenza artificiale, per i rilevanti interrogativi etici che pone.</p>
+        </article>
+        <article class="interest">
+          <span class="interest__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2.5"/><path d="M19 21l-3-9h-3l-3 5-4-3-3 7"/><path d="M14 12l-2 3 4 4"/></svg>
+          </span>
+          <h3 class="interest__t" data-it="Sport" data-en="Sport">Sport</h3>
+          <p class="interest__d" data-it="Sul fronte sportivo, sto allenandomi in vista della Maratona di New York 2027." data-en="On the sports side, I’m training for the 2027 New York Marathon.">Sul fronte sportivo, sto allenandomi in vista della Maratona di New York 2027.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
   <!-- CONTACT -->
   <section class="section section--ink reveal">
     <div class="container text-center">
       <div class="ask-direct">
         <h2 class="ask-direct__title" data-it="Contattalo direttamente." data-en="Get in touch directly.">Contattalo direttamente.</h2>
-        <p class="ask-direct__email"><a href="mailto:c.trebeschi@polaris-group.it">c.trebeschi@polaris-group.it</a></p>
+        <p class="ask-direct__email"><a href="mailto:info@polaris-group.it">info@polaris-group.it</a></p>
         <div class="ask-direct__buttons">
-          <button class="btn btn--primary" type="button" data-open-contact data-modal-eyebrow="Email Cesare" data-modal-email="c.trebeschi@polaris-group.it" data-it="Scrivi a Cesare" data-en="Email Cesare">Scrivi a Cesare</button>
-          <a href="https://www.linkedin.com/in/cesare-trebeschi/" target="_blank" rel="noopener" class="btn btn--ghost" data-it="Profilo LinkedIn" data-en="LinkedIn Profile">Profilo LinkedIn</a>
+          <button class="btn btn--primary" type="button" data-open-contact data-modal-eyebrow="Email Cesare" data-it="Scrivi a Cesare" data-en="Email Cesare">Scrivi a Cesare</button>
+          <a href="https://www.linkedin.com/in/cesare-t-b4055b80/" target="_blank" rel="noopener" class="btn btn--ghost" data-it="Profilo LinkedIn" data-en="LinkedIn Profile">Profilo LinkedIn</a>
           <a href="/chi-siamo.html#team" class="btn btn--ghost" data-it="Torna al team" data-en="Back to Team">Torna al team</a>
         </div>
       </div>
