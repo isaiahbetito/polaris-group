@@ -32,7 +32,7 @@
   function countUp(el){
     var target=+el.dataset.target, dur=1500, t0=null;
     function step(ts){ if(!t0)t0=ts; var p=Math.min((ts-t0)/dur,1);
-      el.textContent=Math.round((1-Math.pow(1-p,3))*target).toLocaleString('it-IT'); if(p<1) requestAnimationFrame(step); }
+      el.textContent=Math.round((1-Math.pow(1-p,3))*target).toLocaleString('it-IT',{useGrouping:'always'}); if(p<1) requestAnimationFrame(step); }
     requestAnimationFrame(step);
   }
   var cio=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ countUp(e.target); cio.unobserve(e.target);} }); },{threshold:.6});

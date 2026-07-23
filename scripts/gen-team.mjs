@@ -50,6 +50,12 @@ const XP = {
     { t:{it:'Amministrazione',en:'Administration'}, d:{it:'Gestione amministrativa, pianificazione e flussi documentali.',en:'Administration, scheduling and document flows.'} },
     { t:{it:'Relazione clienti',en:'Client relations'}, d:{it:'Punto di riferimento per appuntamenti, pratiche e follow-up.',en:'A reference point for appointments, paperwork and follow-up.'} },
   ],
+  amministrazione: [
+    { t:{it:'Contabilità',en:'Accounting'}, d:{it:'Tenuta della contabilità ordinaria del Gruppo e delle società collegate.',en:'Keeping the ordinary bookkeeping of the Group and its related companies.'} },
+    { t:{it:'Fatturazione & pagamenti',en:'Invoicing & payments'}, d:{it:'Ciclo attivo e passivo: fatturazione, scadenziario e gestione dei pagamenti.',en:'Accounts payable and receivable: invoicing, due dates and payment management.'} },
+    { t:{it:'Adempimenti',en:'Compliance'}, d:{it:'Adempimenti amministrativi e fiscali, in raccordo con i consulenti.',en:'Administrative and tax compliance, in coordination with advisors.'} },
+    { t:{it:'Dati economico-finanziari',en:'Financial data'}, d:{it:'Supporto alla predisposizione dei dati economico-finanziari del Gruppo.',en:'Support in preparing the Group’s economic-financial data.'} },
+  ],
 };
 
 const XPHEAD = {
@@ -63,6 +69,8 @@ const XPHEAD = {
     intro:{it:'Finanza non bancaria e invoice trading attraverso Hazard srl, società del Gruppo.',en:'Non-bank finance and invoice trading through Hazard srl, a Group company.'} },
   operations:{ h:{it:'L’operatività che <span class=\'hl\'>tiene tutto insieme</span>.',en:'The operations that <span class=\'hl\'>hold it all together</span>.'},
     intro:{it:'Coordinamento, amministrazione e relazione con i clienti: la struttura su cui poggia il lavoro del Gruppo.',en:'Coordination, administration and client relations: the backbone the Group’s work rests on.'} },
+  amministrazione:{ h:{it:'I conti che <span class=\'hl\'>tornano</span>.',en:'The numbers that <span class=\'hl\'>add up</span>.'},
+    intro:{it:'Contabilità, fatturazione e adempimenti dell’area economico-finanziaria, giorno dopo giorno.',en:'Accounting, invoicing and compliance in the finance area, day after day.'} },
 };
 
 /* shared Polaris belief (company method, not a personal quote) */
@@ -73,18 +81,22 @@ const BELIEF = {
 };
 
 const members = [
-  { slug:'cristina', initials:'C', name:'Cristina Milanesi', xptype:'formazione',
-    role:{it:'Segreteria',en:'Administration'}, area:{it:'Area Segreteria',en:'Administration'},
-    specialty:{it:'Organizzazione, amministrazione e coordinamento ufficio',en:'Organisation, administration and office coordination'},
-    summary:{it:'Supporta l’organizzazione e l’amministrazione del Gruppo: il primo punto di contatto e il filo conduttore di ogni attività di Polaris.',en:'Supports the organisation and administration of the Group: the first point of contact and the thread that runs through every Polaris activity.'},
+  { slug:'cristina', initials:'C', name:'Cristina Milanesi', xptype:'operations',
+    photo:true, photoPos:'center 20%',
+    role:{it:'Front & Back Office',en:'Front & Back Office'}, area:{it:'Area Segreteria',en:'Administration'},
+    specialty:{it:'Gestione piani, front e back office, assistenza clienti',en:'Plan management, front and back office, client support'},
+    summary:{it:'In Polaris da un anno, segue la gestione dei piani e le attività di front e back office: organizzazione delle pratiche, coordinamento operativo e assistenza ai clienti, con attenzione ai dettagli e spirito di collaborazione.',en:'With Polaris for a year, she handles plan management and front- and back-office work: organising paperwork, coordinating day-to-day operations and supporting clients, with attention to detail and a collaborative spirit.'},
     company:{it:'Polaris Group',en:'Polaris Group'},
-    focus:{it:'Supporto a organizzazione e amministrazione.',en:'Support to organisation and administration.'} },
-  { slug:'alessio', initials:'A', name:'Alessio Di Cesare', xptype:'advisory',
-    role:{it:'Controller',en:'Controller'}, area:{it:'Area Economico-Finanziaria',en:'Finance & Control'},
-    specialty:{it:'Controllo di gestione, reporting, analisi economico-finanziaria',en:'Management control, reporting, economic-financial analysis'},
-    summary:{it:'Controller dell’area economico-finanziaria: pianifica, monitora e rendiconta gli indicatori di gestione del Gruppo e delle aziende clienti.',en:'Controller in the finance & control area: plans, monitors and reports management indicators for the Group and for client companies.'},
+    prior:{it:'Entrata in Polaris nel 2025, porta nel Gruppo organizzazione, precisione e capacità di problem solving al servizio dei clienti.',en:'She joined Polaris in 2025, bringing organisation, precision and problem-solving in service of clients.'},
+    focus:{it:'Gestione dei piani e attività di front e back office.',en:'Plan management and front- and back-office work.'} },
+  { slug:'alessio', initials:'A', name:'Alessio Di Cesare', xptype:'amministrazione',
+    photo:true, photoPos:'center 32%',
+    role:{it:'Responsabile Amministrativo',en:'Head of Administration'}, area:{it:'Area Economico-Finanziaria',en:'Finance & Control'},
+    specialty:{it:'Contabilità, fatturazione e gestione dei pagamenti',en:'Accounting, invoicing and payment management'},
+    summary:{it:'In Polaris dal 2020, è il responsabile amministrativo del Gruppo: cura la tenuta della contabilità, la fatturazione e la gestione dei pagamenti dell’area economico-finanziaria.',en:'With Polaris since 2020, he is the Group’s head of administration: he looks after bookkeeping, invoicing and the management of payments in the finance area.'},
     company:{it:'Polaris Group',en:'Polaris Group'},
-    focus:{it:'Controllo di gestione e reporting economico-finanziario.',en:'Management control and economic-financial reporting.'} },
+    prior:{it:'In Polaris dal 2020, tiene la contabilità del Gruppo insieme al collega Gianmaria, occupandosi di fatturazione, scadenze e pagamenti.',en:'With Polaris since 2020, he keeps the Group’s accounts together with his colleague Gianmaria, handling invoicing, deadlines and payments.'},
+    focus:{it:'Contabilità, fatturazione e gestione dei pagamenti.',en:'Accounting, invoicing and payment management.'} },
   { slug:'gianmaria', initials:'G', name:'Gianmaria Bassani', xptype:'invoice',
     role:{it:'Amministrazione',en:'Administration'}, area:{it:'Area Economico-Finanziaria',en:'Finance & Control'},
     specialty:{it:'Contabilità, adempimenti amministrativi, supporto al controller',en:'Accounting, administrative compliance, controller support'},
@@ -92,30 +104,37 @@ const members = [
     company:{it:'Polaris Group',en:'Polaris Group'},
     focus:{it:'Contabilità e adempimenti amministrativi.',en:'Accounting and administrative compliance.'} },
   { slug:'mara', initials:'M', name:'Mara Carioni', xptype:'sumisura',
+    photo:true, photoPos:'center 22%',
     linkedin:'https://www.linkedin.com/in/mara-carioni-a48b0616b/',
     role:{it:'Responsabile Formazione',en:'Head of Training'}, area:{it:'Area Formazione',en:'Training'},
     specialty:{it:'Direzione dell’area formazione, regia dei percorsi',en:'Direction of the training area, programme design'},
     summary:{it:'Responsabile dell’Area Formazione: dirige la squadra, definisce la regia dei percorsi e tiene la relazione con gli imprenditori che ci affidano i propri team.',en:'Head of the Training area: leads the team, defines programme design and keeps the relationship with the entrepreneurs who entrust their people to us.'},
     company:{it:'Polaris Group',en:'Polaris Group'},
+    prior:{it:'In Polaris dal 2015. Entrata subito dopo il percorso di studi, è cresciuta all’interno dell’azienda fino a guidare l’Area Formazione, che coordina progettazione, gestione e rendicontazione dei progetti formativi.',en:'With Polaris since 2015. She joined straight after her studies and grew within the company to lead the Training area, coordinating the design, delivery and reporting of training projects.'},
     focus:{it:'Direzione dell’area formazione.',en:'Leading the training area.'} },
-  { slug:'paola', initials:'P', name:'Paola Franzoni', xptype:'operations',
+  { slug:'paola', initials:'P', name:'Paola Franzoni', xptype:'formazione',
+    photo:true, photoPos:'center 30%',
     linkedin:'https://www.linkedin.com/in/paola-franzoni-072759345/',
     role:{it:'Formazione',en:'Training'}, area:{it:'Area Formazione',en:'Training'},
-    specialty:{it:'Progettazione, gestione e rendicontazione piani formativi',en:'Design, delivery and reporting of training plans'},
-    summary:{it:'Si occupa di progettazione, gestione e rendicontazione dei piani formativi finanziati, dal fabbisogno aziendale alla chiusura del fondo.',en:'Handles the design, delivery and reporting of funded training plans, from the company’s needs to the closing of the fund.'},
+    specialty:{it:'Progettazione e gestione di percorsi formativi finanziati e aziendali',en:'Design and management of funded and corporate training programmes'},
+    summary:{it:'Professionista della formazione e delle risorse umane. Da oltre sei anni, con Polaris HR, progetta e gestisce percorsi formativi finanziati e aziendali, dalla sicurezza alla valorizzazione del capitale umano.',en:'A training and human-resources professional. For over six years, with Polaris HR, she has designed and managed funded and corporate training programmes, from workplace safety to developing human capital.'},
     company:{it:'Polaris Group',en:'Polaris Group'},
-    focus:{it:'Progettazione, gestione e rendicontazione dei piani formativi.',en:'Designing, delivering and reporting training plans.'} },
+    prior:{it:'Oltre sei anni di esperienza nella progettazione e gestione di percorsi formativi finanziati e aziendali, con un approccio che unisce competenza tecnica, ascolto delle aziende e orientamento ai risultati.',en:'Over six years of experience designing and managing funded and corporate training programmes, with an approach that blends technical expertise, listening to companies and a focus on results.'},
+    focus:{it:'Progettazione e gestione dei percorsi formativi.',en:'Designing and managing training programmes.'} },
   { slug:'andrea', initials:'A', name:'Andrea Ungaro', xptype:'formazione',
+    photo:true, photoPos:'center 28%',
     role:{it:'Formazione',en:'Training'}, area:{it:'Area Formazione',en:'Training'},
-    specialty:{it:'Progettazione, gestione e rendicontazione piani formativi',en:'Design, delivery and reporting of training plans'},
-    summary:{it:'Si occupa di progettazione, gestione e rendicontazione dei piani formativi finanziati, affiancando le imprese in ogni fase del percorso.',en:'Handles the design, delivery and reporting of funded training plans, supporting companies through every step of the journey.'},
+    specialty:{it:'Supporto alla gestione dei piani formativi',en:'Support to the management of training plans'},
+    summary:{it:'Giovane collaboratore dell’Area Formazione. Segue con serietà e dedizione le attività che gli vengono affidate, con spirito di collaborazione e attenzione all’ordine.',en:'A young collaborator in the Training area. He follows the tasks entrusted to him with seriousness and dedication, a collaborative spirit and attention to detail.'},
     company:{it:'Polaris Group',en:'Polaris Group'},
-    focus:{it:'Progettazione, gestione e rendicontazione dei piani formativi.',en:'Designing, delivering and reporting training plans.'} },
-  { slug:'giovanni', initials:'G', name:'Giovanni Di Genio', xptype:'advisory',
-    role:{it:'Senior Partner',en:'Senior Partner'}, area:{it:'Area Formazione',en:'Training'},
+    focus:{it:'Supporto alla gestione dei piani formativi.',en:'Supporting the management of training plans.'} },
+  { slug:'giovanni', initials:'G', name:'Giovanni Di Genio', xptype:'sumisura',
+    photo:true, photoPos:'center 26%', hideCredentials:true,
+    role:{it:'Collaboratore Senior',en:'Senior Collaborator'}, area:{it:'Area Formazione',en:'Training'},
     specialty:{it:'Docenza senior, percorsi per imprenditori e dirigenti',en:'Senior faculty, programmes for entrepreneurs and managers'},
-    summary:{it:'Senior partner dell’Area Formazione: porta in aula l’esperienza maturata su percorsi dedicati a imprenditori e dirigenti.',en:'Senior partner in the Training area: brings to the classroom the experience built on programmes for entrepreneurs and managers.'},
+    summary:{it:'Collaboratore senior dell’Area Formazione: porta nei percorsi un’esperienza consolidata e un approccio concreto, dedicato in particolare a imprenditori e dirigenti.',en:'Senior collaborator in the Training area: brings established experience and a concrete approach to the programmes, dedicated in particular to entrepreneurs and managers.'},
     company:{it:'Polaris Group',en:'Polaris Group'},
+    prior:{it:'Mette a disposizione dell’Area Formazione un’esperienza maturata sul campo, portando in aula uno stile diretto e vicino alle esigenze di chi guida un’impresa.',en:'He brings to the Training area experience built in the field, with a direct classroom style close to the needs of those who run a company.'},
     focus:{it:'Docenza senior e percorsi per imprenditori e dirigenti.',en:'Senior faculty and programmes for entrepreneurs and managers.'} },
   { slug:'silvia', initials:'S', name:'Silvia Ungaro', xptype:'formazione',
     role:{it:'Senior Partner',en:'Senior Partner'}, area:{it:'Area Formazione',en:'Training'},
@@ -136,12 +155,15 @@ const members = [
     company:{it:'Polaris Group',en:'Polaris Group'},
     focus:{it:'Docenza senior su soft skills e sviluppo delle persone.',en:'Senior faculty on soft skills and people development.'} },
   { slug:'roberta', initials:'R', name:'Roberta Tagliani', xptype:'formazione',
+    photo:true, photoPos:'center 30%',
     linkedin:'https://www.linkedin.com/in/roberta-tagliani-57957b73/',
     role:{it:'Senior Partner',en:'Senior Partner'}, area:{it:'Area Formazione',en:'Training'},
-    specialty:{it:'Docenza senior, percorsi formativi specialistici',en:'Senior faculty, specialist training programmes'},
-    summary:{it:'Senior partner dell’Area Formazione. Conduce i percorsi formativi specialistici accompagnando i partecipanti con un metodo strutturato e personalizzato.',en:'Senior partner in the Training area. Leads specialist training programmes, supporting participants with a structured and personalised method.'},
+    specialty:{it:'RSPP, HACCP, accreditamento regionale, fondi interprofessionali',en:'RSPP, HACCP, regional accreditation, interprofessional funds'},
+    summary:{it:'Consulente ed esperta nella progettazione e gestione dei processi formativi, specializzata in Salute e Sicurezza sul Lavoro (RSPP) e Igiene degli Alimenti (HACCP). Oltre quindici anni sul campo al fianco delle imprese.',en:'A consultant and expert in the design and management of training processes, specialised in Workplace Health & Safety (RSPP) and Food Hygiene (HACCP). Over fifteen years in the field alongside companies.'},
     company:{it:'Polaris Group',en:'Polaris Group'},
-    focus:{it:'Docenza senior nei percorsi specialistici.',en:'Senior faculty in specialist programmes.'} },
+    prior:{it:'Oltre quindici anni di esperienza con enti di formazione, associazioni di categoria e imprese: docenze specialistiche, incarichi esterni di RSPP e igiene degli alimenti, accreditamento regionale, sistemi di gestione Qualità e Privacy (GDPR). Accompagna le aziende nell’accesso ai fondi interprofessionali e ai bandi regionali e camerali.',en:'Over fifteen years of experience with training bodies, trade associations and companies: specialist teaching, external RSPP and food-hygiene assignments, regional accreditation, Quality and Privacy (GDPR) management systems. She supports companies in accessing interprofessional funds and regional and chamber grants.'},
+    education:{it:'Laurea in Scienze della Formazione, Università di Verona.',en:'Degree in Education Sciences, University of Verona.'},
+    focus:{it:'Docenza specialistica su sicurezza (RSPP) e igiene degli alimenti (HACCP).',en:'Specialist teaching on safety (RSPP) and food hygiene (HACCP).'} },
   { slug:'francesca', initials:'F', name:'Francesca Rossini', xptype:'formazione',
     role:{it:'Junior Partner',en:'Junior Partner'}, area:{it:'Area Formazione',en:'Training'},
     specialty:{it:'Affiancamento ai senior, supporto in aula',en:'Senior support, classroom assistance'},
@@ -149,11 +171,13 @@ const members = [
     company:{it:'Polaris Group',en:'Polaris Group'},
     focus:{it:'Affiancamento ai senior nei percorsi formativi.',en:'Supporting senior partners across training programmes.'} },
   { slug:'lavinia', initials:'L', name:'Lavinia Di Genio', xptype:'formazione',
-    role:{it:'Junior Partner',en:'Junior Partner'}, area:{it:'Area Formazione',en:'Training'},
+    photo:true, photoPos:'center 28%', hideCredentials:true,
+    role:{it:'Collaboratrice Junior',en:'Junior Collaborator'}, area:{it:'Area Formazione',en:'Training'},
     specialty:{it:'Affiancamento ai senior, supporto in aula',en:'Senior support, classroom assistance'},
-    summary:{it:'Junior partner dell’Area Formazione. Affianca i senior nei percorsi formativi, contribuendo alla preparazione e alla gestione operativa delle aule.',en:'Junior partner in the Training area. Supports senior partners across training programmes, contributing to preparation and day-to-day classroom management.'},
+    summary:{it:'Collaboratrice junior dell’Area Formazione. Affianca i collaboratori senior nei percorsi formativi, contribuendo alla preparazione dei materiali e alla gestione operativa delle aule.',en:'Junior collaborator in the Training area. She supports the senior collaborators across training programmes, contributing to the preparation of materials and the day-to-day running of the classroom.'},
     company:{it:'Polaris Group',en:'Polaris Group'},
-    focus:{it:'Affiancamento ai senior nei percorsi formativi.',en:'Supporting senior partners across training programmes.'} },
+    prior:{it:'Al fianco dei collaboratori senior, segue la parte operativa dei percorsi: preparazione dei materiali, organizzazione delle aule e supporto ai partecipanti.',en:'Alongside the senior collaborators, she handles the operational side of the programmes: preparing materials, organising classrooms and supporting participants.'},
+    focus:{it:'Affiancamento ai senior nei percorsi formativi.',en:'Supporting the senior collaborators across training programmes.'} },
 ];
 
 /* escapers: a) plain attribute text (escape & and "), b) html-bearing attr (escape & only; inner markup uses single quotes) */
@@ -293,6 +317,7 @@ const page = m => {
     <ul class="nav__links">
       <li><a href="/chi-siamo.html" class="is-active" data-it="Chi Siamo" data-en="About">Chi Siamo</a></li>
       <li><a href="/servizi.html" data-it="Servizi" data-en="Services">Servizi</a></li>
+      <li><a href="/numeri.html" data-it="I Numeri" data-en="Numbers">I Numeri</a></li>
       <li><a href="/chi-siamo.html#team" data-it="Team" data-en="Team">Team</a></li>
       <li><a href="/casi-testimonianze.html" data-it="Casi &amp; Testimonianze" data-en="Cases">Casi &amp; Testimonianze</a></li>
       <li><a href="/lavora-con-noi.html" data-it="Lavora con noi" data-en="Careers">Lavora con noi</a></li>
@@ -309,7 +334,7 @@ const page = m => {
     <div class="bio-hero__inner">
       <a href="/chi-siamo.html#team" class="bio-back" data-it-html="&larr; Torna al team" data-en-html="&larr; Back to the team">← Torna al team</a>
       <div class="bio-photo">
-        <div class="bio-photo__frame"><div class="bio-photo__mono" aria-hidden="true">${m.initials}</div></div>
+        <div class="bio-photo__frame">${m.photo ? `<img src="/img/team/${m.slug}.jpg" alt="${escA(m.name)}" style="object-position:${m.photoPos || 'center 22%'}">` : `<div class="bio-photo__mono" aria-hidden="true">${m.initials}</div>`}</div>
         <div class="bio-photo__accent" aria-hidden="true"></div>
         <div class="bio-photo__accent-2" aria-hidden="true"></div>
       </div>
@@ -376,10 +401,10 @@ ${xpCards(m)}
               <p class="tl-item__d" data-it="${escA(m.focus.it)}" data-en="${escA(m.focus.en)}">${m.focus.it}</p>
             </div>
             <div class="tl-item">
-              <p class="tl-item__date" data-it="Prima" data-en="Before">Prima</p>
-              <h3 class="tl-item__role" data-it="Esperienza precedente" data-en="Prior experience">Esperienza precedente</h3>
+              <p class="tl-item__date" data-it="Percorso" data-en="Background">Percorso</p>
+              <h3 class="tl-item__role" data-it="Esperienza" data-en="Experience">Esperienza</h3>
               <p class="tl-item__co">&nbsp;</p>
-              <p class="tl-item__d" data-it="[In arrivo: formazione ed esperienze precedenti di ${escA(m.name)}, dall’intervista con il team.]" data-en="[Coming soon: ${escA(m.name)}'s prior education and experience, from the team interview.]">[In arrivo: formazione ed esperienze precedenti di ${m.name}, dall’intervista con il team.]</p>
+              <p class="tl-item__d" data-it="${escA(m.prior ? m.prior.it : `[In arrivo: formazione ed esperienze precedenti di ${m.name}, dall’intervista con il team.]`)}" data-en="${escA(m.prior ? m.prior.en : `[Coming soon: ${m.name}'s prior education and experience, from the team interview.]`)}">${m.prior ? m.prior.it : `[In arrivo: formazione ed esperienze precedenti di ${m.name}, dall’intervista con il team.]`}</p>
             </div>
           </div>
         </div>
@@ -397,7 +422,7 @@ ${xpCards(m)}
   </section>
 
   <!-- FORMAZIONE / CREDENZIALI -->
-  <section class="section section--cream reveal">
+  ${m.hideCredentials ? '' : `<section class="section section--cream reveal">
     <div class="container">
       <div class="section__head">
         <span class="eyebrow eyebrow--center" data-it="Credenziali" data-en="Credentials">Credenziali</span>
@@ -405,9 +430,9 @@ ${xpCards(m)}
       </div>
       <div class="cred-grid">
         <div class="cred-card">
-          <p class="cred-card__year" data-it="In arrivo" data-en="Coming soon">In arrivo</p>
+          <p class="cred-card__year" data-it="${m.education ? 'Titolo di studio' : 'In arrivo'}" data-en="${m.education ? 'Degree' : 'Coming soon'}">${m.education ? 'Titolo di studio' : 'In arrivo'}</p>
           <h3 class="cred-card__t" data-it="Formazione" data-en="Education">Formazione</h3>
-          <p class="cred-card__d" data-it="[In arrivo: titoli di studio e formazione di ${escA(m.name)}.]" data-en="[Coming soon: ${escA(m.name)}'s degrees and education.]">[In arrivo: titoli di studio e formazione di ${m.name}.]</p>
+          <p class="cred-card__d" data-it="${escA(m.education ? m.education.it : `[In arrivo: titoli di studio e formazione di ${m.name}.]`)}" data-en="${escA(m.education ? m.education.en : `[Coming soon: ${m.name}'s degrees and education.]`)}">${m.education ? m.education.it : `[In arrivo: titoli di studio e formazione di ${m.name}.]`}</p>
         </div>
         <div class="cred-card">
           <p class="cred-card__year" data-it="In arrivo" data-en="Coming soon">In arrivo</p>
@@ -416,7 +441,7 @@ ${xpCards(m)}
         </div>
       </div>
     </div>
-  </section>
+  </section>`}
 
   <!-- CONTACT -->
   <section class="section reveal">
@@ -444,6 +469,7 @@ ${xpCards(m)}
       <ul>
         <li><a href="/chi-siamo.html" data-it="Chi Siamo" data-en="About">Chi Siamo</a></li>
         <li><a href="/servizi.html" data-it="Servizi" data-en="Services">Servizi</a></li>
+        <li><a href="/numeri.html" data-it="I Numeri" data-en="Numbers">I Numeri</a></li>
         <li><a href="/casi-testimonianze.html" data-it="Casi &amp; Testimonianze" data-en="Cases">Casi</a></li>
         <li><a href="/lavora-con-noi.html" data-it="Lavora con noi" data-en="Careers">Lavora con noi</a></li>
       </ul>
