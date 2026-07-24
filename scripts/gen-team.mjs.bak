@@ -365,6 +365,84 @@ const page = m => {
     </div>
   </section>
 
+  <!-- EXPERTISE -->
+  <section class="section section--ink-navy reveal">
+    <video class="xp-bg" autoplay muted loop playsinline preload="auto" poster="/img/expertise-flow.jpg" aria-hidden="true">
+      <source src="/img/expertise-flow.mp4" type="video/mp4">
+    </video>
+    <div class="xp-bg__grade" aria-hidden="true"></div>
+    <div class="container">
+      <div class="xp-head text-center">
+        <span class="eyebrow eyebrow--center" data-it="Competenze" data-en="Expertise">Competenze</span>
+        <h2 data-it-html="${escH(head.h.it)}" data-en-html="${escH(head.h.en)}">${head.h.it}</h2>
+        <p data-it="${escA(head.intro.it)}" data-en="${escA(head.intro.en)}">${head.intro.it}</p>
+      </div>
+      <div class="xp-grid">
+${xpCards(m)}
+      </div>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section class="section reveal">
+    <div class="container">
+      <div class="split">
+        <div class="split__left">
+          <span class="eyebrow" data-it="Percorso" data-en="Path">Percorso</span>
+          <h2 data-it-html="In <span class='hl'>Polaris</span>." data-en-html="At <span class='hl'>Polaris</span>.">In <span class="hl">Polaris</span>.</h2>
+          <p data-it="Il ruolo di ${escA(m.name)} nel Gruppo e il percorso che lo accompagna." data-en="${escA(m.name)}'s role in the Group and the path behind it.">Il ruolo di ${m.name} nel Gruppo e il percorso che lo accompagna.</p>
+        </div>
+        <div class="split__right">
+          <div class="timeline">
+            <div class="tl-item tl-item--now">
+              <p class="tl-item__date" data-it="Oggi" data-en="Present">Oggi</p>
+              <h3 class="tl-item__role" data-it="${escA(m.role.it)}" data-en="${escA(m.role.en)}">${m.role.it}</h3>
+              <p class="tl-item__co" data-it="${escA(m.company.it)}" data-en="${escA(m.company.en)}">${m.company.it}</p>
+              <p class="tl-item__d" data-it="${escA(m.focus.it)}" data-en="${escA(m.focus.en)}">${m.focus.it}</p>
+            </div>
+            <div class="tl-item">
+              <p class="tl-item__date" data-it="Percorso" data-en="Background">Percorso</p>
+              <h3 class="tl-item__role" data-it="Esperienza" data-en="Experience">Esperienza</h3>
+              <p class="tl-item__co">&nbsp;</p>
+              <p class="tl-item__d" data-it="${escA(m.prior ? m.prior.it : `[In arrivo: formazione ed esperienze precedenti di ${m.name}, dall’intervista con il team.]`)}" data-en="${escA(m.prior ? m.prior.en : `[Coming soon: ${m.name}'s prior education and experience, from the team interview.]`)}">${m.prior ? m.prior.it : `[In arrivo: formazione ed esperienze precedenti di ${m.name}, dall’intervista con il team.]`}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BELIEF -->
+  <section class="belief reveal">
+    <figure class="belief__inner" style="margin:0">
+      <span class="belief__mk" aria-hidden="true">&ldquo;</span>
+      <blockquote class="belief__quote" data-it-html="${escH(BELIEF.quote.it)}" data-en-html="${escH(BELIEF.quote.en)}">${BELIEF.quote.it}</blockquote>
+      <figcaption class="belief__by">${BELIEF.by}</figcaption>
+    </figure>
+  </section>
+
+  <!-- FORMAZIONE / CREDENZIALI -->
+  ${m.hideCredentials ? '' : `<section class="section section--cream reveal">
+    <div class="container">
+      <div class="section__head">
+        <span class="eyebrow eyebrow--center" data-it="Credenziali" data-en="Credentials">Credenziali</span>
+        <h2 data-it="Formazione &amp; percorso." data-en="Education &amp; background.">Formazione &amp; percorso.</h2>
+      </div>
+      <div class="cred-grid">
+        <div class="cred-card">
+          <p class="cred-card__year" data-it="${m.education ? 'Titolo di studio' : 'In arrivo'}" data-en="${m.education ? 'Degree' : 'Coming soon'}">${m.education ? 'Titolo di studio' : 'In arrivo'}</p>
+          <h3 class="cred-card__t" data-it="Formazione" data-en="Education">Formazione</h3>
+          <p class="cred-card__d" data-it="${escA(m.education ? m.education.it : `[In arrivo: titoli di studio e formazione di ${m.name}.]`)}" data-en="${escA(m.education ? m.education.en : `[Coming soon: ${m.name}'s degrees and education.]`)}">${m.education ? m.education.it : `[In arrivo: titoli di studio e formazione di ${m.name}.]`}</p>
+        </div>
+        <div class="cred-card">
+          <p class="cred-card__year" data-it="In arrivo" data-en="Coming soon">In arrivo</p>
+          <h3 class="cred-card__t" data-it="Certificazioni" data-en="Certifications">Certificazioni</h3>
+          <p class="cred-card__d" data-it="[In arrivo: certificazioni e abilitazioni rilevanti.]" data-en="[Coming soon: relevant certifications and qualifications.]">[In arrivo: certificazioni e abilitazioni rilevanti.]</p>
+        </div>
+      </div>
+    </div>
+  </section>`}
+
   <!-- CONTACT -->
   <section class="section reveal">
     <div class="container text-center">
