@@ -82,7 +82,7 @@ const BELIEF = {
 
 const members = [
   { slug:'cristina', initials:'C', name:'Cristina Milanesi', xptype:'operations',
-    photo:true, photoPos:'center 18%',
+    photo:true, photoPos:'center 16%',
     role:{it:'Front & Back Office',en:'Front & Back Office'}, area:{it:'Area Segreteria',en:'Administration'},
     specialty:{it:'Gestione piani, front e back office, assistenza clienti',en:'Plan management, front and back office, client support'},
     summary:{it:'In Polaris da un anno, segue la gestione dei piani e le attività di front e back office: organizzazione delle pratiche, coordinamento operativo e assistenza ai clienti, con attenzione ai dettagli e spirito di collaborazione.',en:'With Polaris for a year, she handles plan management and front- and back-office work: organising paperwork, coordinating day-to-day operations and supporting clients, with attention to detail and a collaborative spirit.'},
@@ -155,7 +155,7 @@ const members = [
     company:{it:'Polaris Group',en:'Polaris Group'},
     focus:{it:'Docenza senior su soft skills e sviluppo delle persone.',en:'Senior faculty on soft skills and people development.'} },
   { slug:'roberta', initials:'R', name:'Roberta Tagliani', xptype:'formazione',
-    photo:true, photoPos:'center 30%',
+    photo:true, photoPos:'center 20%',
     linkedin:'https://www.linkedin.com/in/roberta-tagliani-57957b73/',
     role:{it:'Senior Partner',en:'Senior Partner'}, area:{it:'Area Formazione',en:'Training'},
     specialty:{it:'RSPP, HACCP, accreditamento regionale, fondi interprofessionali',en:'RSPP, HACCP, regional accreditation, interprofessional funds'},
