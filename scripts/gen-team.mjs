@@ -171,7 +171,7 @@ const members = [
     company:{it:'Polaris Group',en:'Polaris Group'},
     focus:{it:'Affiancamento ai senior nei percorsi formativi.',en:'Supporting senior partners across training programmes.'} },
   { slug:'lavinia', initials:'L', name:'Lavinia Di Genio', xptype:'formazione',
-    photo:true, photoPos:'center 26%', hideCredentials:true,
+    photo:true, photoPos:'center 30%', hideCredentials:true,
     role:{it:'Collaboratrice Junior',en:'Junior Collaborator'}, area:{it:'Area Formazione',en:'Training'},
     specialty:{it:'Affiancamento ai senior, supporto in aula',en:'Senior support, classroom assistance'},
     summary:{it:'Collaboratrice junior dell’Area Formazione. Affianca i collaboratori senior nei percorsi formativi, contribuendo alla preparazione dei materiali e alla gestione operativa delle aule.',en:'Junior collaborator in the Training area. She supports the senior collaborators across training programmes, contributing to the preparation of materials and the day-to-day running of the classroom.'},
