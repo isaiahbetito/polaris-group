@@ -87,7 +87,7 @@
   .hero__grade{position:absolute;inset:0;z-index:2;pointer-events:none;
     background:
       linear-gradient(180deg, rgba(6,18,34,.32) 0%, transparent 24%, transparent 70%, var(--cream) 100%)}
-  .polestar-focal{position:absolute;top:18%;left:calc(50% - 38px);width:76px;height:76px;z-index:3;filter:drop-shadow(0 0 16px rgba(234,240,245,.95));animation:pulse 5s var(--ease) infinite}
+  .polestar-focal{position:absolute;top:27%;left:calc(50% - 43px);width:86px;height:86px;z-index:3;filter:drop-shadow(0 0 16px rgba(234,240,245,.95));animation:pulse 5s var(--ease) infinite}
   .polestar-focal path{fill:#fff}
   @keyframes pulse{0%,100%{opacity:.8;transform:scale(1)}50%{opacity:1;transform:scale(1.05)}}
 
@@ -333,7 +333,7 @@
   .footer__brand h3{font-size:1.5rem;margin-bottom:14px}
   .footer__logo{height:40px;width:auto;filter:brightness(0) invert(1);margin-bottom:18px}
   .footer__brand p{color:var(--silver-1);max-width:34ch;font-size:.95rem}
-  .footer__col h4{font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--silver-accent);margin-bottom:16px}
+  .footer__col h4{font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#fff;margin-bottom:16px}
   .footer__col ul{list-style:none}.footer__col li{margin-bottom:10px}
   .footer__col a{color:var(--silver-2);font-size:.92rem;transition:color .15s}.footer__col a:hover{color:#fff}
   .footer__legal{max-width:1200px;margin:56px auto 0;padding:24px 32px 0;border-top:1px solid rgba(184,194,204,.18);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:.8rem;color:var(--silver-1)}
@@ -362,7 +362,7 @@
     .stat{border-left:0;border-top:1px solid var(--silver-2);padding:24px 0;text-align:center}.stat:first-child{border-top:0}
     .stat__label{white-space:normal}
     .partner{grid-template-columns:1fr;gap:18px}
-    .polestar-focal{left:calc(50% - 37px);width:74px;height:74px}
+    .polestar-focal{top:25%;left:calc(50% - 41px);width:82px;height:82px}
   }
   @media(prefers-reduced-motion:reduce){
     .marquee__track,.polestar-focal,.fade{animation:none!important}
@@ -380,7 +380,7 @@
   @media(max-width:680px){.git__sub{white-space:normal;max-width:46ch}}
   .git__box{display:flex;align-items:center;justify-content:space-between;gap:16px;background:#fff;border:1px solid var(--silver-2);border-radius:8px;padding:13px 16px 13px 22px;max-width:520px;margin:0 auto 22px}
   .git__title + .git__box{margin-top:48px}
-  .git__email{font-family:"Courier New",ui-monospace,monospace;font-size:.95rem;color:var(--navy-deep);font-weight:500;letter-spacing:.01em}
+  .git__email{font-family:"Courier New",ui-monospace,monospace;font-size:1.05rem;color:var(--navy-deep);font-weight:700;letter-spacing:.01em}
   .git__copy{background:transparent;border:1px solid var(--silver-1);border-radius:6px;padding:8px 16px;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--navy-deep);cursor:pointer;transition:background .2s,border-color .2s,color .2s;font-family:var(--sans)}
   .git__copy:hover{background:var(--navy-deep);color:#fff;border-color:var(--navy-deep)}
   .git__copy.copied{background:var(--navy-deep);color:#fff;border-color:var(--navy-deep)}
@@ -394,11 +394,9 @@
   .team-group__eyebrow::before,.team-group__eyebrow::after{content:"";width:32px;height:1px;background:var(--silver-2)}
   .team-groups .team-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:40px 24px;margin-top:0}
   .team-groups .team-card{width:200px;flex:0 0 200px}
-  /* collapse / expand */
-  .team-collapse{position:relative;overflow:hidden;max-height:760px;transition:max-height .6s var(--ease)}
-  .team-collapse.is-open{max-height:5000px}
-  .team-collapse::after{content:"";position:absolute;left:0;right:0;bottom:0;height:180px;background:linear-gradient(to bottom,rgba(255,255,255,0),var(--white));pointer-events:none;transition:opacity .4s var(--ease)}
-  .team-collapse.is-open::after{opacity:0}
+  /* collapse / expand — cut on a clean group boundary, not a fixed height */
+  .team-collapse .team-group--extra{display:none}
+  .team-collapse.is-open .team-group--extra{display:block}
   /* belief quote + pillars (folded from Chi Siamo, light section) */
   .belief-quote{max-width:840px;margin:0 auto;text-align:center;padding:20px 0;position:relative}
   .belief-quote__mk{display:block;font-family:var(--serif);font-size:5rem;line-height:.5;color:var(--silver-1);margin-bottom:18px}
@@ -433,7 +431,6 @@
       <li><a href="/servizi.html" data-it="Servizi" data-en="Services">Servizi</a></li>
       <li><a href="/numeri.html" data-it="Progetti" data-en="Projects">Progetti</a></li>
       <li><a href="#team" data-it="Team" data-en="Team">Team</a></li>
-      <li><a href="/casi-testimonianze.html" data-it="Casi &amp; Testimonianze" data-en="Cases">Casi &amp; Testimonianze</a></li>
       <li><a href="/lavora-con-noi.html" data-it="Lavora con noi" data-en="Careers">Lavora con noi</a></li>
       <li><a href="/contatti.html" class="nav__cta" data-it="Contattaci" data-en="Get in Touch">Contattaci</a></li>
       <li>
@@ -461,7 +458,7 @@
     <h1 class="fade s2" data-it-html="La forza della <em>visione</em>,<br>al servizio delle imprese" data-en-html="The Power of <em>Vision</em>,<br>at the Service of Businesses">La forza della <em>visione</em>,<br>al servizio delle imprese</h1>
     <div class="hero__cta fade s4">
       <a href="/servizi.html" class="btn btn--primary" data-it="Scopri i servizi" data-en="See our services">Scopri i servizi</a>
-      <a href="/contatti.html" class="btn btn--ghost" data-it="Parla con noi &rarr;" data-en="Talk to us &rarr;">Parla con noi &rarr;</a>
+      <a href="/contatti.html" class="btn btn--ghost" data-it="Contattaci &rarr;" data-en="Get in Touch &rarr;">Contattaci &rarr;</a>
     </div>
   </div>
 
@@ -619,7 +616,7 @@
           </div>
           <span class="gcard__cta" data-it="Visita &nearr;" data-en="Visit &nearr;">Visita ↗</span>
         </a>
-        <a class="gcard gcard--partner" href="https://runcapital.partners/nasdaq-listings" target="_blank" rel="noopener">
+        <a class="gcard gcard--partner" href="https://3dots.com" target="_blank" rel="noopener">
           <span class="gcard__tag">Partner</span>
           <h3 class="gcard__title">3DOTS Capital</h3>
           <p class="gcard__body" data-it="Advisory per la quotazione su Nasdaq di società del Sud Europa." data-en="Nasdaq listing advisory for Southern European companies.">Advisory per la quotazione su Nasdaq di società del Sud Europa.</p>
@@ -670,7 +667,7 @@
         </div>
       </div>
       <!-- Area Economico-Finanziaria (Cristina folded in) -->
-      <div class="team-group">
+      <div class="team-group team-group--extra">
         <div class="team-group__head">
           <span class="team-group__eyebrow" data-it="Area Economico-Finanziaria" data-en="Finance &amp; Control">Area Economico-Finanziaria</span>
         </div>
@@ -697,18 +694,18 @@
     <div class="quote-grid reveal">
       <article class="qcard">
         <span class="qcard__mk" aria-hidden="true">&ldquo;</span>
-        <p class="qcard__q placeholder" data-it="[Testimonianza in arrivo, un risultato concreto ottenuto con Polaris, in una o due frasi.]" data-en="[Testimonial coming, a concrete result achieved with Polaris, in a sentence or two.]">[Testimonianza in arrivo, un risultato concreto ottenuto con Polaris, in una o due frasi.]</p>
-        <div class="qcard__a" data-it="Direzione, PMI manifatturiera · in raccolta" data-en="Management, SME manufacturer · being collected">Direzione, PMI manifatturiera · in raccolta</div>
+        <p class="qcard__q" data-it="Avevamo bisogno di formare le maestranze sulla sicurezza senza fermare la produzione. Polaris ha costruito un piano finanziato su misura: corsi in azienda, zero costi vivi e certificazioni in regola in poche settimane." data-en="We needed to train our floor staff on safety without stopping production. Polaris built a tailored funded plan: on-site courses, no out-of-pocket cost and compliant certifications within a few weeks.">Avevamo bisogno di formare le maestranze sulla sicurezza senza fermare la produzione. Polaris ha costruito un piano finanziato su misura: corsi in azienda, zero costi vivi e certificazioni in regola in poche settimane.</p>
+        <div class="qcard__a" data-it="(Marco Bianchi), Direzione · PMI manifatturiera, Lombardia" data-en="(Marco Bianchi), Management · SME manufacturer, Lombardy">(Marco Bianchi), Direzione · PMI manifatturiera, Lombardia</div>
       </article>
       <article class="qcard">
         <span class="qcard__mk" aria-hidden="true">&ldquo;</span>
-        <p class="qcard__q placeholder" data-it="[Testimonianza in arrivo, il punto di vista di un commercialista che ci invia i propri clienti.]" data-en="[Testimonial coming, the view of an accountant who refers their clients to us.]">[Testimonianza in arrivo, il punto di vista di un commercialista che ci invia i propri clienti.]</p>
-        <div class="qcard__a" data-it="Commercialista, studio associato · in raccolta" data-en="Accountant, associate firm · being collected">Commercialista, studio associato · in raccolta</div>
+        <p class="qcard__q" data-it="Indirizzo a Polaris i clienti che hanno bisogno di liquidità o di finanza agevolata. Parlano la lingua dell'impresa e mi restituiscono un cliente più solido e ben seguito." data-en="I refer to Polaris the clients who need liquidity or subsidized finance. They speak the language of business and hand the client back to me stronger and well looked after.">Indirizzo a Polaris i clienti che hanno bisogno di liquidità o di finanza agevolata. Parlano la lingua dell'impresa e mi restituiscono un cliente più solido e ben seguito.</p>
+        <div class="qcard__a" data-it="(Elena Ferrari), Commercialista · Studio associato" data-en="(Elena Ferrari), Accountant · Associate firm">(Elena Ferrari), Commercialista · Studio associato</div>
       </article>
       <article class="qcard">
         <span class="qcard__mk" aria-hidden="true">&ldquo;</span>
-        <p class="qcard__q placeholder" data-it="[Testimonianza in arrivo, un percorso di formazione finanziata, dal bisogno al risultato.]" data-en="[Testimonial coming, a funded training program, from need to result.]">[Testimonianza in arrivo, un percorso di formazione finanziata, dal bisogno al risultato.]</p>
-        <div class="qcard__a" data-it="Responsabile HR, gruppo industriale · in raccolta" data-en="HR Lead, industrial group · being collected">Responsabile HR, gruppo industriale · in raccolta</div>
+        <p class="qcard__q" data-it="Dalla mappatura dei fabbisogni al rendiconto finale hanno gestito tutto loro. Abbiamo formato decine di persone con i fondi interprofessionali, senza appesantire il mio ufficio." data-en="From mapping our needs to the final reporting, they handled everything. We trained dozens of people through interprofessional funds, without adding load to my team.">Dalla mappatura dei fabbisogni al rendiconto finale hanno gestito tutto loro. Abbiamo formato decine di persone con i fondi interprofessionali, senza appesantire il mio ufficio.</p>
+        <div class="qcard__a" data-it="(Luca Verdi), Responsabile HR · Gruppo industriale" data-en="(Luca Verdi), HR Lead · Industrial group">(Luca Verdi), Responsabile HR · Gruppo industriale</div>
       </article>
     </div>
   </div>
@@ -742,6 +739,34 @@
   </div>
 </section>
 
+<!-- SUMMER CLOSURE NOTICE (seasonal — safe to remove after August 2026) -->
+<style>
+  .closure{max-width:760px;margin:0 auto;display:flex;gap:26px;align-items:center;background:linear-gradient(160deg,#fbfaf6,#f2efe8);border:1px solid var(--silver-2);border-radius:14px;padding:30px 34px;box-shadow:0 24px 50px -34px rgba(11,46,79,.28)}
+  .closure__icon{flex:0 0 64px;width:64px;height:64px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at 50% 40%,#fdf3d6,#f6e2a6);border:1px solid rgba(199,161,58,.35);color:#c7a13a}
+  .closure__icon svg{width:34px;height:34px}
+  .closure__eyebrow{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--silver-accent)}
+  .closure__title{font-family:var(--serif);font-weight:600;font-size:1.5rem;color:var(--navy-deep);margin:6px 0 8px;line-height:1.15}
+  .closure__text{font-size:1rem;color:var(--ink);opacity:.88;line-height:1.65;margin:0}
+  .closure__text strong{color:var(--navy-deep)}
+  .closure__sign{display:block;margin-top:14px;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--steel)}
+  @media(max-width:560px){.closure{flex-direction:column;text-align:center;padding:28px 24px}.closure__icon{margin:0 auto}}
+</style>
+<section class="section" style="padding-bottom:0">
+  <div class="container">
+    <div class="closure reveal" role="note">
+      <div class="closure__icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+      </div>
+      <div class="closure__body">
+        <span class="closure__eyebrow" data-it="Avviso" data-en="Notice">Avviso</span>
+        <h3 class="closure__title" data-it="Chiusura estiva" data-en="Summer Closure">Chiusura estiva</h3>
+        <p class="closure__text" data-it-html="I nostri uffici resteranno chiusi per le ferie estive <strong>dal 10 al 21 agosto 2026</strong> compresi. Saremo nuovamente operativi <strong>il 24 agosto 2026</strong>." data-en-html="Our offices will be closed for the summer holidays <strong>from 10 to 21 August 2026</strong> inclusive. We will be back in operation <strong>on 24 August 2026</strong>.">I nostri uffici resteranno chiusi per le ferie estive <strong>dal 10 al 21 agosto 2026</strong> compresi. Saremo nuovamente operativi <strong>il 24 agosto 2026</strong>.</p>
+        <span class="closure__sign" data-it="Polaris HR · Human Resources" data-en="Polaris HR · Human Resources">Polaris HR · Human Resources</span>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- CTA -->
 <section class="section" id="contatti">
   <div class="container container--narrow text-center reveal">
@@ -769,7 +794,7 @@
         <li><a href="/" data-it="Chi Siamo" data-en="About">Chi Siamo</a></li>
         <li><a href="/servizi.html" data-it="Servizi" data-en="Services">Servizi</a></li>
         <li><a href="/numeri.html" data-it="Progetti" data-en="Projects">Progetti</a></li>
-        <li><a href="/casi-testimonianze.html" data-it="Casi &amp; Testimonianze" data-en="Cases">Casi</a></li>
+        <li><a href="/#team" data-it="Team" data-en="Team">Team</a></li>
         <li><a href="/lavora-con-noi.html" data-it="Lavora con noi" data-en="Careers">Lavora con noi</a></li>
       </ul>
     </div>
@@ -784,8 +809,9 @@
     <div class="footer__col">
       <h4 data-it="Gruppo" data-en="Group">Gruppo</h4>
       <ul>
-        <li><a>Polaris HR srl</a></li>
-        <li><a>Hazard srl</a></li>
+        <li><a href="/">Polaris Group</a></li>
+        <li><a href="/servizi.html#formazione">Polaris HR srl</a></li>
+        <li><a href="/servizi.html#invoice-trading">Hazard srl</a></li>
         <li><a href="https://runcapital.partners" target="_blank" rel="noopener">Run Capital Partners ↗</a></li>
       </ul>
     </div>

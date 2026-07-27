@@ -72,7 +72,7 @@ em.hl{font-style:italic;color:var(--steel)}
 .footer__inner{max-width:1200px;margin:0 auto;padding:0 32px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px}
 .footer__logo{height:40px;width:auto;filter:brightness(0) invert(1);margin-bottom:18px}
 .footer__brand p{color:var(--silver-1);max-width:34ch;font-size:.95rem}
-.footer__col h4{font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--silver-accent);margin-bottom:16px}
+.footer__col h4{font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#fff;margin-bottom:16px}
 .footer__col ul{list-style:none}.footer__col li{margin-bottom:10px}
 .footer__col a{color:var(--silver-2);font-size:.92rem;transition:color .15s}.footer__col a:hover{color:#fff}
 .footer__legal{max-width:1200px;margin:56px auto 0;padding:24px 32px 0;border-top:1px solid rgba(184,194,204,.18);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:.8rem;color:var(--silver-1)}

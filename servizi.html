@@ -52,7 +52,7 @@
   .fin:hover{transform:translateY(-5px);background:rgba(255,255,255,.09);border-color:rgba(156,192,239,.45);box-shadow:0 24px 50px -28px rgba(0,0,0,.6),0 0 40px -6px rgba(156,192,239,.3)}
   .fin:hover::after{transform:translateX(110%)}
   .fin__t{font-family:var(--serif);font-size:1.45rem;color:#fff;margin-bottom:6px}
-  .fin__tag{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--silver-accent);margin-bottom:14px;display:block}
+  .fin__tag{font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#fff;margin-bottom:14px;display:block}
   .fin__list{list-style:none}
   .fin__list li{position:relative;padding-left:18px;font-size:.92rem;color:var(--silver-2);margin-bottom:8px;line-height:1.45}
   .fin__list li::before{content:"";position:absolute;left:0;top:9px;width:5px;height:5px;border-radius:50%;background:var(--silver-1)}
@@ -73,6 +73,13 @@
   .partner-cta__loc{font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#cfd9e6}
   .partner-cta__sub{font-size:.92rem;color:#fff;font-style:italic}
   .partner-cta__link{display:inline-block;margin-top:18px;font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#fff}
+  /* white separator between the cinematic navy sections, Polaris star centered */
+  .svc-divider{background:var(--white)}
+  .svc-divider__inner{position:relative;max-width:1100px;margin:0 auto;height:104px;display:flex;align-items:center;justify-content:center}
+  .svc-divider__inner::before{content:"";position:absolute;left:24px;right:24px;top:50%;height:1px;background:var(--silver-2)}
+  .svc-divider__star{position:relative;z-index:1;display:flex;align-items:center;justify-content:center;padding:0 22px;background:var(--white)}
+  .svc-divider__star img{display:block;width:42px;height:42px}
+  @media(max-width:760px){ .svc-divider__inner{height:84px} .svc-divider__star img{width:36px;height:36px} }
   /* 01 Formazione, cinematic training-scene background */
   #formazione{position:relative;overflow:hidden}
   #formazione .fmz-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;filter:saturate(.9) brightness(.97) contrast(1.03)}
@@ -131,8 +138,8 @@
     <ul class="nav__links">
       <li><a href="/" data-it="Chi Siamo" data-en="About">Chi Siamo</a></li>
       <li><a href="/servizi.html" class="is-active" data-it="Servizi" data-en="Services">Servizi</a></li>
+      <li><a href="/numeri.html" data-it="Progetti" data-en="Projects">Progetti</a></li>
       <li><a href="/#team" data-it="Team" data-en="Team">Team</a></li>
-      <li><a href="/casi-testimonianze.html" data-it="Casi &amp; Testimonianze" data-en="Cases">Casi &amp; Testimonianze</a></li>
       <li><a href="/lavora-con-noi.html" data-it="Lavora con noi" data-en="Careers">Lavora con noi</a></li>
       <li><a href="/contatti.html" class="nav__cta" data-it="Contattaci" data-en="Get in Touch">Contattaci</a></li>
       <li><button type="button" class="lang-switch" aria-label="Cambia lingua"><span class="lang-switch__opt on" data-lang="it">IT</span><span>/</span><span class="lang-switch__opt" data-lang="en">EN</span></button></li>
@@ -143,7 +150,7 @@
 <main>
   <header class="page-head">
     <div class="container">
-      <h1 data-it-html="Cosa facciamo per la tua <em>impresa</em>" data-en-html="What We Do for Your <em>Business</em>">Cosa facciamo per la tua <em>impresa</em></h1>
+      <h1 data-it-html="I nostri <em>servizi</em>" data-en-html="Our <em>Services</em>">I nostri <em>servizi</em></h1>
     </div>
   </header>
 
@@ -183,6 +190,9 @@
       </div>
     </div>
   </section>
+
+  <!-- divider -->
+  <div class="svc-divider" aria-hidden="true"><div class="svc-divider__inner"><span class="svc-divider__star"><img src="/img/logo-mark.svg" alt=""></span></div></div>
 
   <!-- INVOICE TRADING / FINANZA -->
   <section class="section section--navy" id="invoice-trading">
@@ -227,6 +237,9 @@
       </div>
     </div>
   </section>
+
+  <!-- divider -->
+  <div class="svc-divider" aria-hidden="true"><div class="svc-divider__inner"><span class="svc-divider__star"><img src="/img/logo-mark.svg" alt=""></span></div></div>
 
   <!-- ADVISORY -->
   <section class="section section--navy" id="advisory">
@@ -335,7 +348,7 @@
   <!-- PARTNER -->
   <section class="section section--cream" style="padding-top:0">
     <div class="container">
-      <hr style="border:0;border-top:1px solid var(--silver-2);max-width:1000px;margin:0 auto 80px">
+      <hr style="border:0;border-top:1px solid var(--silver-2);margin:0 0 80px">
       <div class="section__head reveal">
         <h2 data-it-html="Una rete che <em class=&quot;hl&quot;>va oltre</em>" data-en-html="A Network That <em class=&quot;hl&quot;>Goes Further</em>">Una rete che <em class="hl">va oltre</em></h2>
       </div>
@@ -350,7 +363,7 @@
           </div>
           <span class="partner-cta__link" data-it-html="Visita &rarr;" data-en-html="Learn more &rarr;">Visita →</span>
         </a>
-        <a href="https://runcapital.partners/nasdaq-listings" target="_blank" rel="noopener" class="partner-cta">
+        <a href="https://3dots.com" target="_blank" rel="noopener" class="partner-cta">
           <span class="partner-cta__tag" data-it="Partner" data-en="Partner">Partner</span>
           <div class="partner-cta__t">3DOTS Capital</div>
           <p class="partner-cta__b" data-it="Advisory per la quotazione su Nasdaq di società del Sud Europa. Programma dedicato alle PMI italiane in crescita." data-en="Nasdaq listing advisory for Southern European companies. A program dedicated to growing Italian SMEs.">Advisory per la quotazione su Nasdaq di società del Sud Europa. Programma dedicato alle PMI italiane in crescita.</p>
@@ -371,7 +384,7 @@
         <h2 class="ask__title" data-it-html="Hai <em>domande?</em>" data-en-html="Have <em>Questions?</em>">Hai <em>domande?</em></h2>
         <div class="ask__buttons">
           <button class="btn btn--primary" type="button" data-open-contact data-it-html="Contattaci &rarr;" data-en-html="Contact us &rarr;">Contattaci →</button>
-          <a href="/#team" class="btn btn--ghost" data-it="Conosci il team" data-en="Meet the team">Conosci il team</a>
+          <a href="/" class="btn btn--ghost" data-it="Torna a Polaris" data-en="Back to Polaris">Torna a Polaris</a>
         </div>
       </div>
     </div>
@@ -390,7 +403,7 @@
         <li><a href="/" data-it="Chi Siamo" data-en="About">Chi Siamo</a></li>
         <li><a href="/servizi.html" data-it="Servizi" data-en="Services">Servizi</a></li>
         <li><a href="/numeri.html" data-it="Progetti" data-en="Projects">Progetti</a></li>
-        <li><a href="/casi-testimonianze.html" data-it="Casi &amp; Testimonianze" data-en="Cases">Casi</a></li>
+        <li><a href="/#team" data-it="Team" data-en="Team">Team</a></li>
         <li><a href="/lavora-con-noi.html" data-it="Lavora con noi" data-en="Careers">Lavora con noi</a></li>
       </ul>
     </div>
@@ -405,8 +418,9 @@
     <div class="footer__col">
       <h4 data-it="Gruppo" data-en="Group">Gruppo</h4>
       <ul>
-        <li><a>Polaris HR srl</a></li>
-        <li><a>Hazard srl</a></li>
+        <li><a href="/">Polaris Group</a></li>
+        <li><a href="/servizi.html#formazione">Polaris HR srl</a></li>
+        <li><a href="/servizi.html#invoice-trading">Hazard srl</a></li>
         <li><a href="https://runcapital.partners" target="_blank" rel="noopener">Run Capital Partners ↗</a></li>
       </ul>
     </div>

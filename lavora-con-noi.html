@@ -14,24 +14,24 @@
 <link rel="stylesheet" href="/assets/site.css">
 <style>
   .ally-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-  .ally{position:relative;overflow:hidden;background:var(--white);border:1px solid var(--silver-2);border-radius:4px;padding:32px 28px;transition:transform .35s var(--ease),box-shadow .35s var(--ease),border-color .35s var(--ease),background .35s var(--ease)}
-  .ally::after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 30%,rgba(127,168,220,.22) 50%,transparent 70%);transform:translateX(-110%);transition:transform .9s ease-out;pointer-events:none}
-  .ally:hover{transform:translateY(-5px);background:linear-gradient(160deg,#0e3258,#0a2a4c);border-color:#0a2a4c;box-shadow:0 28px 60px -28px rgba(11,46,79,.55)}
+  .ally{position:relative;overflow:hidden;background:linear-gradient(160deg,#0e3258,#0a2a4c);border:1px solid #0a2a4c;border-radius:4px;padding:32px 28px;box-shadow:0 18px 42px -30px rgba(11,46,79,.5);transition:transform .35s var(--ease),box-shadow .35s var(--ease),border-color .35s var(--ease),background .35s var(--ease)}
+  .ally::after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 30%,rgba(255,255,255,.16) 50%,transparent 70%);transform:translateX(-110%);transition:transform .9s ease-out;pointer-events:none}
+  .ally:hover{transform:translateY(-5px);background:var(--white);border-color:var(--silver-2);box-shadow:0 28px 60px -28px rgba(11,46,79,.35)}
   .ally:hover::after{transform:translateX(110%)}
-  .ally:hover .ally__n{color:#9cc0ef}
-  .ally:hover .ally__t{color:#fff}
-  .ally:hover .ally__d{color:#fff}
-  .ally__n{display:inline-block;font-size:13px;font-weight:800;letter-spacing:.14em;color:var(--navy-deep);border:1.5px solid var(--silver-1);border-radius:4px;padding:6px 10px;transition:color .35s var(--ease),border-color .35s var(--ease)}
-  .ally:hover .ally__n{border-color:rgba(156,192,239,.5)}
-  .ally__t{font-family:var(--serif);font-weight:700;font-size:1.5rem;color:var(--navy-deep);margin:14px 0 8px;line-height:1.15;transition:color .35s var(--ease)}
-  .ally__d{font-size:.95rem;color:var(--ink);opacity:.82;line-height:1.55;transition:color .35s var(--ease)}
-  .proof{display:grid;grid-template-columns:repeat(3,1fr);max-width:900px;margin:0 auto}
+  .ally__n{display:inline-block;font-size:13px;font-weight:800;letter-spacing:.14em;color:#9cc0ef;border:1.5px solid rgba(156,192,239,.5);border-radius:4px;padding:6px 10px;transition:color .35s var(--ease),border-color .35s var(--ease)}
+  .ally:hover .ally__n{color:var(--navy-deep);border-color:var(--silver-1)}
+  .ally__t{font-family:var(--serif);font-weight:700;font-size:1.5rem;color:#fff;margin:14px 0 8px;line-height:1.15;transition:color .35s var(--ease)}
+  .ally:hover .ally__t{color:var(--navy-deep)}
+  .ally__d{font-size:.95rem;color:#fff;line-height:1.55;transition:color .35s var(--ease),opacity .35s var(--ease)}
+  .ally:hover .ally__d{color:var(--ink);opacity:.82}
+  .proof{display:grid;grid-template-columns:repeat(4,1fr);max-width:1000px;margin:0 auto}
   .proof__i{text-align:center;padding:0 24px;border-left:1px solid rgba(184,194,204,.25)}
   .proof__i:first-child{border-left:0}
   .proof__num{font-family:var(--serif);font-weight:600;font-size:clamp(2.4rem,4vw,3.2rem);color:#fff;line-height:1}
   .proof__lbl{margin-top:8px;font-size:.85rem;color:var(--silver-2)}
   .apply{max-width:760px;margin:0 auto;text-align:center}
-  @media(max-width:860px){ .ally-grid{grid-template-columns:1fr} .proof{grid-template-columns:1fr;gap:28px} .proof__i{border-left:0} }
+  @media(max-width:860px){ .ally-grid{grid-template-columns:1fr} .proof{grid-template-columns:repeat(2,1fr);gap:34px 0} .proof__i{border-left:0} }
+  @media(max-width:480px){ .proof{grid-template-columns:1fr} }
 </style>
 </head>
 <body>
@@ -45,7 +45,6 @@
       <li><a href="/servizi.html" data-it="Servizi" data-en="Services">Servizi</a></li>
       <li><a href="/numeri.html" data-it="Progetti" data-en="Projects">Progetti</a></li>
       <li><a href="/#team" data-it="Team" data-en="Team">Team</a></li>
-      <li><a href="/casi-testimonianze.html" data-it="Casi &amp; Testimonianze" data-en="Cases">Casi &amp; Testimonianze</a></li>
       <li><a href="/lavora-con-noi.html" class="is-active" data-it="Lavora con noi" data-en="Careers">Lavora con noi</a></li>
       <li><a href="/contatti.html" class="nav__cta" data-it="Contattaci" data-en="Get in Touch">Contattaci</a></li>
       <li><button type="button" class="lang-switch" aria-label="Cambia lingua"><span class="lang-switch__opt on" data-lang="it">IT</span><span>/</span><span class="lang-switch__opt" data-lang="en">EN</span></button></li>
@@ -63,7 +62,7 @@
   <!-- ALLEATI -->
   <section class="section">
     <div class="container">
-      <div class="section__head reveal">
+      <div class="section__head reveal" style="max-width:none">
         <h2 data-it-html="Chi cerchiamo, <em class=&quot;hl&quot;>con chi cresciamo</em>" data-en-html="Who We Look for, <em class=&quot;hl&quot;>Who We Grow With</em>">Chi cerchiamo, <em class="hl">con chi cresciamo</em></h2>
       </div>
       <div class="ally-grid reveal">
@@ -105,12 +104,13 @@
   <section class="section section--navy">
     <div class="container">
       <div class="section__head reveal">
-        <h2 data-it-html="In cinque anni, <em class=&quot;hl&quot;>insieme</em>" data-en-html="In Five Years, <em class=&quot;hl&quot;>Together</em>">In cinque anni, <em class="hl">insieme</em></h2>
+        <h2 data-it-html="I nostri <em class=&quot;hl&quot;>numeri</em>" data-en-html="Our <em class=&quot;hl&quot;>Numbers</em>">I nostri <em class="hl">numeri</em></h2>
       </div>
       <div class="proof reveal">
-        <div class="proof__i"><div class="proof__num"><span class="count" data-target="3000">0</span>+</div><div class="proof__lbl" data-it="Aziende coinvolte" data-en="Companies involved">Aziende coinvolte</div></div>
-        <div class="proof__i"><div class="proof__num"><span class="count" data-target="20000">0</span>+</div><div class="proof__lbl" data-it="Persone formate" data-en="People trained">Persone formate</div></div>
-        <div class="proof__i"><div class="proof__num"><span class="count" data-target="50000">0</span>+</div><div class="proof__lbl" data-it="Ore di formazione" data-en="Training hours">Ore di formazione</div></div>
+        <div class="proof__i"><div class="proof__num"><span class="count" data-target="5040">0</span></div><div class="proof__lbl" data-it="Partecipanti formati" data-en="People trained">Partecipanti formati</div></div>
+        <div class="proof__i"><div class="proof__num"><span class="count" data-target="391">0</span></div><div class="proof__lbl" data-it="Aziende coinvolte" data-en="Companies involved">Aziende coinvolte</div></div>
+        <div class="proof__i"><div class="proof__num"><span class="count" data-target="10058">0</span></div><div class="proof__lbl" data-it="Ore di formazione erogate" data-en="Training hours delivered">Ore di formazione erogate</div></div>
+        <div class="proof__i"><div class="proof__num"><span class="count" data-target="1006">0</span></div><div class="proof__lbl" data-it="Corsi erogati" data-en="Courses delivered">Corsi erogati</div></div>
       </div>
     </div>
   </section>
@@ -139,7 +139,7 @@
         <li><a href="/" data-it="Chi Siamo" data-en="About">Chi Siamo</a></li>
         <li><a href="/servizi.html" data-it="Servizi" data-en="Services">Servizi</a></li>
         <li><a href="/numeri.html" data-it="Progetti" data-en="Projects">Progetti</a></li>
-        <li><a href="/casi-testimonianze.html" data-it="Casi &amp; Testimonianze" data-en="Cases">Casi</a></li>
+        <li><a href="/#team" data-it="Team" data-en="Team">Team</a></li>
         <li><a href="/lavora-con-noi.html" data-it="Lavora con noi" data-en="Careers">Lavora con noi</a></li>
       </ul>
     </div>
@@ -154,8 +154,9 @@
     <div class="footer__col">
       <h4 data-it="Gruppo" data-en="Group">Gruppo</h4>
       <ul>
-        <li><a>Polaris HR srl</a></li>
-        <li><a>Hazard srl</a></li>
+        <li><a href="/">Polaris Group</a></li>
+        <li><a href="/servizi.html#formazione">Polaris HR srl</a></li>
+        <li><a href="/servizi.html#invoice-trading">Hazard srl</a></li>
         <li><a href="https://runcapital.partners" target="_blank" rel="noopener">Run Capital Partners ↗</a></li>
       </ul>
     </div>
