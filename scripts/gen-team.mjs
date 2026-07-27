@@ -113,7 +113,7 @@ const members = [
     prior:{it:'In Polaris dal 2015. Entrata subito dopo il percorso di studi, è cresciuta all’interno dell’azienda fino a guidare l’Area Formazione, che coordina progettazione, gestione e rendicontazione dei progetti formativi.',en:'With Polaris since 2015. She joined straight after her studies and grew within the company to lead the Training area, coordinating the design, delivery and reporting of training projects.'},
     focus:{it:'Direzione dell’area formazione.',en:'Leading the training area.'} },
   { slug:'paola', initials:'P', name:'Paola Franzoni', xptype:'formazione',
-    photo:true, photoPos:'center 20%',
+    photo:true, photoPos:'center 12%',
     linkedin:'https://www.linkedin.com/in/paola-franzoni-072759345/',
     role:{it:'Formazione',en:'Training'}, area:{it:'Area Formazione',en:'Training'},
     specialty:{it:'Progettazione e gestione di percorsi formativi finanziati e aziendali',en:'Design and management of funded and corporate training programmes'},
@@ -155,7 +155,7 @@ const members = [
     company:{it:'Polaris Group',en:'Polaris Group'},
     focus:{it:'Docenza senior su soft skills e sviluppo delle persone.',en:'Senior faculty on soft skills and people development.'} },
   { slug:'roberta', initials:'R', name:'Roberta Tagliani', xptype:'formazione',
-    photo:true, photoPos:'center 26%',
+    photo:true, photoPos:'center 12%',
     linkedin:'https://www.linkedin.com/in/roberta-tagliani-57957b73/',
     role:{it:'Senior Partner',en:'Senior Partner'}, area:{it:'Area Formazione',en:'Training'},
     specialty:{it:'RSPP, HACCP, accreditamento regionale, fondi interprofessionali',en:'RSPP, HACCP, regional accreditation, interprofessional funds'},
@@ -315,10 +315,10 @@ const page = m => {
     <a href="/" class="nav__logo" aria-label="Polaris Group"><img src="/img/logo-lockup.png" alt="Polaris Group"></a>
     <button class="nav__toggle" aria-label="Menu"><span></span><span></span><span></span></button>
     <ul class="nav__links">
-      <li><a href="/chi-siamo.html" class="is-active" data-it="Chi Siamo" data-en="About">Chi Siamo</a></li>
+      <li><a href="/" class="is-active" data-it="Chi Siamo" data-en="About">Chi Siamo</a></li>
       <li><a href="/servizi.html" data-it="Servizi" data-en="Services">Servizi</a></li>
       <li><a href="/numeri.html" data-it="Progetti" data-en="Projects">Progetti</a></li>
-      <li><a href="/chi-siamo.html#team" data-it="Team" data-en="Team">Team</a></li>
+      <li><a href="/#team" data-it="Team" data-en="Team">Team</a></li>
       <li><a href="/casi-testimonianze.html" data-it="Casi &amp; Testimonianze" data-en="Cases">Casi &amp; Testimonianze</a></li>
       <li><a href="/lavora-con-noi.html" data-it="Lavora con noi" data-en="Careers">Lavora con noi</a></li>
       <li><a href="/contatti.html" class="nav__cta" data-it="Contattaci" data-en="Get in Touch">Contattaci</a></li>
@@ -332,7 +332,7 @@ const page = m => {
   <!-- BIO HERO -->
   <section class="bio-hero">
     <div class="bio-hero__inner">
-      <a href="/chi-siamo.html#team" class="bio-back" data-it-html="&larr; Torna al team" data-en-html="&larr; Back to the team">← Torna al team</a>
+      <a href="/#team" class="bio-back" data-it-html="&larr; Torna al team" data-en-html="&larr; Back to the team">← Torna al team</a>
       <div class="bio-photo">
         <div class="bio-photo__frame">${m.photo ? `<img src="/img/team/${m.slug}.jpg" alt="${escA(m.name)}" style="object-position:${m.photoPos || 'center 22%'}">` : `<div class="bio-photo__mono" aria-hidden="true">${m.initials}</div>`}</div>
         <div class="bio-photo__accent" aria-hidden="true"></div>
@@ -372,7 +372,7 @@ const page = m => {
         <h2 class="ask__title" data-it-html="Hai <em>domande?</em>" data-en-html="Have <em>Questions?</em>">Hai <em>domande?</em></h2>
         <div class="ask__buttons">
           <button class="btn btn--primary" type="button" data-open-contact data-it-html="Contattaci &rarr;" data-en-html="Contact us &rarr;">Contattaci &rarr;</button>
-          <a href="/chi-siamo.html#team" class="btn btn--ghost" data-it="Conosci il team" data-en="Meet the team">Conosci il team</a>
+          <a href="/#team" class="btn btn--ghost" data-it="Conosci il team" data-en="Meet the team">Conosci il team</a>
         </div>
       </div>
     </div>
@@ -389,7 +389,7 @@ const page = m => {
     <div class="footer__col">
       <h4 data-it="Sito" data-en="Site">Sito</h4>
       <ul>
-        <li><a href="/chi-siamo.html" data-it="Chi Siamo" data-en="About">Chi Siamo</a></li>
+        <li><a href="/" data-it="Chi Siamo" data-en="About">Chi Siamo</a></li>
         <li><a href="/servizi.html" data-it="Servizi" data-en="Services">Servizi</a></li>
         <li><a href="/numeri.html" data-it="Progetti" data-en="Projects">Progetti</a></li>
         <li><a href="/casi-testimonianze.html" data-it="Casi &amp; Testimonianze" data-en="Cases">Casi</a></li>

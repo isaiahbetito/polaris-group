@@ -387,6 +387,37 @@
   .git__cta{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--navy-deep);color:#fff;padding:14px 32px;border-radius:6px;font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;transition:transform .2s var(--ease),background .2s}
   .git__cta:hover{transform:translateY(-2px);background:var(--navy-mid)}
   @media(max-width:560px){.git__box{flex-direction:column;align-items:stretch;text-align:center}.git__copy{width:100%}}
+  /* team groups (folded from Chi Siamo) */
+  .team-groups{display:flex;flex-direction:column;gap:56px;margin-top:var(--sp-8)}
+  .team-group__head{text-align:center;margin-bottom:28px}
+  .team-group__eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--silver-accent)}
+  .team-group__eyebrow::before,.team-group__eyebrow::after{content:"";width:32px;height:1px;background:var(--silver-2)}
+  .team-groups .team-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:40px 24px;margin-top:0}
+  .team-groups .team-card{width:200px;flex:0 0 200px}
+  /* collapse / expand */
+  .team-collapse{position:relative;overflow:hidden;max-height:760px;transition:max-height .6s var(--ease)}
+  .team-collapse.is-open{max-height:5000px}
+  .team-collapse::after{content:"";position:absolute;left:0;right:0;bottom:0;height:180px;background:linear-gradient(to bottom,rgba(255,255,255,0),var(--white));pointer-events:none;transition:opacity .4s var(--ease)}
+  .team-collapse.is-open::after{opacity:0}
+  /* belief quote + pillars (folded from Chi Siamo, light section) */
+  .belief-quote{max-width:840px;margin:0 auto;text-align:center;padding:20px 0;position:relative}
+  .belief-quote__mk{display:block;font-family:var(--serif);font-size:5rem;line-height:.5;color:var(--silver-1);margin-bottom:18px}
+  .belief-quote blockquote{font-family:var(--serif);font-size:clamp(1.5rem,2.8vw,2.2rem);line-height:1.45;color:var(--navy-deep);font-weight:500;font-style:italic;margin:0;quotes:none}
+  .belief-quote blockquote em{font-style:italic;color:var(--steel)}
+  .belief-quote__by{margin-top:28px;font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--silver-accent)}
+  .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:var(--sp-8)}
+  .pillar{position:relative;overflow:hidden;background:var(--white);border:1px solid var(--silver-2);border-radius:4px;padding:32px 28px;transition:transform .35s var(--ease),box-shadow .35s var(--ease),border-color .35s var(--ease),background .35s var(--ease)}
+  .pillar:hover{transform:translateY(-5px);background:linear-gradient(160deg,#0e3258,#0a2a4c);border-color:#0a2a4c;box-shadow:0 28px 60px -28px rgba(11,46,79,.55)}
+  .pillar:hover .pillar__n{border-color:rgba(156,192,239,.5);color:#9cc0ef}
+  .pillar:hover .pillar__t,.pillar:hover .pillar__d{color:#fff}
+  .pillar__n{display:inline-block;font-size:13px;font-weight:800;letter-spacing:.14em;color:var(--navy-deep);border:1.5px solid var(--silver-1);border-radius:4px;padding:6px 10px;transition:color .35s var(--ease),border-color .35s var(--ease)}
+  .pillar__t{font-family:var(--serif);font-weight:700;font-size:1.5rem;color:var(--navy-deep);margin:14px 0 8px;line-height:1.15;transition:color .35s var(--ease)}
+  .pillar__d{font-size:.95rem;color:var(--ink);opacity:.82;line-height:1.55;transition:color .35s var(--ease)}
+  @media(max-width:860px){
+    .team-groups .team-grid{gap:32px 12px}
+    .team-groups .team-card{width:calc(50% - 6px);flex:0 0 calc(50% - 6px)}
+    .pillars{grid-template-columns:1fr}
+  }
 </style>
 </head>
 <body>
@@ -398,7 +429,7 @@
     </a>
     <button class="nav__toggle" type="button" aria-label="Menu"><span></span><span></span><span></span></button>
     <ul class="nav__links">
-      <li><a href="/chi-siamo.html" data-it="Chi Siamo" data-en="About">Chi Siamo</a></li>
+      <li><a href="/" data-it="Chi Siamo" data-en="About">Chi Siamo</a></li>
       <li><a href="/servizi.html" data-it="Servizi" data-en="Services">Servizi</a></li>
       <li><a href="/numeri.html" data-it="Progetti" data-en="Projects">Progetti</a></li>
       <li><a href="#team" data-it="Team" data-en="Team">Team</a></li>
@@ -525,7 +556,6 @@
   <div class="container">
     <div class="section__head reveal">
       <h2 data-it-html="I nostri <em class=&quot;hl&quot;>numeri</em>" data-en-html="Our <em class=&quot;hl&quot;>Numbers</em>">I nostri <em class="hl">numeri</em></h2>
-      <p data-it="Formazione finanziata dai fondi interprofessionali, erogata alle imprese nel biennio 2024&ndash;2025." data-en="Training funded by interprofessional funds, delivered to companies over 2024&ndash;2025.">Formazione finanziata dai fondi interprofessionali, erogata alle imprese nel biennio 2024–2025.</p>
     </div>
     <div class="stats reveal">
       <div class="stat"><div class="stat__num"><span class="count" data-target="5040">0</span></div><div class="stat__label" data-it="Partecipanti formati" data-en="People trained">Partecipanti formati</div></div>
@@ -611,18 +641,48 @@
     <div class="section__head reveal">
       <h2 data-it-html="Conosci il <em class=&quot;hl&quot;>team</em>" data-en-html="Meet the <em class=&quot;hl&quot;>Team</em>">Conosci il <em class="hl">team</em></h2>
     </div>
-    <div class="team-grid reveal">
-      <a href="/team/cesare-trebeschi.html" class="team-card team-card--lead"><div class="team-card__photo"><img src="/img/cesare-trebeschi.jpg" alt="Cesare Trebeschi"></div><div class="team-card__name">Cesare Trebeschi</div><div class="team-card__role" data-it="CEO &amp; Fondatore" data-en="CEO &amp; Founder">CEO &amp; Fondatore</div></a>
-      <a href="/team/cristina.html" class="team-card"><div class="team-card__photo"><img src="/img/team/cristina.jpg" alt="Cristina Milanesi" style="object-position:center 26%"></div><div class="team-card__name">Cristina Milanesi</div><div class="team-card__role" data-it="Front &amp; Back Office" data-en="Front &amp; Back Office">Front &amp; Back Office</div></a>
-      <a href="/team/alessio.html" class="team-card"><div class="team-card__photo"><img src="/img/team/alessio.jpg" alt="Alessio Di Cesare" style="object-position:center 32%"></div><div class="team-card__name">Alessio Di Cesare</div><div class="team-card__role" data-it="Responsabile Amministrativo" data-en="Head of Administration">Responsabile Amministrativo</div></a>
-      <a href="/team/gianmaria.html" class="team-card"><div class="team-card__photo">G</div><div class="team-card__name">Gianmaria Bassani</div><div class="team-card__role" data-it="Amministrazione" data-en="Administration">Amministrazione</div></a>
-      <a href="/team/mara.html" class="team-card"><div class="team-card__photo"><img src="/img/team/mara.jpg" alt="Mara Carioni" style="object-position:center 22%"></div><div class="team-card__name">Mara Carioni</div><div class="team-card__role" data-it="Responsabile Formazione" data-en="Head of Training">Responsabile Formazione</div></a>
-      <a href="/team/paola.html" class="team-card"><div class="team-card__photo"><img src="/img/team/paola.jpg" alt="Paola Franzoni" style="object-position:center 20%"></div><div class="team-card__name">Paola Franzoni</div><div class="team-card__role" data-it="Formazione" data-en="Training">Formazione</div></a>
-      <a href="/team/andrea.html" class="team-card"><div class="team-card__photo"><img src="/img/team/andrea.jpg" alt="Andrea Ungaro" style="object-position:center 20%"></div><div class="team-card__name">Andrea Ungaro</div><div class="team-card__role" data-it="Formazione" data-en="Training">Formazione</div></a>
-      <a href="/team/giovanni.html" class="team-card"><div class="team-card__photo"><img src="/img/team/giovanni.jpg" alt="Giovanni Di Genio" style="object-position:center 26%"></div><div class="team-card__name">Giovanni Di Genio</div><div class="team-card__role" data-it="Collaboratore Senior" data-en="Senior Collaborator">Collaboratore Senior</div></a>
+    <div class="team-groups team-collapse reveal" id="teamCollapse">
+      <!-- Leadership -->
+      <div class="team-group">
+        <div class="team-group__head">
+          <span class="team-group__eyebrow" data-it="Leadership" data-en="Leadership">Leadership</span>
+        </div>
+        <div class="team-grid">
+          <a href="/team/cesare-trebeschi.html" class="team-card team-card--lead"><div class="team-card__photo"><img src="/img/cesare-trebeschi.jpg" alt="Cesare Trebeschi"></div><div class="team-card__name">Cesare Trebeschi</div><div class="team-card__role" data-it="CEO &amp; Fondatore" data-en="CEO &amp; Founder">CEO &amp; Fondatore</div></a>
+        </div>
+      </div>
+      <!-- Area Formazione -->
+      <div class="team-group">
+        <div class="team-group__head">
+          <span class="team-group__eyebrow" data-it="Area Formazione" data-en="Training">Area Formazione</span>
+        </div>
+        <div class="team-grid">
+          <a href="/team/mara.html" class="team-card"><div class="team-card__photo"><img src="/img/team/mara.jpg" alt="Mara Carioni" style="object-position:center 16%"></div><div class="team-card__name">Mara Carioni</div><div class="team-card__role" data-it="Responsabile Formazione" data-en="Head of Training">Responsabile Formazione</div></a>
+          <a href="/team/paola.html" class="team-card"><div class="team-card__photo"><img src="/img/team/paola.jpg" alt="Paola Franzoni" style="object-position:center 20%"></div><div class="team-card__name">Paola Franzoni</div><div class="team-card__role" data-it="Formazione" data-en="Training">Formazione</div></a>
+          <a href="/team/andrea.html" class="team-card"><div class="team-card__photo"><img src="/img/team/andrea.jpg" alt="Andrea Ungaro" style="object-position:center 20%"></div><div class="team-card__name">Andrea Ungaro</div><div class="team-card__role" data-it="Formazione" data-en="Training">Formazione</div></a>
+          <a href="/team/giovanni.html" class="team-card"><div class="team-card__photo"><img src="/img/team/giovanni.jpg" alt="Giovanni Di Genio" style="object-position:center 18%"></div><div class="team-card__name">Giovanni Di Genio</div><div class="team-card__role" data-it="Collaboratore Senior" data-en="Senior Collaborator">Collaboratore Senior</div></a>
+          <a href="/team/silvia.html" class="team-card"><div class="team-card__photo">S</div><div class="team-card__name">Silvia Ungaro</div><div class="team-card__role" data-it="Senior Partner" data-en="Senior Partner">Senior Partner</div></a>
+          <a href="/team/roberto.html" class="team-card"><div class="team-card__photo">R</div><div class="team-card__name">Roberto James Aloi</div><div class="team-card__role" data-it="Senior Partner" data-en="Senior Partner">Senior Partner</div></a>
+          <a href="/team/carole.html" class="team-card"><div class="team-card__photo">C</div><div class="team-card__name">Carole Conti</div><div class="team-card__role" data-it="Senior Partner" data-en="Senior Partner">Senior Partner</div></a>
+          <a href="/team/roberta.html" class="team-card"><div class="team-card__photo"><img src="/img/team/roberta.jpg" alt="Roberta Tagliani" style="object-position:center 18%"></div><div class="team-card__name">Roberta Tagliani</div><div class="team-card__role" data-it="Senior Partner" data-en="Senior Partner">Senior Partner</div></a>
+          <a href="/team/francesca.html" class="team-card"><div class="team-card__photo">F</div><div class="team-card__name">Francesca Rossini</div><div class="team-card__role" data-it="Junior Partner" data-en="Junior Partner">Junior Partner</div></a>
+          <a href="/team/lavinia.html" class="team-card"><div class="team-card__photo"><img src="/img/team/lavinia.jpg" alt="Lavinia Di Genio" style="object-position:center 8%"></div><div class="team-card__name">Lavinia Di Genio</div><div class="team-card__role" data-it="Collaboratrice Junior" data-en="Junior Collaborator">Collaboratrice Junior</div></a>
+        </div>
+      </div>
+      <!-- Area Economico-Finanziaria (Cristina folded in) -->
+      <div class="team-group">
+        <div class="team-group__head">
+          <span class="team-group__eyebrow" data-it="Area Economico-Finanziaria" data-en="Finance &amp; Control">Area Economico-Finanziaria</span>
+        </div>
+        <div class="team-grid">
+          <a href="/team/alessio.html" class="team-card"><div class="team-card__photo"><img src="/img/team/alessio.jpg" alt="Alessio Di Cesare" style="object-position:center 16%"></div><div class="team-card__name">Alessio Di Cesare</div><div class="team-card__role" data-it="Responsabile Amministrativo" data-en="Head of Administration">Responsabile Amministrativo</div></a>
+          <a href="/team/gianmaria.html" class="team-card"><div class="team-card__photo">G</div><div class="team-card__name">Gianmaria Bassani</div><div class="team-card__role" data-it="Amministrazione" data-en="Administration">Amministrazione</div></a>
+          <a href="/team/cristina.html" class="team-card"><div class="team-card__photo"><img src="/img/team/cristina.jpg" alt="Cristina Milanesi" style="object-position:center 26%"></div><div class="team-card__name">Cristina Milanesi</div><div class="team-card__role" data-it="Front &amp; Back Office" data-en="Front &amp; Back Office">Front &amp; Back Office</div></a>
+        </div>
+      </div>
     </div>
     <div class="text-center" style="margin-top:var(--sp-8)">
-      <a href="/chi-siamo.html" class="btn btn--ghost" data-it="Scopri di più" data-en="Learn more">Scopri di più</a>
+      <button type="button" class="btn btn--ghost" id="teamMore" data-it="Scopri di più" data-en="Learn more">Scopri di più</button>
     </div>
   </div>
 </section>
@@ -654,6 +714,34 @@
   </div>
 </section>
 
+<!-- IN COSA CREDIAMO (folded from Chi Siamo) -->
+<section class="section section--cream">
+  <div class="container">
+    <figure class="belief-quote reveal">
+      <span class="belief-quote__mk" aria-hidden="true">&ldquo;</span>
+      <blockquote data-it-html="Crediamo che le imprese debbano passare da una logica di breve periodo a una di lungo periodo: restare nel mercato il più a lungo possibile, <em>lasciando le cose meglio di come le hanno trovate.</em>" data-en-html="We believe companies should move from short-term thinking to the long term: staying in the market as long as possible, <em>leaving things better than they found them.</em>">Crediamo che le imprese debbano passare da una logica di breve periodo a una di lungo periodo: restare nel mercato il più a lungo possibile, <em>lasciando le cose meglio di come le hanno trovate.</em></blockquote>
+      <figcaption class="belief-quote__by">Cesare Trebeschi</figcaption>
+    </figure>
+    <div class="pillars reveal">
+      <article class="pillar">
+        <span class="pillar__n">01</span>
+        <h3 class="pillar__t" data-it="Le persone al centro" data-en="People at the Centre">Le persone al centro</h3>
+        <p class="pillar__d" data-it="Il clima di fiducia, le competenze e il coinvolgimento dei collaboratori sono il primo motore della crescita di un’azienda." data-en="Trust, skills and the involvement of employees are the first engine of a company's growth.">Il clima di fiducia, le competenze e il coinvolgimento dei collaboratori sono il primo motore della crescita di un’azienda.</p>
+      </article>
+      <article class="pillar">
+        <span class="pillar__n">02</span>
+        <h3 class="pillar__t" data-it="Una visione di lungo periodo" data-en="A Long-term Vision">Una visione di lungo periodo</h3>
+        <p class="pillar__d" data-it="Una mission chiara e una corretta gestione delle risorse finanziarie permettono di crescere e prosperare nel proprio mercato." data-en="A clear mission and sound financial management let a business grow and prosper in its market.">Una mission chiara e una corretta gestione delle risorse finanziarie permettono di crescere e prosperare nel proprio mercato.</p>
+      </article>
+      <article class="pillar">
+        <span class="pillar__n">03</span>
+        <h3 class="pillar__t" data-it="Cultura prima della tecnica" data-en="Culture Before Technique">Cultura prima della tecnica</h3>
+        <p class="pillar__d" data-it="La nostra è una missione più culturale che tecnica: coinvolgiamo partner professionali capaci di trasferire alle imprese ciò in cui crediamo." data-en="Ours is a mission more cultural than technical: we involve professional partners able to pass on what we believe to companies.">La nostra è una missione più culturale che tecnica: coinvolgiamo partner professionali capaci di trasferire alle imprese ciò in cui crediamo.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
 <!-- CTA -->
 <section class="section" id="contatti">
   <div class="container container--narrow text-center reveal">
@@ -678,7 +766,7 @@
     <div class="footer__col">
       <h4 data-it="Sito" data-en="Site">Sito</h4>
       <ul>
-        <li><a href="/chi-siamo.html" data-it="Chi Siamo" data-en="About">Chi Siamo</a></li>
+        <li><a href="/" data-it="Chi Siamo" data-en="About">Chi Siamo</a></li>
         <li><a href="/servizi.html" data-it="Servizi" data-en="Services">Servizi</a></li>
         <li><a href="/numeri.html" data-it="Progetti" data-en="Projects">Progetti</a></li>
         <li><a href="/casi-testimonianze.html" data-it="Casi &amp; Testimonianze" data-en="Cases">Casi</a></li>
@@ -733,6 +821,15 @@
   function countUp(el){var target=+el.dataset.target,dur=1600,t0=null;function step(ts){if(!t0)t0=ts;var p=Math.min((ts-t0)/dur,1);el.textContent=Math.round((1-Math.pow(1-p,3))*target).toLocaleString('it-IT',{useGrouping:'always'});if(p<1)requestAnimationFrame(step);}requestAnimationFrame(step);}
   var cio=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){countUp(e.target);cio.unobserve(e.target);}});},{threshold:.6});
   document.querySelectorAll('.count').forEach(function(el){cio.observe(el);});
+
+  // Meet the Team: "Learn more" expands the full team inline (no navigation)
+  var teamMore=document.getElementById('teamMore'), teamCollapse=document.getElementById('teamCollapse');
+  if(teamMore&&teamCollapse){
+    teamMore.addEventListener('click',function(){
+      teamCollapse.classList.add('is-open');
+      teamMore.style.display='none';
+    });
+  }
 
   // copy-to-clipboard for .git__copy buttons
   document.querySelectorAll('.git__copy').forEach(function(btn){
