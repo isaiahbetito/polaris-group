@@ -369,9 +369,9 @@ ${m.bio ? `
   <!-- BIO -->
   <section class="section section--cream reveal">
     <div class="container">
-      <div style="max-width:900px;margin:0 auto;text-align:center">
-        <span class="eyebrow eyebrow--center" data-it="Bio" data-en="Bio">Bio</span>
-        <p style="font-family:var(--serif);font-weight:500;font-size:clamp(2.2rem,4.6vw,3.4rem);line-height:1.15;letter-spacing:-.012em;color:var(--navy-deep);margin-top:28px" data-it="${escA(m.bio.it)}" data-en="${escA(m.bio.en)}">${m.bio.it}</p>
+      <div style="max-width:720px;margin:0 auto;text-align:center">
+        <h2 style="font-family:var(--serif);font-weight:500;font-size:clamp(2.2rem,4.6vw,3.4rem);color:var(--navy-deep);line-height:1.1;letter-spacing:-.012em;margin:0" data-it="Bio" data-en="Bio">Bio</h2>
+        <p style="font-size:1.02rem;line-height:1.8;color:var(--ink);opacity:.82;margin-top:26px" data-it="${escA(m.bio.it)}" data-en="${escA(m.bio.en)}">${m.bio.it}</p>
       </div>
     </div>
   </section>` : ''}
