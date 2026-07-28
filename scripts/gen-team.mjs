@@ -86,6 +86,7 @@ const members = [
     role:{it:'Front & Back Office',en:'Front & Back Office'}, area:{it:'Area Segreteria',en:'Administration'},
     specialty:{it:'Gestione piani, front e back office, assistenza clienti',en:'Plan management, front and back office, client support'},
     summary:{it:'In Polaris da un anno, segue la gestione dei piani e le attività di front e back office: organizzazione delle pratiche, coordinamento operativo e assistenza ai clienti, con attenzione ai dettagli e spirito di collaborazione.',en:'With Polaris for a year, she handles plan management and front- and back-office work: organising paperwork, coordinating day-to-day operations and supporting clients, with attention to detail and a collaborative spirit.'},
+    bio:{it:'Fa parte del team Polaris da un anno, dove si occupa della gestione dei piani e delle attività di front e back office. Segue l’organizzazione delle pratiche, il coordinamento delle attività operative e l’assistenza ai clienti, per garantire un servizio efficiente, preciso e attento alle esigenze di ogni interlocutore. Affronta il lavoro con professionalità, attenzione ai dettagli e spirito di collaborazione.',en:'She has been part of the Polaris team for a year, handling plan management and front- and back-office work. She oversees the organisation of paperwork, the coordination of day-to-day operations and client support, ensuring an efficient, precise service attentive to everyone’s needs. She approaches her work with professionalism, attention to detail and a collaborative spirit.'},
     company:{it:'Polaris Group',en:'Polaris Group'},
     prior:{it:'Entrata in Polaris nel 2025, porta nel Gruppo organizzazione, precisione e capacità di problem solving al servizio dei clienti.',en:'She joined Polaris in 2025, bringing organisation, precision and problem-solving in service of clients.'},
     focus:{it:'Gestione dei piani e attività di front e back office.',en:'Plan management and front- and back-office work.'} },
@@ -94,6 +95,7 @@ const members = [
     role:{it:'Responsabile Amministrativo',en:'Head of Administration'}, area:{it:'Area Economico-Finanziaria',en:'Finance & Control'},
     specialty:{it:'Contabilità, fatturazione e gestione dei pagamenti',en:'Accounting, invoicing and payment management'},
     summary:{it:'In Polaris dal 2020, è il responsabile amministrativo del Gruppo: cura la tenuta della contabilità, la fatturazione e la gestione dei pagamenti dell’area economico-finanziaria.',en:'With Polaris since 2020, he is the Group’s head of administration: he looks after bookkeeping, invoicing and the management of payments in the finance area.'},
+    bio:{it:'In Polaris dal 2020, è il responsabile amministrativo: si occupa della tenuta della contabilità insieme al collega Gianmaria, della fatturazione e della gestione dei pagamenti. Fuori dal lavoro coltiva molte passioni, tra cui la lettura, la musica, i film e le serie tv.',en:'With Polaris since 2020, he is the head of administration: he keeps the books together with his colleague Gianmaria, and handles invoicing and payments. Outside work he has many passions, including reading, music, films and TV series.'},
     company:{it:'Polaris Group',en:'Polaris Group'},
     prior:{it:'In Polaris dal 2020, tiene la contabilità del Gruppo insieme al collega Gianmaria, occupandosi di fatturazione, scadenze e pagamenti.',en:'With Polaris since 2020, he keeps the Group’s accounts together with his colleague Gianmaria, handling invoicing, deadlines and payments.'},
     focus:{it:'Contabilità, fatturazione e gestione dei pagamenti.',en:'Accounting, invoicing and payment management.'} },
@@ -109,6 +111,7 @@ const members = [
     role:{it:'Responsabile Formazione',en:'Head of Training'}, area:{it:'Area Formazione',en:'Training'},
     specialty:{it:'Direzione dell’area formazione, regia dei percorsi',en:'Direction of the training area, programme design'},
     summary:{it:'Responsabile dell’Area Formazione: dirige la squadra, definisce la regia dei percorsi e tiene la relazione con gli imprenditori che ci affidano i propri team.',en:'Head of the Training area: leads the team, defines programme design and keeps the relationship with the entrepreneurs who entrust their people to us.'},
+    bio:{it:'Entrata in Polaris nel 2015, subito dopo il percorso di studi, è cresciuta professionalmente all’interno dell’azienda fino a diventare responsabile dell’Area Formazione, che coordina la progettazione, la gestione e la rendicontazione dei progetti formativi.',en:'She joined Polaris in 2015, straight after her studies, and grew professionally within the company to become head of the Training area, which coordinates the design, delivery and reporting of training projects.'},
     company:{it:'Polaris Group',en:'Polaris Group'},
     prior:{it:'In Polaris dal 2015. Entrata subito dopo il percorso di studi, è cresciuta all’interno dell’azienda fino a guidare l’Area Formazione, che coordina progettazione, gestione e rendicontazione dei progetti formativi.',en:'With Polaris since 2015. She joined straight after her studies and grew within the company to lead the Training area, coordinating the design, delivery and reporting of training projects.'},
     focus:{it:'Direzione dell’area formazione.',en:'Leading the training area.'} },
@@ -118,6 +121,7 @@ const members = [
     role:{it:'Formazione',en:'Training'}, area:{it:'Area Formazione',en:'Training'},
     specialty:{it:'Progettazione e gestione di percorsi formativi finanziati e aziendali',en:'Design and management of funded and corporate training programmes'},
     summary:{it:'Professionista della formazione e delle risorse umane. Da oltre sei anni, con Polaris HR, progetta e gestisce percorsi formativi finanziati e aziendali, dalla sicurezza alla valorizzazione del capitale umano.',en:'A training and human-resources professional. For over six years, with Polaris HR, she has designed and managed funded and corporate training programmes, from workplace safety to developing human capital.'},
+    bio:{it:'Professionista della formazione e delle risorse umane, con una consolidata esperienza nella progettazione e gestione di percorsi formativi finanziati e aziendali. Da oltre sei anni, con Polaris HR, supporta imprese e lavoratori nello sviluppo delle competenze, nella formazione sulla sicurezza e nella valorizzazione del capitale umano. Il suo approccio unisce competenza tecnica, attenzione alle esigenze delle aziende e orientamento ai risultati, per costruire percorsi di crescita concreti e sostenibili.',en:'A training and human-resources professional with solid experience in designing and managing funded and corporate training programmes. For over six years, with Polaris HR, she has supported companies and workers in developing skills, in workplace-safety training and in valuing human capital. Her approach blends technical expertise, attention to companies’ needs and a focus on results, to build concrete and sustainable growth paths.'},
     company:{it:'Polaris Group',en:'Polaris Group'},
     prior:{it:'Oltre sei anni di esperienza nella progettazione e gestione di percorsi formativi finanziati e aziendali, con un approccio che unisce competenza tecnica, ascolto delle aziende e orientamento ai risultati.',en:'Over six years of experience designing and managing funded and corporate training programmes, with an approach that blends technical expertise, listening to companies and a focus on results.'},
     focus:{it:'Progettazione e gestione dei percorsi formativi.',en:'Designing and managing training programmes.'} },
@@ -126,6 +130,7 @@ const members = [
     role:{it:'Formazione',en:'Training'}, area:{it:'Area Formazione',en:'Training'},
     specialty:{it:'Supporto alla gestione dei piani formativi',en:'Support to the management of training plans'},
     summary:{it:'Giovane collaboratore dell’Area Formazione. Segue con serietà e dedizione le attività che gli vengono affidate, con spirito di collaborazione e attenzione all’ordine.',en:'A young collaborator in the Training area. He follows the tasks entrusted to him with seriousness and dedication, a collaborative spirit and attention to detail.'},
+    bio:{it:'Giovane collaboratore dell’Area Formazione, nato nel 2005. Si impegna con costanza nei compiti che gli vengono affidati, con disponibilità e spirito di collaborazione, mantenendo un atteggiamento serio e ordinato e affrontando ogni attività con responsabilità e dedizione.',en:'A young collaborator in the Training area, born in 2005. He commits consistently to the tasks entrusted to him, with availability and a collaborative spirit, keeping a serious and orderly attitude and approaching every task with responsibility and dedication.'},
     company:{it:'Polaris Group',en:'Polaris Group'},
     focus:{it:'Supporto alla gestione dei piani formativi.',en:'Supporting the management of training plans.'} },
   { slug:'giovanni', initials:'G', name:'Giovanni Di Genio', xptype:'sumisura',
@@ -160,6 +165,7 @@ const members = [
     role:{it:'Senior Partner',en:'Senior Partner'}, area:{it:'Area Formazione',en:'Training'},
     specialty:{it:'RSPP, HACCP, accreditamento regionale, fondi interprofessionali',en:'RSPP, HACCP, regional accreditation, interprofessional funds'},
     summary:{it:'Consulente ed esperta nella progettazione e gestione dei processi formativi, specializzata in Salute e Sicurezza sul Lavoro (RSPP) e Igiene degli Alimenti (HACCP). Oltre quindici anni sul campo al fianco delle imprese.',en:'A consultant and expert in the design and management of training processes, specialised in Workplace Health & Safety (RSPP) and Food Hygiene (HACCP). Over fifteen years in the field alongside companies.'},
+    bio:{it:'Consulente libera professionista ed esperta nella progettazione e gestione dei processi formativi, specializzata in Salute e Sicurezza sul Lavoro (RSPP) e Igiene degli Alimenti (HACCP). Con una laurea in Scienze della Formazione conseguita all’Università di Verona e oltre quindici anni di esperienza sul campo, aiuta le aziende a tutelare i lavoratori, a regolarizzare i processi interni e a far crescere le proprie risorse umane. Ha collaborato stabilmente con enti di formazione, associazioni di categoria e imprese, occupandosi di docenze specialistiche, incarichi di RSPP e igiene degli alimenti, accreditamento regionale e sistemi di gestione Qualità e Privacy (GDPR). Un pilastro della sua attività è l’accompagnamento delle imprese nell’accesso ai fondi interprofessionali e ai bandi regionali e camerali, convinta che la formazione non sia un adempimento burocratico ma un investimento per prevenire i rischi e migliorare l’efficienza aziendale.',en:'A freelance consultant and expert in the design and management of training processes, specialised in Workplace Health & Safety (RSPP) and Food Hygiene (HACCP). With a degree in Education Sciences from the University of Verona and over fifteen years of field experience, she helps companies protect their workers, regularise internal processes and grow their people. She has worked steadily with training bodies, trade associations and companies, covering specialist teaching, external RSPP and food-hygiene assignments, regional accreditation and Quality and Privacy (GDPR) management systems. A cornerstone of her work is helping companies access interprofessional funds and regional and chamber grants, convinced that training is not a bureaucratic formality but an investment to prevent risks and improve business efficiency.'},
     company:{it:'Polaris Group',en:'Polaris Group'},
     prior:{it:'Oltre quindici anni di esperienza con enti di formazione, associazioni di categoria e imprese: docenze specialistiche, incarichi esterni di RSPP e igiene degli alimenti, accreditamento regionale, sistemi di gestione Qualità e Privacy (GDPR). Accompagna le aziende nell’accesso ai fondi interprofessionali e ai bandi regionali e camerali.',en:'Over fifteen years of experience with training bodies, trade associations and companies: specialist teaching, external RSPP and food-hygiene assignments, regional accreditation, Quality and Privacy (GDPR) management systems. She supports companies in accessing interprofessional funds and regional and chamber grants.'},
     education:{it:'Laurea in Scienze della Formazione, Università di Verona.',en:'Degree in Education Sciences, University of Verona.'},
@@ -312,11 +318,10 @@ const page = m => {
     <a href="/" class="nav__logo" aria-label="Polaris Group"><img src="/img/logo-lockup.png" alt="Polaris Group"></a>
     <button class="nav__toggle" aria-label="Menu"><span></span><span></span><span></span></button>
     <ul class="nav__links">
-      <li><a href="/" class="is-active" data-it="Chi Siamo" data-en="About">Chi Siamo</a></li>
+      <li><a href="/#chi-siamo" class="is-active" data-it="Chi Siamo" data-en="About">Chi Siamo</a></li>
       <li><a href="/servizi.html" data-it="Servizi" data-en="Services">Servizi</a></li>
       <li><a href="/numeri.html" data-it="Progetti" data-en="Projects">Progetti</a></li>
       <li><a href="/#team" data-it="Team" data-en="Team">Team</a></li>
-      <li><a href="/casi-testimonianze.html" data-it="Casi &amp; Testimonianze" data-en="Cases">Casi &amp; Testimonianze</a></li>
       <li><a href="/lavora-con-noi.html" data-it="Lavora con noi" data-en="Careers">Lavora con noi</a></li>
       <li><a href="/contatti.html" class="nav__cta" data-it="Contattaci" data-en="Get in Touch">Contattaci</a></li>
       <li><button type="button" class="lang-switch" aria-label="Cambia lingua"><span class="lang-switch__opt on" data-lang="it">IT</span><span>/</span><span class="lang-switch__opt" data-lang="en">EN</span></button></li>
@@ -360,6 +365,16 @@ const page = m => {
       </div>
     </div>
   </section>
+${m.bio ? `
+  <!-- BIO -->
+  <section class="section section--cream reveal">
+    <div class="container">
+      <div style="max-width:760px;margin:0 auto">
+        <span class="eyebrow" data-it="Bio" data-en="Bio">Bio</span>
+        <p style="font-size:1.12rem;line-height:1.85;color:var(--ink);opacity:.86;margin-top:18px" data-it="${escA(m.bio.it)}" data-en="${escA(m.bio.en)}">${m.bio.it}</p>
+      </div>
+    </div>
+  </section>` : ''}
 
   <!-- CONTACT -->
   <section class="section reveal">
@@ -368,7 +383,7 @@ const page = m => {
         <h2 class="ask__title" data-it-html="Hai <em>domande?</em>" data-en-html="Have <em>Questions?</em>">Hai <em>domande?</em></h2>
         <div class="ask__buttons">
           <button class="btn btn--primary" type="button" data-open-contact data-it-html="Contattaci &rarr;" data-en-html="Contact us &rarr;">Contattaci &rarr;</button>
-          <a href="/#team" class="btn btn--ghost" data-it="Conosci il team" data-en="Meet the team">Conosci il team</a>
+          <a href="/" class="btn btn--ghost" data-it="Torna a Polaris" data-en="Back to Polaris">Torna a Polaris</a>
         </div>
       </div>
     </div>
@@ -385,10 +400,10 @@ const page = m => {
     <div class="footer__col">
       <h4 data-it="Sito" data-en="Site">Sito</h4>
       <ul>
-        <li><a href="/" data-it="Chi Siamo" data-en="About">Chi Siamo</a></li>
+        <li><a href="/#chi-siamo" data-it="Chi Siamo" data-en="About">Chi Siamo</a></li>
         <li><a href="/servizi.html" data-it="Servizi" data-en="Services">Servizi</a></li>
         <li><a href="/numeri.html" data-it="Progetti" data-en="Projects">Progetti</a></li>
-        <li><a href="/casi-testimonianze.html" data-it="Casi &amp; Testimonianze" data-en="Cases">Casi</a></li>
+        <li><a href="/#team" data-it="Team" data-en="Team">Team</a></li>
         <li><a href="/lavora-con-noi.html" data-it="Lavora con noi" data-en="Careers">Lavora con noi</a></li>
       </ul>
     </div>
@@ -403,8 +418,9 @@ const page = m => {
     <div class="footer__col">
       <h4 data-it="Gruppo" data-en="Group">Gruppo</h4>
       <ul>
-        <li><a>Polaris HR srl</a></li>
-        <li><a>Hazard srl</a></li>
+        <li><a href="/">Polaris Group</a></li>
+        <li><a href="/servizi.html#formazione">Polaris HR srl</a></li>
+        <li><a href="/servizi.html#invoice-trading">Hazard srl</a></li>
         <li><a href="https://runcapital.partners" target="_blank" rel="noopener">Run Capital Partners ↗</a></li>
       </ul>
     </div>
