@@ -358,6 +358,11 @@
        Must out-specify `.nav__links a` above, which is (0,1,1) and !important. */
     .nav__links a.nav__cta{display:block;width:100%;margin:0;padding:14px 32px;background:none;color:#fff!important;border-radius:0;font-weight:600;opacity:.9}
     .lang-switch{width:100%;justify-content:flex-start;align-items:center;gap:6px;padding:15px 32px;margin-top:2px;border-top:1px solid rgba(184,194,204,.18);color:var(--silver-1);font-size:13px}
+    /* the open drawer is always navy, even when the scrolled nav is in its
+       light --solid state; without this the active language turns navy and
+       disappears against it. Out-specifies .nav--solid .lang-switch__opt.on */
+    .nav.open .lang-switch{color:var(--silver-1)}
+    .nav.open .lang-switch__opt.on{color:#fff}
     .svc-grid,.stats,.footer__inner{grid-template-columns:1fr}
     .team-grid{grid-template-columns:1fr 1fr;gap:36px 16px}
     .team-card--lead{grid-column:1 / -1}
