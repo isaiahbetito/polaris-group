@@ -90,7 +90,12 @@ em.hl{font-style:italic;color:var(--steel)}
   .nav.open .nav__links{opacity:1;transform:none;pointer-events:auto}
   .nav__links li{width:100%}
   .nav__links a{display:block;padding:14px 32px;width:100%}
-  .nav__cta{display:inline-block;margin:8px 32px}
+  /* in the drawer the CTA is just another menu row — the filled box read as a
+     pre-selected item and overflowed the viewport at width:100% + 32px margins */
+  .nav__links a.nav__cta{display:block;width:100%;margin:0;padding:14px 32px;background:none;color:var(--navy-deep)!important;border-radius:0;font-weight:600}
+  /* the switch is a <button>, so it misses the .nav__links a padding above and
+     would sit flush against the screen edge; align it with the menu items */
+  .lang-switch{width:100%;justify-content:flex-start;align-items:center;gap:6px;padding:15px 32px;margin-top:2px;border-top:1px solid rgba(11,46,79,.08);font-size:13px}
   .footer__inner{grid-template-columns:1fr 1fr;gap:32px}
 }
 @media(max-width:540px){ .footer__inner{grid-template-columns:1fr} }
