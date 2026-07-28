@@ -409,6 +409,21 @@
     .team-groups .team-grid{gap:32px 12px}
     .team-groups .team-card{width:calc(50% - 6px);flex:0 0 calc(50% - 6px)}
   }
+
+  /* MOBILE VERTICAL RHYTHM
+     .section uses var(--sp-16) top AND bottom, so two stacked sections put
+     2x128px between blocks on a phone. Retuning the tokens here tightens
+     every section, section head and token-based margin at once. */
+  @media(max-width:860px){
+    :root{ --sp-8:2.5rem; --sp-12:3.25rem; --sp-16:4rem }
+    .footer{padding:52px 0 24px}
+  }
+  @media(max-width:560px){
+    :root{ --sp-8:1.75rem; --sp-12:2.25rem; --sp-16:2.75rem }
+    .footer{padding:40px 0 22px}
+    .statement__inner{padding:8px 0}
+    .closure{padding:30px 24px}
+  }
 </style>
 </head>
 <body>

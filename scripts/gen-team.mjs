@@ -309,6 +309,11 @@ const page = m => {
     .xp-bg{display:none}
     .section--ink-navy{background:#0B2E4F url("/img/expertise-flow.jpg") center/cover}
   }
+  @media(max-width:560px){
+    .bio-hero__inner{gap:28px;padding:calc(88px + 30px) 22px 40px}
+    .bio-summary{margin-top:20px}
+    .bio-meta{gap:22px;margin-top:26px;padding-top:22px}
+  }
 </style>
 </head>
 <body>

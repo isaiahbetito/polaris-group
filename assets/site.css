@@ -150,3 +150,24 @@ em.hl{font-style:italic;color:var(--steel)}
 
 /* === Direct-contact CTA (team profile bottom — RCP "Get in touch directly" pattern) === */
 .section--ink{background:linear-gradient(180deg,#0a1a2e,#02060c);color:#fff}
+
+/* ===========================================================================
+   MOBILE VERTICAL RHYTHM
+   .section uses var(--sp-16) top AND bottom, so two stacked sections put
+   2x128px of empty space between blocks on a phone. Retuning the tokens
+   here tightens every section, section head and token-based margin at once;
+   the few hard-coded bands (.page-head, .footer) are adjusted alongside.
+   =========================================================================== */
+@media(max-width:860px){
+  :root{ --sp-8:2.5rem; --sp-12:3.25rem; --sp-16:4rem }
+  .page-head{padding:calc(88px + 44px) 0 48px}
+  .footer{padding:52px 0 24px}
+  .footer__legal{margin-top:36px}
+}
+@media(max-width:560px){
+  :root{ --sp-8:1.75rem; --sp-12:2.25rem; --sp-16:2.75rem }
+  .page-head{padding:calc(88px + 30px) 0 34px}
+  .footer{padding:40px 0 22px}
+  .footer__legal{margin-top:28px}
+  .section__head{margin-bottom:var(--sp-8)}
+}
