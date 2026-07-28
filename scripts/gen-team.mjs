@@ -223,8 +223,6 @@ const page = m => {
     background:radial-gradient(120% 90% at 30% 20%,#13406d,#0a2742)}
   .bio-photo__accent{position:absolute;top:-12px;right:-12px;width:84px;height:84px;border:2px solid var(--blue);border-radius:16px;opacity:.32}
   .bio-photo__accent-2{position:absolute;bottom:-10px;left:-10px;width:60px;height:60px;border:1px solid var(--silver-1);border-radius:12px;opacity:.22}
-  .bio-eyebrow{display:flex;align-items:center;gap:12px;font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--silver-1);margin-bottom:18px}
-  .bio-eyebrow::before{content:"";width:32px;height:1px;background:var(--silver-1)}
   .bio-name{font-family:var(--serif);font-size:clamp(40px,5vw,58px);font-weight:500;line-height:1.05;color:#fff}
   .bio-title{font-size:20px;color:var(--blue);font-weight:500;margin-top:10px}
   .bio-linkedin{display:inline-flex;align-items:center;gap:8px;margin-top:24px;padding:7px 15px;border:1px solid rgba(127,168,220,.4);border-radius:6px;color:var(--blue);font-size:13px;font-weight:600;transition:background .25s,border-color .25s;text-decoration:none}
@@ -294,7 +292,6 @@ const page = m => {
   @media(max-width:860px){
     .bio-hero__inner{grid-template-columns:1fr;gap:40px;padding:calc(88px + 48px) 24px 64px;text-align:center}
     .bio-photo{justify-self:center}
-    .bio-eyebrow{justify-content:center}.bio-eyebrow::before{display:none}
     .bio-meta{justify-content:center}
     .bio-photo__accent,.bio-photo__accent-2{display:none}
     .xp-grid,.cred-grid{grid-template-columns:1fr}
@@ -339,9 +336,8 @@ const page = m => {
         <div class="bio-photo__accent-2" aria-hidden="true"></div>
       </div>
       <div class="bio-intro">
-        <div class="bio-eyebrow" data-it="${escA(m.role.it)}" data-en="${escA(m.role.en)}">${m.role.it}</div>
         <h1 class="bio-name">${m.name}</h1>
-        <p class="bio-title" data-it="${escA(m.area.it)}" data-en="${escA(m.area.en)}">${m.area.it}</p>${m.linkedin ? `
+        <p class="bio-title" data-it="${escA(m.role.it)}" data-en="${escA(m.role.en)}">${m.role.it}</p>${m.linkedin ? `
         <a href="${m.linkedin}" target="_blank" rel="noopener" class="bio-linkedin">
           <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
           <span data-it="Profilo LinkedIn" data-en="LinkedIn Profile">Profilo LinkedIn</span>
