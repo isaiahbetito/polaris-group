@@ -210,7 +210,7 @@
   .stat:first-child{border-left:0;padding-left:0}
   .stat__num{font-family:var(--serif);font-weight:600;font-size:clamp(3rem,5vw,4rem);color:var(--navy-deep);line-height:1}
   .stat__label{margin-top:10px;font-size:.82rem;color:var(--steel);white-space:nowrap}
-  .stats-note{margin-top:32px;text-align:center;font-size:.78rem;letter-spacing:.02em;color:var(--silver-accent)}
+  .stats-note{margin-top:60px;text-align:center;font-size:.78rem;letter-spacing:.02em;color:var(--silver-accent)}
 
   /* PARTNER */
   .partner{max-width:920px;margin:0 auto;background:var(--white);border:1px solid var(--silver-1);border-left:3px solid var(--silver-accent);border-radius:3px;padding:40px 44px;display:grid;grid-template-columns:200px 1fr;gap:36px;align-items:center}
@@ -305,13 +305,15 @@
   .thint{font-size:.85rem;color:var(--silver-2);opacity:.7;margin-top:18px}
   @media(max-width:480px){ .tstack,.tcard{width:300px} .tcard[data-pos="1"]{transform:translateX(28px) rotate(0)} .tcard[data-pos="2"]{transform:translateX(56px) rotate(6deg)} }
   /* 3-card testimonial grid (parity with casi-testimonianze.html) */
-  .quote-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-  .qcard{background:rgba(255,255,255,.05);border:1px solid rgba(184,194,204,.22);border-radius:8px;padding:34px 30px;backdrop-filter:blur(4px)}
-  .qcard__mk{font-family:var(--serif);font-size:3rem;color:var(--silver-1);line-height:.4;display:block;margin-bottom:14px}
-  .qcard__q{font-family:var(--serif);font-style:italic;font-size:1.15rem;line-height:1.5;color:var(--silver-2)}
+  /* pulls wider than the 1200px container on roomy screens; collapses to 0 below it.
+     margin (not transform) because .reveal animates transform on this same element. */
+  .quote-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-inline:calc(-1 * clamp(0px,(100vw - 1220px)/2,100px))}
+  .qcard{background:rgba(255,255,255,.05);border:1px solid rgba(184,194,204,.22);border-radius:8px;padding:42px 38px;backdrop-filter:blur(4px)}
+  .qcard__mk{font-family:var(--serif);font-size:3.4rem;color:var(--silver-1);line-height:.4;display:block;margin-bottom:18px}
+  .qcard__q{font-family:var(--serif);font-style:italic;font-size:1.3rem;line-height:1.55;color:var(--silver-2)}
   .qcard__q.placeholder{outline:1px dashed var(--silver-1);outline-offset:5px;border-radius:2px}
-  .qcard__a{margin-top:20px;font-size:.82rem;font-weight:600;letter-spacing:.04em;color:#7ea3cf}
-  @media(max-width:860px){ .quote-grid{grid-template-columns:1fr} }
+  .qcard__a{margin-top:24px;font-size:.92rem;font-weight:600;letter-spacing:.04em;color:#7ea3cf}
+  @media(max-width:860px){ .quote-grid{grid-template-columns:1fr;margin-inline:0} }
   /* legacy testimonial two-column layout, kept for the old draggable variant elsewhere */
   .tlayout{display:grid;grid-template-columns:.82fr 1fr;gap:64px;align-items:center}
   .tphoto{margin:0;position:relative;border-radius:16px;overflow:hidden;border:1px solid rgba(184,194,204,.28);box-shadow:0 40px 80px -40px rgba(0,0,0,.7)}
@@ -397,24 +399,15 @@
   /* collapse / expand — cut on a clean group boundary, not a fixed height */
   .team-collapse .team-group--extra{display:none}
   .team-collapse.is-open .team-group--extra{display:block}
-  /* belief quote + pillars (folded from Chi Siamo, light section) */
+  /* belief quote (folded from Chi Siamo, light section) — pillars moved to team/cesare-trebeschi.html */
   .belief-quote{max-width:840px;margin:0 auto;text-align:center;padding:20px 0;position:relative}
   .belief-quote__mk{display:block;font-family:var(--serif);font-size:5rem;line-height:.5;color:var(--silver-1);margin-bottom:18px}
   .belief-quote blockquote{font-family:var(--serif);font-size:clamp(1.5rem,2.8vw,2.2rem);line-height:1.45;color:var(--navy-deep);font-weight:500;font-style:italic;margin:0;quotes:none}
   .belief-quote blockquote em{font-style:italic;color:var(--steel)}
   .belief-quote__by{margin-top:28px;font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--silver-accent)}
-  .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:var(--sp-8)}
-  .pillar{position:relative;overflow:hidden;background:var(--white);border:1px solid var(--silver-2);border-radius:4px;padding:32px 28px;transition:transform .35s var(--ease),box-shadow .35s var(--ease),border-color .35s var(--ease),background .35s var(--ease)}
-  .pillar:hover{transform:translateY(-5px);background:linear-gradient(160deg,#0e3258,#0a2a4c);border-color:#0a2a4c;box-shadow:0 28px 60px -28px rgba(11,46,79,.55)}
-  .pillar:hover .pillar__n{border-color:rgba(156,192,239,.5);color:#9cc0ef}
-  .pillar:hover .pillar__t,.pillar:hover .pillar__d{color:#fff}
-  .pillar__n{display:inline-block;font-size:13px;font-weight:800;letter-spacing:.14em;color:var(--navy-deep);border:1.5px solid var(--silver-1);border-radius:4px;padding:6px 10px;transition:color .35s var(--ease),border-color .35s var(--ease)}
-  .pillar__t{font-family:var(--serif);font-weight:700;font-size:1.5rem;color:var(--navy-deep);margin:14px 0 8px;line-height:1.15;transition:color .35s var(--ease)}
-  .pillar__d{font-size:.95rem;color:var(--ink);opacity:.82;line-height:1.55;transition:color .35s var(--ease)}
   @media(max-width:860px){
     .team-groups .team-grid{gap:32px 12px}
     .team-groups .team-card{width:calc(50% - 6px);flex:0 0 calc(50% - 6px)}
-    .pillars{grid-template-columns:1fr}
   }
 </style>
 </head>
@@ -427,7 +420,7 @@
     </a>
     <button class="nav__toggle" type="button" aria-label="Menu"><span></span><span></span><span></span></button>
     <ul class="nav__links">
-      <li><a href="/" data-it="Chi Siamo" data-en="About">Chi Siamo</a></li>
+      <li><a href="/#chi-siamo" data-it="Chi Siamo" data-en="About">Chi Siamo</a></li>
       <li><a href="/servizi.html" data-it="Servizi" data-en="Services">Servizi</a></li>
       <li><a href="/numeri.html" data-it="Progetti" data-en="Projects">Progetti</a></li>
       <li><a href="#team" data-it="Team" data-en="Team">Team</a></li>
@@ -495,7 +488,7 @@
 </section>
 
 <!-- BRAND STATEMENT -->
-<section class="statement">
+<section class="statement" id="chi-siamo">
   <div class="container statement__inner reveal">
     <img class="statement__logo" src="/img/logo-lockup.png" alt="Polaris Group">
     <h2 data-it-html="Un riferimento solido<em>Per ogni decisione</em>" data-en-html="A Steady Reference Point<em>for Every Decision</em>">Un riferimento solido<em>Per ogni decisione</em></h2>
@@ -679,7 +672,7 @@
       </div>
     </div>
     <div class="text-center" style="margin-top:var(--sp-8)">
-      <button type="button" class="btn btn--ghost" id="teamMore" data-it="Scopri di più" data-en="Learn more">Scopri di più</button>
+      <button type="button" class="btn btn--ghost" id="teamMore" data-it="Conosci tutto il team" data-en="Meet the full team">Conosci tutto il team</button>
     </div>
   </div>
 </section>
@@ -719,23 +712,6 @@
       <blockquote data-it-html="Crediamo che le imprese debbano passare da una logica di breve periodo a una di lungo periodo: restare nel mercato il più a lungo possibile, <em>lasciando le cose meglio di come le hanno trovate.</em>" data-en-html="We believe companies should move from short-term thinking to the long term: staying in the market as long as possible, <em>leaving things better than they found them.</em>">Crediamo che le imprese debbano passare da una logica di breve periodo a una di lungo periodo: restare nel mercato il più a lungo possibile, <em>lasciando le cose meglio di come le hanno trovate.</em></blockquote>
       <figcaption class="belief-quote__by">Cesare Trebeschi</figcaption>
     </figure>
-    <div class="pillars reveal">
-      <article class="pillar">
-        <span class="pillar__n">01</span>
-        <h3 class="pillar__t" data-it="Le persone al centro" data-en="People at the Centre">Le persone al centro</h3>
-        <p class="pillar__d" data-it="Il clima di fiducia, le competenze e il coinvolgimento dei collaboratori sono il primo motore della crescita di un’azienda." data-en="Trust, skills and the involvement of employees are the first engine of a company's growth.">Il clima di fiducia, le competenze e il coinvolgimento dei collaboratori sono il primo motore della crescita di un’azienda.</p>
-      </article>
-      <article class="pillar">
-        <span class="pillar__n">02</span>
-        <h3 class="pillar__t" data-it="Una visione di lungo periodo" data-en="A Long-term Vision">Una visione di lungo periodo</h3>
-        <p class="pillar__d" data-it="Una mission chiara e una corretta gestione delle risorse finanziarie permettono di crescere e prosperare nel proprio mercato." data-en="A clear mission and sound financial management let a business grow and prosper in its market.">Una mission chiara e una corretta gestione delle risorse finanziarie permettono di crescere e prosperare nel proprio mercato.</p>
-      </article>
-      <article class="pillar">
-        <span class="pillar__n">03</span>
-        <h3 class="pillar__t" data-it="Cultura prima della tecnica" data-en="Culture Before Technique">Cultura prima della tecnica</h3>
-        <p class="pillar__d" data-it="La nostra è una missione più culturale che tecnica: coinvolgiamo partner professionali capaci di trasferire alle imprese ciò in cui crediamo." data-en="Ours is a mission more cultural than technical: we involve professional partners able to pass on what we believe to companies.">La nostra è una missione più culturale che tecnica: coinvolgiamo partner professionali capaci di trasferire alle imprese ciò in cui crediamo.</p>
-      </article>
-    </div>
   </div>
 </section>
 
@@ -748,7 +724,6 @@
   .closure__title{font-family:var(--serif);font-weight:600;font-size:clamp(2.1rem,3.4vw,3rem);color:var(--navy-deep);margin:12px 0 16px;line-height:1.1}
   .closure__text{font-size:clamp(1.08rem,1.5vw,1.35rem);color:var(--ink);opacity:.88;line-height:1.6;margin:0}
   .closure__text strong{color:var(--navy-deep)}
-  .closure__sign{display:block;margin-top:24px;font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--steel)}
   @media(max-width:900px){.closure{gap:32px;padding:44px 40px}.closure__icon{flex:0 0 84px;width:84px;height:84px}.closure__icon svg{width:46px;height:46px}}
   @media(max-width:560px){.closure{flex-direction:column;text-align:center;gap:24px;padding:36px 26px}.closure__icon{margin:0 auto}}
 </style>
@@ -762,7 +737,6 @@
         <span class="closure__eyebrow" data-it="Avviso" data-en="Notice">Avviso</span>
         <h3 class="closure__title" data-it="Chiusura estiva" data-en="Summer Closure">Chiusura estiva</h3>
         <p class="closure__text" data-it-html="I nostri uffici resteranno chiusi per le ferie estive <strong>dal 10 al 21 agosto 2026</strong> compresi. Saremo nuovamente operativi <strong>il 24 agosto 2026</strong>." data-en-html="Our offices will be closed for the summer holidays <strong>from 10 to 21 August 2026</strong> inclusive. We will be back in operation <strong>on 24 August 2026</strong>.">I nostri uffici resteranno chiusi per le ferie estive <strong>dal 10 al 21 agosto 2026</strong> compresi. Saremo nuovamente operativi <strong>il 24 agosto 2026</strong>.</p>
-        <span class="closure__sign" data-it="Polaris HR · Human Resources" data-en="Polaris HR · Human Resources">Polaris HR · Human Resources</span>
       </div>
     </div>
   </div>
@@ -792,7 +766,7 @@
     <div class="footer__col">
       <h4 data-it="Sito" data-en="Site">Sito</h4>
       <ul>
-        <li><a href="/" data-it="Chi Siamo" data-en="About">Chi Siamo</a></li>
+        <li><a href="/#chi-siamo" data-it="Chi Siamo" data-en="About">Chi Siamo</a></li>
         <li><a href="/servizi.html" data-it="Servizi" data-en="Services">Servizi</a></li>
         <li><a href="/numeri.html" data-it="Progetti" data-en="Projects">Progetti</a></li>
         <li><a href="/#team" data-it="Team" data-en="Team">Team</a></li>

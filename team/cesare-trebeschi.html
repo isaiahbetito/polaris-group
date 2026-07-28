@@ -159,6 +159,16 @@
     .tl-item{margin-bottom:24px}
   }
   @media(max-width:420px){ .bio-photo__frame{width:280px;height:350px} }
+  /* principles / pillars (moved here from the homepage) */
+  .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:var(--sp-8)}
+  .pillar{position:relative;overflow:hidden;background:var(--white);border:1px solid var(--silver-2);border-radius:4px;padding:32px 28px;transition:transform .35s var(--ease),box-shadow .35s var(--ease),border-color .35s var(--ease),background .35s var(--ease)}
+  .pillar:hover{transform:translateY(-5px);background:linear-gradient(160deg,#0e3258,#0a2a4c);border-color:#0a2a4c;box-shadow:0 28px 60px -28px rgba(11,46,79,.55)}
+  .pillar:hover .pillar__n{border-color:rgba(156,192,239,.5);color:#9cc0ef}
+  .pillar:hover .pillar__t,.pillar:hover .pillar__d{color:#fff}
+  .pillar__n{display:inline-block;font-size:13px;font-weight:800;letter-spacing:.14em;color:var(--navy-deep);border:1.5px solid var(--silver-1);border-radius:4px;padding:6px 10px;transition:color .35s var(--ease),border-color .35s var(--ease)}
+  .pillar__t{font-family:var(--serif);font-weight:700;font-size:1.5rem;color:var(--navy-deep);margin:14px 0 8px;line-height:1.15;transition:color .35s var(--ease)}
+  .pillar__d{font-size:.95rem;color:var(--ink);opacity:.82;line-height:1.55;transition:color .35s var(--ease)}
+  @media(max-width:860px){ .pillars{grid-template-columns:1fr} }
   @media(prefers-reduced-motion:reduce){
     .xp-bg{display:none}
     .section--ink-navy{background:#0B2E4F url("/img/expertise-flow.jpg") center/cover}
@@ -172,7 +182,7 @@
     <a href="/" class="nav__logo" aria-label="Polaris Group"><img src="/img/logo-lockup.png" alt="Polaris Group"></a>
     <button class="nav__toggle" aria-label="Menu"><span></span><span></span><span></span></button>
     <ul class="nav__links">
-      <li><a href="/" class="is-active" data-it="Chi Siamo" data-en="About">Chi Siamo</a></li>
+      <li><a href="/#chi-siamo" class="is-active" data-it="Chi Siamo" data-en="About">Chi Siamo</a></li>
       <li><a href="/servizi.html" data-it="Servizi" data-en="Services">Servizi</a></li>
       <li><a href="/numeri.html" data-it="Progetti" data-en="Projects">Progetti</a></li>
       <li><a href="/#team" data-it="Team" data-en="Team">Team</a></li>
@@ -257,6 +267,32 @@
       <blockquote class="belief__quote" data-it-html="La crescita passa prima dalle <em>persone</em> e dalla <em>cultura</em>, poi dalla tecnica." data-en-html="Growth comes first from <em>people</em> and <em>culture</em>, then from technique.">La crescita passa prima dalle <em>persone</em> e dalla <em>cultura</em>, poi dalla tecnica.</blockquote>
       <figcaption class="belief__by">Cesare Trebeschi</figcaption>
     </figure>
+  </section>
+
+  <!-- PRINCIPI (moved here from the homepage) -->
+  <section class="section section--cream reveal" style="padding-top:0">
+    <div class="container">
+      <div class="section__head text-center">
+        <span class="eyebrow eyebrow--center" data-it="I principi" data-en="The principles">I principi</span>
+      </div>
+      <div class="pillars">
+        <article class="pillar">
+          <span class="pillar__n">01</span>
+          <h3 class="pillar__t" data-it="Le persone al centro" data-en="People at the Centre">Le persone al centro</h3>
+          <p class="pillar__d" data-it="Il clima di fiducia, le competenze e il coinvolgimento dei collaboratori sono il primo motore della crescita di un’azienda." data-en="Trust, skills and the involvement of employees are the first engine of a company's growth.">Il clima di fiducia, le competenze e il coinvolgimento dei collaboratori sono il primo motore della crescita di un’azienda.</p>
+        </article>
+        <article class="pillar">
+          <span class="pillar__n">02</span>
+          <h3 class="pillar__t" data-it="Una visione di lungo periodo" data-en="A Long-term Vision">Una visione di lungo periodo</h3>
+          <p class="pillar__d" data-it="Una mission chiara e una corretta gestione delle risorse finanziarie permettono di crescere e prosperare nel proprio mercato." data-en="A clear mission and sound financial management let a business grow and prosper in its market.">Una mission chiara e una corretta gestione delle risorse finanziarie permettono di crescere e prosperare nel proprio mercato.</p>
+        </article>
+        <article class="pillar">
+          <span class="pillar__n">03</span>
+          <h3 class="pillar__t" data-it="Cultura prima della tecnica" data-en="Culture Before Technique">Cultura prima della tecnica</h3>
+          <p class="pillar__d" data-it="La nostra è una missione più culturale che tecnica: coinvolgiamo partner professionali capaci di trasferire alle imprese ciò in cui crediamo." data-en="Ours is a mission more cultural than technical: we involve professional partners able to pass on what we believe to companies.">La nostra è una missione più culturale che tecnica: coinvolgiamo partner professionali capaci di trasferire alle imprese ciò in cui crediamo.</p>
+        </article>
+      </div>
+    </div>
   </section>
 
   <!-- CAREER TIMELINE -->
@@ -412,7 +448,7 @@
     <div class="footer__col">
       <h4 data-it="Sito" data-en="Site">Sito</h4>
       <ul>
-        <li><a href="/" data-it="Chi Siamo" data-en="About">Chi Siamo</a></li>
+        <li><a href="/#chi-siamo" data-it="Chi Siamo" data-en="About">Chi Siamo</a></li>
         <li><a href="/servizi.html" data-it="Servizi" data-en="Services">Servizi</a></li>
         <li><a href="/lavora-con-noi.html" data-it="Lavora con noi" data-en="Careers">Lavora con noi</a></li>
       </ul>
