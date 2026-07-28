@@ -371,7 +371,7 @@ ${m.bio ? `
     <div class="container">
       <div style="max-width:900px;margin:0 auto;text-align:center">
         <span class="eyebrow eyebrow--center" data-it="Bio" data-en="Bio">Bio</span>
-        <p style="font-family:var(--serif);font-weight:500;font-size:clamp(1.45rem,2.6vw,2.05rem);line-height:1.5;color:var(--navy-deep);margin-top:28px" data-it="${escA(m.bio.it)}" data-en="${escA(m.bio.en)}">${m.bio.it}</p>
+        <p style="font-family:var(--serif);font-weight:500;font-size:clamp(2.2rem,4.6vw,3.4rem);line-height:1.15;letter-spacing:-.012em;color:var(--navy-deep);margin-top:28px" data-it="${escA(m.bio.it)}" data-en="${escA(m.bio.en)}">${m.bio.it}</p>
       </div>
     </div>
   </section>` : ''}
